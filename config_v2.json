@@ -1,0 +1,132 @@
+{
+  "_comment": "키워드와 계정을 독립적으로 관리하는 설정 파일. 추가/제거가 자유롭습니다.",
+
+  "settings": {
+    "max_tweets_per_target": 20,
+    "request_delay_min": 2.0,
+    "request_delay_max": 5.0,
+    "retry_max_attempts": 3,
+    "retry_base_delay": 5,
+    "playwright_wait_sec": 10,
+    "schedule_interval_hours": 12
+  },
+
+  "keyword_groups": {
+    "_comment": "그룹별로 키워드를 관리합니다. 그룹 활성화/비활성화 가능",
+
+    "security_threats": {
+      "enabled": true,
+      "description": "사이버 위협 그룹 및 공격 모니터링",
+      "keywords": [
+        "Cyberattack",
+        "CVE",
+        "MITRE ATT&CK",
+        "exploit",
+        "RipperSec",
+        "DDoS Korea",
+        "MegaMedusa",
+        "Lazarus Group",
+        "APT28",
+        "ransomware Korea",
+        "한국 해킹",
+        "cyber attack",
+        "malware",
+        "ZeroDay",
+        "0-day","vulnerability",
+        "취약점",
+        "해킹",
+        "랜섬웨어",
+        "DDoS",
+        "디도스",
+        "사이버 공격",
+        "사이버 위협",
+        "사이버 보안",
+        "정보 유출","DFIR",
+        "디지털 포렌식",
+        "incident response",
+        "사이버 인텔리전스",
+        "threat intelligence"
+      ]
+    },
+
+    "service_outage": {
+      "enabled": false,
+      "description": "서비스 장애 감지",
+      "keywords": [
+        "접속 안돼",
+        "결제 오류",
+        "결제 먹통",
+        "송금 안돼",
+        "이체 안돼",
+        "카드 안돼",
+        "앱 먹통",
+        "앱 안열려",
+        "로그인 안돼",
+        "뱅킹 안돼",
+        "뱅킹 먹통"
+      ]
+    },
+
+    "custom": {
+      "enabled": true,
+      "description": "직접 추가한 커스텀 키워드",
+      "keywords": [
+        "Cyberattack"
+      ]
+    }
+  },
+
+  "rss_feeds": {
+    "_comment": "보안 뉴스/블로그 RSS 피드. enabled로 개별 활성화/비활성화 가능",
+
+    "english_news": {
+      "enabled": true,
+      "description": "영문 보안 뉴스",
+      "feeds": [
+        {"name": "TheHackerNews", "url": "https://feeds.feedburner.com/TheHackersNews"},
+        {"name": "SecurityWeek",  "url": "https://www.securityweek.com/feed/"},
+        {"name": "DarkReading",   "url": "https://www.darkreading.com/rss.xml"},
+        {"name": "SANS ISC",      "url": "https://isc.sans.edu/rssfeed_full.xml"}
+      ]
+    },
+
+    "korean_blogs": {
+      "enabled": true,
+      "description": "국내 보안 블로그",
+      "feeds": [
+        {"name": "AhnLab ASEC",   "url": "https://asec.ahnlab.com/ko/feed/"}
+      ]
+    },
+
+    "cve_feeds": {
+      "enabled": true,
+      "description": "CVE/취약점 피드",
+      "feeds": [
+        {"name": "NIST NVD",      "url": "https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml"}
+      ]
+    }
+  },
+
+  "accounts": {
+    "_comment": "특정 X 계정을 직접 모니터링합니다",
+
+    "threat_intel": {
+      "enabled": true,
+      "description": "위협 인텔리전스 계정",
+      "usernames": [
+        "HalcyonAi",
+        "DarkWebInformer",
+        "MonThreat",
+        "DailyDarkWeb",
+        "FalconFeedsio",
+        "H4ckManac"
+      ]
+    },
+
+    "custom_accounts": {
+      "enabled": true,
+      "description": "직접 추가한 계정",
+      "usernames": []
+    }
+  }
+}

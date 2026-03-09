@@ -1,0 +1,41 @@
+services:
+  # 크롤링 테스트 (1회 실행 후 종료)
+  test:
+    build: .
+    container_name: x_crawler_test
+    env_file:
+      - .env
+    environment:
+      - PYTHONUNBUFFERED=1
+      - LOG_LEVEL=DEBUG
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    command: python test_crawl.py
+
+  # 실제 크롤러 (스케줄 모드)
+  crawler:
+    build: .
+    container_name: x_crawler
+    env_file:
+      - .env
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    restart: unless-stopped
+    command: python x_crawler.py
+
+  # 1회 실행 모드
+  crawl-once:
+    build: .
+    container_name: x_crawler_once
+    env_file:
+      - .env
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    command: python x_crawler.py --once
