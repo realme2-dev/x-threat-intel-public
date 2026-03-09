@@ -86,7 +86,6 @@ def _esc(text: str) -> str:
 
 def _clean_llm_text(text: str) -> str:
     """LLM 응답에서 Markdown 마크업을 텔레그램 Markdown v1 호환 형식으로 변환."""
-    import re
     # **bold** → 그냥 텍스트 (Markdown v1은 *italic*만 지원)
     text = re.sub(r"\*\*(.+?)\*\*", r"\1", text)
     # ### heading → 줄 앞에 🔸 추가
@@ -94,8 +93,12 @@ def _clean_llm_text(text: str) -> str:
     # * bullet → • 로 변환 (Markdown 충돌 방지)
     text = re.sub(r"^\*   ", "• ", text, flags=re.MULTILINE)
     text = re.sub(r"^\*\s+", "• ", text, flags=re.MULTILINE)
-    # 남은 _ 이스케이프 (URL 제외)
-    # URL 패턴 보호 후 이스케이프
+    # 인라인 코드 `도메인명` 중 백틱 제거 (Markdown v1 코드블록 오파싱 방지)
+    text = re.sub(r"`([^`\n]+)`", r"\1", text)
+    # 언더스코어 이스케이프
+    text = text.replace("_", "\\_")
+    # 남은 대괄호 이스케이프 (링크가 아닌 것)
+    text = re.sub(r"\[(?![^\]\n]*\]\(https?://)", r"\\[", text)
     return text
 
 
@@ -255,7 +258,7 @@ class TelegramNotifier:
             text_esc = _esc(tw.text[:120])
 
             if tw.link:
-                header = f"[{user_link} | {kst_date}]({tw.link})"
+                header = f"{user_link} | [{kst_date}]({tw.link})"
             else:
                 header = f"{user_link} | {kst_date}"
 
