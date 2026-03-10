@@ -220,17 +220,21 @@ class TelegramNotifier:
 
         parts.append("\n".join(trend_lines))
 
-        # ── 3. 계정 주요 트윗 (간소화: 계정당 1개, 최대 5계정)
-        acc_sample = self._build_account_samples(report)
-        if acc_sample:
-            parts.append(acc_sample)
+        # ── 3. LLM 선별 주요 트윗 (위협도 기준 상위 10개)
+        if report.llm_top_tweets:
+            top_section = self._build_top_tweets_section(report.llm_top_tweets)
+            if top_section:
+                parts.append(top_section)
+        else:
+            # LLM 없으면 기존 방식 폴백
+            acc_sample = self._build_account_samples(report)
+            if acc_sample:
+                parts.append(acc_sample)
+            kw_sample = self._build_keyword_samples(report)
+            if kw_sample:
+                parts.append(kw_sample)
 
-        # ── 4. 키워드 주요 트윗 (간소화: 키워드당 1개, 최대 5키워드)
-        kw_sample = self._build_keyword_samples(report)
-        if kw_sample:
-            parts.append(kw_sample)
-
-        # ── 5. 뉴스 기사 (별도 파트)
+        # ── 4. 뉴스 기사 (별도 파트)
         if news_text:
             parts.append(news_text)
 
@@ -269,6 +273,32 @@ class TelegramNotifier:
             lines.append(text_esc)
             shown += 1
         if shown == 0:
+            return ""
+        return "\n".join(lines)
+
+    def _build_top_tweets_section(self, top_tweets: list) -> str:
+        """LLM 선별 주요 트윗 섹션 — 위협도 배지 + 이유 표시."""
+        level_badge = {"HIGH": "🔴", "MEDIUM": "🟡", "LOW": "🟢"}
+        lines = ["*[🤖 AI 선별 주요 트윗]*"]
+
+        for tw in top_tweets:
+            badge = level_badge.get(tw.threat_level, "⚪")
+            kst_date = _to_kst(tw.date)
+            user_link = _twitter_profile_md(tw.username)
+            text_esc = _esc(tw.text[:140])
+            reason_plain = tw.reason.replace("*", "").replace("_", "").replace("`", "")
+
+            if tw.link:
+                header = f"{badge} {user_link} | [{kst_date}]({tw.link})"
+            else:
+                header = f"{badge} {user_link} | {kst_date}"
+
+            lines.append(f"\n{header}")
+            lines.append(text_esc)
+            if reason_plain:
+                lines.append(f"💡 {reason_plain}")
+
+        if len(lines) <= 1:
             return ""
         return "\n".join(lines)
 

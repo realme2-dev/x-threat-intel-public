@@ -41,7 +41,7 @@ from apscheduler.triggers.interval import IntervalTrigger
 from config_loader import load_config, Config
 from analyzer import Analyzer
 from notifier import TelegramNotifier
-from llm_analyzer import run_llm_analysis, list_available_backends
+from llm_analyzer import run_llm_analysis, run_tweet_selection, list_available_backends
 from rss_collector import collect_rss_news, format_articles_for_llm, format_articles_for_telegram
 
 # x_crawler 컴포넌트
@@ -435,6 +435,18 @@ def run_crawl_job(
                 for item in crawl_results
                 for t in item.get("data", {}).get("tweets", [])
             ]
+
+            # 7-1. 위협 중요도 기준 주요 트윗 선별
+            safe_print(f"  [7-1] 주요 트윗 선별 중 (전체 {len(all_tweets)}개)...")
+            top_tweets = run_tweet_selection(tweets=all_tweets, backend_name=backend_name)
+            report.llm_top_tweets = top_tweets
+            if top_tweets:
+                safe_print(f"  [7-1] 선별 완료: {len(top_tweets)}개")
+            else:
+                safe_print("  [7-1] 선별 실패 또는 결과 없음")
+
+            # 7-2. 심층 위협 인텔리전스 분석
+            safe_print("  [7-2] 심층 분석 중...")
             llm_result = run_llm_analysis(
                 tweets=all_tweets,
                 top_words=report.top_words,
@@ -444,9 +456,9 @@ def run_crawl_job(
             )
             report.llm_summary = llm_result
             if llm_result:
-                safe_print("  [LLM] 분석 완료")
+                safe_print("  [7-2] 분석 완료")
             else:
-                safe_print("  [LLM] 분석 실패 (로그 확인)")
+                safe_print("  [7-2] 분석 실패 (로그 확인)")
 
     analyzer.print_report(report)
     report_path = analyzer.save_report(report)

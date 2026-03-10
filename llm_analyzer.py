@@ -18,6 +18,7 @@
 import json
 import logging
 import os
+import re
 from dataclasses import dataclass, field
 from datetime import datetime, timezone, timedelta
 from typing import Protocol
@@ -419,6 +420,125 @@ def run_llm_analysis(
     except Exception as e:
         logger.error("LLM 분석 실패 [%s]: %s", backend.name, e)
         return ""
+
+
+@dataclass
+class TopTweet:
+    """LLM이 선별한 주요 트윗."""
+    rank: int
+    threat_level: str   # "HIGH" | "MEDIUM" | "LOW"
+    username: str
+    date: str
+    link: str
+    text: str
+    reason: str         # 선별 이유 (한 줄)
+
+
+def build_tweet_selection_prompt(tweets: list[dict]) -> str:
+    """전체 트윗에서 위협 중요도 기준 상위 10개를 선별하는 프롬프트."""
+    lines = []
+    for i, t in enumerate(tweets[:200]):  # 최대 200개 입력
+        user = t.get("user", {}).get("username", "?")
+        text = t.get("text", "")[:180].replace("\n", " ")
+        date = t.get("date", "")[:16]
+        link = t.get("link", "")
+        lang = "[KR]" if any("\uac00" <= c <= "\ud7a3" for c in text) else "[EN]"
+        lines.append(f"[{i}] {lang} @{user} ({date}) {link}\n{text}")
+
+    tweets_block = "\n\n".join(lines)
+    return f"""다음은 사이버보안 트위터 모니터링에서 수집된 트윗 {len(tweets[:200])}개입니다.
+
+{tweets_block}
+
+---
+
+위 트윗 목록에서 보안 위협 중요도가 높은 상위 10개를 선별하세요.
+
+선별 기준 (우선순위 순):
+1. 새로운 CVE/취약점 공개 또는 PoC 코드 배포
+2. 실제 공격/침해 사고 보고 (랜섬웨어, APT, 데이터 유출)
+3. 위협 행위자/그룹 활동 정보
+4. 한국 관련 위협 또는 한국어 트윗
+5. 즉각 조치가 필요한 보안 경보
+
+반드시 아래 JSON 형식으로만 응답하세요 (다른 텍스트 없이):
+{{
+  "top_tweets": [
+    {{
+      "rank": 1,
+      "tweet_index": <[N] 번호>,
+      "threat_level": "HIGH",
+      "reason": "선별 이유 한 줄 (한국어)"
+    }},
+    ...
+  ]
+}}
+
+threat_level은 HIGH/MEDIUM/LOW 중 하나."""
+
+
+def run_tweet_selection(
+    tweets: list[dict],
+    backend_name: str | None = None,
+) -> list[TopTweet]:
+    """
+    LLM으로 전체 트윗에서 위협 중요도 기준 상위 트윗을 선별합니다.
+
+    Returns:
+        TopTweet 리스트 (최대 10개), 실패 시 빈 리스트
+    """
+    if not tweets:
+        return []
+
+    backend = get_backend(backend_name)
+    if backend is None:
+        return []
+
+    prompt = build_tweet_selection_prompt(tweets)
+    system = (
+        "You are a cybersecurity triage analyst. "
+        "Select the most threat-relevant tweets and respond ONLY with valid JSON."
+    )
+
+    try:
+        logger.info("LLM 트윗 선별 시작 (backend=%s, tweets=%d개)", backend.name, len(tweets))
+        result = backend.complete(system, prompt)
+        logger.info("LLM 트윗 선별 완료 (tokens=%d)", result.total_tokens)
+
+        # JSON 파싱
+        text = result.text.strip()
+        # 코드블록 제거
+        text = re.sub(r"```(?:json)?\s*", "", text).strip().rstrip("```").strip()
+        data = json.loads(text)
+
+        top_tweets: list[TopTweet] = []
+        tweet_pool = tweets[:200]
+        for item in data.get("top_tweets", [])[:10]:
+            idx = item.get("tweet_index")
+            if idx is None or idx >= len(tweet_pool):
+                continue
+            t = tweet_pool[idx]
+            user = t.get("user", {}).get("username", "?").lstrip("@")
+            top_tweets.append(TopTweet(
+                rank=item.get("rank", len(top_tweets) + 1),
+                threat_level=item.get("threat_level", "MEDIUM"),
+                username=user,
+                date=t.get("date", ""),
+                link=t.get("link", ""),
+                text=t.get("text", "")[:200],
+                reason=item.get("reason", ""),
+            ))
+        return top_tweets
+
+    except (json.JSONDecodeError, KeyError) as e:
+        logger.error("LLM 트윗 선별 JSON 파싱 실패: %s", e)
+        return []
+    except requests.Timeout:
+        logger.error("LLM 트윗 선별 타임아웃")
+        return []
+    except Exception as e:
+        logger.error("LLM 트윗 선별 실패: %s", e)
+        return []
 
 
 def list_available_backends() -> list[str]:

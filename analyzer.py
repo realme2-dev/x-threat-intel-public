@@ -88,7 +88,8 @@ class TrendReport:
     top_hashtags: list[tuple[str, int]]
     top_mentions: list[tuple[str, int]]
     top_users: list[tuple[str, int]]
-    llm_summary: str = ""  # LLM 활성화 시 채워짐
+    llm_summary: str = ""         # LLM 활성화 시 채워짐
+    llm_top_tweets: list = field(default_factory=list)  # LLM 선별 주요 트윗
 
 
 class Analyzer:
@@ -321,6 +322,7 @@ class Analyzer:
                     "top_mentions": obj.top_mentions,
                     "top_users": obj.top_users,
                     "llm_summary": obj.llm_summary,
+                    "llm_top_tweets": [to_serializable(t) for t in obj.llm_top_tweets],
                 }
             if isinstance(obj, TweetSummary):
                 return {
@@ -344,6 +346,13 @@ class Analyzer:
             if isinstance(obj, SampleTweet):
                 return {"text": obj.text, "username": obj.username,
                         "link": obj.link, "date": obj.date}
+            # TopTweet (llm_analyzer)
+            if hasattr(obj, "threat_level") and hasattr(obj, "reason"):
+                return {
+                    "rank": obj.rank, "threat_level": obj.threat_level,
+                    "username": obj.username, "date": obj.date,
+                    "link": obj.link, "text": obj.text, "reason": obj.reason,
+                }
             return obj
 
         with open(path, "w", encoding="utf-8") as f:
