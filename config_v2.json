@@ -83,10 +83,39 @@
       "enabled": true,
       "description": "영문 보안 뉴스",
       "feeds": [
-        {"name": "TheHackerNews", "url": "https://feeds.feedburner.com/TheHackersNews"},
-        {"name": "SecurityWeek",  "url": "https://www.securityweek.com/feed/"},
-        {"name": "DarkReading",   "url": "https://www.darkreading.com/rss.xml"},
-        {"name": "SANS ISC",      "url": "https://isc.sans.edu/rssfeed_full.xml"}
+        {"name": "TheHackerNews",      "url": "https://feeds.feedburner.com/TheHackersNews"},
+        {"name": "SecurityWeek",       "url": "https://www.securityweek.com/feed/"},
+        {"name": "DarkReading",        "url": "https://www.darkreading.com/rss.xml"},
+        {"name": "SANS ISC",           "url": "https://isc.sans.edu/rssfeed_full.xml"},
+        {"name": "BleepingComputer",   "url": "https://www.bleepingcomputer.com/feed/"},
+        {"name": "Krebs on Security",  "url": "https://krebsonsecurity.com/feed/"},
+        {"name": "CyberScoop",         "url": "https://cyberscoop.com/feed/"},
+        {"name": "Schneier on Security","url": "https://www.schneier.com/feed/atom/"},
+        {"name": "WeLiveSecurity",     "url": "https://www.welivesecurity.com/feed/"},
+        {"name": "Malwarebytes Labs",  "url": "https://www.malwarebytes.com/blog/feed/"},
+        {"name": "Check Point Research","url": "https://research.checkpoint.com/feed/"}
+      ]
+    },
+
+    "english_blogs": {
+      "enabled": true,
+      "description": "영문 보안 전문 블로그 (기술 심층)",
+      "feeds": [
+        {"name": "Mandiant Blog",      "url": "https://www.mandiant.com/resources/blog/rss.xml"},
+        {"name": "Recorded Future",    "url": "https://www.recordedfuture.com/feed"},
+        {"name": "Crowdstrike Blog",   "url": "https://www.crowdstrike.com/blog/feed/"},
+        {"name": "Securelist (Kaspersky)", "url": "https://securelist.com/feed/"},
+        {"name": "Unit42 (Palo Alto)", "url": "https://unit42.paloaltonetworks.com/feed/"},
+        {"name": "Qualys Blog",        "url": "https://blog.qualys.com/feed"},
+        {"name": "ThreatConnect",      "url": "https://threatconnect.com/feed/"}
+      ]
+    },
+
+    "korean_news": {
+      "enabled": true,
+      "description": "국내 보안 뉴스",
+      "feeds": [
+        {"name": "데일리시큐",          "url": "https://www.dailysecu.com/rss/allArticle.xml"}
       ]
     },
 
@@ -94,7 +123,8 @@
       "enabled": true,
       "description": "국내 보안 블로그",
       "feeds": [
-        {"name": "AhnLab ASEC",   "url": "https://asec.ahnlab.com/ko/feed/"}
+        {"name": "AhnLab ASEC",        "url": "https://asec.ahnlab.com/ko/feed/"},
+        {"name": "이스트시큐리티 알약",  "url": "https://blog.alyac.co.kr/rss"}
       ]
     },
 
@@ -102,7 +132,9 @@
       "enabled": true,
       "description": "CVE/취약점 피드",
       "feeds": [
-        {"name": "NIST NVD",      "url": "https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml"}
+        {"name": "NIST NVD",        "url": "https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml"},
+        {"name": "CISA Alerts",     "url": "https://www.cisa.gov/uscert/ncas/alerts.xml"},
+        {"name": "CISA ICS Advisories", "url": "https://www.cisa.gov/uscert/ics/advisories/advisories.xml"}
       ]
     }
   },
@@ -120,6 +152,28 @@
         "DailyDarkWeb",
         "FalconFeedsio",
         "H4ckManac"
+      ]
+    },
+
+    "security_researchers": {
+      "enabled": true,
+      "description": "보안 연구원 및 전문가",
+      "usernames": [
+        "GossiTheDog",
+        "vxunderground",
+        "MalwareTechBlog",
+        "taviso",
+        "SwiftOnSecurity"
+      ]
+    },
+
+    "korean_security": {
+      "enabled": false,
+      "description": "국내 보안 계정 (필요 시 활성화)",
+      "usernames": [
+        "AhnLab_ASEC",
+        "boannews",
+        "krcert_kr"
       ]
     },
 

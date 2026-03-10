@@ -198,13 +198,16 @@ class TelegramNotifier:
         trend_lines = ["*[트렌드 분석]*"]
 
         if report.top_words:
-            words = "  ".join(f"`{w}`({c})" for w, c in report.top_words[:8])
-            trend_lines.append(f"🔑 키워드:\n{words}")
+            top20 = report.top_words[:20]
+            half = len(top20) // 2
+            line1 = "  ".join(f"`{w}`({c})" for w, c in top20[:half])
+            line2 = "  ".join(f"`{w}`({c})" for w, c in top20[half:])
+            trend_lines.append(f"🔑 키워드:\n{line1}\n{line2}")
 
         if report.top_hashtags:
             tags = "  ".join(
                 _twitter_hashtag_md(t) + f"({c})"
-                for t, c in report.top_hashtags[:6]
+                for t, c in report.top_hashtags[:10]
             )
             trend_lines.append(f"#️⃣ 해시태그:\n{tags}")
 

@@ -35,7 +35,13 @@ STOPWORDS: set[str] = {
     "who", "how", "when", "where", "why", "if", "then", "than", "so",
     "as", "not", "no", "up", "out", "about", "just", "more", "also",
     "new", "can", "get", "all", "one", "into", "its", "via", "now",
-    "rt", "amp", "https", "http", "co",
+    "rt", "amp", "https", "http", "co", "com", "www", "bit", "ly",
+    "via", "see", "read", "check", "here", "link", "post", "follow",
+    "like", "share", "view", "click", "watch", "join", "use", "used",
+    "they", "their", "there", "been", "using", "after", "before",
+    "has", "have", "had", "over", "well", "know", "say", "said",
+    "make", "made", "take", "took", "help", "need", "want", "got",
+    "2025", "2026", "2024",
     # 한국어 조사/접속사
     "이", "가", "을", "를", "은", "는", "의", "에", "서", "도", "로", "으로",
     "와", "과", "이나", "나", "하고", "에서", "에게", "한테", "부터", "까지",
@@ -181,7 +187,7 @@ class Analyzer:
         tokens = text.lower().split()
         return [
             t for t in tokens
-            if t not in STOPWORDS and len(t) > 1 and not t.isdigit()
+            if t not in STOPWORDS and len(t) > 2 and not t.isdigit()
         ]
 
     def _top_words(self, tweets: list[dict], n: int = 20) -> list[tuple[str, int]]:
