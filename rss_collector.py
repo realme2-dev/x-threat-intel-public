@@ -11,7 +11,7 @@
 
 import logging
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime, timezone, timedelta
 from email.utils import parsedate_to_datetime
 
@@ -23,12 +23,86 @@ KST = timezone(timedelta(hours=9))
 
 
 @dataclass
+class IOCResult:
+    """기사에서 추출한 IOC(침해지표) 모음."""
+    cves: list[str] = field(default_factory=list)       # CVE-YYYY-XXXXX
+    ips: list[str] = field(default_factory=list)         # IPv4
+    domains: list[str] = field(default_factory=list)     # 악성 도메인 패턴
+    hashes: list[str] = field(default_factory=list)      # MD5/SHA1/SHA256
+    urls: list[str] = field(default_factory=list)        # http(s) URL (악성 가능성)
+
+    def is_empty(self) -> bool:
+        return not any([self.cves, self.ips, self.domains, self.hashes, self.urls])
+
+    def summary(self) -> str:
+        """텔레그램용 한 줄 요약."""
+        parts = []
+        if self.cves:
+            parts.append(f"CVE: {', '.join(self.cves[:3])}")
+        if self.ips:
+            parts.append(f"IP: {', '.join(self.ips[:3])}")
+        if self.domains:
+            parts.append(f"도메인: {', '.join(self.domains[:3])}")
+        if self.hashes:
+            parts.append(f"해시: {self.hashes[0][:16]}...")
+        return " | ".join(parts)
+
+
+def extract_ioc(text: str) -> IOCResult:
+    """
+    텍스트에서 IOC(침해지표)를 추출합니다.
+
+    추출 항목:
+    - CVE 식별자 (CVE-YYYY-XXXXX)
+    - IPv4 주소 (공인 IP만, 사설/루프백 제외)
+    - 의심 도메인 (알려진 악성 TLD 또는 보안 기사 컨텍스트)
+    - 파일 해시 (MD5 32자, SHA1 40자, SHA256 64자)
+    """
+    result = IOCResult()
+
+    # CVE
+    result.cves = list(dict.fromkeys(re.findall(r"CVE-\d{4}-\d{4,7}", text, re.IGNORECASE)))
+
+    # IPv4 (사설/루프백/링크로컬 제외)
+    raw_ips = re.findall(r"\b(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\b", text)
+    for ip in raw_ips:
+        parts = ip.split(".")
+        if not all(0 <= int(p) <= 255 for p in parts):
+            continue
+        a = int(parts[0])
+        b = int(parts[1])
+        # 제외: 10.x, 172.16-31.x, 192.168.x, 127.x, 169.254.x, 0.x
+        if a in (10, 127, 0) or (a == 172 and 16 <= b <= 31) \
+                or (a == 192 and b == 168) or (a == 169 and b == 254):
+            continue
+        result.ips.append(ip)
+    result.ips = list(dict.fromkeys(result.ips))
+
+    # 파일 해시 (MD5=32, SHA1=40, SHA256=64 hex)
+    hashes = re.findall(r"\b([0-9a-fA-F]{64}|[0-9a-fA-F]{40}|[0-9a-fA-F]{32})\b", text)
+    # 너무 흔한 패턴(버전 번호 등) 제외: 모두 같은 문자로만 된 경우 제거
+    result.hashes = [h for h in dict.fromkeys(hashes) if len(set(h.lower())) > 4][:5]
+
+    # 도메인 — 보안 기사에서 악성 도메인으로 언급되는 패턴
+    # (예: "communicates with evil.ru", "C2 server at bad.cn")
+    domain_pattern = re.findall(
+        r"\b([a-zA-Z0-9][-a-zA-Z0-9]{2,62}\."
+        r"(?:ru|cn|ir|kp|top|xyz|tk|pw|cc|su|info|biz|onion))\b",
+        text
+    )
+    result.domains = list(dict.fromkeys(domain_pattern))[:5]
+
+    return result
+
+
+@dataclass
 class NewsArticle:
     title: str
     link: str
     summary: str
     source: str
     published_kst: str   # "26/03/09 14:20 KST"
+    ioc: IOCResult = field(default_factory=IOCResult)  # 추출된 IOC
 
 
 def _parse_date(entry) -> str:
@@ -84,12 +158,16 @@ def collect_rss_news(
                 if not title or not link:
                     continue
 
+                # IOC 추출 (제목 + 요약 전체 텍스트 대상)
+                ioc = extract_ioc(title + " " + summary)
+
                 articles.append(NewsArticle(
                     title=title,
                     link=link,
                     summary=summary,
                     source=name,
                     published_kst=_parse_date(entry),
+                    ioc=ioc,
                 ))
                 count += 1
 
@@ -102,7 +180,7 @@ def collect_rss_news(
 
 
 def format_articles_for_llm(articles: list[NewsArticle]) -> str:
-    """LLM 프롬프트에 포함할 뉴스 기사 텍스트를 생성합니다."""
+    """LLM 프롬프트에 포함할 뉴스 기사 텍스트를 생성합니다. IOC 포함."""
     if not articles:
         return ""
     lines = []
@@ -112,6 +190,17 @@ def format_articles_for_llm(articles: list[NewsArticle]) -> str:
         if a.summary:
             lines.append(f"요약: {a.summary[:200]}")
         lines.append(f"링크: {a.link}")
+        if not a.ioc.is_empty():
+            ioc_parts = []
+            if a.ioc.cves:
+                ioc_parts.append(f"CVE={','.join(a.ioc.cves[:3])}")
+            if a.ioc.ips:
+                ioc_parts.append(f"IP={','.join(a.ioc.ips[:3])}")
+            if a.ioc.hashes:
+                ioc_parts.append(f"HASH={a.ioc.hashes[0][:32]}")
+            if a.ioc.domains:
+                ioc_parts.append(f"DOMAIN={','.join(a.ioc.domains[:3])}")
+            lines.append(f"IOC: {' | '.join(ioc_parts)}")
         lines.append("")
     return "\n".join(lines)
 
@@ -177,6 +266,11 @@ def format_articles_for_telegram(articles: list[NewsArticle], max_items: int = 8
             kws = _extract_keywords(a.title + " " + a.summary)
             if kws:
                 lines.append(f"🔑 {', '.join(kws[:3])}")
+            # IOC 있으면 표시 (출처 링크 포함)
+            if not a.ioc.is_empty():
+                ioc_summary = a.ioc.summary()
+                if ioc_summary:
+                    lines.append(f"🚨 IOC: {ioc_summary} — [출처]({a.link})")
             lines.append("")  # 기사 간 빈 줄
 
     return "\n".join(lines).rstrip()

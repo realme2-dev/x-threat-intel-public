@@ -54,7 +54,13 @@ class LLMResult:
 
 # ─── 프롬프트 ─────────────────────────────────────────────────────────────────
 
-SYSTEM_PROMPT = "You are a cybersecurity threat intelligence analyst. Always respond in Korean."
+SYSTEM_PROMPT = (
+    "You are a senior cybersecurity threat intelligence analyst specializing in APT tracking, "
+    "malware analysis, and vulnerability research. "
+    "Respond in Korean for narrative sections. "
+    "Use English for technical terms, CVE IDs, malware names, and IOC values. "
+    "Be concise, actionable, and precise."
+)
 
 def build_analysis_prompt(
     tweets: list[dict],
@@ -62,54 +68,74 @@ def build_analysis_prompt(
     top_hashtags: list[tuple[str, int]],
     news_text: str = "",
 ) -> str:
-    """크롤링 결과를 LLM에 넘길 프롬프트로 변환합니다."""
+    """크롤링 결과를 LLM에 넘길 심층 분석 프롬프트로 변환합니다."""
+    # 트윗 샘플: 한국어/영어만 포함, 언어 표시
     samples = []
-    for t in tweets[:40]:
+    for t in tweets[:50]:
         user = t.get("user", {}).get("username", "?")
         text = t.get("text", "")[:200].replace("\n", " ")
         date = t.get("date", "")[:16]
         link = t.get("link", "")
-        samples.append(f"@{user} ({date}): {text}  {link}")
+        # 한국어 포함 여부 감지
+        lang = "[KR]" if any("\uac00" <= c <= "\ud7a3" for c in text) else "[EN]"
+        samples.append(f"{lang} @{user} ({date}): {text}  {link}")
 
     words_str = ", ".join(f"{w}({c})" for w, c in top_words[:15])
     tags_str  = ", ".join(f"#{t}({c})" for t, c in top_hashtags[:8])
 
     news_section = ""
     if news_text:
-        news_section = f"\n## 보안 뉴스/블로그 기사\n{news_text}\n"
+        news_section = f"\n## 보안 뉴스/블로그 기사 (IOC 포함)\n{news_text}\n"
 
-    return f"""다음은 X(트위터)에서 사이버보안 키워드로 수집한 트윗 {len(tweets)}개의 분석 데이터입니다.
+    return f"""다음은 X(트위터) 사이버보안 모니터링 시스템에서 수집한 실시간 위협 인텔리전스 데이터입니다.
+수집 트윗 수: {len(tweets)}개 | [KR]=한국어 트윗, [EN]=영문 트윗
 
-## 빈도 높은 단어
+## 트렌드 키워드 (빈도순)
 {words_str}
 
 ## 주요 해시태그
 {tags_str}
 {news_section}
-## 트윗 샘플 (최대 40개)
+## 수집 트윗 샘플 (최대 50개, 언어 구분)
 {chr(10).join(samples)}
 
 ---
 
-위 데이터를 분석하여 **한국어**로 아래 항목을 작성하세요:
+위 데이터를 **심층 분석**하여 아래 항목을 작성하세요.
+서술은 한국어, 기술 용어(CVE, 악성코드명, IOC 값)는 영어 원문 유지.
 
-### 1. 현재 사이버보안 트렌드 (2~3문장)
+### 1. 현재 주요 사이버보안 트렌드
+(3~4문장. 이번 수집에서 두드러지는 공격 벡터/기술 변화 위주)
 
 ### 2. 주요 위협 행위자 / 캠페인
-- (각 항목을 bullet로)
+- 행위자명 (출처 근거): 활동 내용 및 타겟
+- (확인된 항목만, 최대 5개)
 
-### 3. 한국 관련 위협 또는 서비스 장애
-- (없으면 "해당 없음")
+### 3. 한국 관련 위협
+- 한국 기업·기관·인프라 관련 언급 항목
+- 한국어 트윗([KR])에서 감지된 주요 사건
+- (없으면 "이번 수집에서 한국 특정 위협 없음")
 
-### 4. 주목할 CVE / 취약점
-- (없으면 "해당 없음")
+### 4. 주요 CVE / 취약점 (CVSS 우선)
+- CVE-ID: 영향 제품, 심각도, 현재 악용 여부
+- (최대 5개, CVSS 높은 순)
 
-### 5. 위협 수준 평가
-- 전반적 위협 수준: 낮음(1-3) / 보통(4-6) / 높음(7-8) / 심각(9-10)
-- 점수: X/10  (숫자만 기입, 예: 7/10)
+### 5. IOC 요약 (뉴스/블로그에서 추출)
+각 IOC 항목 끝에 출처 기사 링크를 반드시 포함하세요. 형식: `값 ([출처명](링크))`
+- IP: (있으면 나열, 각각 출처 링크 포함)
+- 도메인: (있으면 나열, 각각 출처 링크 포함)
+- 해시: (있으면 나열, 각각 출처 링크 포함)
+- CVE: (있으면 나열, 각각 출처 링크 포함)
+- (없으면 "이번 수집에서 IOC 없음")
+
+### 6. 즉각 대응 권고
+- (실무자가 지금 당장 확인해야 할 조치, 최대 3개 bullet)
+
+### 7. 위협 수준 평가
+- 점수: X/10
 - 근거: (한 줄)
 
-간결하고 실무자가 바로 활용할 수 있도록 작성하세요."""
+간결하고 실무자가 바로 활용 가능하도록 작성하세요."""
 
 
 # ─── LLM 백엔드 구현 ──────────────────────────────────────────────────────────
