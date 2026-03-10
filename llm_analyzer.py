@@ -19,6 +19,7 @@ import json
 import logging
 import os
 import re
+import time
 from dataclasses import dataclass, field
 from datetime import datetime, timezone, timedelta
 from typing import Protocol
@@ -405,7 +406,19 @@ def run_llm_analysis(
 
     try:
         logger.info("LLM 분석 시작 (backend=%s, tweets=%d개)", backend.name, len(tweets))
-        result = backend.complete(SYSTEM_PROMPT, prompt)
+        result = None
+        for attempt in range(3):
+            try:
+                result = backend.complete(SYSTEM_PROMPT, prompt)
+                break
+            except requests.HTTPError as e:
+                if e.response is not None and e.response.status_code == 503 and attempt < 2:
+                    logger.warning("LLM 503 오류, 10초 후 재시도 (%d/3)...", attempt + 1)
+                    time.sleep(10)
+                else:
+                    raise
+        if result is None:
+            return ""
         logger.info(
             "LLM 분석 완료 (backend=%s, tokens=%d)",
             backend.name, result.total_tokens
@@ -437,16 +450,16 @@ class TopTweet:
 def build_tweet_selection_prompt(tweets: list[dict]) -> str:
     """전체 트윗에서 위협 중요도 기준 상위 10개를 선별하는 프롬프트."""
     lines = []
-    for i, t in enumerate(tweets[:200]):  # 최대 200개 입력
+    for i, t in enumerate(tweets[:100]):  # 최대 100개 입력
         user = t.get("user", {}).get("username", "?")
-        text = t.get("text", "")[:180].replace("\n", " ")
+        text = t.get("text", "")[:100].replace("\n", " ")
         date = t.get("date", "")[:16]
         link = t.get("link", "")
         lang = "[KR]" if any("\uac00" <= c <= "\ud7a3" for c in text) else "[EN]"
         lines.append(f"[{i}] {lang} @{user} ({date}) {link}\n{text}")
 
     tweets_block = "\n\n".join(lines)
-    return f"""다음은 사이버보안 트위터 모니터링에서 수집된 트윗 {len(tweets[:200])}개입니다.
+    return f"""다음은 사이버보안 트위터 모니터링에서 수집된 트윗 {len(tweets[:100])}개입니다.
 
 {tweets_block}
 
@@ -502,7 +515,19 @@ def run_tweet_selection(
 
     try:
         logger.info("LLM 트윗 선별 시작 (backend=%s, tweets=%d개)", backend.name, len(tweets))
-        result = backend.complete(system, prompt)
+        result = None
+        for attempt in range(3):
+            try:
+                result = backend.complete(system, prompt)
+                break
+            except requests.HTTPError as e:
+                if e.response is not None and e.response.status_code == 503 and attempt < 2:
+                    logger.warning("LLM 트윗 선별 503 오류, 10초 후 재시도 (%d/3)...", attempt + 1)
+                    time.sleep(10)
+                else:
+                    raise
+        if result is None:
+            return []
         logger.info("LLM 트윗 선별 완료 (tokens=%d)", result.total_tokens)
 
         # JSON 파싱
@@ -512,7 +537,7 @@ def run_tweet_selection(
         data = json.loads(text)
 
         top_tweets: list[TopTweet] = []
-        tweet_pool = tweets[:200]
+        tweet_pool = tweets[:100]
         for item in data.get("top_tweets", [])[:10]:
             idx = item.get("tweet_index")
             if idx is None or idx >= len(tweet_pool):
