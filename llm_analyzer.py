@@ -26,6 +26,8 @@ from typing import Protocol
 
 import requests
 
+from llm_logger import get_llm_logger
+
 logger = logging.getLogger(__name__)
 
 # ─── 환경변수 ─────────────────────────────────────────────────────────────────
@@ -404,6 +406,11 @@ def run_llm_analysis(
 
     prompt = build_analysis_prompt(tweets, top_words, top_hashtags, news_text=news_text)
 
+    # 로깅 시작
+    llm_logger = get_llm_logger()
+    request_id = llm_logger.log_request(backend.name, "analysis", SYSTEM_PROMPT, prompt)
+    start_time = time.time()
+
     try:
         logger.info("LLM 분석 시작 (backend=%s, tweets=%d개)", backend.name, len(tweets))
         result = None
@@ -418,19 +425,38 @@ def run_llm_analysis(
                 else:
                     raise
         if result is None:
+            duration_ms = (time.time() - start_time) * 1000
+            llm_logger.log_response(request_id, "", duration_ms=duration_ms, success=False, error="No result")
             return ""
         logger.info(
             "LLM 분석 완료 (backend=%s, tokens=%d)",
             backend.name, result.total_tokens
         )
+        # 응답 로깅
+        duration_ms = (time.time() - start_time) * 1000
+        llm_logger.log_response(
+            request_id,
+            result.text,
+            prompt_tokens=result.prompt_tokens,
+            output_tokens=result.output_tokens,
+            total_tokens=result.total_tokens,
+            duration_ms=duration_ms,
+            success=True,
+        )
         return format_llm_result(result)
     except requests.HTTPError as e:
+        duration_ms = (time.time() - start_time) * 1000
+        llm_logger.log_response(request_id, "", success=False, error=str(e), duration_ms=duration_ms)
         logger.error("LLM API HTTP 오류 [%s]: %s", backend.name, e)
         return ""
     except requests.Timeout:
+        duration_ms = (time.time() - start_time) * 1000
+        llm_logger.log_response(request_id, "", success=False, error=f"Timeout after {LLM_TIMEOUT}s", duration_ms=duration_ms)
         logger.error("LLM API 타임아웃 [%s]: %d초 초과", backend.name, LLM_TIMEOUT)
         return ""
     except Exception as e:
+        duration_ms = (time.time() - start_time) * 1000
+        llm_logger.log_response(request_id, "", success=False, error=str(e), duration_ms=duration_ms)
         logger.error("LLM 분석 실패 [%s]: %s", backend.name, e)
         return ""
 
@@ -513,6 +539,11 @@ def run_tweet_selection(
         "Select the most threat-relevant tweets and respond ONLY with valid JSON."
     )
 
+    # 로깅 시작
+    llm_logger = get_llm_logger()
+    request_id = llm_logger.log_request(backend.name, "selection", system, prompt)
+    start_time = time.time()
+
     try:
         logger.info("LLM 트윗 선별 시작 (backend=%s, tweets=%d개)", backend.name, len(tweets))
         result = None
@@ -527,6 +558,8 @@ def run_tweet_selection(
                 else:
                     raise
         if result is None:
+            duration_ms = (time.time() - start_time) * 1000
+            llm_logger.log_response(request_id, "", success=False, error="No result", duration_ms=duration_ms)
             return []
         logger.info("LLM 트윗 선별 완료 (tokens=%d)", result.total_tokens)
 
@@ -535,6 +568,18 @@ def run_tweet_selection(
         # 코드블록 제거
         text = re.sub(r"```(?:json)?\s*", "", text).strip().rstrip("```").strip()
         data = json.loads(text)
+
+        # 응답 로깅
+        duration_ms = (time.time() - start_time) * 1000
+        llm_logger.log_response(
+            request_id,
+            result.text,
+            prompt_tokens=result.prompt_tokens,
+            output_tokens=result.output_tokens,
+            total_tokens=result.total_tokens,
+            duration_ms=duration_ms,
+            success=True,
+        )
 
         top_tweets: list[TopTweet] = []
         tweet_pool = tweets[:100]
@@ -556,12 +601,18 @@ def run_tweet_selection(
         return top_tweets
 
     except (json.JSONDecodeError, KeyError) as e:
+        duration_ms = (time.time() - start_time) * 1000
+        llm_logger.log_response(request_id, result.text if result else "", success=False, error=f"JSON parse error: {e}", duration_ms=duration_ms)
         logger.error("LLM 트윗 선별 JSON 파싱 실패: %s", e)
         return []
     except requests.Timeout:
+        duration_ms = (time.time() - start_time) * 1000
+        llm_logger.log_response(request_id, "", success=False, error="Timeout", duration_ms=duration_ms)
         logger.error("LLM 트윗 선별 타임아웃")
         return []
     except Exception as e:
+        duration_ms = (time.time() - start_time) * 1000
+        llm_logger.log_response(request_id, "", success=False, error=str(e), duration_ms=duration_ms)
         logger.error("LLM 트윗 선별 실패: %s", e)
         return []
 
