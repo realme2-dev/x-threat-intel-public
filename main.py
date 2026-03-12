@@ -18,12 +18,13 @@ config_v2.json을 읽어 활성화된 키워드 / 계정을 크롤링하고,
 import argparse
 import io
 import logging
+import re
 import signal
 import sys
 import time
 import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 # Windows 인코딩 처리
@@ -195,6 +196,69 @@ def _deduplicate_tweets(crawl_results: list[dict]) -> list[dict]:
             unique.append(t)
         data["tweets"] = unique
     return crawl_results
+
+
+def _filter_tweets_by_date(
+    crawl_results: list[dict],
+    max_days: int = 2,
+) -> tuple[list[dict], int, int]:
+    """
+    수집 시점 기준 max_days일 이내 트윗만 남깁니다.
+
+    Nitter 날짜 포맷: "Mar 9, 2026 · 1:30 PM UTC" 또는 "Mar 9, 2026 · 13:30"
+    파싱 실패한 트윗은 통과시킵니다 (보수적 처리).
+
+    Returns:
+        (필터링된 crawl_results, 제거된 트윗 수, 전체 트윗 수)
+    """
+    cutoff = datetime.now(timezone.utc) - timedelta(days=max_days)
+    removed = 0
+    total = 0
+
+    _month_map = {
+        "jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6,
+        "jul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12,
+    }
+
+    def _parse_nitter_date(date_str: str) -> datetime | None:
+        """Nitter 날짜 문자열을 UTC datetime으로 변환합니다."""
+        # "Mar 9, 2026 · 1:30 PM UTC" 또는 "Mar 9, 2026 · 13:30"
+        m = re.match(
+            r"([A-Za-z]+)\s+(\d+),\s*(\d+)\s*[·\·]\s*(\d+:\d+)(?:\s*(AM|PM))?",
+            date_str.strip()
+        )
+        if not m:
+            return None
+        try:
+            month_str, day, year, time_str, ampm = m.groups()
+            month = _month_map.get(month_str[:3].lower())
+            if not month:
+                return None
+            hour, minute = map(int, time_str.split(":"))
+            if ampm:
+                if ampm.upper() == "PM" and hour != 12:
+                    hour += 12
+                elif ampm.upper() == "AM" and hour == 12:
+                    hour = 0
+            return datetime(int(year), month, int(day), hour, minute,
+                            tzinfo=timezone.utc)
+        except (ValueError, TypeError):
+            return None
+
+    for item in crawl_results:
+        data = item.get("data", {})
+        tweets = data.get("tweets", [])
+        kept = []
+        for t in tweets:
+            total += 1
+            date_str = t.get("date", "")
+            dt = _parse_nitter_date(date_str) if date_str else None
+            if dt is None or dt >= cutoff:
+                kept.append(t)
+            else:
+                removed += 1
+        data["tweets"] = kept
+    return crawl_results, removed, total
 
 
 def _extract_rising_keywords(
@@ -377,6 +441,15 @@ def run_crawl_job(
     )
     safe_print(f"  중복 제거 후 총 트윗: {total_after_dedup}개")
 
+    # ── 날짜 필터 (2일 이내만 유지)
+    crawl_results, removed_count, pre_filter_total = _filter_tweets_by_date(
+        crawl_results, max_days=2
+    )
+    total_after_filter = sum(
+        len(r.get("data", {}).get("tweets", [])) for r in crawl_results
+    )
+    safe_print(f"  날짜 필터(2일 이내): {removed_count}개 제거 → {total_after_filter}개 유지")
+
     # ── 1차 분석 (급상승 키워드 추출용)
     report = analyzer.analyze(crawl_results)
 
@@ -476,6 +549,76 @@ def run_crawl_job(
         safe_print("\n[8] 텔레그램 비활성화 (.env에 TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID 설정 필요)")
 
 
+# ─── 결과 조회 ────────────────────────────────────────────────────────────────
+
+def _show_results(keyword: str | None = None) -> None:
+    """
+    마지막 리포트의 키워드별 수집 결과를 출력합니다.
+
+    Args:
+        keyword: 특정 키워드 지정 시 해당 트윗 상세 출력. None이면 전체 요약.
+    """
+    import json as _json
+    data_dir = Path("data")
+    reports = sorted(data_dir.glob("_report_*.json"))
+    if not reports:
+        safe_print("저장된 리포트 없음. 먼저 크롤링을 실행해주세요.")
+        return
+
+    latest = reports[-1]
+    with open(latest, encoding="utf-8") as f:
+        report = _json.load(f)
+
+    generated_at = report.get("generated_at", "")[:16].replace("T", " ")
+    total_tweets = report.get("total_tweets", 0)
+    safe_print(f"\n{'='*65}")
+    safe_print(f"  마지막 리포트: {latest.name}  ({generated_at})")
+    safe_print(f"  총 트윗: {total_tweets}개")
+    safe_print(f"{'='*65}")
+
+    summaries = report.get("keyword_summary", [])
+
+    if keyword:
+        # 특정 키워드 상세 조회
+        kw_lower = keyword.lower()
+        matched = [s for s in summaries if kw_lower in s.get("target", "").lower()]
+        if not matched:
+            safe_print(f"\n키워드 '{keyword}'에 해당하는 데이터 없음.")
+            safe_print(f"등록된 키워드 목록: {', '.join(s['target'] for s in summaries)}")
+            return
+        for s in matched:
+            target = s.get("target", "")
+            count = s.get("tweet_count", 0)
+            method = s.get("method", "")
+            crawled_at = s.get("crawled_at", "")[:16].replace("T", " ")
+            safe_print(f"\n[{target}]  {count}개  ({method})  수집: {crawled_at}")
+            safe_print(f"  상위 유저: {', '.join(f'{u[0]}({u[1]})' for u in s.get('top_users', [])[:5])}")
+            safe_print(f"  해시태그: {', '.join(s.get('hashtags', [])[:5])}")
+            safe_print(f"\n  트윗 샘플:")
+            for i, t in enumerate(s.get("sample_tweets", [])[:5], 1):
+                date_str = t.get("date", "")[:16]
+                user = t.get("username", "?")
+                text = t.get("text", "")[:120].replace("\n", " ")
+                link = t.get("link", "")
+                safe_print(f"  [{i}] @{user}  ({date_str})")
+                safe_print(f"      {text}")
+                if link:
+                    safe_print(f"      {link}")
+    else:
+        # 전체 키워드 요약
+        safe_print(f"\n{'키워드':<25} {'트윗':>5} {'방법':<12} {'수집시각'}")
+        safe_print("-" * 65)
+        for s in summaries:
+            target = s.get("target", "")[:24]
+            count = s.get("tweet_count", 0)
+            method = s.get("method", "ntscraper")
+            crawled_at = s.get("crawled_at", "")[:16].replace("T", " ")
+            safe_print(f"  {target:<23} {count:>5}  {method:<12} {crawled_at}")
+        safe_print("-" * 65)
+        safe_print(f"  총 {len(summaries)}개 키워드/계정  |  {total_tweets}개 트윗")
+        safe_print(f"\n  특정 키워드 상세 조회: python main.py --show-keyword <키워드>")
+
+
 # ─── CLI ─────────────────────────────────────────────────────────────────────
 
 def parse_args() -> argparse.Namespace:
@@ -507,12 +650,21 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--log-level", default="INFO",
                    choices=["DEBUG", "INFO", "WARNING", "ERROR"],
                    help="로그 레벨 (기본 INFO)")
+    p.add_argument("--show-results", action="store_true",
+                   help="마지막 리포트의 키워드별 수집 결과 조회")
+    p.add_argument("--show-keyword", default=None, metavar="KEYWORD",
+                   help="특정 키워드 트윗 상세 조회 (예: --show-keyword CVE)")
     return p.parse_args()
 
 
 def main() -> None:
     args = parse_args()
     setup_logging(args.log_level)
+
+    # ── 결과 조회 모드 (크롤링 없이 빠른 조회)
+    if args.show_results or args.show_keyword:
+        _show_results(keyword=args.show_keyword)
+        return
 
     config = load_config()
 
