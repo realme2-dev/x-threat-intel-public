@@ -675,6 +675,10 @@ def main() -> None:
     safe_print(f"  스케줄 간격: {config.settings.schedule_interval_hours}시간")
     safe_print(f"  LLM 백엔드:  {available_llm if available_llm else '미설정 (--llm 사용 불가)'}")
 
+    # --llm 플래그 또는 .env의 ENABLE_LLM=true 중 하나라도 있으면 LLM 활성화
+    import os as _os
+    enable_llm = args.llm or _os.getenv("ENABLE_LLM", "").lower() in ("1", "true", "yes")
+
     def job():
         run_crawl_job(
             config=config,
@@ -682,7 +686,7 @@ def main() -> None:
             accounts_only=args.accounts_only,
             group_filter=args.group,
             workers=args.workers,
-            enable_llm=args.llm,
+            enable_llm=enable_llm,
             llm_backend=args.llm_backend,
         )
 
