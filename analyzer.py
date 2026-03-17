@@ -140,13 +140,13 @@ class Analyzer:
                 sample_texts=[t.get("text", "")[:100] for t in tweets[:2]],
                 sample_tweets=[
                     SampleTweet(
-                        text=t.get("text", "")[:150],
+                        text=t.get("text", ""),
                         username=t.get("user", {}).get("username", "").lstrip("@"),
                         link=t.get("link", ""),
                         date=t.get("date", ""),
                     )
-                    for t in tweets[:3]
-                    if t.get("link")  # 링크 있는 것만
+                    for t in tweets
+                    if t.get("link")
                 ],
             )
 
