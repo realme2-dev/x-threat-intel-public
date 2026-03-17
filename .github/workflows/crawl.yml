@@ -1,0 +1,41 @@
+name: X Threat Intel Crawler
+
+on:
+  schedule:
+    # 오전 9시 KST = UTC 00:00
+    - cron: '0 0 * * *'
+    # 오후 6시 KST = UTC 09:00
+    - cron: '0 9 * * *'
+  workflow_dispatch:  # 수동 실행 버튼
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          playwright install chromium --with-deps
+
+      - name: Run crawler
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ secrets.GEMINI_MODEL }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          LLM_BACKEND: ${{ secrets.LLM_BACKEND }}
+          ENABLE_LLM: "true"
+          PYTHONUTF8: "1"
+        run: |
+          python main.py --once --llm --workers 3
