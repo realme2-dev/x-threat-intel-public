@@ -146,7 +146,7 @@ def _crawl_one(
 
     try:
         result = crawler.crawl(target)
-        save_key = target if target_type == "account" else f"_kw_{target[:30]}"
+        save_key = f"x_user/{target}" if target_type == "account" else f"_kw_{target[:30]}"
         storage.save(save_key, result.toDict())
         safe_print(f"트윗 {result.tweetCount}개 [{result.meta.get('method','?')}]")
         return {

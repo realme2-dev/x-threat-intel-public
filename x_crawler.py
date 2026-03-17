@@ -577,7 +577,8 @@ class Storage:
     accountDir.mkdir(parents=True, exist_ok=True)
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    filename = f"{username}_{timestamp}.json"
+    basename = Path(username).name  # "x_user/Foo" → "Foo", "_kw_CVE" → "_kw_CVE"
+    filename = f"{basename}_{timestamp}.json"
     filepath = accountDir / filename
 
     with open(filepath, "w", encoding="utf-8") as f:
