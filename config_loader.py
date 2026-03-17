@@ -23,11 +23,24 @@ class Settings:
 
 
 @dataclass
+class KeywordTarget:
+    keyword: str
+    max_tweets: int | None = None  # None이면 settings.max_tweets_per_target 사용
+
+
+@dataclass
 class KeywordGroup:
     name: str
     description: str
     enabled: bool
     keywords: list[str]
+    keyword_targets: list[KeywordTarget] = field(default_factory=list)
+
+
+@dataclass
+class AccountTarget:
+    username: str
+    max_tweets: int | None = None  # None이면 settings.max_tweets_per_target 사용
 
 
 @dataclass
@@ -36,6 +49,7 @@ class AccountGroup:
     description: str
     enabled: bool
     usernames: list[str]
+    account_targets: list[AccountTarget] = field(default_factory=list)
 
 
 @dataclass
@@ -101,6 +115,18 @@ class Config:
                 return group.name
         return "unknown"
 
+    def max_tweets_for(self, target: str) -> int:
+        """계정 또는 키워드의 max_tweets 반환. 개별 설정 없으면 settings 기본값."""
+        for group in self.account_groups:
+            for at in group.account_targets:
+                if at.username == target and at.max_tweets is not None:
+                    return at.max_tweets
+        for group in self.keyword_groups:
+            for kt in group.keyword_targets:
+                if kt.keyword == target and kt.max_tweets is not None:
+                    return kt.max_tweets
+        return self.settings.max_tweets_per_target
+
 
 def load_config(path: Path = CONFIG_PATH) -> Config:
     """config_v2.json을 파싱하여 Config 객체 반환."""
@@ -124,11 +150,24 @@ def load_config(path: Path = CONFIG_PATH) -> Config:
     for name, group in raw.get("keyword_groups", {}).items():
         if name.startswith("_"):
             continue
+        kw_targets: list[KeywordTarget] = []
+        plain_keywords: list[str] = []
+        for kw in group.get("keywords", []):
+            if isinstance(kw, dict):
+                kw_targets.append(KeywordTarget(
+                    keyword=kw["keyword"],
+                    max_tweets=kw.get("max_tweets"),
+                ))
+                plain_keywords.append(kw["keyword"])
+            else:
+                kw_targets.append(KeywordTarget(keyword=kw))
+                plain_keywords.append(kw)
         keyword_groups.append(KeywordGroup(
             name=name,
             description=group.get("description", ""),
             enabled=group.get("enabled", True),
-            keywords=group.get("keywords", []),
+            keywords=plain_keywords,
+            keyword_targets=kw_targets,
         ))
 
     # account_groups
@@ -136,11 +175,24 @@ def load_config(path: Path = CONFIG_PATH) -> Config:
     for name, group in raw.get("accounts", {}).items():
         if name.startswith("_"):
             continue
+        acc_targets: list[AccountTarget] = []
+        plain_usernames: list[str] = []
+        for u in group.get("usernames", []):
+            if isinstance(u, dict):
+                acc_targets.append(AccountTarget(
+                    username=u["username"],
+                    max_tweets=u.get("max_tweets"),
+                ))
+                plain_usernames.append(u["username"])
+            else:
+                acc_targets.append(AccountTarget(username=u))
+                plain_usernames.append(u)
         account_groups.append(AccountGroup(
             name=name,
             description=group.get("description", ""),
             enabled=group.get("enabled", True),
-            usernames=group.get("usernames", []),
+            usernames=plain_usernames,
+            account_targets=acc_targets,
         ))
 
     # rss_feeds

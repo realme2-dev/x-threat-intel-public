@@ -38,11 +38,12 @@ load_dotenv(Path(__file__).resolve().parent / ".env")
 
 from apscheduler.schedulers.blocking import BlockingScheduler
 from apscheduler.triggers.interval import IntervalTrigger
+from apscheduler.triggers.cron import CronTrigger
 
 from config_loader import load_config, Config
 from analyzer import Analyzer
 from notifier import TelegramNotifier
-from llm_analyzer import run_llm_analysis, run_tweet_selection, list_available_backends
+from llm_analyzer import run_llm_analysis, run_tweet_selection, list_available_backends, run_korea_tweet_filter
 from rss_collector import collect_rss_news, format_articles_for_llm, format_articles_for_telegram
 
 # x_crawler 컴포넌트
@@ -341,6 +342,7 @@ def run_crawl_job(
         return
     safe_print(f"  활성 인스턴스: {len(working)}개 → {working}")
 
+
     # ── 크롤 대상 수집
     keyword_targets: list[tuple[str, str]] = []
     account_targets: list[tuple[str, str]] = []
@@ -376,7 +378,6 @@ def run_crawl_job(
     fail_count = 0
 
     common_kwargs = dict(
-        max_tweets=cfg.max_tweets_per_target,
         delay_min=cfg.request_delay_min,
         delay_max=cfg.request_delay_max,
         working_instances=working,
@@ -391,6 +392,7 @@ def run_crawl_job(
                 target=target,
                 target_type=target_type,
                 group_name=group_name,
+                max_tweets=config.max_tweets_for(target),
                 index=i,
                 **common_kwargs,
             )
@@ -413,6 +415,7 @@ def run_crawl_job(
                     target=target,
                     target_type=target_type,
                     group_name=group_name,
+                    max_tweets=config.max_tweets_for(target),
                     index=i,
                     **common_kwargs,
                 )
@@ -477,6 +480,7 @@ def run_crawl_job(
             )
             if result:
                 rising_results.append(result)
+
         if rising_results:
             crawl_results.extend(rising_results)
             crawl_results = _deduplicate_tweets(crawl_results)
@@ -493,6 +497,8 @@ def run_crawl_job(
     news_llm_text = format_articles_for_llm(news_articles)
     news_telegram_text = format_articles_for_telegram(news_articles, max_items=8)
     safe_print(f"  RSS 기사: {len(news_articles)}개 수집")
+
+    korea_tweets = []
 
     # ── LLM 분석 (--llm 옵션 시)
     if enable_llm:
@@ -533,6 +539,14 @@ def run_crawl_job(
             else:
                 safe_print("  [7-2] 분석 실패 (로그 확인)")
 
+            # 7-3. 한국 관련 위협 트윗 추출
+            safe_print(f"  [7-3] 한국 관련 트윗 추출 중 (전체 {len(all_tweets)}개)...")
+            korea_tweets = run_korea_tweet_filter(tweets=all_tweets, backend_name=backend_name)
+            if korea_tweets:
+                safe_print(f"  [7-3] 한국 관련 트윗 {len(korea_tweets)}개 발견")
+            else:
+                safe_print("  [7-3] 한국 관련 트윗 없음")
+
     analyzer.print_report(report)
     report_path = analyzer.save_report(report)
     safe_print(f"  리포트 저장: {report_path}")
@@ -545,6 +559,15 @@ def run_crawl_job(
             safe_print(f"  전송 완료 (메시지 {len(notify_result.message_ids)}개)")
         else:
             safe_print(f"  전송 실패: {notify_result.error}")
+
+        # 한국 관련 트윗 별도 전송
+        if korea_tweets:
+            safe_print("  한국 관련 트윗 전송 중...")
+            korea_result = notifier.send_korea_alerts(korea_tweets)
+            if korea_result.success:
+                safe_print(f"  한국 알림 전송 완료 (메시지 {len(korea_result.message_ids)}개)")
+            else:
+                safe_print(f"  한국 알림 전송 실패: {korea_result.error}")
     else:
         safe_print("\n[8] 텔레그램 비활성화 (.env에 TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID 설정 필요)")
 
@@ -710,13 +733,26 @@ def main() -> None:
     except Exception as e:
         logger.error("초기 실행 오류: %s", e)
 
-    scheduler.add_job(
-        job,
-        trigger=IntervalTrigger(hours=config.settings.schedule_interval_hours),
-        id="crawl_job",
-        max_instances=1,
-    )
-    safe_print(f"\n스케줄러 대기 중 (매 {config.settings.schedule_interval_hours}시간 실행)")
+    kst = timezone(timedelta(hours=9))
+    # 매일 오전 9시 / 오후 6시 KST 실행
+    for cron_hour in (9, 18):
+        scheduler.add_job(
+            job,
+            trigger=CronTrigger(hour=cron_hour, minute=0, timezone=kst),
+            id=f"crawl_job_{cron_hour}",
+            max_instances=1,
+        )
+    # 다음 실행 시각 계산
+    now_kst = datetime.now(kst)
+    candidates = [
+        now_kst.replace(hour=h, minute=0, second=0, microsecond=0)
+        for h in (9, 18)
+    ]
+    upcoming = [t if t > now_kst else t + timedelta(days=1) for t in candidates]
+    next_run_kst = min(upcoming)
+    safe_print(f"\n스케줄러 대기 중 (매일 09:00 / 18:00 KST 실행)")
+    safe_print(f"다음 실행: {next_run_kst.strftime('%Y-%m-%d %H:%M KST')}")
+    safe_print("종료: Ctrl+C")
     scheduler.start()
 
 

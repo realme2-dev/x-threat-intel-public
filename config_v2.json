@@ -8,7 +8,7 @@
     "retry_max_attempts": 3,
     "retry_base_delay": 5,
     "playwright_wait_sec": 10,
-    "schedule_interval_hours": 12
+    "schedule_interval_hours": 4
   },
 
   "keyword_groups": {
@@ -45,7 +45,7 @@
         "디지털 포렌식",
         "incident response",
         "사이버 인텔리전스",
-        "threat intelligence"
+        "threat intelligence","악성코드","APT"
       ]
     },
 
@@ -150,7 +150,7 @@
         "DarkWebInformer",
         "MonThreat",
         "DailyDarkWeb",
-        "FalconFeedsio",
+        {"username": "FalconFeedsio", "max_tweets": 50},
         "H4ckManac"
       ]
     },

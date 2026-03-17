@@ -17,7 +17,7 @@ import sys
 import time
 from base64 import b64decode
 from dataclasses import dataclass, field
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Callable, TypeVar
 from urllib.parse import quote, unquote, urlparse
@@ -535,9 +535,34 @@ class Storage:
   def __init__(self, baseDir: Path | None = None):
     self._baseDir = baseDir or DATA_DIR
 
+  @staticmethod
+  def _filterOldTweets(data: dict, max_days: int = 2) -> dict:
+    """2일 이상 된 트윗을 제거합니다."""
+    tweets = data.get("tweets", [])
+    if not tweets:
+      return data
+
+    cutoff = datetime.now(timezone.utc) - timedelta(days=max_days)
+    kept = []
+    for t in tweets:
+      date_str = t.get("date", "")
+      try:
+        # "Mar 12, 2026 · 11:26 AM UTC" 형식
+        dt = datetime.strptime(date_str, "%b %d, %Y · %I:%M %p UTC")
+        dt = dt.replace(tzinfo=timezone.utc)
+        if dt >= cutoff:
+          kept.append(t)
+      except (ValueError, TypeError):
+        kept.append(t)  # 파싱 불가 시 보존
+
+    filtered = dict(data)
+    filtered["tweets"] = kept
+    return filtered
+
   def save(self, username: str, data: dict) -> Path:
     """
     수집 결과를 JSON 파일로 저장합니다.
+    2일 이상 된 트윗은 저장에서 제외합니다.
 
     Args:
       username: 수집 대상 계정명
@@ -546,6 +571,8 @@ class Storage:
     Returns:
       저장된 파일 경로
     """
+    data = self._filterOldTweets(data, max_days=2)
+
     accountDir = self._baseDir / username
     accountDir.mkdir(parents=True, exist_ok=True)
 
@@ -614,12 +641,14 @@ class XCrawler:
     parser: TweetParser,
     maxTweets: int = MAX_TWEETS,
     searchMode: str = SEARCH_MODE,
+    browser=None,  # 외부에서 주입된 Playwright browser (재사용 시)
   ):
     self._instanceMgr = instanceManager
     self._antiBot = antiBot
     self._parser = parser
     self._maxTweets = maxTweets
     self._searchMode = searchMode
+    self._sharedBrowser = browser  # None이면 매번 새 브라우저 생성
 
   def crawl(self, username: str) -> CrawlResult:
     """
@@ -739,65 +768,94 @@ class XCrawler:
       )
 
     if self._searchMode == "hashtag":
-      endpoint = (
-        f"/search?f=tweets&q=%23{quote(username)}&scroll=false"
-      )
+      endpoint = f"/search?f=tweets&q=%23{quote(username)}&scroll=false"
+    elif self._searchMode == "user":
+      endpoint = f"/{username}"
     else:
-      endpoint = (
-        f"/search?f=tweets&q={quote(username)}&scroll=false"
-      )
+      endpoint = f"/search?f=tweets&q={quote(username)}&scroll=false"
 
     requestUrl = instance.rstrip("/") + endpoint
 
-    def fetchWithBrowser(browserType):
+    def fetchWithContext(browser, owned: bool) -> str:
+      """browser에서 새 context+page를 열어 크롤링. owned=True면 완료 후 browser.close().
+      new_context()를 사용하여 각 요청마다 독립된 쿠키/핑거프린트를 제공합니다."""
+      context = browser.new_context(user_agent=self._antiBot.userAgent)
+      page = context.new_page()
+      try:
+        page.set_default_timeout(60000)
+        page.goto(requestUrl, wait_until="domcontentloaded")
+
+        deadline = time.time() + 45
+        while time.time() < deadline:
+          try:
+            title = page.title() or ""
+          except Exception:
+            page.wait_for_timeout(2000)
+            continue
+          if "Making sure" not in title and "bot" not in title.lower():
+            break
+          page.wait_for_timeout(2000)
+
+        try:
+          page.wait_for_load_state("domcontentloaded", timeout=10000)
+        except Exception:
+          pass
+        page.wait_for_timeout(PLAYWRIGHT_WAIT_SEC * 1000)
+
+        try:
+          page.wait_for_selector(".timeline-item", timeout=15000)
+        except Exception:
+          pass
+
+        # 무한 스크롤: maxTweets만큼 모일 때까지 스크롤 반복
+        if self._searchMode == "user" and self._maxTweets > 0:
+          scroll_attempts = 0
+          max_scroll = max(3, self._maxTweets // 5)
+          while scroll_attempts < max_scroll:
+            prev_count = len(page.query_selector_all(".timeline-item"))
+            page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+            page.wait_for_timeout(2000)
+            new_count = len(page.query_selector_all(".timeline-item"))
+            if new_count >= self._maxTweets:
+              break
+            if new_count == prev_count:
+              break
+            scroll_attempts += 1
+
+        return page.content()
+      finally:
+        page.close()
+        context.close()
+        if owned:
+          browser.close()
+
+    def fetchWithBrowserType(browserType) -> str:
       args = (
         ["--disable-http2"]
         if "chromium" in str(browserType).lower()
         else []
       )
-      browser = browserType.launch(headless=True, args=args)
-      page = browser.new_page(
-        user_agent=self._antiBot.userAgent
-      )
-      page.set_default_timeout(60000)
-      page.goto(requestUrl, wait_until="domcontentloaded")
+      b = browserType.launch(headless=True, args=args)
+      return fetchWithContext(b, owned=True)
 
-      deadline = time.time() + 45
-      while time.time() < deadline:
-        try:
-          title = page.title() or ""
-        except Exception:
-          page.wait_for_timeout(2000)
-          continue
-        if "Making sure" not in title and "bot" not in title.lower():
-          break
-        page.wait_for_timeout(2000)
-
+    # 외부 브라우저가 주입된 경우 재사용 (owned=False → 닫지 않음)
+    if self._sharedBrowser is not None:
       try:
-        page.wait_for_load_state("domcontentloaded", timeout=10000)
-      except Exception:
-        pass
-      page.wait_for_timeout(PLAYWRIGHT_WAIT_SEC * 1000)
-
-      try:
-        page.wait_for_selector(".timeline-item", timeout=15000)
-      except Exception:
-        pass
-      html = page.content()
-      browser.close()
-      return html
-
-    with sync_playwright() as p:
-      try:
-        html = fetchWithBrowser(p.chromium)
+        html = fetchWithContext(self._sharedBrowser, owned=False)
       except Exception as e:
-        if "ERR_HTTP2" in str(e) or "PROTOCOL_ERROR" in str(e):
-          try:
-            html = fetchWithBrowser(p.firefox)
-          except Exception as fe:
-            raise CrawlError(f"Playwright 실패: {fe}") from fe
-        else:
-          raise CrawlError(f"Playwright 실패: {e}") from e
+        raise CrawlError(f"Playwright 실패 (shared browser): {e}") from e
+    else:
+      with sync_playwright() as p:
+        try:
+          html = fetchWithBrowserType(p.chromium)
+        except Exception as e:
+          if "ERR_HTTP2" in str(e) or "PROTOCOL_ERROR" in str(e):
+            try:
+              html = fetchWithBrowserType(p.firefox)
+            except Exception as fe:
+              raise CrawlError(f"Playwright 실패: {fe}") from fe
+          else:
+            raise CrawlError(f"Playwright 실패: {e}") from e
 
     tweets, threads = self._parser.parse_timeline(
       html, self._maxTweets

@@ -147,6 +147,55 @@ class TelegramNotifier:
 
         return NotifyResult(success=True, message_ids=sent_ids)
 
+    def send_korea_alerts(self, korea_tweets: list) -> "NotifyResult":
+        """한국 관련 위협 트윗을 텔레그램으로 전송합니다."""
+        if not self._enabled:
+            return NotifyResult(success=False, error="텔레그램 미설정")
+        if not korea_tweets:
+            return NotifyResult(success=True, message_ids=[])
+
+        from datetime import datetime, timezone, timedelta
+        KST = timezone(timedelta(hours=9))
+        now_kst = datetime.now(KST).strftime("%Y-%m-%d %H:%M KST")
+
+        relevance_emoji = {"HIGH": "🔴", "MEDIUM": "🟠", "LOW": "🟡"}
+
+        lines = [f"🇰🇷 *한국 관련 위협 알림* ({now_kst})", f"총 {len(korea_tweets)}건 탐지\n"]
+        for i, t in enumerate(korea_tweets, 1):
+            emoji = relevance_emoji.get(t.relevance, "🟡")
+            link = t.link.replace("https://twitter.com", "https://x.com") if t.link else ""
+            user_part = f"[@{t.username}](https://x.com/{t.username})" if t.username and t.username != "?" else f"@{t.username}"
+            lines.append(f"{emoji} *{i}. {t.relevance}*")
+            lines.append(f"{user_part} | {t.date}")
+            lines.append(t.reason)
+            lines.append(t.text[:200])
+            if link:
+                lines.append(f"[원문 보기]({link})")
+            lines.append("")
+
+        # 4096자 초과 시 분할 전송
+        MAX_LEN = 4000
+        chunks = []
+        current = ""
+        for line in lines:
+            if len(current) + len(line) + 1 > MAX_LEN:
+                chunks.append(current)
+                current = line + "\n"
+            else:
+                current += line + "\n"
+        if current:
+            chunks.append(current)
+
+        sent_ids = []
+        for chunk in chunks:
+            mid = self._send_message(chunk)
+            if mid:
+                sent_ids.append(mid)
+
+        if sent_ids:
+            return NotifyResult(success=True, message_ids=sent_ids)
+        return NotifyResult(success=False, error="전송 실패")
+
     def send_text(self, text: str) -> bool:
         if not self._enabled:
             return False

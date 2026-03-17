@@ -126,6 +126,7 @@ def build_analysis_prompt(
 
 ### 5. IOC 요약 (뉴스/블로그에서 추출)
 각 IOC 항목 끝에 출처 기사 링크를 반드시 포함하세요. 형식: `값 ([출처명](링크))`
+※ IP 주소는 절대 포함하지 마세요 (버전 번호나 오탐 가능성이 높음).
 - 도메인: (있으면 나열, 각각 출처 링크 포함)
 - 해시: (있으면 나열, 각각 출처 링크 포함)
 - CVE: (있으면 나열, 각각 출처 링크 포함)
@@ -623,3 +624,178 @@ def list_available_backends() -> list[str]:
         if cls().is_available():
             available.append(name)
     return available
+
+
+# ─── 한국 관련 트윗 추출 ─────────────────────────────────────────────────────
+
+KOREA_SELECTION_SYSTEM = (
+    "You are a cybersecurity analyst specializing in Korean cyber threat intelligence. "
+    "Identify tweets related to South Korea, Korean organizations, Korean infrastructure, "
+    "or threats targeting Korea. Respond ONLY with valid JSON."
+)
+
+KOREA_SELECTION_PROMPT_TMPL = """아래 트윗 목록에서 한국(South Korea / 🇰🇷 / Korea / 한국 / 대한민국 / .kr / Korean)과
+직접적으로 관련된 위협 정보를 모두 찾아주세요.
+
+관련 기준:
+- 한국 기업/기관/정부를 대상으로 한 공격
+- 한국 인프라(.kr 도메인 포함)에 대한 위협
+- 한국 관련 랜섬웨어/DDoS/데이터 유출 피해
+- 한국을 언급하는 위협 행위자 캠페인
+
+트윗 목록:
+{tweet_list}
+
+응답 형식 (관련 없으면 korea_tweets를 빈 배열로):
+{{
+  "korea_tweets": [
+    {{
+      "tweet_index": <트윗 번호(0부터 시작)>,
+      "relevance": "HIGH/MEDIUM/LOW",
+      "reason": "한국 관련 이유 한 줄 (한국어)"
+    }}
+  ]
+}}"""
+
+
+@dataclass
+class KoreaTweet:
+    """한국 관련 트윗 정보."""
+    relevance: str
+    username: str
+    date: str
+    link: str
+    text: str
+    reason: str
+
+
+def run_korea_tweet_filter(
+    tweets: list[dict],
+    backend_name: str | None = None,
+) -> list[KoreaTweet]:
+    """
+    전체 트윗에서 한국 관련 위협 트윗을 AI로 추출합니다.
+
+    1차: 키워드 사전 필터 (korea/한국/.kr 등 포함 트윗만 LLM에 전달)
+    2차: LLM으로 실제 관련성 판단
+
+    Returns:
+        KoreaTweet 리스트, 실패 시 빈 리스트
+    """
+    if not tweets:
+        return []
+
+    # 1차 키워드 사전 필터
+    KOREA_KEYWORDS = [
+        "korea", "korean", "한국", "대한민국", "코리아", "서울",
+        "🇰🇷", ".kr", "kornet", "kisa", "ahnlab", "리퍼섹", "rippersec",
+        "megamedusa", "kimsuky", "lazarus", "apt38", "apt37",
+    ]
+    candidate_indices = []
+    for i, t in enumerate(tweets):
+        text_lower = t.get("text", "").lower()
+        if any(kw.lower() in text_lower for kw in KOREA_KEYWORDS):
+            candidate_indices.append(i)
+
+    if not candidate_indices:
+        logger.info("한국 관련 키워드 트윗 없음 (전체 %d개)", len(tweets))
+        return []
+
+    candidates = [tweets[i] for i in candidate_indices]
+    logger.info("한국 관련 키워드 1차 필터: %d개 → LLM 분석", len(candidates))
+
+    backend = get_backend(backend_name)
+    if backend is None:
+        # LLM 없으면 키워드 매칭만으로 반환
+        result = []
+        for t in candidates:
+            user = t.get("user", {}).get("username", "?").lstrip("@")
+            result.append(KoreaTweet(
+                relevance="MEDIUM",
+                username=user,
+                date=t.get("date", ""),
+                link=t.get("link", ""),
+                text=t.get("text", "")[:200],
+                reason="키워드 매칭 (LLM 미설정)",
+            ))
+        return result
+
+    # 2차 LLM 판단
+    tweet_list = "\n".join(
+        f"[{i}] @{t.get('user',{}).get('username','?').lstrip('@')} ({t.get('date','')}): {t.get('text','')[:150]}"
+        for i, t in enumerate(candidates)
+    )
+    prompt = KOREA_SELECTION_PROMPT_TMPL.format(tweet_list=tweet_list)
+
+    llm_logger = get_llm_logger()
+    request_id = llm_logger.log_request(backend.name, "korea_filter", KOREA_SELECTION_SYSTEM, prompt)
+    start_time = time.time()
+
+    try:
+        result_raw = None
+        for attempt in range(3):
+            try:
+                result_raw = backend.complete(KOREA_SELECTION_SYSTEM, prompt)
+                break
+            except requests.HTTPError as e:
+                if e.response is not None and e.response.status_code == 503 and attempt < 2:
+                    time.sleep(10)
+                else:
+                    raise
+
+        if result_raw is None:
+            duration_ms = (time.time() - start_time) * 1000
+            llm_logger.log_response(request_id, "", success=False, error="No result", duration_ms=duration_ms)
+            return []
+
+        duration_ms = (time.time() - start_time) * 1000
+        text = result_raw.text.strip()
+        text = re.sub(r"```(?:json)?\s*", "", text).strip().rstrip("```").strip()
+        data = json.loads(text)
+
+        llm_logger.log_response(
+            request_id, result_raw.text,
+            prompt_tokens=result_raw.prompt_tokens,
+            output_tokens=result_raw.output_tokens,
+            total_tokens=result_raw.total_tokens,
+            duration_ms=duration_ms, success=True,
+        )
+
+        korea_tweets: list[KoreaTweet] = []
+        for item in data.get("korea_tweets", []):
+            idx = item.get("tweet_index")
+            if idx is None or idx >= len(candidates):
+                continue
+            t = candidates[idx]
+            user = t.get("user", {}).get("username", "?").lstrip("@")
+            korea_tweets.append(KoreaTweet(
+                relevance=item.get("relevance", "MEDIUM"),
+                username=user,
+                date=t.get("date", ""),
+                link=t.get("link", ""),
+                text=t.get("text", "")[:200],
+                reason=item.get("reason", ""),
+            ))
+
+        # 내용 유사도 기반 중복 제거 (RT 등으로 동일 내용이 여러 계정에서 포함되는 경우)
+        seen_prefixes: set[str] = set()
+        deduped: list[KoreaTweet] = []
+        for kt in korea_tweets:
+            prefix = kt.text[:50].strip().lower()
+            if prefix not in seen_prefixes:
+                seen_prefixes.add(prefix)
+                deduped.append(kt)
+
+        logger.info("한국 관련 트윗 최종: %d개 (중복 제거 전 %d개)", len(deduped), len(korea_tweets))
+        return deduped
+
+    except (json.JSONDecodeError, KeyError) as e:
+        duration_ms = (time.time() - start_time) * 1000
+        llm_logger.log_response(request_id, result_raw.text if result_raw else "", success=False, error=str(e), duration_ms=duration_ms)
+        logger.error("한국 트윗 필터 JSON 파싱 실패: %s", e)
+        return []
+    except Exception as e:
+        duration_ms = (time.time() - start_time) * 1000
+        llm_logger.log_response(request_id, "", success=False, error=str(e), duration_ms=duration_ms)
+        logger.error("한국 트윗 필터 실패: %s", e)
+        return []
