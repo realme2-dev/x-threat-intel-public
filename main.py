@@ -19,9 +19,7 @@ import argparse
 import io
 import logging
 import re
-import signal
 import sys
-import time
 import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta, timezone
@@ -36,9 +34,6 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() in ("cp949", "cp1252", "a
 from dotenv import load_dotenv
 load_dotenv(Path(__file__).resolve().parent / ".env")
 
-from apscheduler.schedulers.blocking import BlockingScheduler
-from apscheduler.triggers.interval import IntervalTrigger
-from apscheduler.triggers.cron import CronTrigger
 
 from config_loader import load_config, Config
 from analyzer import Analyzer
@@ -650,15 +645,13 @@ def parse_args() -> argparse.Namespace:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 예시:
-  python main.py --once                          # 전체 1회 실행
-  python main.py --once --workers 3              # 3개 스레드 병렬 크롤링
-  python main.py --once --llm                    # LLM 분석 포함 (env 기본 백엔드)
-  python main.py --once --llm --llm-backend gemini   # Gemini로 분석
-  python main.py --once --group security_threats # 특정 그룹만
-  python main.py                                 # 스케줄 모드 (12시간마다)
+  python main.py                                 # 전체 실행
+  python main.py --workers 3                     # 3개 스레드 병렬 크롤링
+  python main.py --llm                           # LLM 분석 포함
+  python main.py --llm --llm-backend gemini      # Gemini로 분석
+  python main.py --group security_threats        # 특정 그룹만
         """,
     )
-    p.add_argument("--once", action="store_true", help="1회 실행 후 종료")
     p.add_argument("--keywords-only", action="store_true", help="키워드 검색만 실행")
     p.add_argument("--accounts-only", action="store_true", help="계정 수집만 실행")
     p.add_argument("--group", default=None, metavar="GROUP",
@@ -695,7 +688,6 @@ def main() -> None:
     safe_print(f"설정 로드 완료")
     safe_print(f"  활성 키워드: {len(config.active_keywords)}개")
     safe_print(f"  활성 계정:   {len(config.active_accounts)}개")
-    safe_print(f"  스케줄 간격: {config.settings.schedule_interval_hours}시간")
     safe_print(f"  LLM 백엔드:  {available_llm if available_llm else '미설정 (--llm 사용 불가)'}")
 
     # --llm 플래그 또는 .env의 ENABLE_LLM=true 중 하나라도 있으면 LLM 활성화
@@ -713,47 +705,7 @@ def main() -> None:
             llm_backend=args.llm_backend,
         )
 
-    if args.once:
-        job()
-        return
-
-    # 스케줄 모드
-    scheduler = BlockingScheduler()
-
-    def shutdown(signum, frame):
-        logger.info("종료 시그널 수신 — 스케줄러 종료")
-        scheduler.shutdown(wait=False)
-        sys.exit(0)
-
-    signal.signal(signal.SIGINT, shutdown)
-    signal.signal(signal.SIGTERM, shutdown)
-
-    try:
-        job()
-    except Exception as e:
-        logger.error("초기 실행 오류: %s", e)
-
-    kst = timezone(timedelta(hours=9))
-    # 매일 오전 9시 / 오후 6시 KST 실행
-    for cron_hour in (9, 18):
-        scheduler.add_job(
-            job,
-            trigger=CronTrigger(hour=cron_hour, minute=0, timezone=kst),
-            id=f"crawl_job_{cron_hour}",
-            max_instances=1,
-        )
-    # 다음 실행 시각 계산
-    now_kst = datetime.now(kst)
-    candidates = [
-        now_kst.replace(hour=h, minute=0, second=0, microsecond=0)
-        for h in (9, 18)
-    ]
-    upcoming = [t if t > now_kst else t + timedelta(days=1) for t in candidates]
-    next_run_kst = min(upcoming)
-    safe_print(f"\n스케줄러 대기 중 (매일 09:00 / 18:00 KST 실행)")
-    safe_print(f"다음 실행: {next_run_kst.strftime('%Y-%m-%d %H:%M KST')}")
-    safe_print("종료: Ctrl+C")
-    scheduler.start()
+    job()
 
 
 if __name__ == "__main__":
