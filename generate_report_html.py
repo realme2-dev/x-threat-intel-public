@@ -101,8 +101,9 @@ def generate_html(report: dict) -> str:
     for tag, count in top_hashtags:
         hashtag_tags += f'<span class="hashtag-tag">{tag} <small>{count}</small></span> '
 
-    # 수집 현황 테이블
+    # 수집 현황 테이블 + 모달용 트윗 데이터
     summary_rows = ''
+    modal_data = {}  # target -> list of tweet dicts
     for s in sorted(keyword_summary + account_summary, key=lambda x: -x.get('tweet_count', 0)):
         target = s.get('target', '')
         ttype = s.get('type', '')
@@ -111,14 +112,24 @@ def generate_html(report: dict) -> str:
         crawled_at = s.get('crawled_at', '')[:16].replace('T', ' ')
         icon = '🔍' if ttype == 'keyword' else '👤'
         bar_width = min(100, int(count / max(total_tweets, 1) * 100 * 5))
+        # sample_tweets 수집
+        tweets = s.get('sample_tweets', [])
+        target_id = re.sub(r'[^a-zA-Z0-9_]', '_', target)
+        modal_data[target_id] = {
+            'title': f"{icon} {target}",
+            'type': ttype,
+            'tweets': tweets
+        }
         summary_rows += f'''
-        <tr>
-            <td>{icon} {target}</td>
+        <tr class="clickable-row" onclick="openModal('{target_id}')" title="클릭하여 트윗 보기">
+            <td>{icon} {target} <span class="view-icon">👁</span></td>
             <td>{count}</td>
             <td><div class="bar" style="width:{bar_width}px"></div></td>
             <td><span class="method-badge">{method}</span></td>
             <td class="time">{crawled_at}</td>
         </tr>'''
+
+    modal_json = json.dumps(modal_data, ensure_ascii=False)
 
     llm_html = markdown_to_html(llm_summary) if llm_summary else '<p>LLM 분석 없음</p>'
 
@@ -168,6 +179,29 @@ def generate_html(report: dict) -> str:
   .bar {{ height: 6px; background: #3b82f6; border-radius: 3px; min-width: 4px; }}
   .method-badge {{ background: #064e3b; color: #6ee7b7; padding: 2px 8px; border-radius: 10px; font-size: 0.75rem; }}
   .time {{ color: #64748b; font-size: 0.8rem; }}
+  .clickable-row {{ cursor: pointer; transition: background 0.15s; }}
+  .clickable-row:hover {{ background: #263248 !important; }}
+  .view-icon {{ font-size: 0.75rem; opacity: 0.5; margin-left: 4px; }}
+  .clickable-row:hover .view-icon {{ opacity: 1; }}
+  /* 모달 */
+  .modal-overlay {{ display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 1000; overflow-y: auto; padding: 20px; }}
+  .modal-overlay.open {{ display: flex; align-items: flex-start; justify-content: center; }}
+  .modal-box {{ background: #1e293b; border-radius: 14px; width: 100%; max-width: 760px; margin: auto; overflow: hidden; }}
+  .modal-header {{ background: #0f172a; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; }}
+  .modal-header h3 {{ font-size: 1rem; color: #f1f5f9; }}
+  .modal-header .close-btn {{ background: none; border: none; color: #94a3b8; font-size: 1.4rem; cursor: pointer; line-height: 1; }}
+  .modal-header .close-btn:hover {{ color: #f1f5f9; }}
+  .modal-body {{ padding: 16px 20px; max-height: 70vh; overflow-y: auto; }}
+  .modal-tweet {{ border-bottom: 1px solid #0f172a; padding: 12px 0; }}
+  .modal-tweet:last-child {{ border-bottom: none; }}
+  .modal-tweet-meta {{ display: flex; gap: 10px; align-items: center; margin-bottom: 6px; flex-wrap: wrap; }}
+  .modal-tweet-user {{ color: #60a5fa; font-weight: 600; font-size: 0.85rem; text-decoration: none; }}
+  .modal-tweet-user:hover {{ text-decoration: underline; }}
+  .modal-tweet-date {{ color: #64748b; font-size: 0.78rem; margin-left: auto; }}
+  .modal-tweet-text {{ font-size: 0.87rem; line-height: 1.6; color: #cbd5e1; }}
+  .modal-tweet-link {{ display: inline-block; margin-top: 6px; font-size: 0.78rem; color: #3b82f6; text-decoration: none; }}
+  .modal-tweet-link:hover {{ text-decoration: underline; }}
+  .modal-empty {{ color: #64748b; text-align: center; padding: 30px 0; font-size: 0.9rem; }}
   footer {{ text-align: center; color: #334155; font-size: 0.8rem; padding: 20px 0; border-top: 1px solid #1e293b; margin-top: 20px; }}
 </style>
 </head>
@@ -229,6 +263,62 @@ def generate_html(report: dict) -> str:
     X Threat Intelligence Crawler · GitHub Actions 자동 업데이트 · {generated_at}
   </footer>
 </div>
+
+<!-- 트윗 모달 -->
+<div class="modal-overlay" id="tweetModal" onclick="handleOverlayClick(event)">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 id="modalTitle">트윗 목록</h3>
+      <button class="close-btn" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+const MODAL_DATA = {modal_json};
+
+function openModal(targetId) {{
+  const data = MODAL_DATA[targetId];
+  if (!data) return;
+
+  document.getElementById('modalTitle').textContent = data.title + ' 수집 트윗';
+  const body = document.getElementById('modalBody');
+
+  if (!data.tweets || data.tweets.length === 0) {{
+    body.innerHTML = '<div class="modal-empty">저장된 샘플 트윗이 없습니다.</div>';
+  }} else {{
+    body.innerHTML = data.tweets.map(t => {{
+      const username = t.username || '';
+      const text = (t.text || '').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      const link = t.link || '#';
+      const date = (t.date || '').substring(0, 22);
+      return `<div class="modal-tweet">
+        <div class="modal-tweet-meta">
+          <a class="modal-tweet-user" href="https://twitter.com/${{username}}" target="_blank">@${{username}}</a>
+          <span class="modal-tweet-date">${{date}}</span>
+        </div>
+        <div class="modal-tweet-text">${{text}}</div>
+        <a class="modal-tweet-link" href="${{link}}" target="_blank">🔗 트윗 원문 보기</a>
+      </div>`;
+    }}).join('');
+  }}
+
+  document.getElementById('tweetModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}}
+
+function closeModal() {{
+  document.getElementById('tweetModal').classList.remove('open');
+  document.body.style.overflow = '';
+}}
+
+function handleOverlayClick(e) {{
+  if (e.target === document.getElementById('tweetModal')) closeModal();
+}}
+
+document.addEventListener('keydown', e => {{ if (e.key === 'Escape') closeModal(); }});
+</script>
 </body>
 </html>'''
 

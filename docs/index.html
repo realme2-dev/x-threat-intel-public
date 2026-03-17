@@ -44,6 +44,29 @@
   .bar { height: 6px; background: #3b82f6; border-radius: 3px; min-width: 4px; }
   .method-badge { background: #064e3b; color: #6ee7b7; padding: 2px 8px; border-radius: 10px; font-size: 0.75rem; }
   .time { color: #64748b; font-size: 0.8rem; }
+  .clickable-row { cursor: pointer; transition: background 0.15s; }
+  .clickable-row:hover { background: #263248 !important; }
+  .view-icon { font-size: 0.75rem; opacity: 0.5; margin-left: 4px; }
+  .clickable-row:hover .view-icon { opacity: 1; }
+  /* 모달 */
+  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 1000; overflow-y: auto; padding: 20px; }
+  .modal-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
+  .modal-box { background: #1e293b; border-radius: 14px; width: 100%; max-width: 760px; margin: auto; overflow: hidden; }
+  .modal-header { background: #0f172a; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; }
+  .modal-header h3 { font-size: 1rem; color: #f1f5f9; }
+  .modal-header .close-btn { background: none; border: none; color: #94a3b8; font-size: 1.4rem; cursor: pointer; line-height: 1; }
+  .modal-header .close-btn:hover { color: #f1f5f9; }
+  .modal-body { padding: 16px 20px; max-height: 70vh; overflow-y: auto; }
+  .modal-tweet { border-bottom: 1px solid #0f172a; padding: 12px 0; }
+  .modal-tweet:last-child { border-bottom: none; }
+  .modal-tweet-meta { display: flex; gap: 10px; align-items: center; margin-bottom: 6px; flex-wrap: wrap; }
+  .modal-tweet-user { color: #60a5fa; font-weight: 600; font-size: 0.85rem; text-decoration: none; }
+  .modal-tweet-user:hover { text-decoration: underline; }
+  .modal-tweet-date { color: #64748b; font-size: 0.78rem; margin-left: auto; }
+  .modal-tweet-text { font-size: 0.87rem; line-height: 1.6; color: #cbd5e1; }
+  .modal-tweet-link { display: inline-block; margin-top: 6px; font-size: 0.78rem; color: #3b82f6; text-decoration: none; }
+  .modal-tweet-link:hover { text-decoration: underline; }
+  .modal-empty { color: #64748b; text-align: center; padding: 30px 0; font-size: 0.9rem; }
   footer { text-align: center; color: #334155; font-size: 0.8rem; padding: 20px 0; border-top: 1px solid #1e293b; margin-top: 20px; }
 </style>
 </head>
@@ -148,344 +171,344 @@
     <table>
       <thead><tr><th>타겟</th><th>트윗 수</th><th>비율</th><th>방법</th><th>수집 시각</th></tr></thead>
       <tbody>
-        <tr>
-            <td>🔍 Cyberattack</td>
+        <tr class="clickable-row" onclick="openModal('Cyberattack')" title="클릭하여 트윗 보기">
+            <td>🔍 Cyberattack <span class="view-icon">👁</span></td>
             <td>20</td>
             <td><div class="bar" style="width:18px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:06</td>
         </tr>
-        <tr>
-            <td>🔍 CVE</td>
+        <tr class="clickable-row" onclick="openModal('CVE')" title="클릭하여 트윗 보기">
+            <td>🔍 CVE <span class="view-icon">👁</span></td>
             <td>20</td>
             <td><div class="bar" style="width:18px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:07</td>
         </tr>
-        <tr>
-            <td>🔍 MITRE ATT&CK</td>
+        <tr class="clickable-row" onclick="openModal('MITRE_ATT_CK')" title="클릭하여 트윗 보기">
+            <td>🔍 MITRE ATT&CK <span class="view-icon">👁</span></td>
             <td>20</td>
             <td><div class="bar" style="width:18px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:07</td>
         </tr>
-        <tr>
-            <td>🔍 exploit</td>
+        <tr class="clickable-row" onclick="openModal('exploit')" title="클릭하여 트윗 보기">
+            <td>🔍 exploit <span class="view-icon">👁</span></td>
             <td>20</td>
             <td><div class="bar" style="width:18px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:07</td>
         </tr>
-        <tr>
-            <td>🔍 cyber attack</td>
+        <tr class="clickable-row" onclick="openModal('cyber_attack')" title="클릭하여 트윗 보기">
+            <td>🔍 cyber attack <span class="view-icon">👁</span></td>
             <td>20</td>
             <td><div class="bar" style="width:18px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:10</td>
         </tr>
-        <tr>
-            <td>🔍 ZeroDay</td>
+        <tr class="clickable-row" onclick="openModal('ZeroDay')" title="클릭하여 트윗 보기">
+            <td>🔍 ZeroDay <span class="view-icon">👁</span></td>
             <td>20</td>
             <td><div class="bar" style="width:18px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:10</td>
         </tr>
-        <tr>
-            <td>🔍 0-day</td>
+        <tr class="clickable-row" onclick="openModal('0_day')" title="클릭하여 트윗 보기">
+            <td>🔍 0-day <span class="view-icon">👁</span></td>
             <td>20</td>
             <td><div class="bar" style="width:18px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:11</td>
         </tr>
-        <tr>
-            <td>🔍 vulnerability</td>
+        <tr class="clickable-row" onclick="openModal('vulnerability')" title="클릭하여 트윗 보기">
+            <td>🔍 vulnerability <span class="view-icon">👁</span></td>
             <td>20</td>
             <td><div class="bar" style="width:18px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:11</td>
         </tr>
-        <tr>
-            <td>🔍 DDoS</td>
+        <tr class="clickable-row" onclick="openModal('DDoS')" title="클릭하여 트윗 보기">
+            <td>🔍 DDoS <span class="view-icon">👁</span></td>
             <td>20</td>
             <td><div class="bar" style="width:18px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:12</td>
         </tr>
-        <tr>
-            <td>🔍 incident response</td>
+        <tr class="clickable-row" onclick="openModal('incident_response')" title="클릭하여 트윗 보기">
+            <td>🔍 incident response <span class="view-icon">👁</span></td>
             <td>20</td>
             <td><div class="bar" style="width:18px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:15</td>
         </tr>
-        <tr>
-            <td>🔍 threat intelligence</td>
+        <tr class="clickable-row" onclick="openModal('threat_intelligence')" title="클릭하여 트윗 보기">
+            <td>🔍 threat intelligence <span class="view-icon">👁</span></td>
             <td>20</td>
             <td><div class="bar" style="width:18px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:16</td>
         </tr>
-        <tr>
-            <td>🔍 APT</td>
+        <tr class="clickable-row" onclick="openModal('APT')" title="클릭하여 트윗 보기">
+            <td>🔍 APT <span class="view-icon">👁</span></td>
             <td>20</td>
             <td><div class="bar" style="width:18px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:16</td>
         </tr>
-        <tr>
-            <td>🔍 Cyberattack</td>
+        <tr class="clickable-row" onclick="openModal('Cyberattack')" title="클릭하여 트윗 보기">
+            <td>🔍 Cyberattack <span class="view-icon">👁</span></td>
             <td>20</td>
             <td><div class="bar" style="width:18px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:17</td>
         </tr>
-        <tr>
-            <td>🔍 cyber</td>
+        <tr class="clickable-row" onclick="openModal('cyber')" title="클릭하여 트윗 보기">
+            <td>🔍 cyber <span class="view-icon">👁</span></td>
             <td>20</td>
             <td><div class="bar" style="width:18px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:22</td>
         </tr>
-        <tr>
-            <td>🔍 security</td>
+        <tr class="clickable-row" onclick="openModal('security')" title="클릭하여 트윗 보기">
+            <td>🔍 security <span class="view-icon">👁</span></td>
             <td>20</td>
             <td><div class="bar" style="width:18px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:22</td>
         </tr>
-        <tr>
-            <td>🔍 해킹</td>
+        <tr class="clickable-row" onclick="openModal('__')" title="클릭하여 트윗 보기">
+            <td>🔍 해킹 <span class="view-icon">👁</span></td>
             <td>19</td>
             <td><div class="bar" style="width:17px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:12</td>
         </tr>
-        <tr>
-            <td>🔍 DFIR</td>
+        <tr class="clickable-row" onclick="openModal('DFIR')" title="클릭하여 트윗 보기">
+            <td>🔍 DFIR <span class="view-icon">👁</span></td>
             <td>19</td>
             <td><div class="bar" style="width:17px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:14</td>
         </tr>
-        <tr>
-            <td>🔍 threat</td>
+        <tr class="clickable-row" onclick="openModal('threat')" title="클릭하여 트윗 보기">
+            <td>🔍 threat <span class="view-icon">👁</span></td>
             <td>19</td>
             <td><div class="bar" style="width:17px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:22</td>
         </tr>
-        <tr>
-            <td>🔍 malware</td>
+        <tr class="clickable-row" onclick="openModal('malware')" title="클릭하여 트윗 보기">
+            <td>🔍 malware <span class="view-icon">👁</span></td>
             <td>18</td>
             <td><div class="bar" style="width:16px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:10</td>
         </tr>
-        <tr>
-            <td>🔍 디도스</td>
+        <tr class="clickable-row" onclick="openModal('___')" title="클릭하여 트윗 보기">
+            <td>🔍 디도스 <span class="view-icon">👁</span></td>
             <td>18</td>
             <td><div class="bar" style="width:16px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:13</td>
         </tr>
-        <tr>
-            <td>🔍 cybersecurity</td>
+        <tr class="clickable-row" onclick="openModal('cybersecurity')" title="클릭하여 트윗 보기">
+            <td>🔍 cybersecurity <span class="view-icon">👁</span></td>
             <td>18</td>
             <td><div class="bar" style="width:16px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:21</td>
         </tr>
-        <tr>
-            <td>🔍 group</td>
+        <tr class="clickable-row" onclick="openModal('group')" title="클릭하여 트윗 보기">
+            <td>🔍 group <span class="view-icon">👁</span></td>
             <td>17</td>
             <td><div class="bar" style="width:15px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:21</td>
         </tr>
-        <tr>
-            <td>👤 FalconFeedsio</td>
+        <tr class="clickable-row" onclick="openModal('FalconFeedsio')" title="클릭하여 트윗 보기">
+            <td>👤 FalconFeedsio <span class="view-icon">👁</span></td>
             <td>17</td>
             <td><div class="bar" style="width:15px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:18</td>
         </tr>
-        <tr>
-            <td>👤 DailyDarkWeb</td>
+        <tr class="clickable-row" onclick="openModal('DailyDarkWeb')" title="클릭하여 트윗 보기">
+            <td>👤 DailyDarkWeb <span class="view-icon">👁</span></td>
             <td>13</td>
             <td><div class="bar" style="width:11px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:18</td>
         </tr>
-        <tr>
-            <td>👤 vxunderground</td>
+        <tr class="clickable-row" onclick="openModal('vxunderground')" title="클릭하여 트윗 보기">
+            <td>👤 vxunderground <span class="view-icon">👁</span></td>
             <td>12</td>
             <td><div class="bar" style="width:10px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:20</td>
         </tr>
-        <tr>
-            <td>👤 SwiftOnSecurity</td>
+        <tr class="clickable-row" onclick="openModal('SwiftOnSecurity')" title="클릭하여 트윗 보기">
+            <td>👤 SwiftOnSecurity <span class="view-icon">👁</span></td>
             <td>12</td>
             <td><div class="bar" style="width:10px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:21</td>
         </tr>
-        <tr>
-            <td>🔍 취약점</td>
+        <tr class="clickable-row" onclick="openModal('___')" title="클릭하여 트윗 보기">
+            <td>🔍 취약점 <span class="view-icon">👁</span></td>
             <td>10</td>
             <td><div class="bar" style="width:9px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:11</td>
         </tr>
-        <tr>
-            <td>🔍 Lazarus Group</td>
+        <tr class="clickable-row" onclick="openModal('Lazarus_Group')" title="클릭하여 트윗 보기">
+            <td>🔍 Lazarus Group <span class="view-icon">👁</span></td>
             <td>8</td>
             <td><div class="bar" style="width:7px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:09</td>
         </tr>
-        <tr>
-            <td>🔍 정보 유출</td>
+        <tr class="clickable-row" onclick="openModal('_____')" title="클릭하여 트윗 보기">
+            <td>🔍 정보 유출 <span class="view-icon">👁</span></td>
             <td>8</td>
             <td><div class="bar" style="width:7px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:14</td>
         </tr>
-        <tr>
-            <td>🔍 APT28</td>
+        <tr class="clickable-row" onclick="openModal('APT28')" title="클릭하여 트윗 보기">
+            <td>🔍 APT28 <span class="view-icon">👁</span></td>
             <td>7</td>
             <td><div class="bar" style="width:6px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:09</td>
         </tr>
-        <tr>
-            <td>🔍 RipperSec</td>
+        <tr class="clickable-row" onclick="openModal('RipperSec')" title="클릭하여 트윗 보기">
+            <td>🔍 RipperSec <span class="view-icon">👁</span></td>
             <td>6</td>
             <td><div class="bar" style="width:5px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:08</td>
         </tr>
-        <tr>
-            <td>🔍 랜섬웨어</td>
+        <tr class="clickable-row" onclick="openModal('____')" title="클릭하여 트윗 보기">
+            <td>🔍 랜섬웨어 <span class="view-icon">👁</span></td>
             <td>6</td>
             <td><div class="bar" style="width:5px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:12</td>
         </tr>
-        <tr>
-            <td>👤 DarkWebInformer</td>
+        <tr class="clickable-row" onclick="openModal('DarkWebInformer')" title="클릭하여 트윗 보기">
+            <td>👤 DarkWebInformer <span class="view-icon">👁</span></td>
             <td>6</td>
             <td><div class="bar" style="width:5px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:17</td>
         </tr>
-        <tr>
-            <td>🔍 사이버 위협</td>
+        <tr class="clickable-row" onclick="openModal('______')" title="클릭하여 트윗 보기">
+            <td>🔍 사이버 위협 <span class="view-icon">👁</span></td>
             <td>4</td>
             <td><div class="bar" style="width:3px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:13</td>
         </tr>
-        <tr>
-            <td>🔍 사이버 보안</td>
+        <tr class="clickable-row" onclick="openModal('______')" title="클릭하여 트윗 보기">
+            <td>🔍 사이버 보안 <span class="view-icon">👁</span></td>
             <td>4</td>
             <td><div class="bar" style="width:3px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:14</td>
         </tr>
-        <tr>
-            <td>🔍 악성코드</td>
+        <tr class="clickable-row" onclick="openModal('____')" title="클릭하여 트윗 보기">
+            <td>🔍 악성코드 <span class="view-icon">👁</span></td>
             <td>4</td>
             <td><div class="bar" style="width:3px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:16</td>
         </tr>
-        <tr>
-            <td>🔍 사이버 공격</td>
+        <tr class="clickable-row" onclick="openModal('______')" title="클릭하여 트윗 보기">
+            <td>🔍 사이버 공격 <span class="view-icon">👁</span></td>
             <td>3</td>
             <td><div class="bar" style="width:2px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:13</td>
         </tr>
-        <tr>
-            <td>🔍 한국 해킹</td>
+        <tr class="clickable-row" onclick="openModal('_____')" title="클릭하여 트윗 보기">
+            <td>🔍 한국 해킹 <span class="view-icon">👁</span></td>
             <td>2</td>
             <td><div class="bar" style="width:1px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:10</td>
         </tr>
-        <tr>
-            <td>👤 H4ckManac</td>
+        <tr class="clickable-row" onclick="openModal('H4ckManac')" title="클릭하여 트윗 보기">
+            <td>👤 H4ckManac <span class="view-icon">👁</span></td>
             <td>2</td>
             <td><div class="bar" style="width:1px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:19</td>
         </tr>
-        <tr>
-            <td>🔍 DDoS Korea</td>
+        <tr class="clickable-row" onclick="openModal('DDoS_Korea')" title="클릭하여 트윗 보기">
+            <td>🔍 DDoS Korea <span class="view-icon">👁</span></td>
             <td>0</td>
             <td><div class="bar" style="width:0px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:08</td>
         </tr>
-        <tr>
-            <td>🔍 MegaMedusa</td>
+        <tr class="clickable-row" onclick="openModal('MegaMedusa')" title="클릭하여 트윗 보기">
+            <td>🔍 MegaMedusa <span class="view-icon">👁</span></td>
             <td>0</td>
             <td><div class="bar" style="width:0px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:08</td>
         </tr>
-        <tr>
-            <td>🔍 ransomware Korea</td>
+        <tr class="clickable-row" onclick="openModal('ransomware_Korea')" title="클릭하여 트윗 보기">
+            <td>🔍 ransomware Korea <span class="view-icon">👁</span></td>
             <td>0</td>
             <td><div class="bar" style="width:0px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:09</td>
         </tr>
-        <tr>
-            <td>🔍 디지털 포렌식</td>
+        <tr class="clickable-row" onclick="openModal('_______')" title="클릭하여 트윗 보기">
+            <td>🔍 디지털 포렌식 <span class="view-icon">👁</span></td>
             <td>0</td>
             <td><div class="bar" style="width:0px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:15</td>
         </tr>
-        <tr>
-            <td>🔍 사이버 인텔리전스</td>
+        <tr class="clickable-row" onclick="openModal('_________')" title="클릭하여 트윗 보기">
+            <td>🔍 사이버 인텔리전스 <span class="view-icon">👁</span></td>
             <td>0</td>
             <td><div class="bar" style="width:0px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:15</td>
         </tr>
-        <tr>
-            <td>👤 HalcyonAi</td>
+        <tr class="clickable-row" onclick="openModal('HalcyonAi')" title="클릭하여 트윗 보기">
+            <td>👤 HalcyonAi <span class="view-icon">👁</span></td>
             <td>0</td>
             <td><div class="bar" style="width:0px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:17</td>
         </tr>
-        <tr>
-            <td>👤 MonThreat</td>
+        <tr class="clickable-row" onclick="openModal('MonThreat')" title="클릭하여 트윗 보기">
+            <td>👤 MonThreat <span class="view-icon">👁</span></td>
             <td>0</td>
             <td><div class="bar" style="width:0px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:18</td>
         </tr>
-        <tr>
-            <td>👤 GossiTheDog</td>
+        <tr class="clickable-row" onclick="openModal('GossiTheDog')" title="클릭하여 트윗 보기">
+            <td>👤 GossiTheDog <span class="view-icon">👁</span></td>
             <td>0</td>
             <td><div class="bar" style="width:0px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:19</td>
         </tr>
-        <tr>
-            <td>👤 MalwareTechBlog</td>
+        <tr class="clickable-row" onclick="openModal('MalwareTechBlog')" title="클릭하여 트윗 보기">
+            <td>👤 MalwareTechBlog <span class="view-icon">👁</span></td>
             <td>0</td>
             <td><div class="bar" style="width:0px"></div></td>
             <td><span class="method-badge">playwright</span></td>
             <td class="time">2026-03-17 04:20</td>
         </tr>
-        <tr>
-            <td>👤 taviso</td>
+        <tr class="clickable-row" onclick="openModal('taviso')" title="클릭하여 트윗 보기">
+            <td>👤 taviso <span class="view-icon">👁</span></td>
             <td>0</td>
             <td><div class="bar" style="width:0px"></div></td>
             <td><span class="method-badge">playwright</span></td>
@@ -498,5 +521,61 @@
     X Threat Intelligence Crawler · GitHub Actions 자동 업데이트 · 2026-03-17 04:22 KST
   </footer>
 </div>
+
+<!-- 트윗 모달 -->
+<div class="modal-overlay" id="tweetModal" onclick="handleOverlayClick(event)">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 id="modalTitle">트윗 목록</h3>
+      <button class="close-btn" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+const MODAL_DATA = {"Cyberattack": {"title": "🔍 Cyberattack", "type": "keyword", "tweets": [{"text": "How secure is the U.S. homeland from a massive cyberattack? It depends on the sector.  According to Adm. Mark Montgomery on the latest President's Tec", "username": "scsp_ai", "link": "https://twitter.com/scsp_ai/status/2033620967813947517#m", "date": "Mar 16, 2026 · 7:06 PM UTC"}, {"text": "#Databreaches aren’t the only concern of which individuals and #organisations need to be aware  bit.ly/4qCDxck #WAN #WANAcceleration #DataSecurity #Cy", "username": "BridgeworksLtd", "link": "https://twitter.com/BridgeworksLtd/status/2033619549715653032#m", "date": "Mar 16, 2026 · 7:00 PM UTC"}, {"text": "• #Hacked #Malware #Spyware #Zerodays #Ransomware #CyberAttack ☠️ • • #Technology #Hackers #RCE #DataHack #DataTheft #DataLeaks #DataBreach 💾 •  » @Go", "username": "tatha_gautama", "link": "https://twitter.com/tatha_gautama/status/2033618346789519569#m", "date": "Mar 16, 2026 · 6:56 PM UTC"}]}, "CVE": {"title": "🔍 CVE", "type": "keyword", "tweets": [{"text": "Critical Windows Server WSUS Vulnerability Exploited in the Wild   CVE-2025-59287 allows a remote, unauthenticated attacker to execute arbitrary code ", "username": "SecurityAid", "link": "https://twitter.com/SecurityAid/status/2033560609506091291#m", "date": "Mar 16, 2026 · 3:06 PM UTC"}, {"text": "Monday's CVE Brief is live:  🔴 11 actively exploited 🟡 40 high priority  Stay protected → cvebrief.com #cybersecurity #infosec #CVE #vulnerability", "username": "DailyCVEBrief", "link": "https://twitter.com/DailyCVEBrief/status/2033559370013802507#m", "date": "Mar 16, 2026 · 3:01 PM UTC"}, {"text": "🟠 CVE-2026-4214 - High  A flaw has been found in D-Link DNS-120, DNR-202L, DNS-315L, DNS-320, DNS-320L, DNS-320LW, DNS-321, DNR-322L, DNS-323, DNS-325", "username": "TheHackerWire", "link": "https://twitter.com/TheHackerWire/status/2033559234634457470#m", "date": "Mar 16, 2026 · 3:01 PM UTC"}]}, "MITRE_ATT_CK": {"title": "🔍 MITRE ATT&CK", "type": "keyword", "tweets": [{"text": "Want to flag anomalies within your AWS environment and overlay them with MITRE ATT&CK? We have extended our analytics engine to process CloudTrail log", "username": "alphasoc", "link": "https://twitter.com/alphasoc/status/2033559467439030774#m", "date": "Mar 16, 2026 · 3:02 PM UTC"}, {"text": "Most security teams have MITRE ATT&CK memorized. Almost none have looked at MITRE ATLAS.  ATLAS is ATT&CK's AI-specific extension — tactics and techni", "username": "SecAIPlus", "link": "https://twitter.com/SecAIPlus/status/2033543815752270284#m", "date": "Mar 16, 2026 · 2:00 PM UTC"}, {"text": "3/ MITRE ATT&CK technique T1566 details phishing methodologies. Train employees to spot phishing attempts and use email filtering tools. #Security #Bl", "username": "davidsheyi", "link": "https://twitter.com/davidsheyi/status/2033515131372515646#m", "date": "Mar 16, 2026 · 12:06 PM UTC"}]}, "exploit": {"title": "🔍 exploit", "type": "keyword", "tweets": [{"text": "Je crois que pas mal attende de lui qu'il fasse un exploit.  Mais pour moi, son match, son activité, le volume qu'il met, l'accélération qu'il met dan", "username": "vinzealand", "link": "https://twitter.com/vinzealand/status/2033560810346152372#m", "date": "Mar 16, 2026 · 3:07 PM UTC"}, {"text": "We demand that HEESEUNG remains fully part of ENHYPEN, and we will continue to hold BE:LIFT LAB accountable for any actions that threaten the group's ", "username": "Brightupyourday", "link": "https://twitter.com/Brightupyourday/status/2033560780705346013#m", "date": "Mar 16, 2026 · 3:07 PM UTC"}, {"text": "no doubt DO NOT EXPLOIT THE LEGACY OF ENHYPEN #BEACCOUNTABLE_BELIFT #ENHYPEN_IS_SEVEN #HEESEUNG_STAYS", "username": "trustyien", "link": "https://twitter.com/trustyien/status/2033560778867900799#m", "date": "Mar 16, 2026 · 3:07 PM UTC"}]}, "cyber_attack": {"title": "🔍 cyber attack", "type": "keyword", "tweets": [{"text": "🚨 ISRAELI CYBER ATTACK 🇮🇱  FOUR SHABBAT DAYS saw SIGINT operations targeting Palestinian networks. The ARGON infrastructure was used to deploy malware", "username": "OSN_Reports", "link": "https://twitter.com/OSN_Reports/status/2033560927715373406#m", "date": "Mar 16, 2026 · 3:08 PM UTC"}, {"text": "Targeted Phishing Attack Breaches Biotech Company Data ift.tt/hOFqUzo #Security #Cyber #Cybersecurity", "username": "Jmw66", "link": "https://twitter.com/Jmw66/status/2033560798383985142#m", "date": "Mar 16, 2026 · 3:07 PM UTC"}, {"text": "Stop and think about this: Every second, a cyber attack occurs somewhere in the world. In the next 60 sec, approximately 1,139 attacks will take place", "username": "AyobamiOgunba", "link": "https://twitter.com/AyobamiOgunba/status/2033557983817277870#m", "date": "Mar 16, 2026 · 2:56 PM UTC"}]}, "ZeroDay": {"title": "🔍 ZeroDay", "type": "keyword", "tweets": [{"text": "⚠️ CVE-2026-26133: M365 Copilot Information Disclo...  AI prompt injection hitting M365 Copilot across mobile + Edge - 7.1 CVSS with network-based inf", "username": "0dayPublishing", "link": "https://twitter.com/0dayPublishing/status/2033553687100993745#m", "date": "Mar 16, 2026 · 2:39 PM UTC"}, {"text": "Critical 9.8 CVSS unpatched RCE flaws in the SGLang AI framework (CVE-2026-3059 & CVE-2026-3060) expose servers via unsafe Python pickle deserializati", "username": "the_yellow_fall", "link": "https://twitter.com/the_yellow_fall/status/2033553372406841603#m", "date": "Mar 16, 2026 · 2:38 PM UTC"}, {"text": "⚠️ Critical: Shadow AI infiltration hits SaaS—unseen apps, risky usage threatening data security! How can you discover, monitor, and govern AI tools b", "username": "arnavsharma", "link": "https://twitter.com/arnavsharma/status/2033546770035180023#m", "date": "Mar 16, 2026 · 2:11 PM UTC"}]}, "0_day": {"title": "🔍 0-day", "type": "keyword", "tweets": [{"text": "You win the Day, you win the Week.  You win Weeks, you win the Month.  You win Months, You win the Year!  365 Days Can Change Your Life!  Just Go 1-0 ", "username": "MSt8Football", "link": "https://twitter.com/MSt8Football/status/2033561640734441686#m", "date": "Mar 16, 2026 · 3:10 PM UTC"}, {"text": "SOFT: Geneva drops game one of the day to Westfield State, 2-0.  The women wrap up their Florida trip with a game against St. Joseph's Brooklyn coming", "username": "GenevaAthletics", "link": "https://twitter.com/GenevaAthletics/status/2033561499495530667#m", "date": "Mar 16, 2026 · 3:10 PM UTC"}, {"text": "こちらもポチポチできる！！❤️‍🔥🆕✨️ ◾︎Interlude ~Back On The Summer Day~  utaten.com/lyric/sz26031145/  ⬇️⬇️⬇️  🪐うたてん 待ち遠しい歌詞🪐 (6時~、12時~、18時~、0時~) (各10回ポチポチ☝️)  ◾︎Cl", "username": "NANAHINA410", "link": "https://twitter.com/NANAHINA410/status/2033561256230269385#m", "date": "Mar 16, 2026 · 3:09 PM UTC"}]}, "vulnerability": {"title": "🔍 vulnerability", "type": "keyword", "tweets": [{"text": "All the intentions to negotiate with Iran will fail unless the Hindutva ecosystem URGENTLY learns to understand the effects and motives of propaganda.", "username": "Vidyut", "link": "https://twitter.com/Vidyut/status/2033440677728796691#m", "date": "Mar 16, 2026 · 7:10 AM UTC"}, {"text": "Just watched \"Love Should Not Bleed\" and it hit hard — the mirror scene and the raw shift from vulnerability to unbreakable strength is pure genius. H", "username": "FilmBoombastic", "link": "https://twitter.com/FilmBoombastic/status/2033440581154693385#m", "date": "Mar 16, 2026 · 7:09 AM UTC"}, {"text": "We’re Hiring – VAPT Role at Mitigata™ - Full-Stack Cyber Resilience!  We are currently hiring for a VAPT (Vulnerability Assessment and Penetration Tes", "username": "StartupJobsIN", "link": "https://twitter.com/StartupJobsIN/status/2033440503904305213#m", "date": "Mar 16, 2026 · 7:09 AM UTC"}]}, "DDoS": {"title": "🔍 DDoS", "type": "keyword", "tweets": [{"text": "protocols, ARP and DNS, the difference between TCP and UDP, and how DHCP assigns IP addresses using the DORA process.  I also learned about network th", "username": "PrinceSibie", "link": "https://twitter.com/PrinceSibie/status/2033558521585746383#m", "date": "Mar 16, 2026 · 2:58 PM UTC"}, {"text": "It’s giving Vessel", "username": "DD0S43", "link": "https://twitter.com/DD0S43/status/2033558384419443052#m", "date": "Mar 16, 2026 · 2:57 PM UTC"}, {"text": "if you don’t think dragons, castles, knights, swords and wizards are cool I don’t trust you", "username": "cemeteryfaerie", "link": "https://twitter.com/cemeteryfaerie/status/2033432476089983186#m", "date": "Mar 16, 2026 · 6:37 AM UTC"}]}, "incident_response": {"title": "🔍 incident response", "type": "keyword", "tweets": [{"text": "HRFE Incident Feed HAZMAT Location: HIGHFIELD PARK DR, DARTMOUTH Call Number: HF26000003901 Response: TCT12 March 16, 2026 at 12:06PM", "username": "mattdagley", "link": "https://twitter.com/mattdagley/status/2033561536627609932#m", "date": "Mar 16, 2026 · 3:10 PM UTC"}, {"text": "Refraining from filming or sharing footage of incident sites or field response operations facilitates the work of competent authorities and reflects y", "username": "MOI_QatarEn", "link": "https://twitter.com/MOI_QatarEn/status/2033559405736710564#m", "date": "Mar 16, 2026 · 3:01 PM UTC"}, {"text": "HRFE Incident Feed ALARMS Location: OLD SACKVILLE RD, LOWER SACKVILLE Call Number: HF26000003900 Response: A09 E09 STN09 T10 March 16, 2026 at 11:55AM", "username": "mattdagley", "link": "https://twitter.com/mattdagley/status/2033559009471471699#m", "date": "Mar 16, 2026 · 3:00 PM UTC"}]}, "threat_intelligence": {"title": "🔍 threat intelligence", "type": "keyword", "tweets": [{"text": "Attackers Abuse LiveChat to Phish Credit Card, Personal Data darkreading.com/threat-intel…", "username": "TheCyberSecHub", "link": "https://twitter.com/TheCyberSecHub/status/2033562776162259317#m", "date": "Mar 16, 2026 · 3:15 PM UTC"}, {"text": "Trump attacked DURING PEACE TALKS. Every previous admin was successful in preventing Iran from nukes peacefully. The message sent to Iran & other nati", "username": "11Spooner11", "link": "https://twitter.com/11Spooner11/status/2033562011548762291#m", "date": "Mar 16, 2026 · 3:12 PM UTC"}, {"text": "Why fake normal is becoming the new fraud threat.  The “I” in “AI” doesn’t always just stand for intelligence. Increasingly, across the security secto", "username": "pymnts", "link": "https://twitter.com/pymnts/status/2033559088831848765#m", "date": "Mar 16, 2026 · 3:00 PM UTC"}]}, "APT": {"title": "🔍 APT", "type": "keyword", "tweets": [{"text": "\"They're lying to us - The UK is being infiltrated and colonized!\"  The Islamic conquest is no longer executed by the sword, but rather with political", "username": "IslamInvasion", "link": "https://twitter.com/IslamInvasion/status/2033525712490012916#m", "date": "Mar 16, 2026 · 12:48 PM UTC"}, {"text": "Let me tell you about what happened to a happy and joyful 9-year-old girl in Sweden.  A sweet innocent girl named Luna. She loved to dance. She sang s", "username": "piscesgutt", "link": "https://twitter.com/piscesgutt/status/2033305210286637250#m", "date": "Mar 15, 2026 · 10:11 PM UTC"}, {"text": "and a foreigner isn't really gonna know the difference between the shack in mississipi and the apt in LA, because again, it's an american thing", "username": "italianlvke", "link": "https://twitter.com/italianlvke/status/2033562901001195730#m", "date": "Mar 16, 2026 · 3:15 PM UTC"}]}, "cyber": {"title": "🔍 cyber", "type": "keyword", "tweets": [{"text": "Cyber threats evolve and security strategies must keep up. 🔐 New trends are reshaping how organizations defend systems and data. Read the article and ", "username": "ISS4IT", "link": "https://twitter.com/ISS4IT/status/2033564503699325177#m", "date": "Mar 16, 2026 · 3:22 PM UTC"}, {"text": "Texas' Best Cyber-Radio Experience 'The Classic Hit Combo'™ on ▶GUS.FM! #Classic Hits #Rock #BluesMusic #CountryMusic #ChristianMusic", "username": "fmguss2", "link": "https://twitter.com/fmguss2/status/2033564470442659907#m", "date": "Mar 16, 2026 · 3:22 PM UTC"}, {"text": "@SSalmaraPolice @assampolice Still no action and no update from your Cyber crime team, he openly uses abusive language on Assam and Meghalaya CM's @hi", "username": "Visit_Assam", "link": "https://twitter.com/Visit_Assam/status/2033564466840023534#m", "date": "Mar 16, 2026 · 3:22 PM UTC"}]}, "security": {"title": "🔍 security", "type": "keyword", "tweets": [{"text": "Every country that trades in the gulf needs to provide security. The fact that we are even discussing this proves that Iran needs to be taken off the ", "username": "BartlettMa1522", "link": "https://twitter.com/BartlettMa1522/status/2033564302779564212#m", "date": "Mar 16, 2026 · 3:21 PM UTC"}, {"text": "In the month since it began, they have only spent just over 26 minutes acknowledging the shutdown and its ripple effects, most notably at airports wit", "username": "CurtisHouck", "link": "https://twitter.com/CurtisHouck/status/2033564296874270981#m", "date": "Mar 16, 2026 · 3:21 PM UTC"}, {"text": "Federal public safety funds promised to the KC region are finally being delivered.  These resources will help law enforcement prepare to keep resident", "username": "RepDavids", "link": "https://twitter.com/RepDavids/status/2033564274774225204#m", "date": "Mar 16, 2026 · 3:21 PM UTC"}]}, "__": {"title": "🔍 해킹", "type": "keyword", "tweets": [{"text": "해킹 개많이 했는데 왜 아직 감염되지 않았을까요", "username": "nnewhelloworld", "link": "https://twitter.com/nnewhelloworld/status/2033439732697538963#m", "date": "Mar 16, 2026 · 7:06 AM UTC"}, {"text": "해킹? 당한 것? 같아요", "username": "kyetsgo", "link": "https://twitter.com/kyetsgo/status/2033436528337436705#m", "date": "Mar 16, 2026 · 6:53 AM UTC"}, {"text": "업비트 해킹. 빗썸  오지급.  코빗 거래소 는.  호가창. 세분화. 부탁드립니다", "username": "jijongjin2", "link": "https://twitter.com/jijongjin2/status/2033435796762726648#m", "date": "Mar 16, 2026 · 6:50 AM UTC"}]}, "DFIR": {"title": "🔍 DFIR", "type": "keyword", "tweets": [{"text": "Source: cloud.google.com/blog/topics…", "username": "DFIR_Radar", "link": "https://twitter.com/DFIR_Radar/status/2033562108814864762#m", "date": "Mar 16, 2026 · 3:12 PM UTC"}, {"text": "What’s next for enterprise #DigitalInvestigations?  Join us on March 18 for a webinar that breaks down our new State of #EnterpriseDFIR 2026 Report, i", "username": "MagnetForensics", "link": "https://twitter.com/MagnetForensics/status/2033560715340939728#m", "date": "Mar 16, 2026 · 3:07 PM UTC"}, {"text": "\"On the Exchange email server, the threat actor used a legitimate Windows executable, SystemSettingsAdminFlows.exe, which allows users to customize or", "username": "TheDFIRReport", "link": "https://twitter.com/TheDFIRReport/status/2033524965782196520#m", "date": "Mar 16, 2026 · 12:45 PM UTC"}]}, "threat": {"title": "🔍 threat", "type": "keyword", "tweets": [{"text": "That doesn't even come off as a really distasteful joke that sounds like a straight up threat", "username": "StinkNEO", "link": "https://twitter.com/StinkNEO/status/2033564366893642089#m", "date": "Mar 16, 2026 · 3:21 PM UTC"}, {"text": "Sure, the military personnel are standing there because there's no threat.", "username": "ShaunsEyeView", "link": "https://twitter.com/ShaunsEyeView/status/2033564352406761587#m", "date": "Mar 16, 2026 · 3:21 PM UTC"}, {"text": "As the severe threat moves east, winter reclaims WNC with upslope snow showers lasting through the night. Folks along the NC/TN border who started thi", "username": "jackendrickwx", "link": "https://twitter.com/jackendrickwx/status/2033564352205193686#m", "date": "Mar 16, 2026 · 3:21 PM UTC"}]}, "malware": {"title": "🔍 malware", "type": "keyword", "tweets": [{"text": "FBI investigating Steam games for hidden malware targeting users & stealing crypto, browser data, and logins. . #SteamGames #CyberSecurity #Malware", "username": "nickmo05", "link": "https://twitter.com/nickmo05/status/2033561509784154592#m", "date": "Mar 16, 2026 · 3:10 PM UTC"}, {"text": "Yikes indeed. It's wild how easily malware can slip through sponsored results. Trust is everything in AI, and ads just muddy the waters. We need bette", "username": "BakitKairupok", "link": "https://twitter.com/BakitKairupok/status/2033561183392047456#m", "date": "Mar 16, 2026 · 3:09 PM UTC"}, {"text": "誰だお前", "username": "Kaiyou_love", "link": "https://twitter.com/Kaiyou_love/status/2033546020592996374#m", "date": "Mar 16, 2026 · 2:08 PM UTC"}]}, "___": {"title": "🔍 취약점", "type": "keyword", "tweets": [{"text": "D Prime 〈보안 월간 리포트〉｜2026년 2월 (제6기)  2026년 2월 D Prime 안정 운영 데이터 ﹕   자금 및 계정: 입출금 시스템 안정적으로 운영, KYC 완료 수 14,103건   단일 최대 출금 금액: USD 600,000  네트워크 보안 방어:", "username": "DooPrimeKorea", "link": "https://twitter.com/DooPrimeKorea/status/2033387308528054646#m", "date": "Mar 16, 2026 · 3:38 AM UTC"}, {"text": "펌업도 없는 기계다보니 취약점 오만게 다 털려서 해킹도 칩 달 필요도 없이 메모리카드형 부팅 디바이스 끼우고 켜면 끝이 됐더군요. 제가 마지막으로 봤을 땐 구운 DVD 읽게 칩 다는 거였는데…", "username": "eggry", "link": "https://twitter.com/eggry/status/2033322627159449968#m", "date": "Mar 15, 2026 · 11:21 PM UTC"}, {"text": "(취약점 하나 내보인 기분이다. 숨 고르듯 내뱉는다.) 네 목소리로 들으니까 떨리네.", "username": "ofinfxtuation", "link": "https://twitter.com/ofinfxtuation/status/2033296900359651669#m", "date": "Mar 15, 2026 · 9:38 PM UTC"}]}, "cybersecurity": {"title": "🔍 cybersecurity", "type": "keyword", "tweets": [{"text": "Cybersecurity is crucial in today's digital age. It protects sensitive information from threats, ensures privacy, and maintains trust in technology. S", "username": "d_moiseslima", "link": "https://twitter.com/d_moiseslima/status/2033564425714819521#m", "date": "Mar 16, 2026 · 3:21 PM UTC"}, {"text": "Cybersecurity expert highlights mobile device vulnerabilities gulfcoastnewsnow.com/article…", "username": "GCNNow", "link": "https://twitter.com/GCNNow/status/2033564209372438925#m", "date": "Mar 16, 2026 · 3:21 PM UTC"}, {"text": "Looking at deals within my “edge” or advantage with experience and SDVOSB qualifications.   Gov Con - Security - Cybersecurity and ABA Healthcare clin", "username": "SMB_HEFF", "link": "https://twitter.com/SMB_HEFF/status/2033564176145121459#m", "date": "Mar 16, 2026 · 3:20 PM UTC"}]}, "group": {"title": "🔍 group", "type": "keyword", "tweets": [{"text": "La grada d’animacio 💙❤️! I sometimes imagine a world where this group and the infamous Boixos Nois go band for band every week at our home games.", "username": "DarajaKapoor", "link": "https://twitter.com/DarajaKapoor/status/2033564214787236268#m", "date": "Mar 16, 2026 · 3:21 PM UTC"}, {"text": "Think you can predict March Madness?🤔💭  Join the Won & Done Bracket Challenge  🆓 to enter Prize for the winner 👀  The champ will be crowned the Oracle", "username": "WonAndDoneCBB", "link": "https://twitter.com/WonAndDoneCBB/status/2033564213185237478#m", "date": "Mar 16, 2026 · 3:21 PM UTC"}, {"text": "#AVAX/USDT Direction: 🔐 Entry: 🔐 Stop Loss: 🔐  Target: 🔐 Leverage: x🔐  Details Available on VIP Channel  #ACE #TAO #FET #ETH #ARIA #Solana #BB $DEGO $", "username": "EmmanuelMw81875", "link": "https://twitter.com/EmmanuelMw81875/status/2033564212601974819#m", "date": "Mar 16, 2026 · 3:21 PM UTC"}]}, "FalconFeedsio": {"title": "👤 FalconFeedsio", "type": "account", "tweets": [{"text": "🚨 Ransomware Alert: 🇨🇿  PILANA Group a.s. (pilanagroup.com), a Czech Republic-based machinery manufacturing company, has reportedly fallen victim to t", "username": "FalconFeedsio", "link": "https://twitter.com/FalconFeedsio/status/2033532953184329762#m", "date": "Mar 16, 2026 · 1:16 PM UTC"}, {"text": "🚨 Ransomware Alert 🚨  The Gentlemen ransomware group has added 7 new victims to their dark web portal.  * ⁠BCN Medical 🇨🇴 * CHASE ASIA 🇹🇭 * Canal Capi", "username": "FalconFeedsio", "link": "https://twitter.com/FalconFeedsio/status/2033532627354038322#m", "date": "Mar 16, 2026 · 1:15 PM UTC"}, {"text": "🚨 Ransomware Alert: 🇭🇷  City of Rovinj-Rovigno (rovinj-rovigno.hr), a Croatia-based government organization, has reportedly fallen victim to the LockB", "username": "FalconFeedsio", "link": "https://twitter.com/FalconFeedsio/status/2033529416681505199#m", "date": "Mar 16, 2026 · 1:02 PM UTC"}]}, "DailyDarkWeb": {"title": "👤 DailyDarkWeb", "type": "account", "tweets": [{"text": "Czech Republic 🇨🇿 - Pilana Group (TRITCON) has allegedly been breached by the Akira ransomware group, exposing 93GB of sensitive employee, client, fin", "username": "DailyDarkWeb", "link": "https://twitter.com/DailyDarkWeb/status/2033544091321999868#m", "date": "Mar 16, 2026 · 2:01 PM UTC"}, {"text": "United States 🇺🇸 - Executive Aviation has allegedly been compromised by the Play ransomware group, exposing sensitive client documents, payroll record", "username": "DailyDarkWeb", "link": "https://twitter.com/DailyDarkWeb/status/2033539023352852988#m", "date": "Mar 16, 2026 · 1:40 PM UTC"}, {"text": "The NoName057(16) group claims to have targeted the Shas Party, Noam Party, Otzma Yehudit, Bustan al-Marj, Mevoot HaHermon, Shomron, Arrabe, and Lod 🇮", "username": "DailyDarkWeb", "link": "https://twitter.com/DailyDarkWeb/status/2033536818029728251#m", "date": "Mar 16, 2026 · 1:32 PM UTC"}]}, "vxunderground": {"title": "👤 vxunderground", "type": "account", "tweets": [{"text": "Currently reading about how the weird mooshy gooey thingy inside my skull can retain information (the brain).  I started reading on neuropath ways and", "username": "vxunderground", "link": "https://twitter.com/vxunderground/status/2033430971781919225#m", "date": "Mar 16, 2026 · 6:31 AM UTC"}, {"text": "> be employee > work at Atlassian > 10am > get promotion  > celebrate on LinkedIn  > new career milestone  > overwhelming joy and pride > 2pm > get em", "username": "vxunderground", "link": "https://twitter.com/vxunderground/status/2033404540947513372#m", "date": "Mar 16, 2026 · 4:46 AM UTC"}, {"text": "I want to share something. I don't expect anyone to care. I just want to scream into the void.  I've accomplished everything I've ever wanted to do wi", "username": "vxunderground", "link": "https://twitter.com/vxunderground/status/2033375514455331237#m", "date": "Mar 16, 2026 · 2:51 AM UTC"}]}, "SwiftOnSecurity": {"title": "👤 SwiftOnSecurity", "type": "account", "tweets": [{"text": "Trump seeing your 2x3090 AI goonstation:  \"Wow, everything is computer.\"", "username": "SwiftOnSecurity", "link": "https://twitter.com/SwiftOnSecurity/status/2033594059516694623#m", "date": "Mar 16, 2026 · 5:19 PM UTC"}, {"text": "I like the auto-revoke tripwire", "username": "SwiftOnSecurity", "link": "https://twitter.com/SwiftOnSecurity/status/2033584510705504738#m", "date": "Mar 16, 2026 · 4:41 PM UTC"}, {"text": "100% of the ppl I know with AI gf are still with AI gf. Worrying trend for women, who are getting locked out of these opportunities.", "username": "SwiftOnSecurity", "link": "https://twitter.com/SwiftOnSecurity/status/2033572092227006549#m", "date": "Mar 16, 2026 · 3:52 PM UTC"}]}, "Lazarus_Group": {"title": "🔍 Lazarus Group", "type": "keyword", "tweets": [{"text": "North Korea funds its missile & nuclear programs through a command economy that diverts 15-26% of its ~$25-40B GDP to military priorities, extracting ", "username": "grok", "link": "https://twitter.com/grok/status/2033507397923127793#m", "date": "Mar 16, 2026 · 11:35 AM UTC"}, {"text": "That third option is the real threat. Right now there's a firewall between DPRK financial hackers (Lazarus Group) and its IT freelancers.  Collapsing ", "username": "chadocl", "link": "https://twitter.com/chadocl/status/2033392522836557948#m", "date": "Mar 16, 2026 · 3:58 AM UTC"}, {"text": "The Lazarus Effect Makes Winning Start To Northern Campaign 💥  The Lazarus Effect (NZ) made a winning start to his northern campaign when taking out t", "username": "nzbstandardbred", "link": "https://twitter.com/nzbstandardbred/status/2033293409017118767#m", "date": "Mar 15, 2026 · 9:25 PM UTC"}]}, "_____": {"title": "🔍 한국 해킹", "type": "keyword", "tweets": [{"text": "아 사이렌 오더 켜니까 일본에서 한국 어플로 사이렌오더 되나 궁금해서 로그인 해봤다가 해킹 의심 받고 일시정지 당한 거 생각남ㅋㅋㅋㅋㅋㅋ", "username": "DSKstella", "link": "https://twitter.com/DSKstella/status/2033463437108576745#m", "date": "Mar 16, 2026 · 8:40 AM UTC"}, {"text": "유튜버들도 그렇고 트위터도 그렇고 쿠팡이 해킹 제대로 수습도 안 하고 한국 개무시 했는데도 아직도 소비하는 사람들이 있다는게 놀라움  이러니까 호구로 보고 무시하지", "username": "jaem_0818", "link": "https://twitter.com/jaem_0818/status/2033079291127398870#m", "date": "Mar 15, 2026 · 7:14 AM UTC"}]}, "APT28": {"title": "🔍 APT28", "type": "keyword", "tweets": [{"text": "Hunt Intelligence unmasks APT28's 'Roundish' toolkit from an exposed server, revealing advanced CSS side-channel attacks and stealthy Linux implants. ", "username": "the_yellow_fall", "link": "https://twitter.com/the_yellow_fall/status/2033457868083810718#m", "date": "Mar 16, 2026 · 8:18 AM UTC"}, {"text": "thehackernews.com/2026/03/ap…", "username": "UK_Daniel_Card", "link": "https://twitter.com/UK_Daniel_Card/status/2033440929177055511#m", "date": "Mar 16, 2026 · 7:11 AM UTC"}, {"text": "APT28のRoundishは、Roundcubeを狙うロシアGRU系の実戦的なメール窃取キット。重要なのは、認証情報、メール、連絡先、2FAシークレットの窃取だけでなく、Linux持続化用Go製インプラントまで含む“運用一式”が露出した点。    Hunt.ioは2026年1月、203.161.5", "username": "01ra66it", "link": "https://twitter.com/01ra66it/status/2033436972648382865#m", "date": "Mar 16, 2026 · 6:55 AM UTC"}]}, "RipperSec": {"title": "🔍 RipperSec", "type": "keyword", "tweets": [{"text": "🚨 Alert 🇺🇸  The hacktivist group RipperSec has launched a targeted cyberattack against the website of Christians United for Israel (CUFI) cufi.org #Cy", "username": "cyberasia_io", "link": "https://twitter.com/cyberasia_io/status/2033312472292319492#m", "date": "Mar 15, 2026 · 10:40 PM UTC"}, {"text": "🚨DDoS Alert: 🇺🇸  RipperSec claims to have targeted the website of Christians United for Israel (cufi.org).", "username": "FalconFeedsio", "link": "https://twitter.com/FalconFeedsio/status/2033187453843145172#m", "date": "Mar 15, 2026 · 2:23 PM UTC"}, {"text": "🚨DDoS Alert: 🇮🇱  RipperSec claims to have targeted the website of International Christian Embassy Jerusalem (icej.org).  NB : The site is up at the mo", "username": "FalconFeedsio", "link": "https://twitter.com/FalconFeedsio/status/2033179793735491772#m", "date": "Mar 15, 2026 · 1:53 PM UTC"}]}, "____": {"title": "🔍 악성코드", "type": "keyword", "tweets": [{"text": "호스트 파일 변경시도 악성코드 가능성이 자꾸 뜨는데 복원 예 눌러도 팝업창 사라지지도 않고 뭐임..진짜 안좋은거 깔렸나.", "username": "SH_DOHWON", "link": "https://twitter.com/SH_DOHWON/status/2033560044034498717#m", "date": "Mar 16, 2026 · 3:04 PM UTC"}, {"text": "로얄이랑 해야 fireworks 악성코드 뱅뱅 블랙홀 아이엠 아센디오 키치 낫욜걸 콘서트에서 보고싶음 그냥 신곡이랑 신나는게 좋다는 뜻", "username": "fly_away_yap", "link": "https://twitter.com/fly_away_yap/status/2033405901399576608#m", "date": "Mar 16, 2026 · 4:52 AM UTC"}, {"text": "9 cheap or free ways to make your old PC run faster | PCWorld  pcworld.com/article/436282/9…  오래된 PC를 빠르게 만드는 9가지 방법   - 시작 프로그램 솎아내기 - 블로트웨어 제거, 악성코드", "username": "lunamoth", "link": "https://twitter.com/lunamoth/status/2033048058309603771#m", "date": "Mar 15, 2026 · 5:10 AM UTC"}]}, "DarkWebInformer": {"title": "👤 DarkWebInformer", "type": "account", "tweets": [{"text": "‼️🇬🇧 A threat actor is auctioning full admin access and shell access to a UK-based WordPress/Shopify store with 2,883 total orders and a 100% card pay", "username": "DarkWebInformer", "link": "https://twitter.com/DarkWebInformer/status/2033556850705158650#m", "date": "Mar 16, 2026 · 2:51 PM UTC"}, {"text": "‼️ BreachForums has been down for roughly a day now, but they claim they will be back up after an \"internal problem,\" although @CCITIC has claimed to ", "username": "DarkWebInformer", "link": "https://twitter.com/DarkWebInformer/status/2033233358092665040#m", "date": "Mar 15, 2026 · 5:26 PM UTC"}, {"text": "‼️🇨🇦 The actor has released the first 251,366 Salesforce records of Loblaw and threatens more to come if the company does not contact them.", "username": "DarkWebInformer", "link": "https://twitter.com/DarkWebInformer/status/2033230547636363517#m", "date": "Mar 15, 2026 · 5:15 PM UTC"}]}, "______": {"title": "🔍 사이버 공격", "type": "keyword", "tweets": [{"text": "❌️전문가들이 보는 전쟁 확률 (수치상 분석)  ↗️전면 침공 확률: 여러 안보 싱크탱크와 전문가 그룹의 설문 조사에 따르면, 향후 5년 내 전면적인 무력 침공이 일어날 확률은 약 15%~35% 사이로 낮게 평가.  ↗️제한적 충돌/봉쇄 확률: 전면전보다는 해상 봉쇄나", "username": "chol7310", "link": "https://twitter.com/chol7310/status/2033358139266134213#m", "date": "Mar 16, 2026 · 1:42 AM UTC"}, {"text": "세네갈 대학 시위 사망 사건·사이버 공격 등 정세 주목…중국 차관·스타링크 도입도 추진 byeon.com/senegal-unrest-cyb…  Senegal — 서아프리카 세네갈에서 대학 시위 사망 사건과 정부 기관 사이버 공격 등 주요 현안이 잇따르며 정치·사회적 긴", "username": "K_POPTIMES", "link": "https://twitter.com/K_POPTIMES/status/2033327644171702686#m", "date": "Mar 15, 2026 · 11:41 PM UTC"}, {"text": "invidious.tiekoetter.com/wGee0zmJtLM?si=FBRy… 최근 이란과 연계된 해커 그룹이 미국의 의료 기기 업체인 스트라이커(Stryker)를 대상으로 감행한 사이버 공격 내용과 피해. 충격적!!   이 공격으로 56,000명 이상의 직원이 네", "username": "TV6641962521510", "link": "https://twitter.com/TV6641962521510/status/2033049815609913565#m", "date": "Mar 15, 2026 · 5:17 AM UTC"}]}, "H4ckManac": {"title": "👤 H4ckManac", "type": "account", "tweets": [{"text": "🚨Cyber Alert ‼️  🇧🇭Bahrain - 𝗥𝗼𝘆𝗮𝗹 𝗕𝗮𝗵𝗿𝗮𝗶𝗻 𝗛𝗼𝘀𝗽𝗶𝘁𝗮𝗹  Payload hacking group claims to have breached Royal Bahrain Hospital.  Threat actor: Payload Sect", "username": "H4ckmanac", "link": "https://twitter.com/H4ckmanac/status/2033438739280584811#m", "date": "Mar 16, 2026 · 7:02 AM UTC"}, {"text": "🚨Cyber Alert ‼️  🇨🇦Canada - 𝗪𝗲𝘀𝘁𝗽𝗼𝗿𝘁 𝗙𝘂𝗲𝗹 𝗦𝘆𝘀𝘁𝗲𝗺𝘀  Embargo hacking group claims to have breached Westport Fuel Systems.  Threat actor: Embargo Sector:", "username": "H4ckmanac", "link": "https://twitter.com/H4ckmanac/status/2033497256431694060#m", "date": "Mar 16, 2026 · 10:55 AM UTC"}]}, "DDoS_Korea": {"title": "🔍 DDoS Korea", "type": "keyword", "tweets": []}, "MegaMedusa": {"title": "🔍 MegaMedusa", "type": "keyword", "tweets": []}, "ransomware_Korea": {"title": "🔍 ransomware Korea", "type": "keyword", "tweets": []}, "_______": {"title": "🔍 디지털 포렌식", "type": "keyword", "tweets": []}, "_________": {"title": "🔍 사이버 인텔리전스", "type": "keyword", "tweets": []}, "HalcyonAi": {"title": "👤 HalcyonAi", "type": "account", "tweets": []}, "MonThreat": {"title": "👤 MonThreat", "type": "account", "tweets": []}, "GossiTheDog": {"title": "👤 GossiTheDog", "type": "account", "tweets": []}, "MalwareTechBlog": {"title": "👤 MalwareTechBlog", "type": "account", "tweets": []}, "taviso": {"title": "👤 taviso", "type": "account", "tweets": []}};
+
+function openModal(targetId) {
+  const data = MODAL_DATA[targetId];
+  if (!data) return;
+
+  document.getElementById('modalTitle').textContent = data.title + ' 수집 트윗';
+  const body = document.getElementById('modalBody');
+
+  if (!data.tweets || data.tweets.length === 0) {
+    body.innerHTML = '<div class="modal-empty">저장된 샘플 트윗이 없습니다.</div>';
+  } else {
+    body.innerHTML = data.tweets.map(t => {
+      const username = t.username || '';
+      const text = (t.text || '').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      const link = t.link || '#';
+      const date = (t.date || '').substring(0, 22);
+      return `<div class="modal-tweet">
+        <div class="modal-tweet-meta">
+          <a class="modal-tweet-user" href="https://twitter.com/${username}" target="_blank">@${username}</a>
+          <span class="modal-tweet-date">${date}</span>
+        </div>
+        <div class="modal-tweet-text">${text}</div>
+        <a class="modal-tweet-link" href="${link}" target="_blank">🔗 트윗 원문 보기</a>
+      </div>`;
+    }).join('');
+  }
+
+  document.getElementById('tweetModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('tweetModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('tweetModal')) closeModal();
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
 </body>
 </html>
