@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>X 위협 인텔리전스 대시보드</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #0f172a; color: #e2e8f0; line-height: 1.6; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+  header { border-bottom: 1px solid #1e293b; padding-bottom: 20px; margin-bottom: 28px; }
+  header h1 { font-size: 1.6rem; color: #f1f5f9; }
+  header .meta { color: #64748b; font-size: 0.85rem; margin-top: 4px; }
+  .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-bottom: 28px; }
+  .stat-card { background: #1e293b; border-radius: 10px; padding: 18px; text-align: center; }
+  .stat-card .num { font-size: 2rem; font-weight: 700; }
+  .stat-card .label { font-size: 0.8rem; color: #94a3b8; margin-top: 4px; }
+  .threat-score { color: #ef4444; }
+  section { margin-bottom: 32px; }
+  section h2 { font-size: 1.1rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 14px; border-left: 3px solid #3b82f6; padding-left: 10px; }
+  .llm-box { background: #1e293b; border-radius: 10px; padding: 20px; font-size: 0.9rem; line-height: 1.8; }
+  .llm-box h2, .llm-box h3 { color: #60a5fa; margin: 12px 0 6px; }
+  .llm-box li { margin-left: 20px; margin-bottom: 4px; }
+  .llm-box strong { color: #fbbf24; }
+  .llm-box code { background: #0f172a; padding: 1px 5px; border-radius: 3px; font-size: 0.85em; }
+  .tweet-card { background: #1e293b; border-radius: 10px; padding: 16px; margin-bottom: 12px; border-left: 3px solid #3b82f6; }
+  .tweet-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+  .rank { font-weight: 700; color: #60a5fa; }
+  .threat-badge { padding: 2px 8px; border-radius: 20px; font-size: 0.75rem; color: white; }
+  .username { color: #60a5fa; text-decoration: none; font-weight: 600; }
+  .username:hover { text-decoration: underline; }
+  .date { color: #64748b; font-size: 0.8rem; margin-left: auto; }
+  .tweet-text { font-size: 0.9rem; margin-bottom: 8px; }
+  .reason { font-size: 0.8rem; color: #94a3b8; background: #0f172a; padding: 6px 10px; border-radius: 6px; }
+  .words-box { background: #1e293b; border-radius: 10px; padding: 20px; }
+  .word-tag { display: inline-block; margin: 4px; color: #60a5fa; font-weight: 600; }
+  .word-tag small { color: #64748b; font-size: 0.7em; }
+  .hashtag-tag { display: inline-block; background: #1e3a5f; color: #93c5fd; padding: 3px 10px; border-radius: 20px; margin: 4px; font-size: 0.85rem; }
+  .hashtag-tag small { color: #64748b; }
+  table { width: 100%; border-collapse: collapse; background: #1e293b; border-radius: 10px; overflow: hidden; }
+  th { background: #0f172a; color: #64748b; font-size: 0.75rem; text-transform: uppercase; padding: 10px 14px; text-align: left; }
+  td { padding: 10px 14px; border-bottom: 1px solid #0f172a; font-size: 0.87rem; }
+  tr:last-child td { border-bottom: none; }
+  .bar { height: 6px; background: #3b82f6; border-radius: 3px; min-width: 4px; }
+  .method-badge { background: #064e3b; color: #6ee7b7; padding: 2px 8px; border-radius: 10px; font-size: 0.75rem; }
+  .time { color: #64748b; font-size: 0.8rem; }
+  footer { text-align: center; color: #334155; font-size: 0.8rem; padding: 20px 0; border-top: 1px solid #1e293b; margin-top: 20px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>🛡️ X 사이버 위협 인텔리전스 대시보드</h1>
+    <div class="meta">마지막 업데이트: 2026-03-17 04:22 KST</div>
+  </header>
+
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="num">552</div>
+      <div class="label">수집된 트윗</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">49</div>
+      <div class="label">모니터링 타겟</div>
+    </div>
+    <div class="stat-card">
+      <div class="num threat-score">8/10</div>
+      <div class="label">위협 수준 (높음)</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">10</div>
+      <div class="label">주요 위협 트윗</div>
+    </div>
+  </div>
+
+  <section>
+    <h2>🤖 AI 위협 분석 요약</h2>
+    <div class="llm-box">🤖 [GEMINI 분석] 2026-03-17 04:23 KST<br>🟠 위협 점수: 8/10 (높음)<br><br><h3>1. 현재 주요 사이버보안 트렌드</h3><br>최근 공격자들은 ClickFix 캠페인을 통해 macOS 환경의 MacSync Infostealer를 유포하는 등 사용자 인터랙션을 악용한 정교한 사회공학적 기법을 적극 활용하고 있습니다. 또한, AI 에이전트와 자동화 도구를 활용하여 공격 속도를 높이고 있으며, 랜섬웨어 그룹은 단순 암호화에서 데이터 탈취 및 유출 위협(Data Extortion) 중심으로 비즈니스 모델을 전환하고 있습니다. 특히, 지정학적 갈등과 연계된 파괴적인 Wiper 공격이 의료 및 인프라 분야를 타겟으로 지속적으로 발생하고 있어 각별한 주의가 요구됩니다.<br><br><h3>2. 주요 위협 행위자 / 캠페인</h3><br>- <strong>Handala Hack (Void Manticore)</strong> (Unit42, Check Point): 이란 연계 그룹으로, Microsoft Intune 오용 및 Wiper 악성코드를 사용하여 의료 기술 기업(Stryker 등)을 타겟으로 파괴적 공격 수행.<br>- <strong>Sednit (APT28)</strong> (AhnLab ASEC): 러시아 연계 APT 그룹으로, 최근 공급망 공격 및 악성 DLL 주입을 통해 정보 탈취 활동 재개.<br>- <strong>Lotus Blossom</strong> (AhnLab ASEC): Notepad++ 공급망 인프라를 악용하여 정상 업데이트 프로세스에 악성 실행 파일을 주입하는 캠페인 수행.<br>- <strong>SmartApeSG</strong> (SANS ISC): ClickFix 페이지를 통해 Remcos RAT을 유포하는 캠페인 운영.<br><br><h3>3. 한국 관련 위협</h3><br>- <strong>Qilin 랜섬웨어</strong>: 국내 유명 피부과 및 글로벌 광고 기업의 한국 지사를 대상으로 랜섬웨어 공격 수행 (AhnLab ASEC).<br>- <strong>Winos4.0 악성코드</strong>: 카카오톡 설치 파일로 위장하여 SEO Poisoning 기법을 통해 유포되는 사례 확인 (AhnLab ASEC).<br>- <strong>기술보호 바우처</strong>: 중소기업 대상 기술보호 역량 강화 지원 사업이 활발히 진행 중이나, 공격자들의 타겟팅이 지속되고 있음 (이스트시큐리티).<br><br><h3>4. 주요 CVE / 취약점 (CVSS 우선)</h3><br>- <strong>CVE-2026-89102</strong>: Apache Tomcat, CVSS 9.8, RCE 취약점 (Unauthenticated).<br>- <strong>CVE-2026-29191</strong>: ZITADEL, CVSS 9.3, XSS 기반 Account Takeover.<br>- <strong>CVE-2026-3083 / 3085</strong>: GStreamer, CVSS 8.8, Heap Overflow 및 OOB Write.<br>- <strong>CVE-2025-59287</strong>: Windows Server WSUS, 원격 코드 실행 가능 (Wild에서 악용 중).<br>- <strong>CVE-2026-20127</strong>: Cisco Catalyst SD-WAN Manager, 악용 사례 보고됨.<br><br><h3>5. IOC 요약</h3><br>- <strong>도메인</strong>: office.com (사칭 공격 대상) (<a href="https://thehackernews.com/2026/03/weekly-recap-chrome-0-days-router.html" target="_blank">TheHackerNews</a>)<br>- <strong>해시</strong>: 이번 수집에서 직접적인 파일 해시값은 제공되지 않음.<br>- <strong>CVE</strong>: <br>    - CVE-2026-89102 (<a href="https://twitter.com/CyberAlliance26/status/2033556368850841782#m" target="_blank">CyberAlliance26</a>)<br>    - CVE-2026-29191 (<a href="https://twitter.com/CCBalert/status/2033557648344248762#m" target="_blank">CCBalert</a>)<br>    - CVE-2025-59287 (<a href="https://twitter.com/SecurityAid/status/2033560609506091291#m" target="_blank">SecurityAid</a>)<br>    - CVE-2026-3083/3085 (<a href="https://twitter.com/CCBalert/status/2033558801836544286#m" target="_blank">CCBalert</a>)<br><br><h3>6. 즉각 대응 권고</h3><br>- <strong>패치 적용</strong>: Apache Tomcat 및 GStreamer, Windows Server WSUS의 최신 보안 업데이트를 즉시 적용하십시오.<br>- <strong>사회공학적 공격 대비</strong>: SEO Poisoning 및 ClickFix 캠페인에 대비하여 공식 소프트웨어 다운로드 경로를 재확인하고, 사용자 대상 보안 인식 교육을 강화하십시오.<br>- <strong>엔드포인트 모니터링</strong>: Microsoft Intune 등 관리 도구의 비정상적인 접근 로그를 점검하고, Wiper 공격 대비 중요 데이터의 오프라인 백업을 수행하십시오.<br><br><h3>7. 위협 수준 평가</h3><br>- <strong>점수</strong>: 8/10<br>- <strong>근거</strong>: 의료 및 인프라를 타겟으로 한 Wiper 공격과 RCE 취약점의 활발한 악용이 결합되어 기업 운영에 치명적인 위협을 초래하고 있음.<br><br>📊 토큰: 이번 요청 16,145개 (입력 14,979 / 출력 1,166)<br>📈 일일 한도: 130,458 / 1,000,000 사용 (13.0%) | 잔여 869,542개</div>
+  </section>
+
+  <section>
+    <h2>🔥 주요 위협 트윗 TOP 5</h2>
+    
+        <div class="tweet-card">
+            <div class="tweet-header">
+                <span class="rank">#1</span>
+                <span class="threat-badge" style="background:#ef4444">HIGH</span>
+                <a href="https://twitter.com/CyberAlliance26/status/2033556368850841782#m" target="_blank" class="username">@CyberAlliance26</a>
+                <span class="date">Mar 16, 2026 · 2</span>
+            </div>
+            <div class="tweet-text">🚨 FRESH TOP THREAT ALERT 🚨   Critical RCE in Apache Tomcat  (March 16, 2026): CVE-2026-89102 – (CVSS 9.8)!  Unauthenticated attackers can send one crafted request to trigger a deserialization flaw and</div>
+            <div class="reason">💡 Apache Tomcat의 치명적인 RCE 취약점(CVE-2026-89102) 공개로 즉각적인 패치 필요</div>
+        </div>
+        <div class="tweet-card">
+            <div class="tweet-header">
+                <span class="rank">#2</span>
+                <span class="threat-badge" style="background:#ef4444">HIGH</span>
+                <a href="https://twitter.com/SecurityAid/status/2033560609506091291#m" target="_blank" class="username">@SecurityAid</a>
+                <span class="date">Mar 16, 2026 · 3</span>
+            </div>
+            <div class="tweet-text">Critical Windows Server WSUS Vulnerability Exploited in the Wild   CVE-2025-59287 allows a remote, unauthenticated attacker to execute arbitrary code and a PoC exploit is available. The post Critical </div>
+            <div class="reason">💡 Windows Server WSUS의 원격 코드 실행 취약점(CVE-2025-59287) 악용 사례 보고</div>
+        </div>
+        <div class="tweet-card">
+            <div class="tweet-header">
+                <span class="rank">#3</span>
+                <span class="threat-badge" style="background:#ef4444">HIGH</span>
+                <a href="https://twitter.com/CCBalert/status/2033557648344248762#m" target="_blank" class="username">@CCBalert</a>
+                <span class="date">Mar 16, 2026 · 2</span>
+            </div>
+            <div class="tweet-text">Warning: Critical #XSS Account Takeover in #ZITADEL. CVE-2026-29191 CVSS: 9.3. This flaw in Login V2 /saml-post can enable account takeover and then lead to serious compromise. #Patch #Patch #Patch</div>
+            <div class="reason">💡 ZITADEL의 계정 탈취가 가능한 치명적 XSS 취약점(CVE-2026-29191) 공개</div>
+        </div>
+        <div class="tweet-card">
+            <div class="tweet-header">
+                <span class="rank">#4</span>
+                <span class="threat-badge" style="background:#ef4444">HIGH</span>
+                <a href="https://twitter.com/cyberasia_io/status/2033059987166212463#m" target="_blank" class="username">@cyberasia_io</a>
+                <span class="date">Mar 15, 2026 · 5</span>
+            </div>
+            <div class="tweet-text">🚨 Alert 🇰🇷   The hacktivist group RipperSec has announced a coordinated cyberattack targeting the South Korean website Chonwoo chonwoo.co.kr #CyberSecurity #DDoSAttack #RipperSec #SouthKorea #CyberAtt</div>
+            <div class="reason">💡 RipperSec 해킹 그룹의 한국 대상 조직적 사이버 공격 시도 보고</div>
+        </div>
+        <div class="tweet-card">
+            <div class="tweet-header">
+                <span class="rank">#5</span>
+                <span class="threat-badge" style="background:#ef4444">HIGH</span>
+                <a href="https://twitter.com/FalconFeedsio/status/2033155547802067291#m" target="_blank" class="username">@FalconFeedsio</a>
+                <span class="date">Mar 15, 2026 · 1</span>
+            </div>
+            <div class="tweet-text">🚨DDoS Alert: 🇰🇷  RipperSec claims to have targeted the website of Institute for National Security Strategy (inss.re.kr).  NB : The site is up at the moment</div>
+            <div class="reason">💡 RipperSec 해킹 그룹이 한국 국가안보전략연구원 웹사이트를 표적으로 DDoS 공격 수행</div>
+        </div>
+  </section>
+
+  <section>
+    <h2>📊 트렌드 키워드</h2>
+    <div class="words-box"><span class="word-tag" style="font-size:34px">security <small>(79)</small></span> <span class="word-tag" style="font-size:33px">group <small>(76)</small></span> <span class="word-tag" style="font-size:31px">cybersecurity <small>(70)</small></span> <span class="word-tag" style="font-size:31px">threat <small>(68)</small></span> <span class="word-tag" style="font-size:28px">cve <small>(59)</small></span> <span class="word-tag" style="font-size:27px">cyber <small>(55)</small></span> <span class="word-tag" style="font-size:26px">data <small>(50)</small></span> <span class="word-tag" style="font-size:25px">cyberattack <small>(47)</small></span> <span class="word-tag" style="font-size:24px">malware <small>(42)</small></span> <span class="word-tag" style="font-size:24px">attack <small>(41)</small></span> </div>
+  </section>
+
+  <section>
+    <h2>#️⃣ 해시태그</h2>
+    <div class="words-box"><span class="hashtag-tag">cybersecurity <small>51</small></span> <span class="hashtag-tag">beaccountable_belift <small>17</small></span> <span class="hashtag-tag">heeseung_stays <small>17</small></span> <span class="hashtag-tag">enhypen_is_seven <small>16</small></span> <span class="hashtag-tag">infosec <small>14</small></span> <span class="hashtag-tag">cve <small>13</small></span> <span class="hashtag-tag">cyberattack <small>10</small></span> <span class="hashtag-tag">ai <small>10</small></span> </div>
+  </section>
+
+  <section>
+    <h2>📋 수집 현황</h2>
+    <table>
+      <thead><tr><th>타겟</th><th>트윗 수</th><th>비율</th><th>방법</th><th>수집 시각</th></tr></thead>
+      <tbody>
+        <tr>
+            <td>🔍 Cyberattack</td>
+            <td>20</td>
+            <td><div class="bar" style="width:18px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:06</td>
+        </tr>
+        <tr>
+            <td>🔍 CVE</td>
+            <td>20</td>
+            <td><div class="bar" style="width:18px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:07</td>
+        </tr>
+        <tr>
+            <td>🔍 MITRE ATT&CK</td>
+            <td>20</td>
+            <td><div class="bar" style="width:18px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:07</td>
+        </tr>
+        <tr>
+            <td>🔍 exploit</td>
+            <td>20</td>
+            <td><div class="bar" style="width:18px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:07</td>
+        </tr>
+        <tr>
+            <td>🔍 cyber attack</td>
+            <td>20</td>
+            <td><div class="bar" style="width:18px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:10</td>
+        </tr>
+        <tr>
+            <td>🔍 ZeroDay</td>
+            <td>20</td>
+            <td><div class="bar" style="width:18px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:10</td>
+        </tr>
+        <tr>
+            <td>🔍 0-day</td>
+            <td>20</td>
+            <td><div class="bar" style="width:18px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:11</td>
+        </tr>
+        <tr>
+            <td>🔍 vulnerability</td>
+            <td>20</td>
+            <td><div class="bar" style="width:18px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:11</td>
+        </tr>
+        <tr>
+            <td>🔍 DDoS</td>
+            <td>20</td>
+            <td><div class="bar" style="width:18px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:12</td>
+        </tr>
+        <tr>
+            <td>🔍 incident response</td>
+            <td>20</td>
+            <td><div class="bar" style="width:18px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:15</td>
+        </tr>
+        <tr>
+            <td>🔍 threat intelligence</td>
+            <td>20</td>
+            <td><div class="bar" style="width:18px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:16</td>
+        </tr>
+        <tr>
+            <td>🔍 APT</td>
+            <td>20</td>
+            <td><div class="bar" style="width:18px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:16</td>
+        </tr>
+        <tr>
+            <td>🔍 Cyberattack</td>
+            <td>20</td>
+            <td><div class="bar" style="width:18px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:17</td>
+        </tr>
+        <tr>
+            <td>🔍 cyber</td>
+            <td>20</td>
+            <td><div class="bar" style="width:18px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:22</td>
+        </tr>
+        <tr>
+            <td>🔍 security</td>
+            <td>20</td>
+            <td><div class="bar" style="width:18px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:22</td>
+        </tr>
+        <tr>
+            <td>🔍 해킹</td>
+            <td>19</td>
+            <td><div class="bar" style="width:17px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:12</td>
+        </tr>
+        <tr>
+            <td>🔍 DFIR</td>
+            <td>19</td>
+            <td><div class="bar" style="width:17px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:14</td>
+        </tr>
+        <tr>
+            <td>🔍 threat</td>
+            <td>19</td>
+            <td><div class="bar" style="width:17px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:22</td>
+        </tr>
+        <tr>
+            <td>🔍 malware</td>
+            <td>18</td>
+            <td><div class="bar" style="width:16px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:10</td>
+        </tr>
+        <tr>
+            <td>🔍 디도스</td>
+            <td>18</td>
+            <td><div class="bar" style="width:16px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:13</td>
+        </tr>
+        <tr>
+            <td>🔍 cybersecurity</td>
+            <td>18</td>
+            <td><div class="bar" style="width:16px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:21</td>
+        </tr>
+        <tr>
+            <td>🔍 group</td>
+            <td>17</td>
+            <td><div class="bar" style="width:15px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:21</td>
+        </tr>
+        <tr>
+            <td>👤 FalconFeedsio</td>
+            <td>17</td>
+            <td><div class="bar" style="width:15px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:18</td>
+        </tr>
+        <tr>
+            <td>👤 DailyDarkWeb</td>
+            <td>13</td>
+            <td><div class="bar" style="width:11px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:18</td>
+        </tr>
+        <tr>
+            <td>👤 vxunderground</td>
+            <td>12</td>
+            <td><div class="bar" style="width:10px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:20</td>
+        </tr>
+        <tr>
+            <td>👤 SwiftOnSecurity</td>
+            <td>12</td>
+            <td><div class="bar" style="width:10px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:21</td>
+        </tr>
+        <tr>
+            <td>🔍 취약점</td>
+            <td>10</td>
+            <td><div class="bar" style="width:9px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:11</td>
+        </tr>
+        <tr>
+            <td>🔍 Lazarus Group</td>
+            <td>8</td>
+            <td><div class="bar" style="width:7px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:09</td>
+        </tr>
+        <tr>
+            <td>🔍 정보 유출</td>
+            <td>8</td>
+            <td><div class="bar" style="width:7px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:14</td>
+        </tr>
+        <tr>
+            <td>🔍 APT28</td>
+            <td>7</td>
+            <td><div class="bar" style="width:6px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:09</td>
+        </tr>
+        <tr>
+            <td>🔍 RipperSec</td>
+            <td>6</td>
+            <td><div class="bar" style="width:5px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:08</td>
+        </tr>
+        <tr>
+            <td>🔍 랜섬웨어</td>
+            <td>6</td>
+            <td><div class="bar" style="width:5px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:12</td>
+        </tr>
+        <tr>
+            <td>👤 DarkWebInformer</td>
+            <td>6</td>
+            <td><div class="bar" style="width:5px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:17</td>
+        </tr>
+        <tr>
+            <td>🔍 사이버 위협</td>
+            <td>4</td>
+            <td><div class="bar" style="width:3px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:13</td>
+        </tr>
+        <tr>
+            <td>🔍 사이버 보안</td>
+            <td>4</td>
+            <td><div class="bar" style="width:3px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:14</td>
+        </tr>
+        <tr>
+            <td>🔍 악성코드</td>
+            <td>4</td>
+            <td><div class="bar" style="width:3px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:16</td>
+        </tr>
+        <tr>
+            <td>🔍 사이버 공격</td>
+            <td>3</td>
+            <td><div class="bar" style="width:2px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:13</td>
+        </tr>
+        <tr>
+            <td>🔍 한국 해킹</td>
+            <td>2</td>
+            <td><div class="bar" style="width:1px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:10</td>
+        </tr>
+        <tr>
+            <td>👤 H4ckManac</td>
+            <td>2</td>
+            <td><div class="bar" style="width:1px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:19</td>
+        </tr>
+        <tr>
+            <td>🔍 DDoS Korea</td>
+            <td>0</td>
+            <td><div class="bar" style="width:0px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:08</td>
+        </tr>
+        <tr>
+            <td>🔍 MegaMedusa</td>
+            <td>0</td>
+            <td><div class="bar" style="width:0px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:08</td>
+        </tr>
+        <tr>
+            <td>🔍 ransomware Korea</td>
+            <td>0</td>
+            <td><div class="bar" style="width:0px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:09</td>
+        </tr>
+        <tr>
+            <td>🔍 디지털 포렌식</td>
+            <td>0</td>
+            <td><div class="bar" style="width:0px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:15</td>
+        </tr>
+        <tr>
+            <td>🔍 사이버 인텔리전스</td>
+            <td>0</td>
+            <td><div class="bar" style="width:0px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:15</td>
+        </tr>
+        <tr>
+            <td>👤 HalcyonAi</td>
+            <td>0</td>
+            <td><div class="bar" style="width:0px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:17</td>
+        </tr>
+        <tr>
+            <td>👤 MonThreat</td>
+            <td>0</td>
+            <td><div class="bar" style="width:0px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:18</td>
+        </tr>
+        <tr>
+            <td>👤 GossiTheDog</td>
+            <td>0</td>
+            <td><div class="bar" style="width:0px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:19</td>
+        </tr>
+        <tr>
+            <td>👤 MalwareTechBlog</td>
+            <td>0</td>
+            <td><div class="bar" style="width:0px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:20</td>
+        </tr>
+        <tr>
+            <td>👤 taviso</td>
+            <td>0</td>
+            <td><div class="bar" style="width:0px"></div></td>
+            <td><span class="method-badge">playwright</span></td>
+            <td class="time">2026-03-17 04:20</td>
+        </tr></tbody>
+    </table>
+  </section>
+
+  <footer>
+    X Threat Intelligence Crawler · GitHub Actions 자동 업데이트 · 2026-03-17 04:22 KST
+  </footer>
+</div>
+</body>
+</html>
