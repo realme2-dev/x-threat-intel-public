@@ -414,14 +414,15 @@ def run_llm_analysis(
     try:
         logger.info("LLM 분석 시작 (backend=%s, tweets=%d개)", backend.name, len(tweets))
         result = None
-        for attempt in range(3):
+        for attempt in range(5):
             try:
                 result = backend.complete(SYSTEM_PROMPT, prompt)
                 break
             except requests.HTTPError as e:
-                if e.response is not None and e.response.status_code == 503 and attempt < 2:
-                    logger.warning("LLM 503 오류, 10초 후 재시도 (%d/3)...", attempt + 1)
-                    time.sleep(10)
+                if e.response is not None and e.response.status_code == 503 and attempt < 4:
+                    wait = 30 * (attempt + 1)
+                    logger.warning("LLM 503 오류, %d초 후 재시도 (%d/5)...", wait, attempt + 1)
+                    time.sleep(wait)
                 else:
                     raise
         if result is None:
@@ -547,14 +548,15 @@ def run_tweet_selection(
     try:
         logger.info("LLM 트윗 선별 시작 (backend=%s, tweets=%d개)", backend.name, len(tweets))
         result = None
-        for attempt in range(3):
+        for attempt in range(5):
             try:
                 result = backend.complete(system, prompt)
                 break
             except requests.HTTPError as e:
-                if e.response is not None and e.response.status_code == 503 and attempt < 2:
-                    logger.warning("LLM 트윗 선별 503 오류, 10초 후 재시도 (%d/3)...", attempt + 1)
-                    time.sleep(10)
+                if e.response is not None and e.response.status_code == 503 and attempt < 4:
+                    wait = 30 * (attempt + 1)
+                    logger.warning("LLM 트윗 선별 503 오류, %d초 후 재시도 (%d/5)...", wait, attempt + 1)
+                    time.sleep(wait)
                 else:
                     raise
         if result is None:
@@ -733,13 +735,15 @@ def run_korea_tweet_filter(
 
     try:
         result_raw = None
-        for attempt in range(3):
+        for attempt in range(5):
             try:
                 result_raw = backend.complete(KOREA_SELECTION_SYSTEM, prompt)
                 break
             except requests.HTTPError as e:
-                if e.response is not None and e.response.status_code == 503 and attempt < 2:
-                    time.sleep(10)
+                if e.response is not None and e.response.status_code == 503 and attempt < 4:
+                    wait = 30 * (attempt + 1)
+                    logger.warning("LLM 한국 선별 503 오류, %d초 후 재시도 (%d/5)...", wait, attempt + 1)
+                    time.sleep(wait)
                 else:
                     raise
 
