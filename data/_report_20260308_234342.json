@@ -1,0 +1,531 @@
+{
+  "generated_at": "2026-03-08T23:43:42.259464",
+  "total_tweets": 111,
+  "total_targets": 6,
+  "keyword_summary": [],
+  "account_summary": [
+    {
+      "target": "HalcyonAi",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-08T23:42:01.066903",
+      "top_users": [
+        [
+          "@HalcyonAi",
+          14
+        ],
+        [
+          "@jc_vazquez",
+          3
+        ],
+        [
+          "@_kernelcon_",
+          1
+        ]
+      ],
+      "hashtags": [
+        "RaaS",
+        "Vect",
+        "ransomware",
+        "ransomware",
+        "Akira"
+      ],
+      "sample_texts": [
+        "New #RaaS. Real capability.  #Vect is live - and already hitting orgs in Brazil & South Africa.  Wha",
+        "A $0.05 paperclip beat a million-dollar #ransomware crew.  Play locked victims out of SonicWall fire"
+      ],
+      "sample_tweets": [
+        {
+          "text": "New #RaaS. Real capability.  #Vect is live - and already hitting orgs in Brazil & South Africa.  What stands out: • Custom C++ build (not recycled cod",
+          "username": "HalcyonAi",
+          "link": "https://twitter.com/HalcyonAi/status/2030039483043733506#m",
+          "date": "Mar 6, 2026 · 9:"
+        },
+        {
+          "text": "A $0.05 paperclip beat a million-dollar #ransomware crew.  Play locked victims out of SonicWall firewalls—no creds worked, even breakglass.   The only",
+          "username": "HalcyonAi",
+          "link": "https://twitter.com/HalcyonAi/status/2030001219599581484#m",
+          "date": "Mar 6, 2026 · 7:"
+        },
+        {
+          "text": "Traditional detection looks for tools. Modern #ransomware avoids them.  #Akira used LSASS memory dumping to steal credentials quietly and stage access",
+          "username": "HalcyonAi",
+          "link": "https://twitter.com/HalcyonAi/status/2029989402064130438#m",
+          "date": "Mar 6, 2026 · 6:"
+        }
+      ]
+    },
+    {
+      "target": "DarkWebInformer",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 19,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-08T23:42:19.829713",
+      "top_users": [
+        [
+          "@DarkWebInformer",
+          3
+        ],
+        [
+          "@grok",
+          2
+        ],
+        [
+          "@shabat_12",
+          2
+        ]
+      ],
+      "hashtags": [],
+      "sample_texts": [
+        "Ça fuit de partout bordel",
+        "10k+ medical lives exposed while the hacker mocks their security on a forum. Security from day one i"
+      ],
+      "sample_tweets": [
+        {
+          "text": "Ça fuit de partout bordel",
+          "username": "_saintete_pepe",
+          "link": "https://twitter.com/_saintete_pepe/status/2030624556323324323#m",
+          "date": "Mar 8, 2026 · 12"
+        },
+        {
+          "text": "10k+ medical lives exposed while the hacker mocks their security on a forum. Security from day one isn't optional - especially for healthcare.",
+          "username": "JakeSmGaming",
+          "link": "https://twitter.com/JakeSmGaming/status/2030588076142059675#m",
+          "date": "Mar 8, 2026 · 10"
+        },
+        {
+          "text": "Security teams beware.",
+          "username": "StormyCloudInc",
+          "link": "https://twitter.com/StormyCloudInc/status/2030576673746497643#m",
+          "date": "Mar 8, 2026 · 9:"
+        }
+      ]
+    },
+    {
+      "target": "MonThreat",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 18,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-08T23:42:42.098883",
+      "top_users": [
+        [
+          "@MonThreat",
+          12
+        ],
+        [
+          "@AvaoControl",
+          3
+        ],
+        [
+          "@JustWantToQ1",
+          1
+        ]
+      ],
+      "hashtags": [
+        "DataLeak",
+        "Cybercrime",
+        "ThreatIntelligence",
+        "DarkWeb",
+        "Cybercrime"
+      ],
+      "sample_texts": [
+        "🚨 20 TB of Corporate Data from Major Companies Put Up for Sale in Underground Forum 🚨  A threat acto",
+        "Advanced loaders using polymorphism, steganography, and runtime bytecode execution show how attacker"
+      ],
+      "sample_tweets": [
+        {
+          "text": "🚨 20 TB of Corporate Data from Major Companies Put Up for Sale in Underground Forum 🚨  A threat actor using the alias “Benneton” posted an auction lis",
+          "username": "MonThreat",
+          "link": "https://twitter.com/MonThreat/status/2030612801379594500#m",
+          "date": "Mar 8, 2026 · 11"
+        },
+        {
+          "text": "Advanced loaders using polymorphism, steganography, and runtime bytecode execution show how attackers are increasingly designing malware to evade trad",
+          "username": "AvaoControl",
+          "link": "https://twitter.com/AvaoControl/status/2029886385214333273#m",
+          "date": "Mar 6, 2026 · 11"
+        },
+        {
+          "text": "I asked one of these newer people to write a simple UD loader one time in NIM to show me their knowledge and they gave me a 13mb binary.😅",
+          "username": "JustWantToQ1",
+          "link": "https://twitter.com/JustWantToQ1/status/2029777356190061046#m",
+          "date": "Mar 6, 2026 · 4:"
+        }
+      ]
+    },
+    {
+      "target": "DailyDarkWeb",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-08T23:43:01.329388",
+      "top_users": [
+        [
+          "@DailyDarkWeb",
+          6
+        ],
+        [
+          "@JustWantToQ1",
+          5
+        ],
+        [
+          "@HomieDntFknCare",
+          2
+        ]
+      ],
+      "hashtags": [
+        "CyberWar",
+        "CyberThreatIntelligence",
+        "Hacktivism",
+        "Infosec",
+        "CyberSecurity"
+      ],
+      "sample_texts": [
+        "Another reminder about cybersecurity risks.",
+        "👀"
+      ],
+      "sample_tweets": [
+        {
+          "text": "Another reminder about cybersecurity risks.",
+          "username": "StormyCloudInc",
+          "link": "https://twitter.com/StormyCloudInc/status/2030241146778378557#m",
+          "date": "Mar 7, 2026 · 11"
+        },
+        {
+          "text": "👀",
+          "username": "x86x64_IA32",
+          "link": "https://twitter.com/x86x64_IA32/status/2030197569591148766#m",
+          "date": "Mar 7, 2026 · 8:"
+        },
+        {
+          "text": "Leaks involving source code and NDAs can have long-term consequences for any company. Incidents like this keep showing why platforms like @StorXNetwor",
+          "username": "AntonioKop12",
+          "link": "https://twitter.com/AntonioKop12/status/2030166487877705758#m",
+          "date": "Mar 7, 2026 · 6:"
+        }
+      ]
+    },
+    {
+      "target": "FalconFeedsio",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-08T23:43:20.003567",
+      "top_users": [
+        [
+          "@FalconFeedsio",
+          18
+        ],
+        [
+          "@ravirockks",
+          2
+        ]
+      ],
+      "hashtags": [
+        "CyberThreatIntelligence",
+        "NationalSecurity",
+        "Iran",
+        "CyberWarfare",
+        "Geopolitics"
+      ],
+      "sample_texts": [
+        "🚨DDoS Alert: 🇮🇱  BD Anonymous claims to have targeted the website of SONY (sony.co.il).  NB : The si",
+        "🚨DDoS Alert: 🇮🇱  RipperSec claims to have targeted the website of Wingate Institute - National Insti"
+      ],
+      "sample_tweets": [
+        {
+          "text": "🚨DDoS Alert: 🇮🇱  BD Anonymous claims to have targeted the website of SONY (sony.co.il).  NB : The site is up at the moment.",
+          "username": "FalconFeedsio",
+          "link": "https://twitter.com/FalconFeedsio/status/2030645618335744434#m",
+          "date": "Mar 8, 2026 · 2:"
+        },
+        {
+          "text": "🚨DDoS Alert: 🇮🇱  RipperSec claims to have targeted the website of Wingate Institute - National Institute for Sports Excellence  (wingate.org.il).",
+          "username": "FalconFeedsio",
+          "link": "https://twitter.com/FalconFeedsio/status/2030640330283053208#m",
+          "date": "Mar 8, 2026 · 1:"
+        },
+        {
+          "text": "🚨 DDoS Alert: 🇮🇱  TEAM FEARLESS claims to have targeted multiple websites in Israel.  * Bank of Israel * Keshet International * Petah Tikva Municipali",
+          "username": "FalconFeedsio",
+          "link": "https://twitter.com/FalconFeedsio/status/2030632502193463602#m",
+          "date": "Mar 8, 2026 · 1:"
+        }
+      ]
+    },
+    {
+      "target": "H4ckManac",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 14,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-08T23:43:42.240406",
+      "top_users": [
+        [
+          "@AvaoControl",
+          3
+        ],
+        [
+          "@ComCat_05",
+          1
+        ],
+        [
+          "@AnyKumar826971",
+          1
+        ]
+      ],
+      "hashtags": [],
+      "sample_texts": [
+        "Shai Hulud hit CrowdStrike packages. bundle.js runs TruffleHog on install, steals cloud tokens, pers",
+        "Kindly forward these apk so we can track"
+      ],
+      "sample_tweets": [
+        {
+          "text": "Shai Hulud hit CrowdStrike packages. bundle.js runs TruffleHog on install, steals cloud tokens, persists via GitHub Actions. no CVE. postinstall behav",
+          "username": "ComCat_05",
+          "link": "https://twitter.com/ComCat_05/status/2030455674279432281#m",
+          "date": "Mar 8, 2026 · 1:"
+        },
+        {
+          "text": "Kindly forward these apk so we can track",
+          "username": "AnyKumar826971",
+          "link": "https://twitter.com/AnyKumar826971/status/2029917141798113523#m",
+          "date": "Mar 6, 2026 · 1:"
+        },
+        {
+          "text": "",
+          "username": "af1_doctor",
+          "link": "https://twitter.com/af1_doctor/status/2029854955218014258#m",
+          "date": "Mar 6, 2026 · 9:"
+        }
+      ]
+    }
+  ],
+  "top_words": [
+    [
+      "ransomware",
+      32
+    ],
+    [
+      "cyber",
+      32
+    ],
+    [
+      "claims",
+      32
+    ],
+    [
+      "iran",
+      21
+    ],
+    [
+      "group",
+      21
+    ],
+    [
+      "threat",
+      19
+    ],
+    [
+      "alert",
+      18
+    ],
+    [
+      "government",
+      16
+    ],
+    [
+      "cybersecurity",
+      15
+    ],
+    [
+      "data",
+      15
+    ],
+    [
+      "actor",
+      14
+    ],
+    [
+      "gov",
+      14
+    ],
+    [
+      "ddos",
+      14
+    ],
+    [
+      "ministry",
+      14
+    ],
+    [
+      "bh",
+      14
+    ],
+    [
+      "forum",
+      13
+    ],
+    [
+      "targeted",
+      13
+    ],
+    [
+      "cybercrime",
+      12
+    ],
+    [
+      "infrastructure",
+      12
+    ],
+    [
+      "ai",
+      11
+    ]
+  ],
+  "top_hashtags": [
+    [
+      "cybersecurity",
+      12
+    ],
+    [
+      "darkweb",
+      11
+    ],
+    [
+      "ransomware",
+      10
+    ],
+    [
+      "threatintelligence",
+      10
+    ],
+    [
+      "cyberthreatintelligence",
+      8
+    ],
+    [
+      "infosec",
+      7
+    ],
+    [
+      "iran",
+      5
+    ],
+    [
+      "cybercrime",
+      5
+    ],
+    [
+      "cyberwar",
+      5
+    ],
+    [
+      "threatintel",
+      5
+    ]
+  ],
+  "top_mentions": [
+    [
+      "halcyonai",
+      5
+    ],
+    [
+      "storxnetwork",
+      2
+    ],
+    [
+      "infosecuritymag",
+      1
+    ],
+    [
+      "gobuildops",
+      1
+    ],
+    [
+      "datagrail",
+      1
+    ],
+    [
+      "verkadahq",
+      1
+    ],
+    [
+      "vast_data",
+      1
+    ],
+    [
+      "forbes",
+      1
+    ],
+    [
+      "axios",
+      1
+    ],
+    [
+      "samsabin923",
+      1
+    ]
+  ],
+  "top_users": [
+    [
+      "@FalconFeedsio",
+      18
+    ],
+    [
+      "@HalcyonAi",
+      14
+    ],
+    [
+      "@MonThreat",
+      12
+    ],
+    [
+      "@AvaoControl",
+      6
+    ],
+    [
+      "@JustWantToQ1",
+      6
+    ],
+    [
+      "@DailyDarkWeb",
+      6
+    ],
+    [
+      "@jc_vazquez",
+      3
+    ],
+    [
+      "@DarkWebInformer",
+      3
+    ],
+    [
+      "@StormyCloudInc",
+      2
+    ],
+    [
+      "@grok",
+      2
+    ]
+  ],
+  "llm_summary": ""
+}

@@ -1,0 +1,2477 @@
+{
+  "generated_at": "2026-03-17T04:22:46.592085",
+  "total_tweets": 552,
+  "total_targets": 49,
+  "keyword_summary": [
+    {
+      "target": "Cyberattack",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:06:53.922158",
+      "top_users": [
+        [
+          "@M_Miho_JPN",
+          1
+        ],
+        [
+          "@brentdavenpor14",
+          1
+        ],
+        [
+          "@grasshopperbank",
+          1
+        ]
+      ],
+      "hashtags": [
+        "cybersecurity",
+        "infosec",
+        "datasecurity",
+        "malware",
+        "ransomware"
+      ],
+      "sample_texts": [
+        "Poland’s National Centre for Nuclear Research (NCBJ) says hackers targeted its IT infrastructure, bu",
+        "#cybersecurity #infosec #datasecurity #malware #ransomware #phishing #ethicalhacking #cybersecuritya"
+      ],
+      "sample_tweets": [
+        {
+          "text": "Poland’s National Centre for Nuclear Research (NCBJ) says hackers targeted its IT infrastructure, but the attack was detected and blocked before causi",
+          "username": "M_Miho_JPN",
+          "link": "https://twitter.com/M_Miho_JPN/status/2033560323047981106#m",
+          "date": "Mar 16, 2026 · 3:05 PM UTC"
+        },
+        {
+          "text": "#cybersecurity #infosec #datasecurity #malware #ransomware #phishing #ethicalhacking #cybersecurityawareness #cybercrime #cybersecurityawareness #cybe",
+          "username": "brentdavenpor14",
+          "link": "https://twitter.com/brentdavenpor14/status/2033559603569426478#m",
+          "date": "Mar 16, 2026 · 3:02 PM UTC"
+        },
+        {
+          "text": "A bank vault won’t stop a cyberattack.  Modern banking threats live in software, not buildings.  Read our latest blog on why digital banks often have ",
+          "username": "grasshopperbank",
+          "link": "https://twitter.com/grasshopperbank/status/2033559380243714531#m",
+          "date": "Mar 16, 2026 · 3:01 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "CVE",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:07:13.406022",
+      "top_users": [
+        [
+          "@CveFindCom",
+          8
+        ],
+        [
+          "@TheHackerWire",
+          3
+        ],
+        [
+          "@CCBalert",
+          2
+        ]
+      ],
+      "hashtags": [
+        "cybersecurity",
+        "infosec",
+        "CVE",
+        "vulnerability",
+        "RCE"
+      ],
+      "sample_texts": [
+        "Critical Windows Server WSUS Vulnerability Exploited in the Wild   CVE-2025-59287 allows a remote, u",
+        "Monday's CVE Brief is live:  🔴 11 actively exploited 🟡 40 high priority  Stay protected → cvebrief.c"
+      ],
+      "sample_tweets": [
+        {
+          "text": "Critical Windows Server WSUS Vulnerability Exploited in the Wild   CVE-2025-59287 allows a remote, unauthenticated attacker to execute arbitrary code ",
+          "username": "SecurityAid",
+          "link": "https://twitter.com/SecurityAid/status/2033560609506091291#m",
+          "date": "Mar 16, 2026 · 3:06 PM UTC"
+        },
+        {
+          "text": "Monday's CVE Brief is live:  🔴 11 actively exploited 🟡 40 high priority  Stay protected → cvebrief.com #cybersecurity #infosec #CVE #vulnerability",
+          "username": "DailyCVEBrief",
+          "link": "https://twitter.com/DailyCVEBrief/status/2033559370013802507#m",
+          "date": "Mar 16, 2026 · 3:01 PM UTC"
+        },
+        {
+          "text": "🟠 CVE-2026-4214 - High  A flaw has been found in D-Link DNS-120, DNR-202L, DNS-315L, DNS-320, DNS-320L, DNS-320LW, DNS-321, DNR-322L, DNS-323, DNS-325",
+          "username": "TheHackerWire",
+          "link": "https://twitter.com/TheHackerWire/status/2033559234634457470#m",
+          "date": "Mar 16, 2026 · 3:01 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "MITRE ATT&CK",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:07:32.334605",
+      "top_users": [
+        [
+          "@davidsheyi",
+          4
+        ],
+        [
+          "@grok",
+          3
+        ],
+        [
+          "@MacLockdown_cl",
+          2
+        ]
+      ],
+      "hashtags": [
+        "AISecurity",
+        "CompTIA",
+        "SecAIPlus",
+        "Security",
+        "BlueTeam"
+      ],
+      "sample_texts": [
+        "Want to flag anomalies within your AWS environment and overlay them with MITRE ATT&CK? We have exten",
+        "Most security teams have MITRE ATT&CK memorized. Almost none have looked at MITRE ATLAS.  ATLAS is A"
+      ],
+      "sample_tweets": [
+        {
+          "text": "Want to flag anomalies within your AWS environment and overlay them with MITRE ATT&CK? We have extended our analytics engine to process CloudTrail log",
+          "username": "alphasoc",
+          "link": "https://twitter.com/alphasoc/status/2033559467439030774#m",
+          "date": "Mar 16, 2026 · 3:02 PM UTC"
+        },
+        {
+          "text": "Most security teams have MITRE ATT&CK memorized. Almost none have looked at MITRE ATLAS.  ATLAS is ATT&CK's AI-specific extension — tactics and techni",
+          "username": "SecAIPlus",
+          "link": "https://twitter.com/SecAIPlus/status/2033543815752270284#m",
+          "date": "Mar 16, 2026 · 2:00 PM UTC"
+        },
+        {
+          "text": "3/ MITRE ATT&CK technique T1566 details phishing methodologies. Train employees to spot phishing attempts and use email filtering tools. #Security #Bl",
+          "username": "davidsheyi",
+          "link": "https://twitter.com/davidsheyi/status/2033515131372515646#m",
+          "date": "Mar 16, 2026 · 12:06 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "exploit",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:07:51.262889",
+      "top_users": [
+        [
+          "@trustyien",
+          4
+        ],
+        [
+          "@jkshflwr",
+          3
+        ],
+        [
+          "@Hafizaryyy",
+          2
+        ]
+      ],
+      "hashtags": [
+        "BEACCOUNTABLE_BELIFT",
+        "ENHYPEN_IS_SEVEN",
+        "HEESEUNG_STAYS",
+        "BEACCOUNTABLE_BELIFT",
+        "ENHYPEN_IS_SEVEN"
+      ],
+      "sample_texts": [
+        "Je crois que pas mal attende de lui qu'il fasse un exploit.  Mais pour moi, son match, son activité,",
+        "We demand that HEESEUNG remains fully part of ENHYPEN, and we will continue to hold BE:LIFT LAB acco"
+      ],
+      "sample_tweets": [
+        {
+          "text": "Je crois que pas mal attende de lui qu'il fasse un exploit.  Mais pour moi, son match, son activité, le volume qu'il met, l'accélération qu'il met dan",
+          "username": "vinzealand",
+          "link": "https://twitter.com/vinzealand/status/2033560810346152372#m",
+          "date": "Mar 16, 2026 · 3:07 PM UTC"
+        },
+        {
+          "text": "We demand that HEESEUNG remains fully part of ENHYPEN, and we will continue to hold BE:LIFT LAB accountable for any actions that threaten the group's ",
+          "username": "Brightupyourday",
+          "link": "https://twitter.com/Brightupyourday/status/2033560780705346013#m",
+          "date": "Mar 16, 2026 · 3:07 PM UTC"
+        },
+        {
+          "text": "no doubt DO NOT EXPLOIT THE LEGACY OF ENHYPEN #BEACCOUNTABLE_BELIFT #ENHYPEN_IS_SEVEN #HEESEUNG_STAYS",
+          "username": "trustyien",
+          "link": "https://twitter.com/trustyien/status/2033560778867900799#m",
+          "date": "Mar 16, 2026 · 3:07 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "RipperSec",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 6,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:08:10.043699",
+      "top_users": [
+        [
+          "@cyberasia_io",
+          3
+        ],
+        [
+          "@FalconFeedsio",
+          3
+        ]
+      ],
+      "hashtags": [
+        "CyberSecurity",
+        "DataBreach",
+        "RipperSec",
+        "HackingNews",
+        "CUFI"
+      ],
+      "sample_texts": [
+        "🚨 Alert 🇺🇸  The hacktivist group RipperSec has launched a targeted cyberattack against the website o",
+        "🚨DDoS Alert: 🇺🇸  RipperSec claims to have targeted the website of Christians United for Israel (cufi"
+      ],
+      "sample_tweets": [
+        {
+          "text": "🚨 Alert 🇺🇸  The hacktivist group RipperSec has launched a targeted cyberattack against the website of Christians United for Israel (CUFI) cufi.org #Cy",
+          "username": "cyberasia_io",
+          "link": "https://twitter.com/cyberasia_io/status/2033312472292319492#m",
+          "date": "Mar 15, 2026 · 10:40 PM UTC"
+        },
+        {
+          "text": "🚨DDoS Alert: 🇺🇸  RipperSec claims to have targeted the website of Christians United for Israel (cufi.org).",
+          "username": "FalconFeedsio",
+          "link": "https://twitter.com/FalconFeedsio/status/2033187453843145172#m",
+          "date": "Mar 15, 2026 · 2:23 PM UTC"
+        },
+        {
+          "text": "🚨DDoS Alert: 🇮🇱  RipperSec claims to have targeted the website of International Christian Embassy Jerusalem (icej.org).  NB : The site is up at the mo",
+          "username": "FalconFeedsio",
+          "link": "https://twitter.com/FalconFeedsio/status/2033179793735491772#m",
+          "date": "Mar 15, 2026 · 1:53 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "DDoS Korea",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:08:28.654873",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "MegaMedusa",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:08:47.249495",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "Lazarus Group",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 8,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:09:06.508501",
+      "top_users": [
+        [
+          "@grok",
+          1
+        ],
+        [
+          "@chadocl",
+          1
+        ],
+        [
+          "@nzbstandardbred",
+          1
+        ]
+      ],
+      "hashtags": [
+        "ciberseguridad",
+        "CyberSecurity"
+      ],
+      "sample_texts": [
+        "North Korea funds its missile & nuclear programs through a command economy that diverts 15-26% of it",
+        "That third option is the real threat. Right now there's a firewall between DPRK financial hackers (L"
+      ],
+      "sample_tweets": [
+        {
+          "text": "North Korea funds its missile & nuclear programs through a command economy that diverts 15-26% of its ~$25-40B GDP to military priorities, extracting ",
+          "username": "grok",
+          "link": "https://twitter.com/grok/status/2033507397923127793#m",
+          "date": "Mar 16, 2026 · 11:35 AM UTC"
+        },
+        {
+          "text": "That third option is the real threat. Right now there's a firewall between DPRK financial hackers (Lazarus Group) and its IT freelancers.  Collapsing ",
+          "username": "chadocl",
+          "link": "https://twitter.com/chadocl/status/2033392522836557948#m",
+          "date": "Mar 16, 2026 · 3:58 AM UTC"
+        },
+        {
+          "text": "The Lazarus Effect Makes Winning Start To Northern Campaign 💥  The Lazarus Effect (NZ) made a winning start to his northern campaign when taking out t",
+          "username": "nzbstandardbred",
+          "link": "https://twitter.com/nzbstandardbred/status/2033293409017118767#m",
+          "date": "Mar 15, 2026 · 9:25 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "APT28",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 7,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:09:25.239902",
+      "top_users": [
+        [
+          "@the_yellow_fall",
+          1
+        ],
+        [
+          "@UK_Daniel_Card",
+          1
+        ],
+        [
+          "@01ra66it",
+          1
+        ]
+      ],
+      "hashtags": [
+        "CyberSecurity",
+        "ThreatIntel",
+        "APT28",
+        "FancyBear",
+        "Roundcube"
+      ],
+      "sample_texts": [
+        "Hunt Intelligence unmasks APT28's 'Roundish' toolkit from an exposed server, revealing advanced CSS ",
+        "thehackernews.com/2026/03/ap…"
+      ],
+      "sample_tweets": [
+        {
+          "text": "Hunt Intelligence unmasks APT28's 'Roundish' toolkit from an exposed server, revealing advanced CSS side-channel attacks and stealthy Linux implants. ",
+          "username": "the_yellow_fall",
+          "link": "https://twitter.com/the_yellow_fall/status/2033457868083810718#m",
+          "date": "Mar 16, 2026 · 8:18 AM UTC"
+        },
+        {
+          "text": "thehackernews.com/2026/03/ap…",
+          "username": "UK_Daniel_Card",
+          "link": "https://twitter.com/UK_Daniel_Card/status/2033440929177055511#m",
+          "date": "Mar 16, 2026 · 7:11 AM UTC"
+        },
+        {
+          "text": "APT28のRoundishは、Roundcubeを狙うロシアGRU系の実戦的なメール窃取キット。重要なのは、認証情報、メール、連絡先、2FAシークレットの窃取だけでなく、Linux持続化用Go製インプラントまで含む“運用一式”が露出した点。    Hunt.ioは2026年1月、203.161.5",
+          "username": "01ra66it",
+          "link": "https://twitter.com/01ra66it/status/2033436972648382865#m",
+          "date": "Mar 16, 2026 · 6:55 AM UTC"
+        }
+      ]
+    },
+    {
+      "target": "ransomware Korea",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:09:43.939900",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "한국 해킹",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 2,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:10:03.935037",
+      "top_users": [
+        [
+          "@DSKstella",
+          1
+        ],
+        [
+          "@jaem_0818",
+          1
+        ]
+      ],
+      "hashtags": [],
+      "sample_texts": [
+        "아 사이렌 오더 켜니까 일본에서 한국 어플로 사이렌오더 되나 궁금해서 로그인 해봤다가 해킹 의심 받고 일시정지 당한 거 생각남ㅋㅋㅋㅋㅋㅋ",
+        "유튜버들도 그렇고 트위터도 그렇고 쿠팡이 해킹 제대로 수습도 안 하고 한국 개무시 했는데도 아직도 소비하는 사람들이 있다는게 놀라움  이러니까 호구로 보고 무시하지"
+      ],
+      "sample_tweets": [
+        {
+          "text": "아 사이렌 오더 켜니까 일본에서 한국 어플로 사이렌오더 되나 궁금해서 로그인 해봤다가 해킹 의심 받고 일시정지 당한 거 생각남ㅋㅋㅋㅋㅋㅋ",
+          "username": "DSKstella",
+          "link": "https://twitter.com/DSKstella/status/2033463437108576745#m",
+          "date": "Mar 16, 2026 · 8:40 AM UTC"
+        },
+        {
+          "text": "유튜버들도 그렇고 트위터도 그렇고 쿠팡이 해킹 제대로 수습도 안 하고 한국 개무시 했는데도 아직도 소비하는 사람들이 있다는게 놀라움  이러니까 호구로 보고 무시하지",
+          "username": "jaem_0818",
+          "link": "https://twitter.com/jaem_0818/status/2033079291127398870#m",
+          "date": "Mar 15, 2026 · 7:14 AM UTC"
+        }
+      ]
+    },
+    {
+      "target": "cyber attack",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:10:23.013182",
+      "top_users": [
+        [
+          "@s_ai_ra_m",
+          2
+        ],
+        [
+          "@Don_Juantoshi",
+          2
+        ],
+        [
+          "@OSN_Reports",
+          1
+        ]
+      ],
+      "hashtags": [
+        "Cybersecurity",
+        "OSINT",
+        "Security",
+        "Cyber",
+        "Cybersecurity"
+      ],
+      "sample_texts": [
+        "🚨 ISRAELI CYBER ATTACK 🇮🇱  FOUR SHABBAT DAYS saw SIGINT operations targeting Palestinian networks. T",
+        "Targeted Phishing Attack Breaches Biotech Company Data ift.tt/hOFqUzo #Security #Cyber #Cybersecurit"
+      ],
+      "sample_tweets": [
+        {
+          "text": "🚨 ISRAELI CYBER ATTACK 🇮🇱  FOUR SHABBAT DAYS saw SIGINT operations targeting Palestinian networks. The ARGON infrastructure was used to deploy malware",
+          "username": "OSN_Reports",
+          "link": "https://twitter.com/OSN_Reports/status/2033560927715373406#m",
+          "date": "Mar 16, 2026 · 3:08 PM UTC"
+        },
+        {
+          "text": "Targeted Phishing Attack Breaches Biotech Company Data ift.tt/hOFqUzo #Security #Cyber #Cybersecurity",
+          "username": "Jmw66",
+          "link": "https://twitter.com/Jmw66/status/2033560798383985142#m",
+          "date": "Mar 16, 2026 · 3:07 PM UTC"
+        },
+        {
+          "text": "Stop and think about this: Every second, a cyber attack occurs somewhere in the world. In the next 60 sec, approximately 1,139 attacks will take place",
+          "username": "AyobamiOgunba",
+          "link": "https://twitter.com/AyobamiOgunba/status/2033557983817277870#m",
+          "date": "Mar 16, 2026 · 2:56 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "malware",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 18,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:10:40.020754",
+      "top_users": [
+        [
+          "@nickmo05",
+          1
+        ],
+        [
+          "@BakitKairupok",
+          1
+        ],
+        [
+          "@Kaiyou_love",
+          1
+        ]
+      ],
+      "hashtags": [
+        "SteamGames",
+        "CyberSecurity",
+        "Malware",
+        "Cyberattack",
+        "BankHack"
+      ],
+      "sample_texts": [
+        "FBI investigating Steam games for hidden malware targeting users & stealing crypto, browser data, an",
+        "Yikes indeed. It's wild how easily malware can slip through sponsored results. Trust is everything i"
+      ],
+      "sample_tweets": [
+        {
+          "text": "FBI investigating Steam games for hidden malware targeting users & stealing crypto, browser data, and logins. . #SteamGames #CyberSecurity #Malware",
+          "username": "nickmo05",
+          "link": "https://twitter.com/nickmo05/status/2033561509784154592#m",
+          "date": "Mar 16, 2026 · 3:10 PM UTC"
+        },
+        {
+          "text": "Yikes indeed. It's wild how easily malware can slip through sponsored results. Trust is everything in AI, and ads just muddy the waters. We need bette",
+          "username": "BakitKairupok",
+          "link": "https://twitter.com/BakitKairupok/status/2033561183392047456#m",
+          "date": "Mar 16, 2026 · 3:09 PM UTC"
+        },
+        {
+          "text": "誰だお前",
+          "username": "Kaiyou_love",
+          "link": "https://twitter.com/Kaiyou_love/status/2033546020592996374#m",
+          "date": "Mar 16, 2026 · 2:08 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "ZeroDay",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:10:58.801902",
+      "top_users": [
+        [
+          "@0dayPublishing",
+          2
+        ],
+        [
+          "@arnavsharma",
+          2
+        ],
+        [
+          "@C4TROPHE",
+          2
+        ]
+      ],
+      "hashtags": [
+        "netsec",
+        "vulnerability",
+        "CVE",
+        "sysadmin",
+        "zeroday"
+      ],
+      "sample_texts": [
+        "⚠️ CVE-2026-26133: M365 Copilot Information Disclo...  AI prompt injection hitting M365 Copilot acro",
+        "Critical 9.8 CVSS unpatched RCE flaws in the SGLang AI framework (CVE-2026-3059 & CVE-2026-3060) exp"
+      ],
+      "sample_tweets": [
+        {
+          "text": "⚠️ CVE-2026-26133: M365 Copilot Information Disclo...  AI prompt injection hitting M365 Copilot across mobile + Edge - 7.1 CVSS with network-based inf",
+          "username": "0dayPublishing",
+          "link": "https://twitter.com/0dayPublishing/status/2033553687100993745#m",
+          "date": "Mar 16, 2026 · 2:39 PM UTC"
+        },
+        {
+          "text": "Critical 9.8 CVSS unpatched RCE flaws in the SGLang AI framework (CVE-2026-3059 & CVE-2026-3060) expose servers via unsafe Python pickle deserializati",
+          "username": "the_yellow_fall",
+          "link": "https://twitter.com/the_yellow_fall/status/2033553372406841603#m",
+          "date": "Mar 16, 2026 · 2:38 PM UTC"
+        },
+        {
+          "text": "⚠️ Critical: Shadow AI infiltration hits SaaS—unseen apps, risky usage threatening data security! How can you discover, monitor, and govern AI tools b",
+          "username": "arnavsharma",
+          "link": "https://twitter.com/arnavsharma/status/2033546770035180023#m",
+          "date": "Mar 16, 2026 · 2:11 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "0-day",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:11:17.740321",
+      "top_users": [
+        [
+          "@puppyathlete",
+          2
+        ],
+        [
+          "@MSt8Football",
+          1
+        ],
+        [
+          "@GenevaAthletics",
+          1
+        ]
+      ],
+      "hashtags": [
+        "ComeBallNFergusFalls",
+        "weather",
+        "March16",
+        "cfc",
+        "Chelsea"
+      ],
+      "sample_texts": [
+        "You win the Day, you win the Week.  You win Weeks, you win the Month.  You win Months, You win the Y",
+        "SOFT: Geneva drops game one of the day to Westfield State, 2-0.  The women wrap up their Florida tri"
+      ],
+      "sample_tweets": [
+        {
+          "text": "You win the Day, you win the Week.  You win Weeks, you win the Month.  You win Months, You win the Year!  365 Days Can Change Your Life!  Just Go 1-0 ",
+          "username": "MSt8Football",
+          "link": "https://twitter.com/MSt8Football/status/2033561640734441686#m",
+          "date": "Mar 16, 2026 · 3:10 PM UTC"
+        },
+        {
+          "text": "SOFT: Geneva drops game one of the day to Westfield State, 2-0.  The women wrap up their Florida trip with a game against St. Joseph's Brooklyn coming",
+          "username": "GenevaAthletics",
+          "link": "https://twitter.com/GenevaAthletics/status/2033561499495530667#m",
+          "date": "Mar 16, 2026 · 3:10 PM UTC"
+        },
+        {
+          "text": "こちらもポチポチできる！！❤️‍🔥🆕✨️ ◾︎Interlude ~Back On The Summer Day~  utaten.com/lyric/sz26031145/  ⬇️⬇️⬇️  🪐うたてん 待ち遠しい歌詞🪐 (6時~、12時~、18時~、0時~) (各10回ポチポチ☝️)  ◾︎Cl",
+          "username": "NANAHINA410",
+          "link": "https://twitter.com/NANAHINA410/status/2033561256230269385#m",
+          "date": "Mar 16, 2026 · 3:09 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "vulnerability",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:11:37.321805",
+      "top_users": [
+        [
+          "@Vidyut",
+          1
+        ],
+        [
+          "@FilmBoombastic",
+          1
+        ],
+        [
+          "@StartupJobsIN",
+          1
+        ]
+      ],
+      "hashtags": [
+        "HiggsfieldAction",
+        "StartupJobsIN",
+        "shadowdancing",
+        "Grcsphere",
+        "Observeri"
+      ],
+      "sample_texts": [
+        "All the intentions to negotiate with Iran will fail unless the Hindutva ecosystem URGENTLY learns to",
+        "Just watched \"Love Should Not Bleed\" and it hit hard — the mirror scene and the raw shift from vulne"
+      ],
+      "sample_tweets": [
+        {
+          "text": "All the intentions to negotiate with Iran will fail unless the Hindutva ecosystem URGENTLY learns to understand the effects and motives of propaganda.",
+          "username": "Vidyut",
+          "link": "https://twitter.com/Vidyut/status/2033440677728796691#m",
+          "date": "Mar 16, 2026 · 7:10 AM UTC"
+        },
+        {
+          "text": "Just watched \"Love Should Not Bleed\" and it hit hard — the mirror scene and the raw shift from vulnerability to unbreakable strength is pure genius. H",
+          "username": "FilmBoombastic",
+          "link": "https://twitter.com/FilmBoombastic/status/2033440581154693385#m",
+          "date": "Mar 16, 2026 · 7:09 AM UTC"
+        },
+        {
+          "text": "We’re Hiring – VAPT Role at Mitigata™ - Full-Stack Cyber Resilience!  We are currently hiring for a VAPT (Vulnerability Assessment and Penetration Tes",
+          "username": "StartupJobsIN",
+          "link": "https://twitter.com/StartupJobsIN/status/2033440503904305213#m",
+          "date": "Mar 16, 2026 · 7:09 AM UTC"
+        }
+      ]
+    },
+    {
+      "target": "취약점",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 10,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:11:56.295764",
+      "top_users": [
+        [
+          "@rokmc_sns",
+          3
+        ],
+        [
+          "@DooPrimeKorea",
+          1
+        ],
+        [
+          "@eggry",
+          1
+        ]
+      ],
+      "hashtags": [
+        "DPrime",
+        "애플",
+        "아이패드",
+        "아이폰",
+        "Coruna"
+      ],
+      "sample_texts": [
+        "D Prime 〈보안 월간 리포트〉｜2026년 2월 (제6기)  2026년 2월 D Prime 안정 운영 데이터 ﹕   자금 및 계정: 입출금 시스템 안정적으로 운영, KYC 완료",
+        "펌업도 없는 기계다보니 취약점 오만게 다 털려서 해킹도 칩 달 필요도 없이 메모리카드형 부팅 디바이스 끼우고 켜면 끝이 됐더군요. 제가 마지막으로 봤을 땐 구운 DVD 읽게 칩 다"
+      ],
+      "sample_tweets": [
+        {
+          "text": "D Prime 〈보안 월간 리포트〉｜2026년 2월 (제6기)  2026년 2월 D Prime 안정 운영 데이터 ﹕   자금 및 계정: 입출금 시스템 안정적으로 운영, KYC 완료 수 14,103건   단일 최대 출금 금액: USD 600,000  네트워크 보안 방어:",
+          "username": "DooPrimeKorea",
+          "link": "https://twitter.com/DooPrimeKorea/status/2033387308528054646#m",
+          "date": "Mar 16, 2026 · 3:38 AM UTC"
+        },
+        {
+          "text": "펌업도 없는 기계다보니 취약점 오만게 다 털려서 해킹도 칩 달 필요도 없이 메모리카드형 부팅 디바이스 끼우고 켜면 끝이 됐더군요. 제가 마지막으로 봤을 땐 구운 DVD 읽게 칩 다는 거였는데…",
+          "username": "eggry",
+          "link": "https://twitter.com/eggry/status/2033322627159449968#m",
+          "date": "Mar 15, 2026 · 11:21 PM UTC"
+        },
+        {
+          "text": "(취약점 하나 내보인 기분이다. 숨 고르듯 내뱉는다.) 네 목소리로 들으니까 떨리네.",
+          "username": "ofinfxtuation",
+          "link": "https://twitter.com/ofinfxtuation/status/2033296900359651669#m",
+          "date": "Mar 15, 2026 · 9:38 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "해킹",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 19,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:12:15.539964",
+      "top_users": [
+        [
+          "@PdSPiCa",
+          2
+        ],
+        [
+          "@nnewhelloworld",
+          1
+        ],
+        [
+          "@kyetsgo",
+          1
+        ]
+      ],
+      "hashtags": [
+        "지인능욕",
+        "지인상납",
+        "이슈",
+        "유머",
+        "fyp"
+      ],
+      "sample_texts": [
+        "해킹 개많이 했는데 왜 아직 감염되지 않았을까요",
+        "해킹? 당한 것? 같아요"
+      ],
+      "sample_tweets": [
+        {
+          "text": "해킹 개많이 했는데 왜 아직 감염되지 않았을까요",
+          "username": "nnewhelloworld",
+          "link": "https://twitter.com/nnewhelloworld/status/2033439732697538963#m",
+          "date": "Mar 16, 2026 · 7:06 AM UTC"
+        },
+        {
+          "text": "해킹? 당한 것? 같아요",
+          "username": "kyetsgo",
+          "link": "https://twitter.com/kyetsgo/status/2033436528337436705#m",
+          "date": "Mar 16, 2026 · 6:53 AM UTC"
+        },
+        {
+          "text": "업비트 해킹. 빗썸  오지급.  코빗 거래소 는.  호가창. 세분화. 부탁드립니다",
+          "username": "jijongjin2",
+          "link": "https://twitter.com/jijongjin2/status/2033435796762726648#m",
+          "date": "Mar 16, 2026 · 6:50 AM UTC"
+        }
+      ]
+    },
+    {
+      "target": "랜섬웨어",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 6,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:12:34.339427",
+      "top_users": [
+        [
+          "@rokmc_sns",
+          1
+        ],
+        [
+          "@decentralww",
+          1
+        ],
+        [
+          "@newsky144th",
+          1
+        ]
+      ],
+      "hashtags": [],
+      "sample_texts": [
+        "랜섬웨어 공격의 90%가 방화벽 취약점을 악용해 이뤄지는 것  mc529.tistory.com/m/1917",
+        "오늘의 보안 뉴스  1️⃣ AI 기반 피싱 메일 급증, 기존 보안 필터 우회 사례 증가  2️⃣ INC 랜섬웨어 공격, 데이터 탈취 후 암호화하는 ‘이중 공격’ 방식 사용  3️⃣"
+      ],
+      "sample_tweets": [
+        {
+          "text": "랜섬웨어 공격의 90%가 방화벽 취약점을 악용해 이뤄지는 것  mc529.tistory.com/m/1917",
+          "username": "rokmc_sns",
+          "link": "https://twitter.com/rokmc_sns/status/2033290879457518050#m",
+          "date": "Mar 15, 2026 · 9:14 PM UTC"
+        },
+        {
+          "text": "오늘의 보안 뉴스  1️⃣ AI 기반 피싱 메일 급증, 기존 보안 필터 우회 사례 증가  2️⃣ INC 랜섬웨어 공격, 데이터 탈취 후 암호화하는 ‘이중 공격’ 방식 사용  3️⃣ 의료기기 기업 Stryker, 와이퍼(Wiper) 악성코드 공격으로 시스템 마비",
+          "username": "decentralww",
+          "link": "https://twitter.com/decentralww/status/2033056641479045277#m",
+          "date": "Mar 15, 2026 · 5:44 AM UTC"
+        },
+        {
+          "text": "[인터폴이 주도한 \"시너지아 작전 III\"] 당국, 랜섬웨어 공격에 사용된 악성 IP 주소 4만 5천 개 단속 / 이란, 호르무즈 해협 유조선...중국 위안화 결재시 통과 검토중 m.blog.naver.com/newsky144th…",
+          "username": "newsky144th",
+          "link": "https://twitter.com/newsky144th/status/2033087883754746260#m",
+          "date": "Mar 15, 2026 · 7:48 AM UTC"
+        }
+      ]
+    },
+    {
+      "target": "DDoS",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:12:53.701877",
+      "top_users": [
+        [
+          "@DD0S43",
+          3
+        ],
+        [
+          "@PrinceSibie",
+          2
+        ],
+        [
+          "@TMMH4R7",
+          2
+        ]
+      ],
+      "hashtags": [
+        "CyberSecurity",
+        "Networking",
+        "TechLearning",
+        "30DaysOfTech",
+        "LearningWithTS"
+      ],
+      "sample_texts": [
+        "protocols, ARP and DNS, the difference between TCP and UDP, and how DHCP assigns IP addresses using ",
+        "It’s giving Vessel"
+      ],
+      "sample_tweets": [
+        {
+          "text": "protocols, ARP and DNS, the difference between TCP and UDP, and how DHCP assigns IP addresses using the DORA process.  I also learned about network th",
+          "username": "PrinceSibie",
+          "link": "https://twitter.com/PrinceSibie/status/2033558521585746383#m",
+          "date": "Mar 16, 2026 · 2:58 PM UTC"
+        },
+        {
+          "text": "It’s giving Vessel",
+          "username": "DD0S43",
+          "link": "https://twitter.com/DD0S43/status/2033558384419443052#m",
+          "date": "Mar 16, 2026 · 2:57 PM UTC"
+        },
+        {
+          "text": "if you don’t think dragons, castles, knights, swords and wizards are cool I don’t trust you",
+          "username": "cemeteryfaerie",
+          "link": "https://twitter.com/cemeteryfaerie/status/2033432476089983186#m",
+          "date": "Mar 16, 2026 · 6:37 AM UTC"
+        }
+      ]
+    },
+    {
+      "target": "디도스",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 18,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:13:12.548553",
+      "top_users": [
+        [
+          "@10DDoS_10",
+          6
+        ],
+        [
+          "@cIspimd",
+          1
+        ],
+        [
+          "@tomoneynedi",
+          1
+        ]
+      ],
+      "hashtags": [
+        "픽셀리_X친소",
+        "뜰팁_트친소",
+        "뜰팁_트친소",
+        "뜰팁_𝕏친소",
+        "픽셀리_𝕏친소"
+      ],
+      "sample_texts": [
+        "",
+        "가뼐림 버전으로 하나 그려봐씁니다  ㅎㅎ"
+      ],
+      "sample_tweets": [
+        {
+          "text": "",
+          "username": "cIspimd",
+          "link": "https://twitter.com/cIspimd/status/2033440858750755160#m",
+          "date": "Mar 16, 2026 · 7:10 AM UTC"
+        },
+        {
+          "text": "가뼐림 버전으로 하나 그려봐씁니다  ㅎㅎ",
+          "username": "tomoneynedi",
+          "link": "https://twitter.com/tomoneynedi/status/2033201365854679436#m",
+          "date": "Mar 15, 2026 · 3:19 PM UTC"
+        },
+        {
+          "text": "#픽셀리_X친소 #뜰팁_트친소  탐라가 적적해서 트친소 돌립니다 각수 위주 올멤 골고루 좋아합니다  알티 위주로 찾아뵙겠습니다  트친들 알티 부탁해용~",
+          "username": "Chx_nameless",
+          "link": "https://twitter.com/Chx_nameless/status/2033457469566149035#m",
+          "date": "Mar 16, 2026 · 8:16 AM UTC"
+        }
+      ]
+    },
+    {
+      "target": "사이버 공격",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 3,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:13:31.826383",
+      "top_users": [
+        [
+          "@chol7310",
+          1
+        ],
+        [
+          "@K_POPTIMES",
+          1
+        ],
+        [
+          "@TV6641962521510",
+          1
+        ]
+      ],
+      "hashtags": [
+        "Stryker",
+        "IranWar"
+      ],
+      "sample_texts": [
+        "❌️전문가들이 보는 전쟁 확률 (수치상 분석)  ↗️전면 침공 확률: 여러 안보 싱크탱크와 전문가 그룹의 설문 조사에 따르면, 향후 5년 내 전면적인 무력 침공이 일어날 확률은 약",
+        "세네갈 대학 시위 사망 사건·사이버 공격 등 정세 주목…중국 차관·스타링크 도입도 추진 byeon.com/senegal-unrest-cyb…  Senegal — 서아프리카 세네갈에"
+      ],
+      "sample_tweets": [
+        {
+          "text": "❌️전문가들이 보는 전쟁 확률 (수치상 분석)  ↗️전면 침공 확률: 여러 안보 싱크탱크와 전문가 그룹의 설문 조사에 따르면, 향후 5년 내 전면적인 무력 침공이 일어날 확률은 약 15%~35% 사이로 낮게 평가.  ↗️제한적 충돌/봉쇄 확률: 전면전보다는 해상 봉쇄나",
+          "username": "chol7310",
+          "link": "https://twitter.com/chol7310/status/2033358139266134213#m",
+          "date": "Mar 16, 2026 · 1:42 AM UTC"
+        },
+        {
+          "text": "세네갈 대학 시위 사망 사건·사이버 공격 등 정세 주목…중국 차관·스타링크 도입도 추진 byeon.com/senegal-unrest-cyb…  Senegal — 서아프리카 세네갈에서 대학 시위 사망 사건과 정부 기관 사이버 공격 등 주요 현안이 잇따르며 정치·사회적 긴",
+          "username": "K_POPTIMES",
+          "link": "https://twitter.com/K_POPTIMES/status/2033327644171702686#m",
+          "date": "Mar 15, 2026 · 11:41 PM UTC"
+        },
+        {
+          "text": "invidious.tiekoetter.com/wGee0zmJtLM?si=FBRy… 최근 이란과 연계된 해커 그룹이 미국의 의료 기기 업체인 스트라이커(Stryker)를 대상으로 감행한 사이버 공격 내용과 피해. 충격적!!   이 공격으로 56,000명 이상의 직원이 네",
+          "username": "TV6641962521510",
+          "link": "https://twitter.com/TV6641962521510/status/2033049815609913565#m",
+          "date": "Mar 15, 2026 · 5:17 AM UTC"
+        }
+      ]
+    },
+    {
+      "target": "사이버 위협",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 4,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:13:51.079652",
+      "top_users": [
+        [
+          "@News1_ITScience",
+          2
+        ],
+        [
+          "@youngongge_next",
+          1
+        ],
+        [
+          "@rokmc_sns",
+          1
+        ]
+      ],
+      "hashtags": [
+        "뉴스1ICT",
+        "뉴스1"
+      ],
+      "sample_texts": [
+        "보안 위협 된 인공지능…정부, AI발 사이버 리스크 차단 나선다 #뉴스1ICT news1.kr/it-science/security…",
+        "하얀이가 절 붙잡고 짤짤 흔드는 중 몬님은 사이버 위협 이건 진짜 위협"
+      ],
+      "sample_tweets": [
+        {
+          "text": "보안 위협 된 인공지능…정부, AI발 사이버 리스크 차단 나선다 #뉴스1ICT news1.kr/it-science/security…",
+          "username": "News1_ITScience",
+          "link": "https://twitter.com/News1_ITScience/status/2033481877764644913#m",
+          "date": "Mar 16, 2026 · 9:53 AM UTC"
+        },
+        {
+          "text": "하얀이가 절 붙잡고 짤짤 흔드는 중 몬님은 사이버 위협 이건 진짜 위협",
+          "username": "youngongge_next",
+          "link": "https://twitter.com/youngongge_next/status/2033426157266456588#m",
+          "date": "Mar 16, 2026 · 6:12 AM UTC"
+        },
+        {
+          "text": "보안 위협 된 인공지능…정부, AI발 사이버 리스크 차단 나선다 #뉴스1 news1.kr/it-science/security…",
+          "username": "News1_ITScience",
+          "link": "https://twitter.com/News1_ITScience/status/2033311587612922095#m",
+          "date": "Mar 15, 2026 · 10:37 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "사이버 보안",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 4,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:14:10.264841",
+      "top_users": [
+        [
+          "@Peanut__AI",
+          1
+        ],
+        [
+          "@IT_CHOSUN",
+          1
+        ],
+        [
+          "@BREAM_21",
+          1
+        ]
+      ],
+      "hashtags": [
+        "자동차",
+        "사이버",
+        "보안",
+        "소프트웨어",
+        "SDV"
+      ],
+      "sample_texts": [
+        "피넛에이아이, SECON 2026에서 IoT·산업 보안의 새 기준 제시한다.  오는 3월 18일부터 20일까지 일산 킨텍스(KINTEX) 제1전시장에서 열리는 제25회 세계 보안 ",
+        "커지는 車 보안 시장서 존재감… 고난도 기술력 뽐내는 韓기업 #자동차 #사이버 #보안 #소프트웨어 #SDV #AI #인공지능 #아우토크립트 #페스카로 #자율주행 #IT #IT뉴스 "
+      ],
+      "sample_tweets": [
+        {
+          "text": "피넛에이아이, SECON 2026에서 IoT·산업 보안의 새 기준 제시한다.  오는 3월 18일부터 20일까지 일산 킨텍스(KINTEX) 제1전시장에서 열리는 제25회 세계 보안 엑스포(SECON 2026)에 피넛에이아이가 참여하게되었습니다.  IoT와 산업 인프라를 ",
+          "username": "Peanut__AI",
+          "link": "https://twitter.com/Peanut__AI/status/2033431238053449952#m",
+          "date": "Mar 16, 2026 · 6:32 AM UTC"
+        },
+        {
+          "text": "커지는 車 보안 시장서 존재감… 고난도 기술력 뽐내는 韓기업 #자동차 #사이버 #보안 #소프트웨어 #SDV #AI #인공지능 #아우토크립트 #페스카로 #자율주행 #IT #IT뉴스 #IT조선 it.chosun.com/news/articleVi…",
+          "username": "IT_CHOSUN",
+          "link": "https://twitter.com/IT_CHOSUN/status/2033324866511016082#m",
+          "date": "Mar 15, 2026 · 11:30 PM UTC"
+        },
+        {
+          "text": "SOFTWAR는 2023년 출시되었고 해당 책의 주장들 중 일부가 실현되는 중.  3️⃣ 전략적 비트코인 비축을 고려하라  2025년 트럼프가 행정명령에 서명하면서 미국 정부가 보유한 비트코인을 국가 준비 자산으로 관리하기 시작.  2️⃣ 비트코인을 먼저 사이버 보안 ",
+          "username": "BREAM_21",
+          "link": "https://twitter.com/BREAM_21/status/2033144164171284679#m",
+          "date": "Mar 15, 2026 · 11:31 AM UTC"
+        }
+      ]
+    },
+    {
+      "target": "정보 유출",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 8,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:14:29.677318",
+      "top_users": [
+        [
+          "@FreedomKorea7",
+          1
+        ],
+        [
+          "@stopthesteal581",
+          1
+        ],
+        [
+          "@rokmc_sns",
+          1
+        ]
+      ],
+      "hashtags": [
+        "호통이",
+        "호통이tv",
+        "hotongi",
+        "hotongitv",
+        "뉴스"
+      ],
+      "sample_texts": [
+        "🚨 🇺🇸전직 해병대 정보 분석관, 기밀 유출 혐의로 기소 전직 해병대 정보 분석관이 2022년과 2023년 두 차례에 걸쳐 국방 기밀 정보를 유출한 혐의로 체포 및 기소되었습니다.",
+        "invidious.tiekoetter.com/QyZK32vt8L0?si=CvKh…  윤석열의 군 감시 정보 유출 방조는 간첩죄일까 일반이적죄일까?       현재 간첩 윤석열은 평"
+      ],
+      "sample_tweets": [
+        {
+          "text": "🚨 🇺🇸전직 해병대 정보 분석관, 기밀 유출 혐의로 기소 전직 해병대 정보 분석관이 2022년과 2023년 두 차례에 걸쳐 국방 기밀 정보를 유출한 혐의로 체포 및 기소되었습니다. 특히 두 번째 유출 대상은 중국에 있는 인물로 추정되어 파장이 커지고 있습니다. 현재 사",
+          "username": "FreedomKorea7",
+          "link": "https://twitter.com/FreedomKorea7/status/2033538051562234315#m",
+          "date": "Mar 16, 2026 · 1:37 PM UTC"
+        },
+        {
+          "text": "invidious.tiekoetter.com/QyZK32vt8L0?si=CvKh…  윤석열의 군 감시 정보 유출 방조는 간첩죄일까 일반이적죄일까?       현재 간첩 윤석열은 평양 무인기 및 북한도발 유도로 일반여적죄로 기소되어 재판중에 있지만, 평양 무인기 사건은 ",
+          "username": "stopthesteal581",
+          "link": "https://twitter.com/stopthesteal581/status/2033537977436311625#m",
+          "date": "Mar 16, 2026 · 1:36 PM UTC"
+        },
+        {
+          "text": "스타벅스, 미국 직원 889명 정보 유출…피싱으로 HR 포털 계정 침해  dailysecu.com/news/articleVi…",
+          "username": "rokmc_sns",
+          "link": "https://twitter.com/rokmc_sns/status/2033313863857480020#m",
+          "date": "Mar 15, 2026 · 10:46 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "DFIR",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 19,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:14:48.690816",
+      "top_users": [
+        [
+          "@DFIR_Radar",
+          8
+        ],
+        [
+          "@VitorNeressss",
+          2
+        ],
+        [
+          "@MagnetForensics",
+          1
+        ]
+      ],
+      "hashtags": [
+        "DigitalInvestigations",
+        "EnterpriseDFIR",
+        "DFIR",
+        "DFIR",
+        "Ciberseguridad"
+      ],
+      "sample_texts": [
+        "Source: cloud.google.com/blog/topics…",
+        "What’s next for enterprise #DigitalInvestigations?  Join us on March 18 for a webinar that breaks do"
+      ],
+      "sample_tweets": [
+        {
+          "text": "Source: cloud.google.com/blog/topics…",
+          "username": "DFIR_Radar",
+          "link": "https://twitter.com/DFIR_Radar/status/2033562108814864762#m",
+          "date": "Mar 16, 2026 · 3:12 PM UTC"
+        },
+        {
+          "text": "What’s next for enterprise #DigitalInvestigations?  Join us on March 18 for a webinar that breaks down our new State of #EnterpriseDFIR 2026 Report, i",
+          "username": "MagnetForensics",
+          "link": "https://twitter.com/MagnetForensics/status/2033560715340939728#m",
+          "date": "Mar 16, 2026 · 3:07 PM UTC"
+        },
+        {
+          "text": "\"On the Exchange email server, the threat actor used a legitimate Windows executable, SystemSettingsAdminFlows.exe, which allows users to customize or",
+          "username": "TheDFIRReport",
+          "link": "https://twitter.com/TheDFIRReport/status/2033524965782196520#m",
+          "date": "Mar 16, 2026 · 12:45 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "디지털 포렌식",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:15:08.020769",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "incident response",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:15:27.657923",
+      "top_users": [
+        [
+          "@mattdagley",
+          5
+        ],
+        [
+          "@MOI_QatarEn",
+          1
+        ],
+        [
+          "@LetsDefendIO",
+          1
+        ]
+      ],
+      "hashtags": [
+        "MOIQatar",
+        "Cybersecurity",
+        "IncidentResponse",
+        "CyberNewsLive"
+      ],
+      "sample_texts": [
+        "HRFE Incident Feed HAZMAT Location: HIGHFIELD PARK DR, DARTMOUTH Call Number: HF26000003901 Response",
+        "Refraining from filming or sharing footage of incident sites or field response operations facilitate"
+      ],
+      "sample_tweets": [
+        {
+          "text": "HRFE Incident Feed HAZMAT Location: HIGHFIELD PARK DR, DARTMOUTH Call Number: HF26000003901 Response: TCT12 March 16, 2026 at 12:06PM",
+          "username": "mattdagley",
+          "link": "https://twitter.com/mattdagley/status/2033561536627609932#m",
+          "date": "Mar 16, 2026 · 3:10 PM UTC"
+        },
+        {
+          "text": "Refraining from filming or sharing footage of incident sites or field response operations facilitates the work of competent authorities and reflects y",
+          "username": "MOI_QatarEn",
+          "link": "https://twitter.com/MOI_QatarEn/status/2033559405736710564#m",
+          "date": "Mar 16, 2026 · 3:01 PM UTC"
+        },
+        {
+          "text": "HRFE Incident Feed ALARMS Location: OLD SACKVILLE RD, LOWER SACKVILLE Call Number: HF26000003900 Response: A09 E09 STN09 T10 March 16, 2026 at 11:55AM",
+          "username": "mattdagley",
+          "link": "https://twitter.com/mattdagley/status/2033559009471471699#m",
+          "date": "Mar 16, 2026 · 3:00 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "사이버 인텔리전스",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:15:45.608498",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "threat intelligence",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:16:04.918250",
+      "top_users": [
+        [
+          "@TheCyberSecHub",
+          1
+        ],
+        [
+          "@11Spooner11",
+          1
+        ],
+        [
+          "@pymnts",
+          1
+        ]
+      ],
+      "hashtags": [
+        "tryhackme",
+        "ransomware",
+        "datatheft",
+        "Akira",
+        "UnitedStates"
+      ],
+      "sample_texts": [
+        "Attackers Abuse LiveChat to Phish Credit Card, Personal Data darkreading.com/threat-intel…",
+        "Trump attacked DURING PEACE TALKS. Every previous admin was successful in preventing Iran from nukes"
+      ],
+      "sample_tweets": [
+        {
+          "text": "Attackers Abuse LiveChat to Phish Credit Card, Personal Data darkreading.com/threat-intel…",
+          "username": "TheCyberSecHub",
+          "link": "https://twitter.com/TheCyberSecHub/status/2033562776162259317#m",
+          "date": "Mar 16, 2026 · 3:15 PM UTC"
+        },
+        {
+          "text": "Trump attacked DURING PEACE TALKS. Every previous admin was successful in preventing Iran from nukes peacefully. The message sent to Iran & other nati",
+          "username": "11Spooner11",
+          "link": "https://twitter.com/11Spooner11/status/2033562011548762291#m",
+          "date": "Mar 16, 2026 · 3:12 PM UTC"
+        },
+        {
+          "text": "Why fake normal is becoming the new fraud threat.  The “I” in “AI” doesn’t always just stand for intelligence. Increasingly, across the security secto",
+          "username": "pymnts",
+          "link": "https://twitter.com/pymnts/status/2033559088831848765#m",
+          "date": "Mar 16, 2026 · 3:00 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "악성코드",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 4,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:16:24.316095",
+      "top_users": [
+        [
+          "@SH_DOHWON",
+          1
+        ],
+        [
+          "@fly_away_yap",
+          1
+        ],
+        [
+          "@lunamoth",
+          1
+        ]
+      ],
+      "hashtags": [],
+      "sample_texts": [
+        "호스트 파일 변경시도 악성코드 가능성이 자꾸 뜨는데 복원 예 눌러도 팝업창 사라지지도 않고 뭐임..진짜 안좋은거 깔렸나.",
+        "로얄이랑 해야 fireworks 악성코드 뱅뱅 블랙홀 아이엠 아센디오 키치 낫욜걸 콘서트에서 보고싶음 그냥 신곡이랑 신나는게 좋다는 뜻"
+      ],
+      "sample_tweets": [
+        {
+          "text": "호스트 파일 변경시도 악성코드 가능성이 자꾸 뜨는데 복원 예 눌러도 팝업창 사라지지도 않고 뭐임..진짜 안좋은거 깔렸나.",
+          "username": "SH_DOHWON",
+          "link": "https://twitter.com/SH_DOHWON/status/2033560044034498717#m",
+          "date": "Mar 16, 2026 · 3:04 PM UTC"
+        },
+        {
+          "text": "로얄이랑 해야 fireworks 악성코드 뱅뱅 블랙홀 아이엠 아센디오 키치 낫욜걸 콘서트에서 보고싶음 그냥 신곡이랑 신나는게 좋다는 뜻",
+          "username": "fly_away_yap",
+          "link": "https://twitter.com/fly_away_yap/status/2033405901399576608#m",
+          "date": "Mar 16, 2026 · 4:52 AM UTC"
+        },
+        {
+          "text": "9 cheap or free ways to make your old PC run faster | PCWorld  pcworld.com/article/436282/9…  오래된 PC를 빠르게 만드는 9가지 방법   - 시작 프로그램 솎아내기 - 블로트웨어 제거, 악성코드",
+          "username": "lunamoth",
+          "link": "https://twitter.com/lunamoth/status/2033048058309603771#m",
+          "date": "Mar 15, 2026 · 5:10 AM UTC"
+        }
+      ]
+    },
+    {
+      "target": "APT",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:16:43.361503",
+      "top_users": [
+        [
+          "@monforra",
+          3
+        ],
+        [
+          "@EmmanuelMw81875",
+          2
+        ],
+        [
+          "@IslamInvasion",
+          1
+        ]
+      ],
+      "hashtags": [
+        "ACE",
+        "TAO",
+        "FET",
+        "ETH",
+        "ARIA"
+      ],
+      "sample_texts": [
+        "\"They're lying to us - The UK is being infiltrated and colonized!\"  The Islamic conquest is no longe",
+        "Let me tell you about what happened to a happy and joyful 9-year-old girl in Sweden.  A sweet innoce"
+      ],
+      "sample_tweets": [
+        {
+          "text": "\"They're lying to us - The UK is being infiltrated and colonized!\"  The Islamic conquest is no longer executed by the sword, but rather with political",
+          "username": "IslamInvasion",
+          "link": "https://twitter.com/IslamInvasion/status/2033525712490012916#m",
+          "date": "Mar 16, 2026 · 12:48 PM UTC"
+        },
+        {
+          "text": "Let me tell you about what happened to a happy and joyful 9-year-old girl in Sweden.  A sweet innocent girl named Luna. She loved to dance. She sang s",
+          "username": "piscesgutt",
+          "link": "https://twitter.com/piscesgutt/status/2033305210286637250#m",
+          "date": "Mar 15, 2026 · 10:11 PM UTC"
+        },
+        {
+          "text": "and a foreigner isn't really gonna know the difference between the shack in mississipi and the apt in LA, because again, it's an american thing",
+          "username": "italianlvke",
+          "link": "https://twitter.com/italianlvke/status/2033562901001195730#m",
+          "date": "Mar 16, 2026 · 3:15 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "Cyberattack",
+      "type": "keyword",
+      "group": "custom",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:17:01.945990",
+      "top_users": [
+        [
+          "@tatha_gautama",
+          2
+        ],
+        [
+          "@scsp_ai",
+          1
+        ],
+        [
+          "@BridgeworksLtd",
+          1
+        ]
+      ],
+      "hashtags": [
+        "Databreaches",
+        "organisations",
+        "WAN",
+        "WANAcceleration",
+        "DataSecurity"
+      ],
+      "sample_texts": [
+        "How secure is the U.S. homeland from a massive cyberattack? It depends on the sector.  According to ",
+        "#Databreaches aren’t the only concern of which individuals and #organisations need to be aware  bit."
+      ],
+      "sample_tweets": [
+        {
+          "text": "How secure is the U.S. homeland from a massive cyberattack? It depends on the sector.  According to Adm. Mark Montgomery on the latest President's Tec",
+          "username": "scsp_ai",
+          "link": "https://twitter.com/scsp_ai/status/2033620967813947517#m",
+          "date": "Mar 16, 2026 · 7:06 PM UTC"
+        },
+        {
+          "text": "#Databreaches aren’t the only concern of which individuals and #organisations need to be aware  bit.ly/4qCDxck #WAN #WANAcceleration #DataSecurity #Cy",
+          "username": "BridgeworksLtd",
+          "link": "https://twitter.com/BridgeworksLtd/status/2033619549715653032#m",
+          "date": "Mar 16, 2026 · 7:00 PM UTC"
+        },
+        {
+          "text": "• #Hacked #Malware #Spyware #Zerodays #Ransomware #CyberAttack ☠️ • • #Technology #Hackers #RCE #DataHack #DataTheft #DataLeaks #DataBreach 💾 •  » @Go",
+          "username": "tatha_gautama",
+          "link": "https://twitter.com/tatha_gautama/status/2033618346789519569#m",
+          "date": "Mar 16, 2026 · 6:56 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "group",
+      "type": "keyword",
+      "group": "rising",
+      "tweet_count": 17,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:21:30.232529",
+      "top_users": [
+        [
+          "@DarajaKapoor",
+          1
+        ],
+        [
+          "@WonAndDoneCBB",
+          1
+        ],
+        [
+          "@EmmanuelMw81875",
+          1
+        ]
+      ],
+      "hashtags": [
+        "AVAX",
+        "ACE",
+        "TAO",
+        "FET",
+        "ETH"
+      ],
+      "sample_texts": [
+        "La grada d’animacio 💙❤️! I sometimes imagine a world where this group and the infamous Boixos Nois g",
+        "Think you can predict March Madness?🤔💭  Join the Won & Done Bracket Challenge  🆓 to enter Prize for "
+      ],
+      "sample_tweets": [
+        {
+          "text": "La grada d’animacio 💙❤️! I sometimes imagine a world where this group and the infamous Boixos Nois go band for band every week at our home games.",
+          "username": "DarajaKapoor",
+          "link": "https://twitter.com/DarajaKapoor/status/2033564214787236268#m",
+          "date": "Mar 16, 2026 · 3:21 PM UTC"
+        },
+        {
+          "text": "Think you can predict March Madness?🤔💭  Join the Won & Done Bracket Challenge  🆓 to enter Prize for the winner 👀  The champ will be crowned the Oracle",
+          "username": "WonAndDoneCBB",
+          "link": "https://twitter.com/WonAndDoneCBB/status/2033564213185237478#m",
+          "date": "Mar 16, 2026 · 3:21 PM UTC"
+        },
+        {
+          "text": "#AVAX/USDT Direction: 🔐 Entry: 🔐 Stop Loss: 🔐  Target: 🔐 Leverage: x🔐  Details Available on VIP Channel  #ACE #TAO #FET #ETH #ARIA #Solana #BB $DEGO $",
+          "username": "EmmanuelMw81875",
+          "link": "https://twitter.com/EmmanuelMw81875/status/2033564212601974819#m",
+          "date": "Mar 16, 2026 · 3:21 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "cybersecurity",
+      "type": "keyword",
+      "group": "rising",
+      "tweet_count": 18,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:21:49.083941",
+      "top_users": [
+        [
+          "@cyber_rekk",
+          3
+        ],
+        [
+          "@d_moiseslima",
+          1
+        ],
+        [
+          "@GCNNow",
+          1
+        ]
+      ],
+      "hashtags": [
+        "smb",
+        "Grateful",
+        "QNAP",
+        "NAS",
+        "ASLAN2026"
+      ],
+      "sample_texts": [
+        "Cybersecurity is crucial in today's digital age. It protects sensitive information from threats, ens",
+        "Cybersecurity expert highlights mobile device vulnerabilities gulfcoastnewsnow.com/article…"
+      ],
+      "sample_tweets": [
+        {
+          "text": "Cybersecurity is crucial in today's digital age. It protects sensitive information from threats, ensures privacy, and maintains trust in technology. S",
+          "username": "d_moiseslima",
+          "link": "https://twitter.com/d_moiseslima/status/2033564425714819521#m",
+          "date": "Mar 16, 2026 · 3:21 PM UTC"
+        },
+        {
+          "text": "Cybersecurity expert highlights mobile device vulnerabilities gulfcoastnewsnow.com/article…",
+          "username": "GCNNow",
+          "link": "https://twitter.com/GCNNow/status/2033564209372438925#m",
+          "date": "Mar 16, 2026 · 3:21 PM UTC"
+        },
+        {
+          "text": "Looking at deals within my “edge” or advantage with experience and SDVOSB qualifications.   Gov Con - Security - Cybersecurity and ABA Healthcare clin",
+          "username": "SMB_HEFF",
+          "link": "https://twitter.com/SMB_HEFF/status/2033564176145121459#m",
+          "date": "Mar 16, 2026 · 3:20 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "threat",
+      "type": "keyword",
+      "group": "rising",
+      "tweet_count": 19,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:22:08.166744",
+      "top_users": [
+        [
+          "@StinkNEO",
+          1
+        ],
+        [
+          "@ShaunsEyeView",
+          1
+        ],
+        [
+          "@jackendrickwx",
+          1
+        ]
+      ],
+      "hashtags": [
+        "Breaking"
+      ],
+      "sample_texts": [
+        "That doesn't even come off as a really distasteful joke that sounds like a straight up threat",
+        "Sure, the military personnel are standing there because there's no threat."
+      ],
+      "sample_tweets": [
+        {
+          "text": "That doesn't even come off as a really distasteful joke that sounds like a straight up threat",
+          "username": "StinkNEO",
+          "link": "https://twitter.com/StinkNEO/status/2033564366893642089#m",
+          "date": "Mar 16, 2026 · 3:21 PM UTC"
+        },
+        {
+          "text": "Sure, the military personnel are standing there because there's no threat.",
+          "username": "ShaunsEyeView",
+          "link": "https://twitter.com/ShaunsEyeView/status/2033564352406761587#m",
+          "date": "Mar 16, 2026 · 3:21 PM UTC"
+        },
+        {
+          "text": "As the severe threat moves east, winter reclaims WNC with upslope snow showers lasting through the night. Folks along the NC/TN border who started thi",
+          "username": "jackendrickwx",
+          "link": "https://twitter.com/jackendrickwx/status/2033564352205193686#m",
+          "date": "Mar 16, 2026 · 3:21 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "cyber",
+      "type": "keyword",
+      "group": "rising",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:22:27.371117",
+      "top_users": [
+        [
+          "@Visit_Assam",
+          2
+        ],
+        [
+          "@ISS4IT",
+          1
+        ],
+        [
+          "@fmguss2",
+          1
+        ]
+      ],
+      "hashtags": [
+        "Classic",
+        "Rock",
+        "BluesMusic",
+        "CountryMusic",
+        "ChristianMusic"
+      ],
+      "sample_texts": [
+        "Cyber threats evolve and security strategies must keep up. 🔐 New trends are reshaping how organizati",
+        "Texas' Best Cyber-Radio Experience 'The Classic Hit Combo'™ on ▶GUS.FM! #Classic Hits #Rock #BluesMu"
+      ],
+      "sample_tweets": [
+        {
+          "text": "Cyber threats evolve and security strategies must keep up. 🔐 New trends are reshaping how organizations defend systems and data. Read the article and ",
+          "username": "ISS4IT",
+          "link": "https://twitter.com/ISS4IT/status/2033564503699325177#m",
+          "date": "Mar 16, 2026 · 3:22 PM UTC"
+        },
+        {
+          "text": "Texas' Best Cyber-Radio Experience 'The Classic Hit Combo'™ on ▶GUS.FM! #Classic Hits #Rock #BluesMusic #CountryMusic #ChristianMusic",
+          "username": "fmguss2",
+          "link": "https://twitter.com/fmguss2/status/2033564470442659907#m",
+          "date": "Mar 16, 2026 · 3:22 PM UTC"
+        },
+        {
+          "text": "@SSalmaraPolice @assampolice Still no action and no update from your Cyber crime team, he openly uses abusive language on Assam and Meghalaya CM's @hi",
+          "username": "Visit_Assam",
+          "link": "https://twitter.com/Visit_Assam/status/2033564466840023534#m",
+          "date": "Mar 16, 2026 · 3:22 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "security",
+      "type": "keyword",
+      "group": "rising",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:22:46.539421",
+      "top_users": [
+        [
+          "@BartlettMa1522",
+          1
+        ],
+        [
+          "@CurtisHouck",
+          1
+        ],
+        [
+          "@RepDavids",
+          1
+        ]
+      ],
+      "hashtags": [
+        "Energy",
+        "Security",
+        "Asia"
+      ],
+      "sample_texts": [
+        "Every country that trades in the gulf needs to provide security. The fact that we are even discussin",
+        "In the month since it began, they have only spent just over 26 minutes acknowledging the shutdown an"
+      ],
+      "sample_tweets": [
+        {
+          "text": "Every country that trades in the gulf needs to provide security. The fact that we are even discussing this proves that Iran needs to be taken off the ",
+          "username": "BartlettMa1522",
+          "link": "https://twitter.com/BartlettMa1522/status/2033564302779564212#m",
+          "date": "Mar 16, 2026 · 3:21 PM UTC"
+        },
+        {
+          "text": "In the month since it began, they have only spent just over 26 minutes acknowledging the shutdown and its ripple effects, most notably at airports wit",
+          "username": "CurtisHouck",
+          "link": "https://twitter.com/CurtisHouck/status/2033564296874270981#m",
+          "date": "Mar 16, 2026 · 3:21 PM UTC"
+        },
+        {
+          "text": "Federal public safety funds promised to the KC region are finally being delivered.  These resources will help law enforcement prepare to keep resident",
+          "username": "RepDavids",
+          "link": "https://twitter.com/RepDavids/status/2033564274774225204#m",
+          "date": "Mar 16, 2026 · 3:21 PM UTC"
+        }
+      ]
+    }
+  ],
+  "account_summary": [
+    {
+      "target": "HalcyonAi",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:17:22.808534",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "DarkWebInformer",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 6,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:17:44.517608",
+      "top_users": [
+        [
+          "@DarkWebInformer",
+          6
+        ]
+      ],
+      "hashtags": [],
+      "sample_texts": [
+        "‼️🇬🇧 A threat actor is auctioning full admin access and shell access to a UK-based WordPress/Shopify",
+        "‼️ BreachForums has been down for roughly a day now, but they claim they will be back up after an \"i"
+      ],
+      "sample_tweets": [
+        {
+          "text": "‼️🇬🇧 A threat actor is auctioning full admin access and shell access to a UK-based WordPress/Shopify store with 2,883 total orders and a 100% card pay",
+          "username": "DarkWebInformer",
+          "link": "https://twitter.com/DarkWebInformer/status/2033556850705158650#m",
+          "date": "Mar 16, 2026 · 2:51 PM UTC"
+        },
+        {
+          "text": "‼️ BreachForums has been down for roughly a day now, but they claim they will be back up after an \"internal problem,\" although @CCITIC has claimed to ",
+          "username": "DarkWebInformer",
+          "link": "https://twitter.com/DarkWebInformer/status/2033233358092665040#m",
+          "date": "Mar 15, 2026 · 5:26 PM UTC"
+        },
+        {
+          "text": "‼️🇨🇦 The actor has released the first 251,366 Salesforce records of Loblaw and threatens more to come if the company does not contact them.",
+          "username": "DarkWebInformer",
+          "link": "https://twitter.com/DarkWebInformer/status/2033230547636363517#m",
+          "date": "Mar 15, 2026 · 5:15 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "MonThreat",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:18:05.300797",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "DailyDarkWeb",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 13,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:18:26.867905",
+      "top_users": [
+        [
+          "@DailyDarkWeb",
+          13
+        ]
+      ],
+      "hashtags": [
+        "CyberSecurity",
+        "CyberThreatIntelligence",
+        "Infosec",
+        "ThreatIntel",
+        "DarkWeb"
+      ],
+      "sample_texts": [
+        "Czech Republic 🇨🇿 - Pilana Group (TRITCON) has allegedly been breached by the Akira ransomware group",
+        "United States 🇺🇸 - Executive Aviation has allegedly been compromised by the Play ransomware group, e"
+      ],
+      "sample_tweets": [
+        {
+          "text": "Czech Republic 🇨🇿 - Pilana Group (TRITCON) has allegedly been breached by the Akira ransomware group, exposing 93GB of sensitive employee, client, fin",
+          "username": "DailyDarkWeb",
+          "link": "https://twitter.com/DailyDarkWeb/status/2033544091321999868#m",
+          "date": "Mar 16, 2026 · 2:01 PM UTC"
+        },
+        {
+          "text": "United States 🇺🇸 - Executive Aviation has allegedly been compromised by the Play ransomware group, exposing sensitive client documents, payroll record",
+          "username": "DailyDarkWeb",
+          "link": "https://twitter.com/DailyDarkWeb/status/2033539023352852988#m",
+          "date": "Mar 16, 2026 · 1:40 PM UTC"
+        },
+        {
+          "text": "The NoName057(16) group claims to have targeted the Shas Party, Noam Party, Otzma Yehudit, Bustan al-Marj, Mevoot HaHermon, Shomron, Arrabe, and Lod 🇮",
+          "username": "DailyDarkWeb",
+          "link": "https://twitter.com/DailyDarkWeb/status/2033536818029728251#m",
+          "date": "Mar 16, 2026 · 1:32 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "FalconFeedsio",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 17,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:18:47.908770",
+      "top_users": [
+        [
+          "@FalconFeedsio",
+          17
+        ]
+      ],
+      "hashtags": [
+        "OSINT",
+        "CyberIntel",
+        "ThreatIntelligence",
+        "CyberSecurity",
+        "InformationOperations"
+      ],
+      "sample_texts": [
+        "🚨 Ransomware Alert: 🇨🇿  PILANA Group a.s. (pilanagroup.com), a Czech Republic-based machinery manufa",
+        "🚨 Ransomware Alert 🚨  The Gentlemen ransomware group has added 7 new victims to their dark web porta"
+      ],
+      "sample_tweets": [
+        {
+          "text": "🚨 Ransomware Alert: 🇨🇿  PILANA Group a.s. (pilanagroup.com), a Czech Republic-based machinery manufacturing company, has reportedly fallen victim to t",
+          "username": "FalconFeedsio",
+          "link": "https://twitter.com/FalconFeedsio/status/2033532953184329762#m",
+          "date": "Mar 16, 2026 · 1:16 PM UTC"
+        },
+        {
+          "text": "🚨 Ransomware Alert 🚨  The Gentlemen ransomware group has added 7 new victims to their dark web portal.  * ⁠BCN Medical 🇨🇴 * CHASE ASIA 🇹🇭 * Canal Capi",
+          "username": "FalconFeedsio",
+          "link": "https://twitter.com/FalconFeedsio/status/2033532627354038322#m",
+          "date": "Mar 16, 2026 · 1:15 PM UTC"
+        },
+        {
+          "text": "🚨 Ransomware Alert: 🇭🇷  City of Rovinj-Rovigno (rovinj-rovigno.hr), a Croatia-based government organization, has reportedly fallen victim to the LockB",
+          "username": "FalconFeedsio",
+          "link": "https://twitter.com/FalconFeedsio/status/2033529416681505199#m",
+          "date": "Mar 16, 2026 · 1:02 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "H4ckManac",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 2,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:19:08.780660",
+      "top_users": [
+        [
+          "@H4ckmanac",
+          2
+        ]
+      ],
+      "hashtags": [],
+      "sample_texts": [
+        "🚨Cyber Alert ‼️  🇧🇭Bahrain - 𝗥𝗼𝘆𝗮𝗹 𝗕𝗮𝗵𝗿𝗮𝗶𝗻 𝗛𝗼𝘀𝗽𝗶𝘁𝗮𝗹  Payload hacking group claims to have breached R",
+        "🚨Cyber Alert ‼️  🇨🇦Canada - 𝗪𝗲𝘀𝘁𝗽𝗼𝗿𝘁 𝗙𝘂𝗲𝗹 𝗦𝘆𝘀𝘁𝗲𝗺𝘀  Embargo hacking group claims to have breached Wes"
+      ],
+      "sample_tweets": [
+        {
+          "text": "🚨Cyber Alert ‼️  🇧🇭Bahrain - 𝗥𝗼𝘆𝗮𝗹 𝗕𝗮𝗵𝗿𝗮𝗶𝗻 𝗛𝗼𝘀𝗽𝗶𝘁𝗮𝗹  Payload hacking group claims to have breached Royal Bahrain Hospital.  Threat actor: Payload Sect",
+          "username": "H4ckmanac",
+          "link": "https://twitter.com/H4ckmanac/status/2033438739280584811#m",
+          "date": "Mar 16, 2026 · 7:02 AM UTC"
+        },
+        {
+          "text": "🚨Cyber Alert ‼️  🇨🇦Canada - 𝗪𝗲𝘀𝘁𝗽𝗼𝗿𝘁 𝗙𝘂𝗲𝗹 𝗦𝘆𝘀𝘁𝗲𝗺𝘀  Embargo hacking group claims to have breached Westport Fuel Systems.  Threat actor: Embargo Sector:",
+          "username": "H4ckmanac",
+          "link": "https://twitter.com/H4ckmanac/status/2033497256431694060#m",
+          "date": "Mar 16, 2026 · 10:55 AM UTC"
+        }
+      ]
+    },
+    {
+      "target": "GossiTheDog",
+      "type": "account",
+      "group": "security_researchers",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:19:44.859507",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "vxunderground",
+      "type": "account",
+      "group": "security_researchers",
+      "tweet_count": 12,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:20:06.577875",
+      "top_users": [
+        [
+          "@vxunderground",
+          12
+        ]
+      ],
+      "hashtags": [],
+      "sample_texts": [
+        "Currently reading about how the weird mooshy gooey thingy inside my skull can retain information (th",
+        "> be employee > work at Atlassian > 10am > get promotion  > celebrate on LinkedIn  > new career mile"
+      ],
+      "sample_tweets": [
+        {
+          "text": "Currently reading about how the weird mooshy gooey thingy inside my skull can retain information (the brain).  I started reading on neuropath ways and",
+          "username": "vxunderground",
+          "link": "https://twitter.com/vxunderground/status/2033430971781919225#m",
+          "date": "Mar 16, 2026 · 6:31 AM UTC"
+        },
+        {
+          "text": "> be employee > work at Atlassian > 10am > get promotion  > celebrate on LinkedIn  > new career milestone  > overwhelming joy and pride > 2pm > get em",
+          "username": "vxunderground",
+          "link": "https://twitter.com/vxunderground/status/2033404540947513372#m",
+          "date": "Mar 16, 2026 · 4:46 AM UTC"
+        },
+        {
+          "text": "I want to share something. I don't expect anyone to care. I just want to scream into the void.  I've accomplished everything I've ever wanted to do wi",
+          "username": "vxunderground",
+          "link": "https://twitter.com/vxunderground/status/2033375514455331237#m",
+          "date": "Mar 16, 2026 · 2:51 AM UTC"
+        }
+      ]
+    },
+    {
+      "target": "MalwareTechBlog",
+      "type": "account",
+      "group": "security_researchers",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:20:27.643511",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "taviso",
+      "type": "account",
+      "group": "security_researchers",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:20:49.663093",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "SwiftOnSecurity",
+      "type": "account",
+      "group": "security_researchers",
+      "tweet_count": 12,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-17T04:21:11.155521",
+      "top_users": [
+        [
+          "@SwiftOnSecurity",
+          8
+        ],
+        [
+          "@mthcht2",
+          1
+        ],
+        [
+          "@IAMERICAbooted",
+          1
+        ]
+      ],
+      "hashtags": [],
+      "sample_texts": [
+        "Trump seeing your 2x3090 AI goonstation:  \"Wow, everything is computer.\"",
+        "I like the auto-revoke tripwire"
+      ],
+      "sample_tweets": [
+        {
+          "text": "Trump seeing your 2x3090 AI goonstation:  \"Wow, everything is computer.\"",
+          "username": "SwiftOnSecurity",
+          "link": "https://twitter.com/SwiftOnSecurity/status/2033594059516694623#m",
+          "date": "Mar 16, 2026 · 5:19 PM UTC"
+        },
+        {
+          "text": "I like the auto-revoke tripwire",
+          "username": "SwiftOnSecurity",
+          "link": "https://twitter.com/SwiftOnSecurity/status/2033584510705504738#m",
+          "date": "Mar 16, 2026 · 4:41 PM UTC"
+        },
+        {
+          "text": "100% of the ppl I know with AI gf are still with AI gf. Worrying trend for women, who are getting locked out of these opportunities.",
+          "username": "SwiftOnSecurity",
+          "link": "https://twitter.com/SwiftOnSecurity/status/2033572092227006549#m",
+          "date": "Mar 16, 2026 · 3:52 PM UTC"
+        }
+      ]
+    }
+  ],
+  "top_words": [
+    [
+      "security",
+      79
+    ],
+    [
+      "group",
+      76
+    ],
+    [
+      "cybersecurity",
+      70
+    ],
+    [
+      "threat",
+      68
+    ],
+    [
+      "cve",
+      59
+    ],
+    [
+      "cyber",
+      55
+    ],
+    [
+      "data",
+      50
+    ],
+    [
+      "cyberattack",
+      47
+    ],
+    [
+      "malware",
+      42
+    ],
+    [
+      "attack",
+      41
+    ],
+    [
+      "day",
+      39
+    ],
+    [
+      "iran",
+      36
+    ],
+    [
+      "vulnerability",
+      36
+    ],
+    [
+      "ransomware",
+      34
+    ],
+    [
+      "alert",
+      32
+    ],
+    [
+      "intelligence",
+      28
+    ],
+    [
+      "claims",
+      28
+    ],
+    [
+      "enhypen",
+      27
+    ],
+    [
+      "ddos",
+      26
+    ],
+    [
+      "incident",
+      25
+    ]
+  ],
+  "top_hashtags": [
+    [
+      "cybersecurity",
+      51
+    ],
+    [
+      "beaccountable_belift",
+      17
+    ],
+    [
+      "heeseung_stays",
+      17
+    ],
+    [
+      "enhypen_is_seven",
+      16
+    ],
+    [
+      "infosec",
+      14
+    ],
+    [
+      "cve",
+      13
+    ],
+    [
+      "cyberattack",
+      10
+    ],
+    [
+      "ai",
+      10
+    ],
+    [
+      "zeroday",
+      9
+    ],
+    [
+      "dfir",
+      9
+    ]
+  ],
+  "top_mentions": [
+    [
+      "msftsecurity",
+      8
+    ],
+    [
+      "youtube",
+      2
+    ],
+    [
+      "nottshame",
+      2
+    ],
+    [
+      "cyberdefenders",
+      2
+    ],
+    [
+      "ssalmarapolice",
+      2
+    ],
+    [
+      "assampolice",
+      2
+    ],
+    [
+      "himantabiswa",
+      2
+    ],
+    [
+      "sangmaconrad",
+      2
+    ],
+    [
+      "cyberpress",
+      1
+    ],
+    [
+      "beliftlab",
+      1
+    ]
+  ],
+  "top_users": [
+    [
+      "@FalconFeedsio",
+      22
+    ],
+    [
+      "@DailyDarkWeb",
+      13
+    ],
+    [
+      "@vxunderground",
+      12
+    ],
+    [
+      "@CveFindCom",
+      8
+    ],
+    [
+      "@grok",
+      8
+    ],
+    [
+      "@DFIR_Radar",
+      8
+    ],
+    [
+      "@SwiftOnSecurity",
+      8
+    ],
+    [
+      "@rokmc_sns",
+      7
+    ],
+    [
+      "@10DDoS_10",
+      6
+    ],
+    [
+      "@DarkWebInformer",
+      6
+    ]
+  ],
+  "llm_summary": "🤖 [GEMINI 분석] 2026-03-17 04:23 KST\n🟠 위협 점수: 8/10 (높음)\n\n### 1. 현재 주요 사이버보안 트렌드\n최근 공격자들은 ClickFix 캠페인을 통해 macOS 환경의 MacSync Infostealer를 유포하는 등 사용자 인터랙션을 악용한 정교한 사회공학적 기법을 적극 활용하고 있습니다. 또한, AI 에이전트와 자동화 도구를 활용하여 공격 속도를 높이고 있으며, 랜섬웨어 그룹은 단순 암호화에서 데이터 탈취 및 유출 위협(Data Extortion) 중심으로 비즈니스 모델을 전환하고 있습니다. 특히, 지정학적 갈등과 연계된 파괴적인 Wiper 공격이 의료 및 인프라 분야를 타겟으로 지속적으로 발생하고 있어 각별한 주의가 요구됩니다.\n\n### 2. 주요 위협 행위자 / 캠페인\n- **Handala Hack (Void Manticore)** (Unit42, Check Point): 이란 연계 그룹으로, Microsoft Intune 오용 및 Wiper 악성코드를 사용하여 의료 기술 기업(Stryker 등)을 타겟으로 파괴적 공격 수행.\n- **Sednit (APT28)** (AhnLab ASEC): 러시아 연계 APT 그룹으로, 최근 공급망 공격 및 악성 DLL 주입을 통해 정보 탈취 활동 재개.\n- **Lotus Blossom** (AhnLab ASEC): Notepad++ 공급망 인프라를 악용하여 정상 업데이트 프로세스에 악성 실행 파일을 주입하는 캠페인 수행.\n- **SmartApeSG** (SANS ISC): ClickFix 페이지를 통해 Remcos RAT을 유포하는 캠페인 운영.\n\n### 3. 한국 관련 위협\n- **Qilin 랜섬웨어**: 국내 유명 피부과 및 글로벌 광고 기업의 한국 지사를 대상으로 랜섬웨어 공격 수행 (AhnLab ASEC).\n- **Winos4.0 악성코드**: 카카오톡 설치 파일로 위장하여 SEO Poisoning 기법을 통해 유포되는 사례 확인 (AhnLab ASEC).\n- **기술보호 바우처**: 중소기업 대상 기술보호 역량 강화 지원 사업이 활발히 진행 중이나, 공격자들의 타겟팅이 지속되고 있음 (이스트시큐리티).\n\n### 4. 주요 CVE / 취약점 (CVSS 우선)\n- **CVE-2026-89102**: Apache Tomcat, CVSS 9.8, RCE 취약점 (Unauthenticated).\n- **CVE-2026-29191**: ZITADEL, CVSS 9.3, XSS 기반 Account Takeover.\n- **CVE-2026-3083 / 3085**: GStreamer, CVSS 8.8, Heap Overflow 및 OOB Write.\n- **CVE-2025-59287**: Windows Server WSUS, 원격 코드 실행 가능 (Wild에서 악용 중).\n- **CVE-2026-20127**: Cisco Catalyst SD-WAN Manager, 악용 사례 보고됨.\n\n### 5. IOC 요약\n- **도메인**: office.com (사칭 공격 대상) ([TheHackerNews](https://thehackernews.com/2026/03/weekly-recap-chrome-0-days-router.html))\n- **해시**: 이번 수집에서 직접적인 파일 해시값은 제공되지 않음.\n- **CVE**: \n    - CVE-2026-89102 ([CyberAlliance26](https://twitter.com/CyberAlliance26/status/2033556368850841782#m))\n    - CVE-2026-29191 ([CCBalert](https://twitter.com/CCBalert/status/2033557648344248762#m))\n    - CVE-2025-59287 ([SecurityAid](https://twitter.com/SecurityAid/status/2033560609506091291#m))\n    - CVE-2026-3083/3085 ([CCBalert](https://twitter.com/CCBalert/status/2033558801836544286#m))\n\n### 6. 즉각 대응 권고\n- **패치 적용**: Apache Tomcat 및 GStreamer, Windows Server WSUS의 최신 보안 업데이트를 즉시 적용하십시오.\n- **사회공학적 공격 대비**: SEO Poisoning 및 ClickFix 캠페인에 대비하여 공식 소프트웨어 다운로드 경로를 재확인하고, 사용자 대상 보안 인식 교육을 강화하십시오.\n- **엔드포인트 모니터링**: Microsoft Intune 등 관리 도구의 비정상적인 접근 로그를 점검하고, Wiper 공격 대비 중요 데이터의 오프라인 백업을 수행하십시오.\n\n### 7. 위협 수준 평가\n- **점수**: 8/10\n- **근거**: 의료 및 인프라를 타겟으로 한 Wiper 공격과 RCE 취약점의 활발한 악용이 결합되어 기업 운영에 치명적인 위협을 초래하고 있음.\n\n📊 토큰: 이번 요청 16,145개 (입력 14,979 / 출력 1,166)\n📈 일일 한도: 130,458 / 1,000,000 사용 (13.0%) | 잔여 869,542개",
+  "llm_top_tweets": [
+    {
+      "rank": 1,
+      "threat_level": "HIGH",
+      "username": "CyberAlliance26",
+      "date": "Mar 16, 2026 · 2:49 PM UTC",
+      "link": "https://twitter.com/CyberAlliance26/status/2033556368850841782#m",
+      "text": "🚨 FRESH TOP THREAT ALERT 🚨   Critical RCE in Apache Tomcat  (March 16, 2026): CVE-2026-89102 – (CVSS 9.8)!  Unauthenticated attackers can send one crafted request to trigger a deserialization flaw and",
+      "reason": "Apache Tomcat의 치명적인 RCE 취약점(CVE-2026-89102) 공개로 즉각적인 패치 필요"
+    },
+    {
+      "rank": 2,
+      "threat_level": "HIGH",
+      "username": "SecurityAid",
+      "date": "Mar 16, 2026 · 3:06 PM UTC",
+      "link": "https://twitter.com/SecurityAid/status/2033560609506091291#m",
+      "text": "Critical Windows Server WSUS Vulnerability Exploited in the Wild   CVE-2025-59287 allows a remote, unauthenticated attacker to execute arbitrary code and a PoC exploit is available. The post Critical ",
+      "reason": "Windows Server WSUS의 원격 코드 실행 취약점(CVE-2025-59287) 악용 사례 보고"
+    },
+    {
+      "rank": 3,
+      "threat_level": "HIGH",
+      "username": "CCBalert",
+      "date": "Mar 16, 2026 · 2:54 PM UTC",
+      "link": "https://twitter.com/CCBalert/status/2033557648344248762#m",
+      "text": "Warning: Critical #XSS Account Takeover in #ZITADEL. CVE-2026-29191 CVSS: 9.3. This flaw in Login V2 /saml-post can enable account takeover and then lead to serious compromise. #Patch #Patch #Patch",
+      "reason": "ZITADEL의 계정 탈취가 가능한 치명적 XSS 취약점(CVE-2026-29191) 공개"
+    },
+    {
+      "rank": 4,
+      "threat_level": "HIGH",
+      "username": "cyberasia_io",
+      "date": "Mar 15, 2026 · 5:57 AM UTC",
+      "link": "https://twitter.com/cyberasia_io/status/2033059987166212463#m",
+      "text": "🚨 Alert 🇰🇷   The hacktivist group RipperSec has announced a coordinated cyberattack targeting the South Korean website Chonwoo chonwoo.co.kr #CyberSecurity #DDoSAttack #RipperSec #SouthKorea #CyberAtt",
+      "reason": "RipperSec 해킹 그룹의 한국 대상 조직적 사이버 공격 시도 보고"
+    },
+    {
+      "rank": 5,
+      "threat_level": "HIGH",
+      "username": "FalconFeedsio",
+      "date": "Mar 15, 2026 · 12:17 PM UTC",
+      "link": "https://twitter.com/FalconFeedsio/status/2033155547802067291#m",
+      "text": "🚨DDoS Alert: 🇰🇷  RipperSec claims to have targeted the website of Institute for National Security Strategy (inss.re.kr).  NB : The site is up at the moment",
+      "reason": "RipperSec 해킹 그룹이 한국 국가안보전략연구원 웹사이트를 표적으로 DDoS 공격 수행"
+    },
+    {
+      "rank": 6,
+      "threat_level": "HIGH",
+      "username": "M_Miho_JPN",
+      "date": "Mar 16, 2026 · 3:05 PM UTC",
+      "link": "https://twitter.com/M_Miho_JPN/status/2033560323047981106#m",
+      "text": "Poland’s National Centre for Nuclear Research (NCBJ) says hackers targeted its IT infrastructure, but the attack was detected and blocked before causing any impact. bleepingcomputer.com/news/se…",
+      "reason": "폴란드 국립원자력연구센터(NCBJ) 대상 해킹 공격 발생"
+    },
+    {
+      "rank": 7,
+      "threat_level": "HIGH",
+      "username": "SCMagazine",
+      "date": "Mar 16, 2026 · 2:51 PM UTC",
+      "link": "https://twitter.com/SCMagazine/status/2033556660044648542#m",
+      "text": "Medical device maker Stryker says it has no timeline for full recovery after a cyberattack by an Iran-linked group disrupted 200K-plus systems. The impact now extends beyond IT to manufacturing, suppl",
+      "reason": "의료기기 제조사 Stryker를 대상으로 한 이란 연계 해킹 그룹의 사이버 공격 및 서비스 중단"
+    },
+    {
+      "rank": 8,
+      "threat_level": "HIGH",
+      "username": "01ra66it",
+      "date": "Mar 16, 2026 · 6:55 AM UTC",
+      "link": "https://twitter.com/01ra66it/status/2033436972648382865#m",
+      "text": "APT28のRoundishは、Roundcubeを狙うロシアGRU系の実戦的なメール窃取キット。重要なのは、認証情報、メール、連絡先、2FAシークレットの窃取だけでなく、Linux持続化用Go製インプラントまで含む“運用一式”が露出した点。    Hunt.ioは2026年1月、203.161.50[.]145上の公開ディレクトリからこのツール群を確認し、主標的としてウクライナ国家移民局の ma",
+      "reason": "러시아 GRU 연계 APT28 그룹의 Roundcube 타겟 이메일 탈취 도구 'Roundish' 상세 분석"
+    },
+    {
+      "rank": 9,
+      "threat_level": "HIGH",
+      "username": "CyberSecDive",
+      "date": "Mar 16, 2026 · 3:00 PM UTC",
+      "link": "https://twitter.com/CyberSecDive/status/2033558953557192736#m",
+      "text": "Robotics firm Intuitive Surgical says cyberattack compromised business, customer data: cybersecuritydive.com/news/i… (by Ricky Zipp)",
+      "reason": "로봇 공학 기업 Intuitive Surgical의 사이버 공격으로 인한 고객 데이터 유출 사고"
+    },
+    {
+      "rank": 10,
+      "threat_level": "HIGH",
+      "username": "SecurityAid",
+      "date": "Mar 15, 2026 · 12:06 AM UTC",
+      "link": "https://twitter.com/SecurityAid/status/2032971729681686885#m",
+      "text": "North Korea’s Lazarus group attacked three companies involved in drone development  North Korea’s Lazarus threat group attacked three Europe-based companies with active operations in the defense secto",
+      "reason": "북한 라자루스 그룹의 드론 개발 관련 기업 3곳 대상 공격 활동 보고"
+    }
+  ]
+}

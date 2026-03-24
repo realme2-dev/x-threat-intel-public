@@ -1,0 +1,407 @@
+{
+  "generated_at": "2026-03-08T23:13:55.284094",
+  "total_tweets": 111,
+  "total_targets": 6,
+  "keyword_summary": [],
+  "account_summary": [
+    {
+      "target": "HalcyonAi",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-08T23:12:01.416581",
+      "top_users": [
+        [
+          "@HalcyonAi",
+          14
+        ],
+        [
+          "@jc_vazquez",
+          3
+        ],
+        [
+          "@_kernelcon_",
+          1
+        ]
+      ],
+      "hashtags": [
+        "RaaS",
+        "Vect",
+        "ransomware",
+        "ransomware",
+        "Akira"
+      ],
+      "sample_texts": [
+        "New #RaaS. Real capability.  #Vect is live - and already hitting orgs in Brazil & South Africa.  Wha",
+        "A $0.05 paperclip beat a million-dollar #ransomware crew.  Play locked victims out of SonicWall fire"
+      ]
+    },
+    {
+      "target": "DarkWebInformer",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 19,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-08T23:12:22.810563",
+      "top_users": [
+        [
+          "@DarkWebInformer",
+          3
+        ],
+        [
+          "@grok",
+          2
+        ],
+        [
+          "@shabat_12",
+          2
+        ]
+      ],
+      "hashtags": [],
+      "sample_texts": [
+        "Ça fuit de partout bordel",
+        "10k+ medical lives exposed while the hacker mocks their security on a forum. Security from day one i"
+      ]
+    },
+    {
+      "target": "MonThreat",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 18,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-08T23:12:43.367592",
+      "top_users": [
+        [
+          "@MonThreat",
+          12
+        ],
+        [
+          "@AvaoControl",
+          3
+        ],
+        [
+          "@JustWantToQ1",
+          1
+        ]
+      ],
+      "hashtags": [
+        "Cybercrime",
+        "DarkWeb",
+        "DataLeak",
+        "ThreatIntelligence",
+        "Malware"
+      ],
+      "sample_texts": [
+        "Advanced loaders using polymorphism, steganography, and runtime bytecode execution show how attacker",
+        "I asked one of these newer people to write a simple UD loader one time in NIM to show me their knowl"
+      ]
+    },
+    {
+      "target": "DailyDarkWeb",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-08T23:13:02.378859",
+      "top_users": [
+        [
+          "@DailyDarkWeb",
+          6
+        ],
+        [
+          "@JustWantToQ1",
+          5
+        ],
+        [
+          "@HomieDntFknCare",
+          2
+        ]
+      ],
+      "hashtags": [
+        "CyberWar",
+        "CyberThreatIntelligence",
+        "Hacktivism",
+        "Infosec",
+        "CyberSecurity"
+      ],
+      "sample_texts": [
+        "Another reminder about cybersecurity risks.",
+        "👀"
+      ]
+    },
+    {
+      "target": "FalconFeedsio",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-08T23:13:24.830896",
+      "top_users": [
+        [
+          "@FalconFeedsio",
+          19
+        ],
+        [
+          "@ravirockks",
+          1
+        ]
+      ],
+      "hashtags": [
+        "OpBahrain"
+      ],
+      "sample_texts": [
+        "🚨 DDoS Alert: 🇩🇪  NoName claims to have targeted multiple websites in Germany.  * Healy Hudson GmbH ",
+        "🚨 OSINT Alert – Bahrain Critical Infrastructure 🇧🇭   Hours before Bahrain confirmed damage to a wate"
+      ]
+    },
+    {
+      "target": "H4ckManac",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 14,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-08T23:13:55.256263",
+      "top_users": [
+        [
+          "@AvaoControl",
+          3
+        ],
+        [
+          "@ComCat_05",
+          1
+        ],
+        [
+          "@AnyKumar826971",
+          1
+        ]
+      ],
+      "hashtags": [],
+      "sample_texts": [
+        "Shai Hulud hit CrowdStrike packages. bundle.js runs TruffleHog on install, steals cloud tokens, pers",
+        "Kindly forward these apk so we can track"
+      ]
+    }
+  ],
+  "top_words": [
+    [
+      "ransomware",
+      40
+    ],
+    [
+      "group",
+      32
+    ],
+    [
+      "cyber",
+      28
+    ],
+    [
+      "claims",
+      28
+    ],
+    [
+      "threat",
+      25
+    ],
+    [
+      "alert",
+      21
+    ],
+    [
+      "data",
+      19
+    ],
+    [
+      "government",
+      18
+    ],
+    [
+      "actor",
+      17
+    ],
+    [
+      "cybersecurity",
+      15
+    ],
+    [
+      "based",
+      15
+    ],
+    [
+      "gov",
+      14
+    ],
+    [
+      "ministry",
+      14
+    ],
+    [
+      "bh",
+      14
+    ],
+    [
+      "com",
+      13
+    ],
+    [
+      "team",
+      12
+    ],
+    [
+      "company",
+      12
+    ],
+    [
+      "infrastructure",
+      12
+    ],
+    [
+      "real",
+      11
+    ],
+    [
+      "ai",
+      11
+    ]
+  ],
+  "top_hashtags": [
+    [
+      "cybersecurity",
+      12
+    ],
+    [
+      "ransomware",
+      10
+    ],
+    [
+      "darkweb",
+      10
+    ],
+    [
+      "threatintelligence",
+      8
+    ],
+    [
+      "infosec",
+      7
+    ],
+    [
+      "cyberwar",
+      5
+    ],
+    [
+      "cyberthreatintelligence",
+      5
+    ],
+    [
+      "threatintel",
+      5
+    ],
+    [
+      "cyber",
+      4
+    ],
+    [
+      "cybercrime",
+      4
+    ]
+  ],
+  "top_mentions": [
+    [
+      "halcyonai",
+      5
+    ],
+    [
+      "storxnetwork",
+      2
+    ],
+    [
+      "infosecuritymag",
+      1
+    ],
+    [
+      "gobuildops",
+      1
+    ],
+    [
+      "datagrail",
+      1
+    ],
+    [
+      "verkadahq",
+      1
+    ],
+    [
+      "vast_data",
+      1
+    ],
+    [
+      "forbes",
+      1
+    ],
+    [
+      "axios",
+      1
+    ],
+    [
+      "samsabin923",
+      1
+    ]
+  ],
+  "top_users": [
+    [
+      "@FalconFeedsio",
+      19
+    ],
+    [
+      "@HalcyonAi",
+      14
+    ],
+    [
+      "@MonThreat",
+      12
+    ],
+    [
+      "@AvaoControl",
+      6
+    ],
+    [
+      "@JustWantToQ1",
+      6
+    ],
+    [
+      "@DailyDarkWeb",
+      6
+    ],
+    [
+      "@jc_vazquez",
+      3
+    ],
+    [
+      "@DarkWebInformer",
+      3
+    ],
+    [
+      "@StormyCloudInc",
+      2
+    ],
+    [
+      "@grok",
+      2
+    ]
+  ],
+  "llm_summary": ""
+}

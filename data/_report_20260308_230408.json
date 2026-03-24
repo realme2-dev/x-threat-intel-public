@@ -1,0 +1,727 @@
+{
+  "generated_at": "2026-03-08T23:04:08.231611",
+  "total_tweets": 268,
+  "total_targets": 15,
+  "keyword_summary": [
+    {
+      "target": "Cyberattack",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-08T22:57:02.773265",
+      "top_users": [
+        [
+          "@jbl375537500",
+          2
+        ],
+        [
+          "@Maui_Native",
+          1
+        ],
+        [
+          "@diegomichelato_",
+          1
+        ]
+      ],
+      "hashtags": [
+        "CyberSecurity",
+        "HackingNews",
+        "RipperSec",
+        "CyberAttack",
+        "WingateInstitute"
+      ],
+      "sample_texts": [
+        "I’m thinking cyberattack 💀",
+        "Israel dropped Iran's internet to 4% of normal.  Imagine 96% of your country's communications vanish"
+      ]
+    },
+    {
+      "target": "CVE",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-08T22:57:32.509621",
+      "top_users": [
+        [
+          "@TheHackerWire",
+          6
+        ],
+        [
+          "@cyberbivash",
+          4
+        ],
+        [
+          "@__kokumoto",
+          2
+        ]
+      ],
+      "hashtags": [
+        "IntelFusions",
+        "ThreatIntel",
+        "Nginx",
+        "Vulnerability",
+        "CyberCrime"
+      ],
+      "sample_texts": [
+        "Wicked CVE coming right up 😀",
+        "CVE-2026-27944: Nginx UI backup endpoint requires zero authentication.  CVSS score of 9.8   One HTTP"
+      ]
+    },
+    {
+      "target": "mitre",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-08T22:58:04.587858",
+      "top_users": [
+        [
+          "@leanngreen18",
+          2
+        ],
+        [
+          "@MitreRosario",
+          2
+        ],
+        [
+          "@radiomitre",
+          1
+        ]
+      ],
+      "hashtags": [
+        "catholicsaints",
+        "Christ",
+        "catholicschool",
+        "catholicism",
+        "perpetualhelp"
+      ],
+      "sample_texts": [
+        "Cómo averiguar a nombre de quién está un auto radiomitre.cienradios.com/so…",
+        "Handmade French Antique Blessed Virgin Mary Mitre for sale! Asking for $1,125! Contact us at 913-710"
+      ]
+    },
+    {
+      "target": "exploit",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-08T22:58:24.270333",
+      "top_users": [
+        [
+          "@WhftOwner",
+          2
+        ],
+        [
+          "@collardbunnypet",
+          1
+        ],
+        [
+          "@GloriousGod01",
+          1
+        ]
+      ],
+      "hashtags": [],
+      "sample_texts": [
+        "We will never become self sufficient, the north sea is fully developed and in serious decline.  Prod",
+        "wait till i either get a rich bf or i exploit rich guys ill have the best figurine and pokemon colle"
+      ]
+    },
+    {
+      "target": "RipperSec",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-08T22:58:44.177405",
+      "top_users": [
+        [
+          "@cyberasia_io",
+          8
+        ],
+        [
+          "@FalconFeedsio",
+          6
+        ],
+        [
+          "@S2W_Official",
+          3
+        ]
+      ],
+      "hashtags": [
+        "CyberSecurity",
+        "Hacktivism",
+        "RipperSec",
+        "CyberAttack",
+        "IranIsrael"
+      ],
+      "sample_texts": [
+        "🚨DDoS Alert: 🇮🇱  RipperSec claims to have targeted the website of Switcher (switcher.co.il).  NB : T",
+        "🚨 Alert 🇮🇱   The hacktivist group known as RipperSec has announced a coordinated cyberattack targeti"
+      ]
+    },
+    {
+      "target": "DDoS Korea",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 6,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-08T22:59:12.991771",
+      "top_users": [
+        [
+          "@JyotiTamha46436",
+          2
+        ],
+        [
+          "@FalconFeedsio",
+          1
+        ],
+        [
+          "@namgyeongs88100",
+          1
+        ]
+      ],
+      "hashtags": [],
+      "sample_texts": [
+        "🚨DDoS Alert: 🇰🇷  RipperSec claims to have targeted the website of Korea Research Institute for Defen",
+        "South Korea Distributed Denial of Service (DDoS) Mitigation Service Market Growth Drivers, Size & Tr"
+      ]
+    },
+    {
+      "target": "MegaMedusa",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 15,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-08T22:59:44.044915",
+      "top_users": [
+        [
+          "@Ccwhiteangel",
+          6
+        ],
+        [
+          "@cyber_megan",
+          2
+        ],
+        [
+          "@S2W_Official",
+          1
+        ]
+      ],
+      "hashtags": [
+        "MegaMedusa",
+        "NodeJS",
+        "DDoS",
+        "hacktivist",
+        "infosec"
+      ],
+      "sample_texts": [
+        "For attacks against South Korea, they utilize tools including \"MegaMedusa\" (custom-built) and \"Zeus ",
+        "RipperSec’s Expanding Target List: Ideology, Messaging, and the MegaMedusa Factor  stealthmole-intel"
+      ]
+    },
+    {
+      "target": "Lazarus Group",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-08T23:00:05.554203",
+      "top_users": [
+        [
+          "@cryptolchaos",
+          1
+        ],
+        [
+          "@Egeneroficial",
+          1
+        ],
+        [
+          "@OtunbaBrickz",
+          1
+        ]
+      ],
+      "hashtags": [
+        "ciberseguridad",
+        "TheAtlasMalawi"
+      ],
+      "sample_texts": [
+        "Bybit multi-sig update: 400k ETH now safely custodied by Lazarus Group.",
+        "Noticias: Detección de Ataques del Lazarus Group: Hackers Amplían su Arsenal con PondRAT, ThemeFores"
+      ]
+    },
+    {
+      "target": "APT28",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-08T23:00:37.394948",
+      "top_users": [
+        [
+          "@RespawnTax",
+          2
+        ],
+        [
+          "@EmrysEmryssnr",
+          2
+        ],
+        [
+          "@cyber_watchers",
+          2
+        ]
+      ],
+      "hashtags": [
+        "cyber",
+        "threathunting",
+        "infosec",
+        "Russia",
+        "Ukraine"
+      ],
+      "sample_texts": [
+        "🚨 BadPaw Loader [High] Mar 08, 2026 This report details the BadPaw Loader malware, recently observed",
+        "APT28’s Stealthy Multi-Stage Campaign Leveraging CVE‑2026‑21509 and Cloud C2 Infrastructure dlvr.it/"
+      ]
+    },
+    {
+      "target": "ransomware Korea",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 19,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-08T23:01:06.670173",
+      "top_users": [
+        [
+          "@TweetThreatNews",
+          2
+        ],
+        [
+          "@f1tym1",
+          2
+        ],
+        [
+          "@FalconFeedsio",
+          1
+        ]
+      ],
+      "hashtags": [
+        "SouthKorea",
+        "HealthcareAttack",
+        "Ransomware",
+        "infosec",
+        "ransomware"
+      ],
+      "sample_texts": [
+        "🚨 Ransomware Alert : 🇰🇷  HYUNDAI ELEVATOR (hyundaielevator.com), an South Korea-based Manufacturing ",
+        "Cheongdam OracleClinic in South Korea suffers a ransomware attack linked to threat actor Qilin. Deta"
+      ]
+    },
+    {
+      "target": "한국 해킹",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 8,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-08T23:01:33.038573",
+      "top_users": [
+        [
+          "@Planet0259",
+          1
+        ],
+        [
+          "@IT_CHOSUN",
+          1
+        ],
+        [
+          "@KneelingToGod",
+          1
+        ]
+      ],
+      "hashtags": [
+        "한국",
+        "중국",
+        "로봇청소기",
+        "AI",
+        "인공지능"
+      ],
+      "sample_texts": [
+        "인구 대비 비율 크립토커런시 보유국가.  북한은 빵퍼인데 비트코인 보유 세계3위 ㅋㅋㅋㅋㅋㅋ  정은이 대체 얼마나 부자인거냐??? 인민들은 서로 먹기 바쁜데.  인구대비 보유 4퍼",
+        "\"2년 만에 두 배 이상 성장\" 보안·AI 다 잡은 韓 로봇청소기, 中 위협 #한국 #중국 #로봇청소기 #AI #인공지능 #보안 #삼성전자 #LG전자 #로보락 #데이터 #해킹 #가"
+      ]
+    },
+    {
+      "target": "cyber attack",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.privacyredirect.com",
+      "crawled_at": "2026-03-08T23:02:39.775414",
+      "top_users": [
+        [
+          "@mitri_drake",
+          2
+        ],
+        [
+          "@jha899440",
+          2
+        ],
+        [
+          "@RickRouth",
+          1
+        ]
+      ],
+      "hashtags": [
+        "Gunra",
+        "ransomware",
+        "threatintel",
+        "HongKong",
+        "WindowsForum"
+      ],
+      "sample_texts": [
+        "So Iran wants to go full fight club via cyber attack against India  and I'm supposed to be mad about",
+        "Of course cyber security will check the tweets and first read did they really say that or was it fal"
+      ]
+    },
+    {
+      "target": "malware",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-08T23:03:09.885145",
+      "top_users": [
+        [
+          "@MalwareCutie",
+          4
+        ],
+        [
+          "@gossy_84",
+          1
+        ],
+        [
+          "@CRudinschi",
+          1
+        ]
+      ],
+      "hashtags": [
+        "OSINT",
+        "sponsored",
+        "sponsored",
+        "cybus_iiot",
+        "LimbusCompany"
+      ],
+      "sample_texts": [
+        "Stop hunting for CTI resources one by one.  The \"deepdarkCTI\" GitHub repo is a massive, curated list",
+        "#sponsored by Cybus. Attackers are already using AI to automate reconnaissance and generate malware."
+      ]
+    },
+    {
+      "target": "ZeroDay",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-08T23:03:40.416741",
+      "top_users": [
+        [
+          "@Zeroday_Crypto",
+          9
+        ],
+        [
+          "@puritystats",
+          1
+        ],
+        [
+          "@KylarX_X",
+          1
+        ]
+      ],
+      "hashtags": [
+        "CyberSecurity",
+        "CISA",
+        "Hikvision",
+        "RockwellAutomation",
+        "CVE"
+      ],
+      "sample_texts": [
+        "omfg i hate Hate Hate Hate zeroday fans i Hate them all I hate",
+        "tcc missing the entire point and message behind zeroday will make me upset forever"
+      ]
+    },
+    {
+      "target": "0-day",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-03-08T23:04:08.205527",
+      "top_users": [
+        [
+          "@AltrinchamFCW",
+          1
+        ],
+        [
+          "@afc_richard",
+          1
+        ],
+        [
+          "@KEEPTHALEGACY",
+          1
+        ]
+      ],
+      "hashtags": [
+        "CybersecurityNews",
+        "IndiaVsNewZealand",
+        "FC大阪",
+        "奈良クラブ",
+        "USPHLElite"
+      ],
+      "sample_texts": [
+        "1’ Underway for this afternoon’s international women’s day fixture.  0-0 @AaronsLegal",
+        "I get that aspect, but genuinely curious, what would you remember the more fondly? Your big day out "
+      ]
+    }
+  ],
+  "account_summary": [],
+  "top_words": [
+    [
+      "com",
+      61
+    ],
+    [
+      "group",
+      38
+    ],
+    [
+      "attack",
+      37
+    ],
+    [
+      "cyber",
+      36
+    ],
+    [
+      "rippersec",
+      34
+    ],
+    [
+      "cyberattack",
+      33
+    ],
+    [
+      "korea",
+      33
+    ],
+    [
+      "ddos",
+      32
+    ],
+    [
+      "de",
+      31
+    ],
+    [
+      "day",
+      31
+    ],
+    [
+      "ransomware",
+      31
+    ],
+    [
+      "russian",
+      28
+    ],
+    [
+      "cybersecurity",
+      27
+    ],
+    [
+      "exploit",
+      27
+    ],
+    [
+      "hackers",
+      26
+    ],
+    [
+      "cve",
+      26
+    ],
+    [
+      "like",
+      25
+    ],
+    [
+      "alert",
+      24
+    ],
+    [
+      "malware",
+      24
+    ],
+    [
+      "lazarus",
+      22
+    ]
+  ],
+  "top_hashtags": [
+    [
+      "cybersecurity",
+      19
+    ],
+    [
+      "cyberattack",
+      14
+    ],
+    [
+      "rippersec",
+      10
+    ],
+    [
+      "infosec",
+      7
+    ],
+    [
+      "ransomware",
+      7
+    ],
+    [
+      "opisrael",
+      6
+    ],
+    [
+      "anonymous",
+      6
+    ],
+    [
+      "freepalestine",
+      6
+    ],
+    [
+      "freepalestinefromisraelnow",
+      6
+    ],
+    [
+      "threatintel",
+      5
+    ]
+  ],
+  "top_mentions": [
+    [
+      "youranoncentral",
+      2
+    ],
+    [
+      "shutemdownpt3",
+      2
+    ],
+    [
+      "chuecanatalia",
+      1
+    ],
+    [
+      "petehegseth",
+      1
+    ],
+    [
+      "secwar",
+      1
+    ],
+    [
+      "alfleuco",
+      1
+    ],
+    [
+      "tiraniddo",
+      1
+    ],
+    [
+      "cloudflare",
+      1
+    ],
+    [
+      "cygeekpwn",
+      1
+    ],
+    [
+      "activistht_2",
+      1
+    ]
+  ],
+  "top_users": [
+    [
+      "@cyberasia_io",
+      9
+    ],
+    [
+      "@Zeroday_Crypto",
+      9
+    ],
+    [
+      "@FalconFeedsio",
+      8
+    ],
+    [
+      "@TheHackerWire",
+      6
+    ],
+    [
+      "@Ccwhiteangel",
+      6
+    ],
+    [
+      "@grok",
+      5
+    ],
+    [
+      "@S2W_Official",
+      5
+    ],
+    [
+      "@cyberbivash",
+      4
+    ],
+    [
+      "@MalwareCutie",
+      4
+    ],
+    [
+      "@archie_sham",
+      2
+    ]
+  ],
+  "llm_summary": ""
+}
