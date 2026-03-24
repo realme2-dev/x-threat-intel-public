@@ -31,14 +31,22 @@ from llm_logger import get_llm_logger
 logger = logging.getLogger(__name__)
 
 # ─── 환경변수 ─────────────────────────────────────────────────────────────────
-LLM_BACKEND: str = os.getenv("LLM_BACKEND", "gemini").lower()  # openai | gemini | grok
+# LLM_BACKEND: 기본 백엔드. 실패 시 LLM_FALLBACK_ORDER 순서로 자동 폴백
+LLM_BACKEND: str = os.getenv("LLM_BACKEND", "gemini").lower()
+# LLM_FALLBACK_ORDER: 쉼표 구분 폴백 순서 (기본: groq → grok → openai)
+LLM_FALLBACK_ORDER: list[str] = [
+    s.strip() for s in os.getenv("LLM_FALLBACK_ORDER", "groq,grok,openai").split(",") if s.strip()
+]
+
 OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
 GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
 GROK_API_KEY: str = os.getenv("GROK_API_KEY", "")
+GROQ_API_KEY: str = os.getenv("GROQ_API_KEY", "")
 
 OPENAI_MODEL: str = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
 GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-3.1-flash-lite-preview")
 GROK_MODEL: str = os.getenv("GROK_MODEL", "grok-3-mini-fast-beta")
+GROQ_MODEL: str = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
 
 LLM_TIMEOUT: int = int(os.getenv("LLM_TIMEOUT", "60"))
 
@@ -281,12 +289,64 @@ class GrokBackend:
         )
 
 
+class GroqBackend:
+    """Groq API — 완전 무료, 초고속 추론 (LLaMA/Gemma 기반).
+
+    무료 키 발급: https://console.groq.com
+    무료 한도: llama-3.3-70b 기준 일 14,400 요청 / 분당 6000 토큰
+    OpenAI 호환 엔드포인트 사용.
+    """
+
+    name = "groq"
+
+    def is_available(self) -> bool:
+        return bool(GROQ_API_KEY)
+
+    def complete(self, system: str, user: str) -> LLMResult:
+        resp = requests.post(
+            "https://api.groq.com/openai/v1/chat/completions",
+            headers={
+                "Authorization": f"Bearer {GROQ_API_KEY}",
+                "Content-Type": "application/json",
+            },
+            json={
+                "model": GROQ_MODEL,
+                "messages": [
+                    {"role": "system", "content": system},
+                    {"role": "user", "content": user},
+                ],
+                "temperature": 0.3,
+                "max_tokens": 1500,
+            },
+            timeout=LLM_TIMEOUT,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        usage = data.get("usage", {})
+        return LLMResult(
+            text=data["choices"][0]["message"]["content"],
+            backend=self.name,
+            prompt_tokens=usage.get("prompt_tokens", 0),
+            output_tokens=usage.get("completion_tokens", 0),
+            total_tokens=usage.get("total_tokens", 0),
+        )
+
+
 # ─── 팩토리 및 메인 분석기 ────────────────────────────────────────────────────
 
 _BACKENDS: dict[str, type] = {
     "openai": OpenAIBackend,
     "gemini": GeminiBackend,
     "grok":   GrokBackend,
+    "groq":   GroqBackend,
+}
+
+
+_KEY_ENV: dict[str, str] = {
+    "openai": "OPENAI_API_KEY",
+    "gemini": "GEMINI_API_KEY",
+    "grok":   "GROK_API_KEY",
+    "groq":   "GROQ_API_KEY",
 }
 
 
@@ -299,20 +359,35 @@ def get_backend(name: str | None = None) -> LLMBackend | None:
     backend_name = (name or LLM_BACKEND).lower()
     cls = _BACKENDS.get(backend_name)
     if cls is None:
-        logger.warning("알 수 없는 LLM 백엔드: %s (openai/gemini/grok 중 선택)", backend_name)
+        logger.warning("알 수 없는 LLM 백엔드: %s", backend_name)
         return None
 
     backend = cls()
     if not backend.is_available():
-        key_env = {
-            "openai": "OPENAI_API_KEY",
-            "gemini": "GEMINI_API_KEY",
-            "grok":   "GROK_API_KEY",
-        }.get(backend_name, "API_KEY")
-        logger.warning("LLM 백엔드 '%s' 비활성화: %s 환경변수 미설정", backend_name, key_env)
+        logger.warning("LLM 백엔드 '%s' 비활성화: %s 미설정",
+                       backend_name, _KEY_ENV.get(backend_name, "API_KEY"))
         return None
 
     return backend
+
+
+def get_backend_with_fallback(name: str | None = None) -> LLMBackend | None:
+    """
+    기본 백엔드 시도 후 실패 시 LLM_FALLBACK_ORDER 순서로 자동 폴백합니다.
+    API 키가 설정된 백엔드만 후보로 사용합니다.
+    """
+    primary = (name or LLM_BACKEND).lower()
+    candidates = [primary] + [b for b in LLM_FALLBACK_ORDER if b != primary]
+
+    for backend_name in candidates:
+        backend = get_backend(backend_name)
+        if backend is not None:
+            if backend_name != primary:
+                logger.info("LLM 폴백: %s → %s", primary, backend_name)
+            return backend
+
+    logger.error("사용 가능한 LLM 백엔드 없음 (시도: %s)", candidates)
+    return None
 
 
 def _threat_level_emoji(text: str) -> str:
@@ -380,6 +455,21 @@ def format_llm_result(result: LLMResult) -> str:
     return f"{header}\n\n{result.text}{token_info}"
 
 
+def _try_complete_with_retry(backend: LLMBackend, system: str, prompt: str) -> LLMResult:
+    """단일 백엔드로 최대 3회 재시도 (503 한정). 실패 시 예외 전파."""
+    for attempt in range(3):
+        try:
+            return backend.complete(system, prompt)
+        except requests.HTTPError as e:
+            if e.response is not None and e.response.status_code == 503 and attempt < 2:
+                wait = 30 * (attempt + 1)
+                logger.warning("LLM 503 [%s], %d초 후 재시도 (%d/3)...", backend.name, wait, attempt + 1)
+                time.sleep(wait)
+            else:
+                raise
+    raise RuntimeError("재시도 초과")
+
+
 def run_llm_analysis(
     tweets: list[dict],
     top_words: list[tuple[str, int]],
@@ -389,77 +479,49 @@ def run_llm_analysis(
 ) -> str:
     """
     트윗 데이터를 LLM으로 분석하여 위협 인텔리전스 리포트를 반환합니다.
+    기본 백엔드 실패 시 LLM_FALLBACK_ORDER 순서로 자동 폴백합니다.
 
     Args:
         tweets: 크롤링된 트윗 리스트
         top_words: 빈도 상위 단어 [(word, count), ...]
         top_hashtags: 빈도 상위 해시태그
-        backend_name: "openai" | "gemini" | "grok" | None (env 기본값 사용)
+        backend_name: "openai" | "gemini" | "grok" | "groq" | None (env 기본값)
         news_text: RSS 뉴스 기사 텍스트 (선택)
 
     Returns:
         분석 결과 문자열 (실패 시 빈 문자열)
     """
-    backend = get_backend(backend_name)
-    if backend is None:
-        return ""
+    primary = (backend_name or LLM_BACKEND).lower()
+    candidates = [primary] + [b for b in LLM_FALLBACK_ORDER if b != primary]
 
     prompt = build_analysis_prompt(tweets, top_words, top_hashtags, news_text=news_text)
-
-    # 로깅 시작
     llm_logger = get_llm_logger()
-    request_id = llm_logger.log_request(backend.name, "analysis", SYSTEM_PROMPT, prompt)
-    start_time = time.time()
 
-    try:
-        logger.info("LLM 분석 시작 (backend=%s, tweets=%d개)", backend.name, len(tweets))
-        result = None
-        for attempt in range(5):
-            try:
-                result = backend.complete(SYSTEM_PROMPT, prompt)
-                break
-            except requests.HTTPError as e:
-                if e.response is not None and e.response.status_code == 503 and attempt < 4:
-                    wait = 30 * (attempt + 1)
-                    logger.warning("LLM 503 오류, %d초 후 재시도 (%d/5)...", wait, attempt + 1)
-                    time.sleep(wait)
-                else:
-                    raise
-        if result is None:
+    for backend_name_try in candidates:
+        backend = get_backend(backend_name_try)
+        if backend is None:
+            continue
+
+        request_id = llm_logger.log_request(backend.name, "analysis", SYSTEM_PROMPT, prompt)
+        start_time = time.time()
+        try:
+            logger.info("LLM 분석 시작 (backend=%s, tweets=%d개)", backend.name, len(tweets))
+            result = _try_complete_with_retry(backend, SYSTEM_PROMPT, prompt)
+            logger.info("LLM 분석 완료 (backend=%s, tokens=%d)", backend.name, result.total_tokens)
             duration_ms = (time.time() - start_time) * 1000
-            llm_logger.log_response(request_id, "", duration_ms=duration_ms, success=False, error="No result")
-            return ""
-        logger.info(
-            "LLM 분석 완료 (backend=%s, tokens=%d)",
-            backend.name, result.total_tokens
-        )
-        # 응답 로깅
-        duration_ms = (time.time() - start_time) * 1000
-        llm_logger.log_response(
-            request_id,
-            result.text,
-            prompt_tokens=result.prompt_tokens,
-            output_tokens=result.output_tokens,
-            total_tokens=result.total_tokens,
-            duration_ms=duration_ms,
-            success=True,
-        )
-        return format_llm_result(result)
-    except requests.HTTPError as e:
-        duration_ms = (time.time() - start_time) * 1000
-        llm_logger.log_response(request_id, "", success=False, error=str(e), duration_ms=duration_ms)
-        logger.error("LLM API HTTP 오류 [%s]: %s", backend.name, e)
-        return ""
-    except requests.Timeout:
-        duration_ms = (time.time() - start_time) * 1000
-        llm_logger.log_response(request_id, "", success=False, error=f"Timeout after {LLM_TIMEOUT}s", duration_ms=duration_ms)
-        logger.error("LLM API 타임아웃 [%s]: %d초 초과", backend.name, LLM_TIMEOUT)
-        return ""
-    except Exception as e:
-        duration_ms = (time.time() - start_time) * 1000
-        llm_logger.log_response(request_id, "", success=False, error=str(e), duration_ms=duration_ms)
-        logger.error("LLM 분석 실패 [%s]: %s", backend.name, e)
-        return ""
+            llm_logger.log_response(request_id, result.text,
+                                    prompt_tokens=result.prompt_tokens,
+                                    output_tokens=result.output_tokens,
+                                    total_tokens=result.total_tokens,
+                                    duration_ms=duration_ms, success=True)
+            return format_llm_result(result)
+        except Exception as e:
+            duration_ms = (time.time() - start_time) * 1000
+            llm_logger.log_response(request_id, "", success=False, error=str(e), duration_ms=duration_ms)
+            logger.error("LLM 분석 실패 [%s]: %s — 다음 백엔드 시도", backend.name, e)
+
+    logger.error("모든 LLM 백엔드 실패: %s", candidates)
+    return ""
 
 
 @dataclass
@@ -530,93 +592,64 @@ def run_tweet_selection(
     if not tweets:
         return []
 
-    backend = get_backend(backend_name)
-    if backend is None:
-        return []
+    primary = (backend_name or LLM_BACKEND).lower()
+    candidates = [primary] + [b for b in LLM_FALLBACK_ORDER if b != primary]
 
     prompt = build_tweet_selection_prompt(tweets)
     system = (
         "You are a cybersecurity triage analyst. "
         "Select the most threat-relevant tweets and respond ONLY with valid JSON."
     )
-
-    # 로깅 시작
     llm_logger = get_llm_logger()
-    request_id = llm_logger.log_request(backend.name, "selection", system, prompt)
-    start_time = time.time()
 
-    try:
-        logger.info("LLM 트윗 선별 시작 (backend=%s, tweets=%d개)", backend.name, len(tweets))
-        result = None
-        for attempt in range(5):
-            try:
-                result = backend.complete(system, prompt)
-                break
-            except requests.HTTPError as e:
-                if e.response is not None and e.response.status_code == 503 and attempt < 4:
-                    wait = 30 * (attempt + 1)
-                    logger.warning("LLM 트윗 선별 503 오류, %d초 후 재시도 (%d/5)...", wait, attempt + 1)
-                    time.sleep(wait)
-                else:
-                    raise
-        if result is None:
+    for backend_name_try in candidates:
+        backend = get_backend(backend_name_try)
+        if backend is None:
+            continue
+
+        request_id = llm_logger.log_request(backend.name, "selection", system, prompt)
+        start_time = time.time()
+        try:
+            logger.info("LLM 트윗 선별 시작 (backend=%s, tweets=%d개)", backend.name, len(tweets))
+            result = _try_complete_with_retry(backend, system, prompt)
+            logger.info("LLM 트윗 선별 완료 (tokens=%d)", result.total_tokens)
+
+            text = re.sub(r"```(?:json)?\s*", "", result.text.strip()).strip().rstrip("```").strip()
+            data = json.loads(text)
+
             duration_ms = (time.time() - start_time) * 1000
-            llm_logger.log_response(request_id, "", success=False, error="No result", duration_ms=duration_ms)
-            return []
-        logger.info("LLM 트윗 선별 완료 (tokens=%d)", result.total_tokens)
+            llm_logger.log_response(request_id, result.text,
+                                    prompt_tokens=result.prompt_tokens,
+                                    output_tokens=result.output_tokens,
+                                    total_tokens=result.total_tokens,
+                                    duration_ms=duration_ms, success=True)
 
-        # JSON 파싱
-        text = result.text.strip()
-        # 코드블록 제거
-        text = re.sub(r"```(?:json)?\s*", "", text).strip().rstrip("```").strip()
-        data = json.loads(text)
+            top_tweets: list[TopTweet] = []
+            tweet_pool = tweets[:100]
+            for item in data.get("top_tweets", [])[:10]:
+                idx = item.get("tweet_index")
+                if idx is None or idx >= len(tweet_pool):
+                    continue
+                t = tweet_pool[idx]
+                user = t.get("user", {}).get("username", "?").lstrip("@")
+                top_tweets.append(TopTweet(
+                    rank=item.get("rank", len(top_tweets) + 1),
+                    threat_level=item.get("threat_level", "MEDIUM"),
+                    username=user,
+                    date=t.get("date", ""),
+                    link=t.get("link", ""),
+                    text=t.get("text", "")[:200],
+                    reason=item.get("reason", ""),
+                ))
+            return top_tweets
 
-        # 응답 로깅
-        duration_ms = (time.time() - start_time) * 1000
-        llm_logger.log_response(
-            request_id,
-            result.text,
-            prompt_tokens=result.prompt_tokens,
-            output_tokens=result.output_tokens,
-            total_tokens=result.total_tokens,
-            duration_ms=duration_ms,
-            success=True,
-        )
+        except Exception as e:
+            duration_ms = (time.time() - start_time) * 1000
+            llm_logger.log_response(request_id, "", success=False, error=str(e), duration_ms=duration_ms)
+            logger.error("LLM 트윗 선별 실패 [%s]: %s — 다음 백엔드 시도", backend.name, e)
 
-        top_tweets: list[TopTweet] = []
-        tweet_pool = tweets[:100]
-        for item in data.get("top_tweets", [])[:10]:
-            idx = item.get("tweet_index")
-            if idx is None or idx >= len(tweet_pool):
-                continue
-            t = tweet_pool[idx]
-            user = t.get("user", {}).get("username", "?").lstrip("@")
-            top_tweets.append(TopTweet(
-                rank=item.get("rank", len(top_tweets) + 1),
-                threat_level=item.get("threat_level", "MEDIUM"),
-                username=user,
-                date=t.get("date", ""),
-                link=t.get("link", ""),
-                text=t.get("text", "")[:200],
-                reason=item.get("reason", ""),
-            ))
-        return top_tweets
-
-    except (json.JSONDecodeError, KeyError) as e:
-        duration_ms = (time.time() - start_time) * 1000
-        llm_logger.log_response(request_id, result.text if result else "", success=False, error=f"JSON parse error: {e}", duration_ms=duration_ms)
-        logger.error("LLM 트윗 선별 JSON 파싱 실패: %s", e)
-        return []
-    except requests.Timeout:
-        duration_ms = (time.time() - start_time) * 1000
-        llm_logger.log_response(request_id, "", success=False, error="Timeout", duration_ms=duration_ms)
-        logger.error("LLM 트윗 선별 타임아웃")
-        return []
-    except Exception as e:
-        duration_ms = (time.time() - start_time) * 1000
-        llm_logger.log_response(request_id, "", success=False, error=str(e), duration_ms=duration_ms)
-        logger.error("LLM 트윗 선별 실패: %s", e)
-        return []
+    logger.error("모든 LLM 백엔드 실패 (트윗 선별): %s", candidates)
+    return []
 
 
 def list_available_backends() -> list[str]:
@@ -703,103 +736,70 @@ def run_korea_tweet_filter(
         logger.info("한국 관련 키워드 트윗 없음 (전체 %d개)", len(tweets))
         return []
 
-    candidates = [tweets[i] for i in candidate_indices]
-    logger.info("한국 관련 키워드 1차 필터: %d개 → LLM 분석", len(candidates))
+    tweet_candidates = [tweets[i] for i in candidate_indices]
+    logger.info("한국 관련 키워드 1차 필터: %d개 → LLM 분석", len(tweet_candidates))
 
-    backend = get_backend(backend_name)
-    if backend is None:
-        # LLM 없으면 키워드 매칭만으로 반환
-        result = []
-        for t in candidates:
-            user = t.get("user", {}).get("username", "?").lstrip("@")
-            result.append(KoreaTweet(
-                relevance="MEDIUM",
-                username=user,
-                date=t.get("date", ""),
-                link=t.get("link", ""),
-                text=t.get("text", "")[:200],
-                reason="키워드 매칭 (LLM 미설정)",
-            ))
-        return result
+    primary = (backend_name or LLM_BACKEND).lower()
+    backend_candidates = [primary] + [b for b in LLM_FALLBACK_ORDER if b != primary]
 
-    # 2차 LLM 판단
     tweet_list = "\n".join(
         f"[{i}] @{t.get('user',{}).get('username','?').lstrip('@')} ({t.get('date','')}): {t.get('text','')[:150]}"
-        for i, t in enumerate(candidates)
+        for i, t in enumerate(tweet_candidates)
     )
     prompt = KOREA_SELECTION_PROMPT_TMPL.format(tweet_list=tweet_list)
-
     llm_logger = get_llm_logger()
-    request_id = llm_logger.log_request(backend.name, "korea_filter", KOREA_SELECTION_SYSTEM, prompt)
-    start_time = time.time()
 
-    try:
-        result_raw = None
-        for attempt in range(5):
-            try:
-                result_raw = backend.complete(KOREA_SELECTION_SYSTEM, prompt)
-                break
-            except requests.HTTPError as e:
-                if e.response is not None and e.response.status_code == 503 and attempt < 4:
-                    wait = 30 * (attempt + 1)
-                    logger.warning("LLM 한국 선별 503 오류, %d초 후 재시도 (%d/5)...", wait, attempt + 1)
-                    time.sleep(wait)
-                else:
-                    raise
+    for backend_name_try in backend_candidates:
+        backend = get_backend(backend_name_try)
+        if backend is None:
+            continue
 
-        if result_raw is None:
+        request_id = llm_logger.log_request(backend.name, "korea_filter", KOREA_SELECTION_SYSTEM, prompt)
+        start_time = time.time()
+        try:
+            result_raw = _try_complete_with_retry(backend, KOREA_SELECTION_SYSTEM, prompt)
+
             duration_ms = (time.time() - start_time) * 1000
-            llm_logger.log_response(request_id, "", success=False, error="No result", duration_ms=duration_ms)
-            return []
+            text = re.sub(r"```(?:json)?\s*", "", result_raw.text.strip()).strip().rstrip("```").strip()
+            data = json.loads(text)
 
-        duration_ms = (time.time() - start_time) * 1000
-        text = result_raw.text.strip()
-        text = re.sub(r"```(?:json)?\s*", "", text).strip().rstrip("```").strip()
-        data = json.loads(text)
+            llm_logger.log_response(request_id, result_raw.text,
+                                    prompt_tokens=result_raw.prompt_tokens,
+                                    output_tokens=result_raw.output_tokens,
+                                    total_tokens=result_raw.total_tokens,
+                                    duration_ms=duration_ms, success=True)
 
-        llm_logger.log_response(
-            request_id, result_raw.text,
-            prompt_tokens=result_raw.prompt_tokens,
-            output_tokens=result_raw.output_tokens,
-            total_tokens=result_raw.total_tokens,
-            duration_ms=duration_ms, success=True,
-        )
+            korea_tweets: list[KoreaTweet] = []
+            for item in data.get("korea_tweets", []):
+                idx = item.get("tweet_index")
+                if idx is None or idx >= len(tweet_candidates):
+                    continue
+                t = tweet_candidates[idx]
+                user = t.get("user", {}).get("username", "?").lstrip("@")
+                korea_tweets.append(KoreaTweet(
+                    relevance=item.get("relevance", "MEDIUM"),
+                    username=user,
+                    date=t.get("date", ""),
+                    link=t.get("link", ""),
+                    text=t.get("text", "")[:200],
+                    reason=item.get("reason", ""),
+                ))
 
-        korea_tweets: list[KoreaTweet] = []
-        for item in data.get("korea_tweets", []):
-            idx = item.get("tweet_index")
-            if idx is None or idx >= len(candidates):
-                continue
-            t = candidates[idx]
-            user = t.get("user", {}).get("username", "?").lstrip("@")
-            korea_tweets.append(KoreaTweet(
-                relevance=item.get("relevance", "MEDIUM"),
-                username=user,
-                date=t.get("date", ""),
-                link=t.get("link", ""),
-                text=t.get("text", "")[:200],
-                reason=item.get("reason", ""),
-            ))
+            seen_prefixes: set[str] = set()
+            deduped: list[KoreaTweet] = []
+            for kt in korea_tweets:
+                prefix = kt.text[:50].strip().lower()
+                if prefix not in seen_prefixes:
+                    seen_prefixes.add(prefix)
+                    deduped.append(kt)
 
-        # 내용 유사도 기반 중복 제거 (RT 등으로 동일 내용이 여러 계정에서 포함되는 경우)
-        seen_prefixes: set[str] = set()
-        deduped: list[KoreaTweet] = []
-        for kt in korea_tweets:
-            prefix = kt.text[:50].strip().lower()
-            if prefix not in seen_prefixes:
-                seen_prefixes.add(prefix)
-                deduped.append(kt)
+            logger.info("한국 관련 트윗 최종: %d개 (중복 제거 전 %d개)", len(deduped), len(korea_tweets))
+            return deduped
 
-        logger.info("한국 관련 트윗 최종: %d개 (중복 제거 전 %d개)", len(deduped), len(korea_tweets))
-        return deduped
+        except Exception as e:
+            duration_ms = (time.time() - start_time) * 1000
+            llm_logger.log_response(request_id, "", success=False, error=str(e), duration_ms=duration_ms)
+            logger.error("한국 트윗 필터 실패 [%s]: %s — 다음 백엔드 시도", backend.name, e)
 
-    except (json.JSONDecodeError, KeyError) as e:
-        duration_ms = (time.time() - start_time) * 1000
-        llm_logger.log_response(request_id, result_raw.text if result_raw else "", success=False, error=str(e), duration_ms=duration_ms)
-        logger.error("한국 트윗 필터 JSON 파싱 실패: %s", e)
-        return []
-    except Exception as e:
-        duration_ms = (time.time() - start_time) * 1000
-        llm_logger.log_response(request_id, "", success=False, error=str(e), duration_ms=duration_ms)
-        logger.error("한국 트윗 필터 실패: %s", e)
-        return []
+    logger.error("모든 LLM 백엔드 실패 (한국 필터): %s", backend_candidates)
+    return []
