@@ -37,9 +37,12 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ secrets.GEMINI_MODEL }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GROQ_MODEL: ${{ secrets.GROQ_MODEL }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          LLM_BACKEND: ${{ secrets.LLM_BACKEND }}
+          LLM_BACKEND: "gemini"
+          LLM_FALLBACK_ORDER: "groq,openai"
           ENABLE_LLM: "true"
           PYTHONUTF8: "1"
         run: |

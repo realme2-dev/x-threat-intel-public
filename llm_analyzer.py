@@ -431,16 +431,34 @@ def format_llm_result(result: LLMResult) -> str:
 
     token_info = ""
     if result.total_tokens > 0:
-        # Gemini 일일 한도 표시
-        daily_limit = GEMINI_DAILY_LIMITS.get(GEMINI_MODEL, 0)
-        if result.backend == "gemini" and daily_limit:
-            used_pct = (_session_total_tokens / daily_limit) * 100
-            remaining = max(0, daily_limit - _session_total_tokens)
+        if result.backend == "gemini":
+            # Gemini: 세션 내 누적 토큰 (프로세스 재시작 시 초기화)
+            daily_limit = GEMINI_DAILY_LIMITS.get(GEMINI_MODEL, 0)
+            if daily_limit:
+                used_pct = (_session_total_tokens / daily_limit) * 100
+                remaining = max(0, daily_limit - _session_total_tokens)
+                token_info = (
+                    f"\n\n📊 Gemini 토큰: 이번 {result.total_tokens:,}개 "
+                    f"(입력 {result.prompt_tokens:,} / 출력 {result.output_tokens:,})\n"
+                    f"📈 세션 누적: {_session_total_tokens:,} / {daily_limit:,} "
+                    f"({used_pct:.1f}%) | 세션 잔여 추정 {remaining:,}개"
+                )
+            else:
+                token_info = (
+                    f"\n\n📊 Gemini 토큰: {result.total_tokens:,}개 "
+                    f"(입력 {result.prompt_tokens:,} / 출력 {result.output_tokens:,})"
+                )
+        elif result.backend == "grok":
+            # Grok: xAI 월 $25 무료 크레딧 기준 (grok-3-mini-fast ~$0.60/1M input, ~$4/1M output)
+            # 정확한 잔여량은 API 미지원 → 비용 추정만 표시
+            input_cost = result.prompt_tokens * 0.60 / 1_000_000   # $0.60/1M
+            output_cost = result.output_tokens * 4.00 / 1_000_000  # $4.00/1M
+            total_cost = input_cost + output_cost
+            session_cost = _session_total_tokens * 1.0 / 1_000_000  # 평균 추정
             token_info = (
-                f"\n\n📊 토큰: 이번 요청 {result.total_tokens:,}개 "
+                f"\n\n📊 Grok 토큰: {result.total_tokens:,}개 "
                 f"(입력 {result.prompt_tokens:,} / 출력 {result.output_tokens:,})\n"
-                f"📈 일일 한도: {_session_total_tokens:,} / {daily_limit:,} 사용 "
-                f"({used_pct:.1f}%) | 잔여 {remaining:,}개"
+                f"💰 이번 요청 추정 비용: ${total_cost:.4f} | 월 $25 무료 크레딧"
             )
         else:
             token_info = (
@@ -456,18 +474,14 @@ def format_llm_result(result: LLMResult) -> str:
 
 
 def _try_complete_with_retry(backend: LLMBackend, system: str, prompt: str) -> LLMResult:
-    """단일 백엔드로 최대 3회 재시도 (503 한정). 실패 시 예외 전파."""
-    for attempt in range(3):
-        try:
-            return backend.complete(system, prompt)
-        except requests.HTTPError as e:
-            if e.response is not None and e.response.status_code == 503 and attempt < 2:
-                wait = 30 * (attempt + 1)
-                logger.warning("LLM 503 [%s], %d초 후 재시도 (%d/3)...", backend.name, wait, attempt + 1)
-                time.sleep(wait)
-            else:
-                raise
-    raise RuntimeError("재시도 초과")
+    """단일 백엔드 호출. 503/429는 즉시 예외 전파 (빠른 폴백), 기타 오류도 즉시 전파."""
+    try:
+        return backend.complete(system, prompt)
+    except requests.HTTPError as e:
+        status = e.response.status_code if e.response is not None else 0
+        if status in (503, 429, 529):
+            logger.warning("LLM %d [%s] → 즉시 다음 백엔드로 폴백", status, backend.name)
+        raise
 
 
 def run_llm_analysis(
