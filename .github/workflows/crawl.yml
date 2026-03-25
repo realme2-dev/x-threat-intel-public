@@ -51,14 +51,14 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --rebase origin master
           git add data/_report_*.json docs/index.html
-          if git diff --cached --quiet; then
-            echo "변경 없음, 커밋 건너뜀"
-          else
-            git commit -m "data: $(date -u +'%Y-%m-%d %H:%M UTC') 크롤링 결과"
-            git push origin master
-          fi
+          git diff --cached --quiet && echo "변경 없음, 커밋 건너뜀" && exit 0
+          git stash
+          git pull --rebase origin master
+          git stash pop
+          git add data/_report_*.json docs/index.html
+          git commit -m "data: $(date -u +'%Y-%m-%d %H:%M UTC') 크롤링 결과"
+          git push origin master
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
