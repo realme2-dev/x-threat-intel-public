@@ -1,12 +1,7 @@
 name: X Threat Intel Crawler
 
 on:
-  schedule:
-    # 오전 7시 KST = UTC 22:00 (전날)
-    - cron: '0 22 * * *'
-    # 오후 5시 KST = UTC 08:00
-    - cron: '0 8 * * *'
-  workflow_dispatch:  # 수동 실행 버튼
+  workflow_dispatch:  # 수동 실행만 (실제 스케줄은 x-threat-intel-public에서 실행)
 
 permissions:
   contents: write
