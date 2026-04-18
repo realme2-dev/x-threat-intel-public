@@ -38,7 +38,7 @@ load_dotenv(Path(__file__).resolve().parent / ".env")
 from config_loader import load_config, Config
 from analyzer import Analyzer
 from notifier import TelegramNotifier
-from llm_analyzer import run_llm_analysis, run_tweet_selection, list_available_backends, run_korea_tweet_filter
+from llm_analyzer import run_llm_analysis, run_tweet_selection, list_available_backends, run_korea_tweet_filter, run_llm_compare
 from rss_collector import collect_rss_news, format_articles_for_llm, format_articles_for_telegram
 
 # x_crawler 컴포넌트
@@ -197,9 +197,11 @@ def _deduplicate_tweets(crawl_results: list[dict]) -> list[dict]:
 def _filter_tweets_by_date(
     crawl_results: list[dict],
     max_days: int = 2,
+    today_only: bool = False,
 ) -> tuple[list[dict], int, int]:
     """
     수집 시점 기준 max_days일 이내 트윗만 남깁니다.
+    today_only=True 시 KST 당일(00:00~) 트윗만 유지합니다.
 
     Nitter 날짜 포맷: "Mar 9, 2026 · 1:30 PM UTC" 또는 "Mar 9, 2026 · 13:30"
     파싱 실패한 트윗은 통과시킵니다 (보수적 처리).
@@ -207,7 +209,12 @@ def _filter_tweets_by_date(
     Returns:
         (필터링된 crawl_results, 제거된 트윗 수, 전체 트윗 수)
     """
-    cutoff = datetime.now(timezone.utc) - timedelta(days=max_days)
+    if today_only:
+        KST = timezone(timedelta(hours=9))
+        today_kst = datetime.now(KST).replace(hour=0, minute=0, second=0, microsecond=0)
+        cutoff = today_kst.astimezone(timezone.utc)
+    else:
+        cutoff = datetime.now(timezone.utc) - timedelta(days=max_days)
     removed = 0
     total = 0
 
@@ -306,6 +313,8 @@ def run_crawl_job(
     workers: int = 1,
     enable_llm: bool = False,
     llm_backend: str | None = None,
+    compare_backends: list[str] | None = None,
+    today_only: bool = False,
 ) -> None:
     """
     config를 참조하여 키워드/계정 크롤링을 실행하고
@@ -441,7 +450,7 @@ def run_crawl_job(
 
     # ── 날짜 필터 (2일 이내만 유지)
     crawl_results, removed_count, pre_filter_total = _filter_tweets_by_date(
-        crawl_results, max_days=2
+        crawl_results, max_days=2, today_only=today_only
     )
     total_after_filter = sum(
         len(r.get("data", {}).get("tweets", [])) for r in crawl_results
@@ -542,6 +551,19 @@ def run_crawl_job(
             else:
                 safe_print("  [7-3] 한국 관련 트윗 없음")
 
+            # 7-4. LLM 비교 분석 (--compare-llm 시)
+            if compare_backends:
+                safe_print(f"\n  [7-4] LLM 비교 분석 중: {compare_backends}")
+                compare_results = run_llm_compare(
+                    tweets=all_tweets,
+                    top_words=report.top_words,
+                    top_hashtags=report.top_hashtags,
+                    backends=compare_backends,
+                    news_text=news_llm_text,
+                )
+                report.compare_results = compare_results
+                safe_print(f"  [7-4] 비교 완료: {len(compare_results)}개 결과")
+
     analyzer.print_report(report)
     report_path = analyzer.save_report(report)
     safe_print(f"  리포트 저장: {report_path}")
@@ -563,6 +585,15 @@ def run_crawl_job(
                 safe_print(f"  한국 알림 전송 완료 (메시지 {len(korea_result.message_ids)}개)")
             else:
                 safe_print(f"  한국 알림 전송 실패: {korea_result.error}")
+
+        # LLM 비교 결과 전송
+        compare_results = getattr(report, "compare_results", [])
+        if compare_results:
+            safe_print(f"  LLM 비교 결과 전송 중 ({len(compare_results)}개)...")
+            notifier.send_text("━━━━━━━━━━━━━━━━━━━━\n🔬 *LLM 비교 분석 결과*\n━━━━━━━━━━━━━━━━━━━━")
+            for i, cmp_text in enumerate(compare_results, 1):
+                notifier.send_text(cmp_text)
+                safe_print(f"  비교 결과 {i}/{len(compare_results)} 전송 완료")
     else:
         safe_print("\n[8] 텔레그램 비활성화 (.env에 TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID 설정 필요)")
 
@@ -661,8 +692,12 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--llm", action="store_true",
                    help="LLM 위협 인텔리전스 분석 활성화")
     p.add_argument("--llm-backend", default=None, metavar="BACKEND",
-                   choices=["openai", "gemini", "grok"],
-                   help="LLM 백엔드 선택 (openai/gemini/grok, 기본: .env LLM_BACKEND)")
+                   choices=["openai", "gemini", "groq", "grok"],
+                   help="LLM 백엔드 선택 (openai/gemini/groq/grok, 기본: .env LLM_BACKEND)")
+    p.add_argument("--compare-llm", default=None, metavar="BACKENDS",
+                   help="동일 프롬프트를 여러 LLM에 전송해 결과 비교 (예: --compare-llm gemini,groq)")
+    p.add_argument("--today-only", action="store_true",
+                   help="KST 당일 트윗만 수집 (noname 등 실시간 모니터링용)")
     p.add_argument("--log-level", default="INFO",
                    choices=["DEBUG", "INFO", "WARNING", "ERROR"],
                    help="로그 레벨 (기본 INFO)")
@@ -694,6 +729,8 @@ def main() -> None:
     import os as _os
     enable_llm = args.llm or _os.getenv("ENABLE_LLM", "").lower() in ("1", "true", "yes")
 
+    compare_backends = [b.strip() for b in args.compare_llm.split(",")] if args.compare_llm else None
+
     def job():
         run_crawl_job(
             config=config,
@@ -703,6 +740,8 @@ def main() -> None:
             workers=args.workers,
             enable_llm=enable_llm,
             llm_backend=args.llm_backend,
+            compare_backends=compare_backends,
+            today_only=args.today_only,
         )
 
     job()

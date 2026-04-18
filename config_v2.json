@@ -73,6 +73,18 @@
       "keywords": [
         "Cyberattack"
       ]
+    },
+
+    "noname_watch": {
+      "enabled": true,
+      "description": "Noname057 해킹그룹 및 관련 작전 모니터링",
+      "keywords": [
+        "noname057",
+        "ddosia",
+        "OpSouthKorea",
+        "FuckEastwood",
+        "TimeOfRetribution"
+      ]
     }
   },
 

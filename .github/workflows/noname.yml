@@ -1,0 +1,45 @@
+name: Noname Watch
+
+on:
+  schedule:
+    - cron: '0 3 * * *'    # KST 12:00
+    - cron: '30 3 * * *'   # KST 12:30
+    - cron: '0 4 * * *'    # KST 13:00
+    - cron: '30 4 * * *'   # KST 13:30
+    - cron: '0 5 * * *'    # KST 14:00
+    - cron: '30 5 * * *'   # KST 14:30
+    - cron: '0 6 * * *'    # KST 15:00
+    - cron: '30 6 * * *'   # KST 15:30
+    - cron: '0 7 * * *'    # KST 16:00
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  noname_watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          playwright install chromium --with-deps
+
+      - name: Run Noname watch
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          PYTHONUTF8: "1"
+        run: |
+          python main.py --group noname_watch --keywords-only --today-only --workers 2
