@@ -675,6 +675,53 @@ def list_available_backends() -> list[str]:
     return available
 
 
+def run_llm_compare(
+    tweets: list[dict],
+    top_words: list[tuple[str, int]],
+    top_hashtags: list[tuple[str, int]],
+    backends: list[str],
+    news_text: str = "",
+) -> list[str]:
+    """
+    동일한 프롬프트를 여러 백엔드에 각각 전송하고 결과 목록을 반환합니다.
+
+    Args:
+        backends: 비교할 백엔드 이름 목록 (예: ["gemini", "groq"])
+
+    Returns:
+        각 백엔드의 분석 결과 문자열 목록 (실패한 백엔드는 포함 안 됨)
+    """
+    prompt = build_analysis_prompt(tweets, top_words, top_hashtags, news_text=news_text)
+    llm_logger = get_llm_logger()
+    results = []
+
+    for backend_name in backends:
+        backend = get_backend(backend_name)
+        if backend is None:
+            logger.warning("비교 백엔드 '%s' 사용 불가 (API 키 미설정)", backend_name)
+            continue
+
+        request_id = llm_logger.log_request(backend.name, "compare", SYSTEM_PROMPT, prompt)
+        start_time = time.time()
+        try:
+            logger.info("LLM 비교 분석 시작 (backend=%s)", backend.name)
+            result = _try_complete_with_retry(backend, SYSTEM_PROMPT, prompt)
+            logger.info("LLM 비교 분석 완료 (backend=%s, tokens=%d)", backend.name, result.total_tokens)
+            duration_ms = (time.time() - start_time) * 1000
+            llm_logger.log_response(request_id, result.text,
+                                    prompt_tokens=result.prompt_tokens,
+                                    output_tokens=result.output_tokens,
+                                    total_tokens=result.total_tokens,
+                                    duration_ms=duration_ms, success=True)
+            results.append(format_llm_result(result))
+        except Exception as e:
+            duration_ms = (time.time() - start_time) * 1000
+            llm_logger.log_response(request_id, "", success=False, error=str(e), duration_ms=duration_ms)
+            logger.error("LLM 비교 분석 실패 [%s]: %s", backend.name, e)
+
+    return results
+
+
 # ─── 한국 관련 트윗 추출 ─────────────────────────────────────────────────────
 
 KOREA_SELECTION_SYSTEM = (
