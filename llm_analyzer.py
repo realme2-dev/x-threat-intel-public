@@ -44,7 +44,7 @@ GROK_API_KEY: str = os.getenv("GROK_API_KEY", "")
 GROQ_API_KEY: str = os.getenv("GROQ_API_KEY", "")
 
 OPENAI_MODEL: str = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
-GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-3.1-flash-lite-preview")
+GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-3.1-flash-lite")
 GROK_MODEL: str = os.getenv("GROK_MODEL", "grok-3-mini-fast-beta")
 GROQ_MODEL: str = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
 
@@ -412,7 +412,7 @@ def _threat_level_emoji(text: str) -> str:
 
 # Gemini 무료 일일 한도 (모델별)
 GEMINI_DAILY_LIMITS: dict[str, int] = {
-    "gemini-3.1-flash-lite-preview": 1_000_000,  # 무료 1M tokens/day (추정)
+    "gemini-3.1-flash-lite": 1_000_000,  # 무료 1M tokens/day (GA 정식버전)
     "gemini-2.5-flash":              500_000,
     "gemini-2.5-flash-lite":         500_000,
     "gemini-2.0-flash":              1_000_000,
