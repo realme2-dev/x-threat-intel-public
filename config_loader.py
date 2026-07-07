@@ -56,6 +56,7 @@ class AccountGroup:
 class RssFeed:
     name: str
     url: str
+    group: str = ""
 
 
 @dataclass
@@ -201,7 +202,7 @@ def load_config(path: Path = CONFIG_PATH) -> Config:
         if name.startswith("_"):
             continue
         feeds = [
-            RssFeed(name=f.get("name", ""), url=f.get("url", ""))
+            RssFeed(name=f.get("name", ""), url=f.get("url", ""), group=name)
             for f in group.get("feeds", [])
             if f.get("url")
         ]

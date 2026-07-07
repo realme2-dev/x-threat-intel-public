@@ -90,6 +90,7 @@ class TrendReport:
     top_users: list[tuple[str, int]]
     llm_summary: str = ""         # LLM 활성화 시 채워짐
     llm_top_tweets: list = field(default_factory=list)  # LLM 선별 주요 트윗
+    news_articles: list = field(default_factory=list)  # RSS 뉴스 기사 (NewsArticle 목록)
 
 
 class Analyzer:
@@ -323,6 +324,7 @@ class Analyzer:
                     "top_users": obj.top_users,
                     "llm_summary": obj.llm_summary,
                     "llm_top_tweets": [to_serializable(t) for t in obj.llm_top_tweets],
+                    "news_articles": [to_serializable(a) for a in obj.news_articles],
                 }
             if isinstance(obj, TweetSummary):
                 return {
@@ -352,6 +354,19 @@ class Analyzer:
                     "rank": obj.rank, "threat_level": obj.threat_level,
                     "username": obj.username, "date": obj.date,
                     "link": obj.link, "text": obj.text, "reason": obj.reason,
+                }
+            # NewsArticle (rss_collector)
+            if hasattr(obj, "region") and hasattr(obj, "ioc"):
+                ioc = obj.ioc
+                return {
+                    "title": obj.title, "link": obj.link, "summary": obj.summary,
+                    "source": obj.source, "published_kst": obj.published_kst,
+                    "region": obj.region,
+                    "ioc": {
+                        "cves": ioc.cves, "ips": ioc.ips,
+                        "domains": ioc.domains, "hashes": ioc.hashes,
+                        "urls": ioc.urls,
+                    },
                 }
             return obj
 

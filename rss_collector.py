@@ -103,6 +103,7 @@ class NewsArticle:
     source: str
     published_kst: str   # "26/03/09 14:20 KST"
     ioc: IOCResult = field(default_factory=IOCResult)  # 추출된 IOC
+    region: str = "international"  # "domestic" | "international" — 피드 그룹 기반
 
 
 def _parse_date(entry) -> str:
@@ -135,6 +136,7 @@ def collect_rss_news(
     for feed_info in feeds:
         name = feed_info.name
         url = feed_info.url
+        region = "domestic" if feed_info.group.startswith("korean_") else "international"
         try:
             feed = feedparser.parse(
                 url,
@@ -168,6 +170,7 @@ def collect_rss_news(
                     source=name,
                     published_kst=_parse_date(entry),
                     ioc=ioc,
+                    region=region,
                 ))
                 count += 1
 

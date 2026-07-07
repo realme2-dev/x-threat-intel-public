@@ -23,6 +23,36 @@
   .llm-box li { margin-left: 20px; margin-bottom: 4px; }
   .llm-box strong { color: #fbbf24; }
   .llm-box code { background: #0f172a; padding: 1px 5px; border-radius: 3px; font-size: 0.85em; }
+  .llm-box a { color: #7dd3fc; text-decoration: underline; text-underline-offset: 2px; }
+  .llm-box a:hover { color: #bae6fd; }
+  .cve-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+  .cve-card { background: #1e293b; border-radius: 10px; padding: 14px 16px; border-left: 3px solid #ef4444; }
+  .cve-id { font-weight: 700; color: #fca5a5; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; }
+  .cve-severity { background: #7f1d1d; color: #fecaca; font-size: 0.7rem; padding: 2px 8px; border-radius: 20px; font-weight: 600; }
+  .cve-detail { font-size: 0.83rem; color: #cbd5e1; margin-top: 6px; line-height: 1.5; }
+  .trend-box { background: #1e293b; border-radius: 10px; padding: 20px; }
+  .trend-svg { width: 100%; height: auto; overflow: visible; }
+  .trend-svg .grid-line { stroke: #334155; stroke-width: 1; }
+  .trend-svg .axis-label { fill: #64748b; font-size: 10px; }
+  .trend-svg .avg-line { stroke: #64748b; stroke-width: 1; stroke-dasharray: 4 3; }
+  .trend-svg .avg-label { fill: #94a3b8; font-size: 10px; font-style: italic; }
+  .trend-svg .trend-line { fill: none; stroke: #3b82f6; stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+  .trend-svg .trend-area { fill: #3b82f6; opacity: 0.10; }
+  .trend-svg .trend-dot { stroke: #1e293b; stroke-width: 2; cursor: pointer; }
+  .trend-svg .trend-value-label { fill: #cbd5e1; font-size: 10px; font-weight: 600; }
+  .trend-caption { margin-top: 10px; font-size: 0.82rem; color: #94a3b8; text-align: center; }
+  .trend-caption strong { color: #e2e8f0; }
+  .trend-empty { color: #64748b; font-size: 0.85rem; text-align: center; padding: 20px 0; }
+  .keyword-badge-row { display: flex; flex-wrap: wrap; gap: 10px; }
+  .keyword-badge { display: inline-flex; align-items: center; gap: 6px; background: #0f172a; border: 1px solid #334155; color: #e2e8f0; padding: 6px 14px; border-radius: 20px; font-size: 0.88rem; font-weight: 600; }
+  .keyword-badge small { color: #64748b; font-weight: 500; }
+  .kw-rank { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; background: #3b82f6; color: white; border-radius: 50%; font-size: 0.7rem; font-weight: 700; }
+  .channel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .channel-card { background: #1e293b; border-radius: 10px; padding: 18px; text-align: center; }
+  .channel-icon { font-size: 1.6rem; }
+  .channel-num { font-size: 1.8rem; font-weight: 700; color: #f1f5f9; margin-top: 4px; }
+  .channel-label { font-size: 0.85rem; color: #94a3b8; margin-top: 2px; font-weight: 600; }
+  .channel-detail { font-size: 0.75rem; color: #64748b; margin-top: 6px; line-height: 1.5; }
   .tweet-card { background: #1e293b; border-radius: 10px; padding: 16px; margin-bottom: 12px; border-left: 3px solid #3b82f6; }
   .tweet-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
   .rank { font-weight: 700; color: #60a5fa; }
@@ -74,7 +104,7 @@
 <div class="container">
   <header>
     <h1>🛡️ X 사이버 위협 인텔리전스 대시보드</h1>
-    <div class="meta">마지막 업데이트: 2026-07-07 13:11 KST</div>
+    <div class="meta">마지막 업데이트: 2026-07-07 04:11 KST</div>
   </header>
 
   <div class="stats-row">
@@ -96,9 +126,77 @@
     </div>
   </div>
 
+
+  <section>
+    <h2>📈 위협 점수 추이 (최근 14회 수집)</h2>
+    <div class="trend-box"><svg viewBox="0 0 720 260" class="trend-svg" preserveAspectRatio="xMidYMid meet">
+      <rect x="40" y="20.0" width="660" height="41.2" fill="#ef4444" opacity="0.07"/><rect x="40" y="61.2" width="660" height="61.8" fill="#f97316" opacity="0.06"/><rect x="40" y="123.0" width="660" height="103.0" fill="#22c55e" opacity="0.05"/>
+      <line x1="40" y1="226.0" x2="700" y2="226.0" class="grid-line"/><text x="32" y="230.0" class="axis-label" text-anchor="end">0</text><line x1="40" y1="174.5" x2="700" y2="174.5" class="grid-line"/><text x="32" y="178.5" class="axis-label" text-anchor="end">2.5</text><line x1="40" y1="123.0" x2="700" y2="123.0" class="grid-line"/><text x="32" y="127.0" class="axis-label" text-anchor="end">5</text><line x1="40" y1="71.5" x2="700" y2="71.5" class="grid-line"/><text x="32" y="75.5" class="axis-label" text-anchor="end">7.5</text><line x1="40" y1="20.0" x2="700" y2="20.0" class="grid-line"/><text x="32" y="24.0" class="axis-label" text-anchor="end">10</text>
+      <path d="M 40.0,123.0 L 90.8,61.2 L 141.5,123.0 L 192.3,61.2 L 243.1,123.0 L 293.8,123.0 L 344.6,123.0 L 395.4,61.2 L 446.2,61.2 L 496.9,123.0 L 547.7,123.0 L 598.5,61.2 L 649.2,123.0 L 700.0,123.0 L 700.0,226.0 L 40.0,226.0 Z" class="trend-area"/>
+      <line x1="40" y1="100.9" x2="700" y2="100.9" class="avg-line"/><text x="700" y="95.9" class="avg-label" text-anchor="end">평균 6.1</text>
+      <path d="M 40.0,123.0 L 90.8,61.2 L 141.5,123.0 L 192.3,61.2 L 243.1,123.0 L 293.8,123.0 L 344.6,123.0 L 395.4,61.2 L 446.2,61.2 L 496.9,123.0 L 547.7,123.0 L 598.5,61.2 L 649.2,123.0 L 700.0,123.0" class="trend-line"/>
+      <circle cx="40.0" cy="123.0" r="5" fill="#f97316" class="trend-dot"><title>2026-06-30 23:10 KST · 위협 점수 5/10</title></circle><text x="40.0" y="111.0" class="trend-value-label" text-anchor="middle">5</text><circle cx="90.8" cy="61.2" r="5" fill="#ef4444" class="trend-dot"><title>2026-07-01 11:27 KST · 위협 점수 8/10 (전회 대비 +3)</title></circle><text x="90.8" y="81.2" class="trend-value-label" text-anchor="middle">8</text><circle cx="141.5" cy="123.0" r="5" fill="#f97316" class="trend-dot"><title>2026-07-01 23:10 KST · 위협 점수 5/10 (전회 대비 -3)</title></circle><text x="141.5" y="111.0" class="trend-value-label" text-anchor="middle">5</text><circle cx="192.3" cy="61.2" r="5" fill="#ef4444" class="trend-dot"><title>2026-07-02 10:41 KST · 위협 점수 8/10 (전회 대비 +3)</title></circle><text x="192.3" y="81.2" class="trend-value-label" text-anchor="middle">8</text><circle cx="243.1" cy="123.0" r="5" fill="#f97316" class="trend-dot"><title>2026-07-02 23:05 KST · 위협 점수 5/10 (전회 대비 -3)</title></circle><text x="243.1" y="111.0" class="trend-value-label" text-anchor="middle">5</text><circle cx="293.8" cy="123.0" r="5" fill="#f97316" class="trend-dot"><title>2026-07-03 10:39 KST · 위협 점수 5/10 (전회 대비 변동 없음)</title></circle><text x="293.8" y="143.0" class="trend-value-label" text-anchor="middle">5</text><circle cx="344.6" cy="123.0" r="5" fill="#f97316" class="trend-dot"><title>2026-07-03 23:02 KST · 위협 점수 5/10 (전회 대비 변동 없음)</title></circle><text x="344.6" y="111.0" class="trend-value-label" text-anchor="middle">5</text><circle cx="395.4" cy="61.2" r="5" fill="#ef4444" class="trend-dot"><title>2026-07-04 10:12 KST · 위협 점수 8/10 (전회 대비 +3)</title></circle><text x="395.4" y="81.2" class="trend-value-label" text-anchor="middle">8</text><circle cx="446.2" cy="61.2" r="5" fill="#ef4444" class="trend-dot"><title>2026-07-04 22:55 KST · 위협 점수 8/10 (전회 대비 변동 없음)</title></circle><text x="446.2" y="49.2" class="trend-value-label" text-anchor="middle">8</text><circle cx="496.9" cy="123.0" r="5" fill="#f97316" class="trend-dot"><title>2026-07-05 10:15 KST · 위협 점수 5/10 (전회 대비 -3)</title></circle><text x="496.9" y="143.0" class="trend-value-label" text-anchor="middle">5</text><circle cx="547.7" cy="123.0" r="5" fill="#f97316" class="trend-dot"><title>2026-07-05 23:00 KST · 위협 점수 5/10 (전회 대비 변동 없음)</title></circle><text x="547.7" y="111.0" class="trend-value-label" text-anchor="middle">5</text><circle cx="598.5" cy="61.2" r="5" fill="#ef4444" class="trend-dot"><title>2026-07-06 12:07 KST · 위협 점수 8/10 (전회 대비 +3)</title></circle><text x="598.5" y="81.2" class="trend-value-label" text-anchor="middle">8</text><circle cx="649.2" cy="123.0" r="5" fill="#f97316" class="trend-dot"><title>2026-07-06 23:06 KST · 위협 점수 5/10 (전회 대비 -3)</title></circle><text x="649.2" y="111.0" class="trend-value-label" text-anchor="middle">5</text><circle cx="700.0" cy="123.0" r="5" fill="#f97316" class="trend-dot"><title>2026-07-07 04:11 KST · 위협 점수 5/10 (전회 대비 변동 없음)</title></circle><text x="700.0" y="143.0" class="trend-value-label" text-anchor="middle">5</text>
+      <text x="40.0" y="250" class="axis-label" text-anchor="middle">06/30 23시</text><text x="141.5" y="250" class="axis-label" text-anchor="middle">07/01 23시</text><text x="243.1" y="250" class="axis-label" text-anchor="middle">07/02 23시</text><text x="344.6" y="250" class="axis-label" text-anchor="middle">07/03 23시</text><text x="446.2" y="250" class="axis-label" text-anchor="middle">07/04 22시</text><text x="547.7" y="250" class="axis-label" text-anchor="middle">07/05 23시</text><text x="649.2" y="250" class="axis-label" text-anchor="middle">07/06 23시</text><text x="700.0" y="250" class="axis-label" text-anchor="middle">07/07 04시</text>
+    </svg><div class="trend-caption">기간 내 평균 <strong>6.1/10</strong> · 최고 <strong>8</strong> · 최저 <strong>5</strong> · 첫 리포트 대비 <strong>변동 없음</strong> (5 → 5)</div></div>
+  </section>
+
+  <section>
+    <h2>🔑 이번 수집 TOP 키워드</h2>
+    <div class="words-box"><div class="keyword-badge-row"><span class="keyword-badge"><span class="kw-rank">1</span>security <small>(112)</small></span><span class="keyword-badge"><span class="kw-rank">2</span>있습니다 <small>(95)</small></span><span class="keyword-badge"><span class="kw-rank">3</span>threat <small>(93)</small></span><span class="keyword-badge"><span class="kw-rank">4</span>data <small>(87)</small></span><span class="keyword-badge"><span class="kw-rank">5</span>reported <small>(79)</small></span><span class="keyword-badge"><span class="kw-rank">6</span>attack <small>(52)</small></span><span class="keyword-badge"><span class="kw-rank">7</span>malware <small>(50)</small></span><span class="keyword-badge"><span class="kw-rank">8</span>intelligence <small>(50)</small></span><span class="keyword-badge"><span class="kw-rank">9</span>actor <small>(50)</small></span><span class="keyword-badge"><span class="kw-rank">10</span>claims <small>(49)</small></span></div></div>
+  </section>
+
+  <section>
+    <h2>🗂️ 수집 채널별 분류</h2>
+    <div class="channel-grid">
+      <div class="channel-card">
+        <div class="channel-icon">🐦</div>
+        <div class="channel-num">467</div>
+        <div class="channel-label">트위터(X) 크롤링</div>
+        <div class="channel-detail">키워드/계정 기반 실시간 트윗</div>
+      </div>
+      <div class="channel-card">
+        <div class="channel-icon">🌍</div>
+        <div class="channel-num">0</div>
+        <div class="channel-label">해외 뉴스 · 블로그</div>
+        <div class="channel-detail">수집된 기사 없음</div>
+      </div>
+      <div class="channel-card">
+        <div class="channel-icon">🇰🇷</div>
+        <div class="channel-num">0</div>
+        <div class="channel-label">국내 뉴스 · 블로그</div>
+        <div class="channel-detail">수집된 기사 없음</div>
+      </div>
+    </div>
+  </section>
+
   <section>
     <h2>🤖 AI 위협 분석 요약</h2>
     <div class="llm-box">🤖 [GEMINI 분석] 2026-07-07 13:11 KST<br>🟡 위협 점수: 5/10 (보통)<br><br><h3>1. 현재 주요 사이버보안 트렌드</h3><br>최근 위협 환경은 AI Agent를 활용한 자율형 랜섬웨어(Autonomous Ransomware)와 공급망 공격이 결합된 형태로 진화하고 있습니다. 특히 LLM의 도메인 환각(Hallucination)을 악용한 'Phantom Squatting'과 같은 새로운 공격 벡터가 등장했으며, 공격자들은 공개된 PoC를 즉각적으로 무기화하여 패치 적용 전의 시간차를 노리는 경향이 뚜렷합니다. 또한, 기존의 피싱 기법에 Microsoft Teams 음성 통화나 가짜 채용 인터뷰 등 사회공학적 기법이 정교하게 결합되어 기업 내부망 침투를 시도하고 있습니다.<br><br><h3>2. 주요 위협 행위자 / 캠페인</h3><br><li><strong>Armored Likho</strong>: 러시아, 브라질, 카자흐스탄의 정부 기관 및 전력 인프라를 타겟으로 하며, 모듈형 RAT와 <code>BusySnake</code> Infostealer를 사용함.</li><br><li><strong>Cavern Manticore</strong>: 이란 연계 APT 그룹으로, 신규 모듈형 C2 프레임워크인 <code>Cavern</code>을 사용하여 이스라엘 조직을 공격함.</li><br><li><strong>TAG-182</strong>: 이란 연계 클러스터로, <code>MarkiRAT</code> 악성코드를 배포하여 국내 타겟 대상 사이버 감시 활동 수행.</li><br><li><strong>Scattered Spider</strong>: 영국 Transport for London 공격 등 대규모 데이터 유출 및 랜섬웨어 공격을 주도하며 최근 법적 처벌이 진행 중.</li><br><br><h3>3. 한국 관련 위협</h3><br><li><strong>우리은행</strong>: NFT 플랫폼 개발 관련 외부 업체 직원의 관리 부실로 인해 고객정보 1만 7,551건 유출 발생.</li><br><li><strong>Kimsuky</strong>: 보안 담당자를 대상으로 개인정보 유출을 사칭한 스피어 피싱 공격 지속 확인.</li><br><li><strong>공급망 위협</strong>: 북한 연계 공격자가 <code>chai-as-init</code> npm 패키지를 통해 유명 테스트 프레임워크인 Chai.js 플러그인으로 위장하여 배포한 사례 확인.</li><br><br><h3>4. 주요 CVE / 취약점</h3><br><li><strong>CVE-2026-53359</strong>: Linux KVM hypervisor, Guest-to-Host Escape 가능, 심각도 높음(Januscape).</li><br><li><strong>CVE-2026-20896</strong>: Gitea Docker images, 원격 코드 실행 가능, 실제 공격 관측됨.</li><br><li><strong>CVE-2026-48282</strong>: Adobe ColdFusion, 경로 순회(Path Traversal) 취약점, 공개 직후 실제 공격 악용.</li><br><li><strong>CVE-2026-45659</strong>: Microsoft SharePoint, RCE 취약점, CISA KEV 등재 및 실제 악용 확인.</li><br><li><strong>CVE-2026-22153</strong>: FortiOS, LDAP 인증 우회, 7.6.0~7.6.4 버전 영향.</li><br><br><h3>5. IOC 요약</h3><br><li><strong>CVE</strong>:</li><br>    *   CVE-2026-53359 (<a href="https://thehackernews.com/2026/07/16-year-old-linux-kvm-flaw-lets-guest.html" target="_blank">TheHackerNews</a>)<br>    *   CVE-2026-20896 (<a href="https://thehackernews.com/2026/07/threat-actors-probe-gitea-docker-flaw.html" target="_blank">TheHackerNews</a>)<br>    *   CVE-2026-48282 (<a href="https://www.dailysecu.com/news/articleView.html?idxno=207479" target="_blank">데일리시큐</a>)<br><li><strong>도메인/해시</strong>: 이번 수집 데이터 내 특정 도메인 및 파일 해시값은 보안상 명시되지 않음.</li><br><br><h3>6. 즉각 대응 권고</h3><br><li><strong>패치 우선순위</strong>: Adobe ColdFusion(<code>CVE-2026-48282</code>) 및 Microsoft SharePoint(<code>CVE-2026-45659</code>) 서버의 즉각적인 패치 적용 및 보안 업데이트 확인.</li><br><li><strong>인증 보안 강화</strong>: FortiOS SSL-VPN 사용 시 최신 버전으로 업데이트하고, 관리자 및 사용자 계정에 MFA(다중 인증) 강제 적용.</li><br><li><strong>공급망 검증</strong>: 개발 환경에서 사용하는 외부 라이브러리(npm 등)의 무결성을 검증하고, 출처가 불분명한 패키지 설치를 차단하는 정책 수립.</li><br><br><h3>7. 위협 수준 평가</h3><br><li><strong>점수</strong>: 8.5/10</li><br><li><strong>근거</strong>: AI 기반의 자율형 공격(JadePuffer)과 16년 된 취약점(Januscape)의 재발견, 그리고 공공/금융 인프라를 겨냥한 APT 공격이 동시다발적으로 발생하여 위협 수위가 매우 높음.</li><br><br>📊 Gemini 토큰: 이번 14,519개 (입력 13,376 / 출력 1,143)<br>📈 세션 누적: 14,519 / 1,000,000 (1.5%) | 세션 잔여 추정 985,481개</div>
+  </section>
+
+  <section>
+    <h2>⚠️ 주의해야 할 핵심 취약점</h2>
+    <div class="cve-grid">
+        <div class="cve-card">
+            <div class="cve-id">⚠️ CVE-2026-53359 <span class="cve-severity">심각</span></div>
+            <div class="cve-detail">Linux KVM hypervisor, Guest-to-Host Escape 가능, 심각도 높음(Januscape).</div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-id">⚠️ CVE-2026-20896 </div>
+            <div class="cve-detail">Gitea Docker images, 원격 코드 실행 가능, 실제 공격 관측됨.</div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-id">⚠️ CVE-2026-48282 </div>
+            <div class="cve-detail">Adobe ColdFusion, 경로 순회(Path Traversal) 취약점, 공개 직후 실제 공격 악용.</div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-id">⚠️ CVE-2026-45659 </div>
+            <div class="cve-detail">Microsoft SharePoint, RCE 취약점, CISA KEV 등재 및 실제 악용 확인.</div>
+        </div>
+        <div class="cve-card">
+            <div class="cve-id">⚠️ CVE-2026-22153 </div>
+            <div class="cve-detail">FortiOS, LDAP 인증 우회, 7.6.0~7.6.4 버전 영향.</div>
+        </div></div>
   </section>
 
   <section>
@@ -157,7 +255,7 @@
   </section>
 
   <section>
-    <h2>📊 트렌드 키워드</h2>
+    <h2>📊 트렌드 키워드 (전체)</h2>
     <div class="words-box"><span class="word-tag" style="font-size:34px">security <small>(112)</small></span> <span class="word-tag" style="font-size:30px">있습니다 <small>(95)</small></span> <span class="word-tag" style="font-size:30px">threat <small>(93)</small></span> <span class="word-tag" style="font-size:29px">data <small>(87)</small></span> <span class="word-tag" style="font-size:28px">reported <small>(79)</small></span> <span class="word-tag" style="font-size:23px">attack <small>(52)</small></span> <span class="word-tag" style="font-size:22px">malware <small>(50)</small></span> <span class="word-tag" style="font-size:22px">intelligence <small>(50)</small></span> <span class="word-tag" style="font-size:22px">actor <small>(50)</small></span> <span class="word-tag" style="font-size:22px">claims <small>(49)</small></span> </div>
   </section>
 
@@ -553,7 +651,7 @@
   </section>
 
   <footer>
-    X Threat Intelligence Crawler · GitHub Actions 자동 업데이트 · 2026-07-07 13:11 KST
+    X Threat Intelligence Crawler · GitHub Actions 자동 업데이트 · 2026-07-07 04:11 KST
   </footer>
 </div>
 

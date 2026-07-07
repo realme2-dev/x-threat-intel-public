@@ -501,6 +501,7 @@ def run_crawl_job(
     news_llm_text = format_articles_for_llm(news_articles)
     news_telegram_text = format_articles_for_telegram(news_articles, max_items=8)
     safe_print(f"  RSS 기사: {len(news_articles)}개 수집")
+    report.news_articles = news_articles
 
     korea_tweets = []
 
