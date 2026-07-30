@@ -91,6 +91,7 @@ FALLBACK_INSTANCES: list[str] = [
 
 INSTANCE_HEALTH_TIMEOUT: int = int(os.getenv("INSTANCE_HEALTH_TIMEOUT", "5"))
 NTSCRAPER_TIMEOUT: int = int(os.getenv("NTSCRAPER_TIMEOUT", "60"))
+PLAYWRIGHT_TIMEOUT: int = int(os.getenv("PLAYWRIGHT_TIMEOUT", "150"))
 
 logger = logging.getLogger(__name__)
 
@@ -711,20 +712,30 @@ class XCrawler:
     self, username: str, instance: str
   ) -> CrawlResult:
     """단일 인스턴스에서 크롤링을 수행합니다."""
-    result = self._crawlWithNtscraperTimeout(username, instance)
+    result = self._runWithTimeout(
+      self._crawlWithNtscraper, username, instance,
+      timeoutSec=NTSCRAPER_TIMEOUT, label="ntscraper",
+    )
     if not result.isEmpty:
       return result
 
-    return self._crawlWithPlaywright(username, instance)
+    return self._runWithTimeout(
+      self._crawlWithPlaywright, username, instance,
+      timeoutSec=PLAYWRIGHT_TIMEOUT, label="playwright",
+    )
 
-  def _crawlWithNtscraperTimeout(
-    self, username: str, instance: str
+  def _runWithTimeout(
+    self, func: Callable[[str, str], CrawlResult], username: str, instance: str,
+    timeoutSec: int, label: str,
   ) -> CrawlResult:
-    """ntscraper 호출에 타임아웃을 강제한다.
+    """크롤링 호출(ntscraper/playwright)에 타임아웃을 강제한다.
 
-    ntscraper(내부 requests 호출)는 자체 타임아웃이 없어 Nitter 인스턴스가
-    응답 없이 커넥션만 붙잡고 있으면 무한 대기한다. daemon 스레드에서 호출해
-    NTSCRAPER_TIMEOUT초 내에 끝나지 않으면 타임아웃 예외를 발생시켜 (이미 있는)
+    ntscraper(내부 requests 호출)와 playwright 모두 GitHub Actions 환경에서
+    응답 없이 무한 대기하는 사례가 확인되었다(ntscraper는 Nitter 인스턴스가
+    커넥션만 붙잡고 응답을 안 주는 경우, playwright는 알려진 sync_api
+    driver IPC 행 이슈 — microsoft/playwright-python#1549, #2444 참고).
+    두 경우 모두 예외 없이 멈추므로 daemon 스레드에서 실행해 timeoutSec
+    내에 끝나지 않으면 타임아웃 예외를 발생시켜 (이미 있는)
     _tryAllInstances의 다음 인스턴스 폴백이 동작하도록 한다.
 
     ThreadPoolExecutor는 워커 스레드가 non-daemon이라 응답 없는 작업이 남아있으면
@@ -736,18 +747,18 @@ class XCrawler:
 
     def worker():
       try:
-        q.put(("ok", self._crawlWithNtscraper(username, instance)))
+        q.put(("ok", func(username, instance)))
       except Exception as e:
         q.put(("err", e))
 
     t = threading.Thread(target=worker, daemon=True)
     t.start()
     try:
-      status, payload = q.get(timeout=NTSCRAPER_TIMEOUT)
+      status, payload = q.get(timeout=timeoutSec)
     except queue.Empty:
       raise CrawlError(
-        f"'{username}' @ {instance}: ntscraper 응답 없음 "
-        f"({NTSCRAPER_TIMEOUT}초 타임아웃)"
+        f"'{username}' @ {instance}: {label} 응답 없음 "
+        f"({timeoutSec}초 타임아웃)"
       )
     if status == "err":
       raise payload
