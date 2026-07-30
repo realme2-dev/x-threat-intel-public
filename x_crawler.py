@@ -11,9 +11,11 @@ import io
 import json
 import logging
 import os
+import queue
 import random
 import signal
 import sys
+import threading
 import time
 from base64 import b64decode
 from dataclasses import dataclass, field
@@ -88,6 +90,7 @@ FALLBACK_INSTANCES: list[str] = [
 ]
 
 INSTANCE_HEALTH_TIMEOUT: int = int(os.getenv("INSTANCE_HEALTH_TIMEOUT", "5"))
+NTSCRAPER_TIMEOUT: int = int(os.getenv("NTSCRAPER_TIMEOUT", "60"))
 
 logger = logging.getLogger(__name__)
 
@@ -708,11 +711,47 @@ class XCrawler:
     self, username: str, instance: str
   ) -> CrawlResult:
     """단일 인스턴스에서 크롤링을 수행합니다."""
-    result = self._crawlWithNtscraper(username, instance)
+    result = self._crawlWithNtscraperTimeout(username, instance)
     if not result.isEmpty:
       return result
 
     return self._crawlWithPlaywright(username, instance)
+
+  def _crawlWithNtscraperTimeout(
+    self, username: str, instance: str
+  ) -> CrawlResult:
+    """ntscraper 호출에 타임아웃을 강제한다.
+
+    ntscraper(내부 requests 호출)는 자체 타임아웃이 없어 Nitter 인스턴스가
+    응답 없이 커넥션만 붙잡고 있으면 무한 대기한다. daemon 스레드에서 호출해
+    NTSCRAPER_TIMEOUT초 내에 끝나지 않으면 타임아웃 예외를 발생시켜 (이미 있는)
+    _tryAllInstances의 다음 인스턴스 폴백이 동작하도록 한다.
+
+    ThreadPoolExecutor는 워커 스레드가 non-daemon이라 응답 없는 작업이 남아있으면
+    (shutdown(wait=False)를 써도) 프로세스 종료 자체를 막는다 — 지금 겪고 있는
+    "Run crawler 스텝이 안 끝난다" 버그와 동일한 메커니즘이라 여기선 쓸 수 없다.
+    daemon=True 스레드는 메인 프로세스가 끝날 때 강제 종료되므로 안전하다.
+    """
+    q: "queue.Queue" = queue.Queue(maxsize=1)
+
+    def worker():
+      try:
+        q.put(("ok", self._crawlWithNtscraper(username, instance)))
+      except Exception as e:
+        q.put(("err", e))
+
+    t = threading.Thread(target=worker, daemon=True)
+    t.start()
+    try:
+      status, payload = q.get(timeout=NTSCRAPER_TIMEOUT)
+    except queue.Empty:
+      raise CrawlError(
+        f"'{username}' @ {instance}: ntscraper 응답 없음 "
+        f"({NTSCRAPER_TIMEOUT}초 타임아웃)"
+      )
+    if status == "err":
+      raise payload
+    return payload
 
   def _crawlWithNtscraper(
     self, username: str, instance: str
