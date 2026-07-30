@@ -16,6 +16,7 @@ config_v2.json을 읽어 활성화된 키워드 / 계정을 크롤링하고,
 """
 
 import argparse
+import faulthandler
 import io
 import logging
 import re
@@ -745,7 +746,19 @@ def main() -> None:
             today_only=args.today_only,
         )
 
+    # [진단] job() 실행 후 프로세스가 종료되지 않는 hang의 원인을 잡기 위한
+    # 워치독. job()이 정상 종료되면 인터프리터가 곧바로 빠져나가 아래 타이머는
+    # 발동할 일이 없어야 한다. hang이 나면 90초 뒤 전체 스레드 콜스택을 stderr로
+    # 덤프하고 강제 종료한다 (원인 특정 후 이 블록 전체 제거 예정).
+    _diag_timer = threading.Timer(
+        90, lambda: (faulthandler.dump_traceback(), sys.stderr.flush(), __import__("os")._exit(1))
+    )
+    _diag_timer.daemon = True
+    _diag_timer.start()
+
     job()
+
+    _diag_timer.cancel()
 
 
 if __name__ == "__main__":
