@@ -264,44 +264,6 @@ def _filter_tweets_by_date(
     return crawl_results, removed, total
 
 
-def _extract_rising_keywords(
-    top_words: list[tuple[str, int]],
-    existing_keywords: set[str],
-    top_n: int = 5,
-) -> list[str]:
-    """
-    빈도 상위 단어 중 기존 키워드 목록에 없는 보안 관련 신규 키워드를 추출합니다.
-
-    보안 관련성 판단 기준:
-    - 4글자 이상 영문/한글 단어
-    - 숫자만이거나 불용어가 아닌 것
-    - 최소 빈도 3 이상
-    """
-    # 일반적인 불필요 단어 필터
-    skip = {
-        "com", "http", "https", "www", "via", "new", "amp",
-        "the", "for", "and", "with", "this", "that", "have",
-        "from", "not", "are", "was", "been", "will", "can",
-        "보안", "사이버", "공격", "위협", "해킹", "정보",  # 이미 키워드에 포함
-    }
-    rising = []
-    for word, count in top_words:
-        if count < 3:
-            continue
-        wl = word.lower()
-        if wl in skip:
-            continue
-        if wl in existing_keywords:
-            continue
-        if len(word) < 4:
-            continue
-        if word.isdigit():
-            continue
-        rising.append(word)
-        if len(rising) >= top_n:
-            break
-    return rising
-
 
 # ─── 크롤링 실행 핵심 ────────────────────────────────────────────────────────
 
@@ -457,44 +419,11 @@ def run_crawl_job(
     )
     safe_print(f"  날짜 필터(2일 이내): {removed_count}개 제거 → {total_after_filter}개 유지")
 
-    # ── 1차 분석 (급상승 키워드 추출용)
+    # ── 분석
     report = analyzer.analyze(crawl_results)
 
-    # ── 급상승 키워드 2차 수집
-    safe_print("\n[5] 급상승 키워드 추출 및 2차 수집...")
-    existing_keywords = set(kw.lower() for kw in config.active_keywords)
-    rising_keywords = _extract_rising_keywords(
-        report.top_words, existing_keywords, top_n=5
-    )
-    if rising_keywords:
-        safe_print(f"  급상승 키워드: {rising_keywords}")
-        rising_results = []
-        for i, kw in enumerate(rising_keywords, 1):
-            result = _crawl_one(
-                target=kw,
-                target_type="keyword",
-                group_name="rising",
-                max_tweets=cfg.max_tweets_per_target,
-                delay_min=cfg.request_delay_min,
-                delay_max=cfg.request_delay_max,
-                working_instances=working,
-                storage=storage,
-                index=i,
-                total=len(rising_keywords),
-            )
-            if result:
-                rising_results.append(result)
-
-        if rising_results:
-            crawl_results.extend(rising_results)
-            crawl_results = _deduplicate_tweets(crawl_results)
-            report = analyzer.analyze(crawl_results)  # 재분석
-            safe_print(f"  2차 수집 완료: {len(rising_results)}개 키워드")
-    else:
-        safe_print("  새로운 급상승 키워드 없음")
-
     # ── RSS 뉴스 수집
-    safe_print("\n[6] RSS 보안 뉴스 수집 중...")
+    safe_print("\n[5] RSS 보안 뉴스 수집 중...")
     active_feeds = config.active_rss_feeds
     safe_print(f"  활성 피드: {len(active_feeds)}개")
     news_articles = collect_rss_news(feeds=active_feeds, max_per_feed=3)
@@ -513,7 +442,7 @@ def run_crawl_job(
         if not available:
             safe_print("  [LLM] API 키 미설정 — GEMINI_API_KEY / OPENAI_API_KEY / GROK_API_KEY 중 하나를 .env에 추가하세요")
         else:
-            safe_print(f"\n[7] LLM 분석 시작 (backend={backend_name or 'env기본값'}, 가용={available})")
+            safe_print(f"\n[6] LLM 분석 시작 (backend={backend_name or 'env기본값'}, 가용={available})")
             all_tweets = [
                 t
                 for item in crawl_results
@@ -571,7 +500,7 @@ def run_crawl_job(
 
     # ── 텔레그램 전송
     if notifier.enabled:
-        safe_print("\n[8] 텔레그램 전송 중...")
+        safe_print("\n[7] 텔레그램 전송 중...")
         notify_result = notifier.send_report(report, news_text=news_telegram_text)
         if notify_result.success:
             safe_print(f"  전송 완료 (메시지 {len(notify_result.message_ids)}개)")
@@ -596,7 +525,7 @@ def run_crawl_job(
                 notifier.send_text(cmp_text)
                 safe_print(f"  비교 결과 {i}/{len(compare_results)} 전송 완료")
     else:
-        safe_print("\n[8] 텔레그램 비활성화 (.env에 TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID 설정 필요)")
+        safe_print("\n[7] 텔레그램 비활성화 (.env에 TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID 설정 필요)")
 
 
 # ─── 결과 조회 ────────────────────────────────────────────────────────────────
