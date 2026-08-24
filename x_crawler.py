@@ -93,6 +93,13 @@ INSTANCE_HEALTH_TIMEOUT: int = int(os.getenv("INSTANCE_HEALTH_TIMEOUT", "5"))
 NTSCRAPER_TIMEOUT: int = int(os.getenv("NTSCRAPER_TIMEOUT", "60"))
 PLAYWRIGHT_TIMEOUT: int = int(os.getenv("PLAYWRIGHT_TIMEOUT", "150"))
 
+# 공개 Nitter 인스턴스들의 /search 경로가 (프로필 조회는 되어도) 지속적으로
+# 빈 페이지를 반환하는 상태(2026-08-21부터 관측)라, ntscraper(검색 기반) 시도가
+# 항목마다 25~40초씩 실패만 하고 결국 Playwright 폴백으로 넘어가 전체 크롤링이
+# 20분 타임아웃을 초과했다. 검색 계열 인스턴스가 복구되기 전까지는 ntscraper를
+# 건너뛰고 바로 Playwright로 가서 낭비되는 시간을 없앤다.
+SKIP_NTSCRAPER: bool = os.getenv("SKIP_NTSCRAPER", "true").lower() == "true"
+
 logger = logging.getLogger(__name__)
 
 T = TypeVar("T")
@@ -712,12 +719,13 @@ class XCrawler:
     self, username: str, instance: str
   ) -> CrawlResult:
     """단일 인스턴스에서 크롤링을 수행합니다."""
-    result = self._runWithTimeout(
-      self._crawlWithNtscraper, username, instance,
-      timeoutSec=NTSCRAPER_TIMEOUT, label="ntscraper",
-    )
-    if not result.isEmpty:
-      return result
+    if not SKIP_NTSCRAPER:
+      result = self._runWithTimeout(
+        self._crawlWithNtscraper, username, instance,
+        timeoutSec=NTSCRAPER_TIMEOUT, label="ntscraper",
+      )
+      if not result.isEmpty:
+        return result
 
     return self._runWithTimeout(
       self._crawlWithPlaywright, username, instance,
