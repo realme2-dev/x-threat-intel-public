@@ -305,6 +305,12 @@ def run_crawl_job(
     working = instance_mgr.refresh()
     if not working:
         safe_print("  활성 인스턴스 없음 — 작업 중단")
+        if notifier.enabled:
+            notifier.send_text(
+                "🚨 X 크롤러 경고\n"
+                "살아있는 Nitter 인스턴스가 하나도 없습니다 (헬스체크 200 응답 0개).\n"
+                "크롤링을 건너뛰었습니다 — 인스턴스 목록(FALLBACK_INSTANCES) 점검이 필요합니다."
+            )
         return
     safe_print(f"  활성 인스턴스: {len(working)}개 → {working}")
 
