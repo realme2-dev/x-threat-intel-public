@@ -80,7 +80,13 @@ INSTANCES_API: str = (
   "https://raw.githubusercontent.com/libredirect/instances/main/data.json"
 )
 
+# 2026-08-24 Nitter 원본(zedeus/nitter) 공식 종료 이후 LibRedirect API가
+# 제공하는 인스턴스 대부분이 검색(/search) 응답 없이 죽어있다. 아래 목록은
+# 후속 포크(codeberg.org/mv12star/shitter) 위키에 등재된 인스턴스들 중
+# 검색까지 실제로 동작하는 것을 확인한 것을 최우선으로 둔다(2026-09-06 검증,
+# nitter.jaydenha.uk만 생존 확인 — 이후 상황이 바뀌면 갱신 필요).
 FALLBACK_INSTANCES: list[str] = [
+  "https://nitter.jaydenha.uk",
   "https://xcancel.com",
   "https://nitter.tiekoetter.com",
   "https://nitter.poast.org",
@@ -269,19 +275,27 @@ class InstanceManager:
     self._failedInstances.add(instanceUrl)
 
   def _fetchInstanceList(self) -> list[str]:
-    """LibRedirect API에서 인스턴스 목록을 가져옵니다."""
+    """LibRedirect API + 폴백 목록에서 인스턴스 후보를 가져옵니다.
+
+    LibRedirect API는 Nitter 원본 종료(2026-08-24) 이후 죽은 인스턴스 위주로
+    반환하는 경우가 많아, 검증된 FALLBACK_INSTANCES를 항상 앞에 붙여
+    헬스체크 우선순위에서 밀리지 않도록 한다.
+    """
+    instances = FALLBACK_INSTANCES.copy()
     try:
       r = requests.get(INSTANCES_API, timeout=10)
       if r.ok:
         data = r.json()
-        instances = data.get("nitter", {}).get("clearnet", [])
-        if instances:
-          logger.info("LibRedirect API에서 %d개 인스턴스 조회", len(instances))
-          return instances
+        apiInstances = data.get("nitter", {}).get("clearnet", [])
+        if apiInstances:
+          logger.info("LibRedirect API에서 %d개 인스턴스 조회", len(apiInstances))
+          for url in apiInstances:
+            if url not in instances:
+              instances.append(url)
     except Exception as e:
-      logger.warning("인스턴스 API 조회 실패: %s - 폴백 목록 사용", e)
+      logger.warning("인스턴스 API 조회 실패: %s - 폴백 목록만 사용", e)
 
-    return FALLBACK_INSTANCES.copy()
+    return instances
 
   def _checkAllHealth(self, instanceUrls: list[str]) -> list[InstanceInfo]:
     """모든 인스턴스의 헬스체크를 수행하고 응답 속도순으로 정렬합니다."""
