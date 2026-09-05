@@ -81,12 +81,15 @@ INSTANCES_API: str = (
 )
 
 # 2026-08-24 Nitter 원본(zedeus/nitter) 공식 종료 이후 LibRedirect API가
-# 제공하는 인스턴스 대부분이 검색(/search) 응답 없이 죽어있다. 아래 목록은
-# 후속 포크(codeberg.org/mv12star/shitter) 위키에 등재된 인스턴스들 중
-# 검색까지 실제로 동작하는 것을 확인한 것을 최우선으로 둔다(2026-09-06 검증,
-# nitter.jaydenha.uk만 생존 확인 — 이후 상황이 바뀌면 갱신 필요).
+# 제공하는 인스턴스 대부분이 검색(/search) 응답 없이 죽어있다. 아래 목록
+# 앞 3개는 후속 포크(codeberg.org/mv12star/shitter) 위키에 등재된 인스턴스
+# 중 검색까지 실제로 동작하는 것을 확인해(2026-09-06) 우선순위로 둔 것.
+# 생존 인스턴스가 워낙 적고 유동적이라 하나만 남기지 말고 여러 개를 폴백에
+# 걸어둔다 — 상황이 바뀌면 재검증 후 갱신 필요.
 FALLBACK_INSTANCES: list[str] = [
   "https://nitter.jaydenha.uk",
+  "https://nitter.click",
+  "https://tw.eir-nya.gay",
   "https://xcancel.com",
   "https://nitter.tiekoetter.com",
   "https://nitter.poast.org",
