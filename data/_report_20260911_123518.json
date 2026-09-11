@@ -1,0 +1,2084 @@
+{
+  "generated_at": "2026-09-11T12:34:55.269817",
+  "total_tweets": 32,
+  "total_targets": 49,
+  "keyword_summary": [
+    {
+      "target": "Cyberattack",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:31:56.509665",
+      "top_users": [
+        [
+          "@elonmusk",
+          7
+        ],
+        [
+          "@SpaceX",
+          3
+        ],
+        [
+          "@mattyp",
+          1
+        ]
+      ],
+      "hashtags": [],
+      "sample_texts": [
+        "Falcon 9 launches USSF-153 to orbit from pad 4E in California",
+        "Falcon 9’s first stage lands on the Of Course I Still Love You droneship"
+      ],
+      "sample_tweets": [
+        {
+          "text": "Falcon 9 launches USSF-153 to orbit from pad 4E in California",
+          "username": "SpaceX",
+          "link": "https://twitter.com/SpaceX/status/2098154822868320479#m",
+          "date": "Sep 10, 2026 · 9:01 PM UTC"
+        },
+        {
+          "text": "Falcon 9’s first stage lands on the Of Course I Still Love You droneship",
+          "username": "SpaceX",
+          "link": "https://twitter.com/SpaceX/status/2098077243050193346#m",
+          "date": "Sep 10, 2026 · 3:52 PM UTC"
+        },
+        {
+          "text": "Giving Grok Bot a Phone  00:19 Installing Dialbot 00:54 Bland voice setup 02:39 Why use a calling agent? 03:20 Live demo call 04:50 Reviewing the transcript and cost 05:38 Chaining bots  @Bot can do anything you can - this is one way to make calls",
+          "username": "mattyp",
+          "link": "https://twitter.com/mattyp/status/2098155792327381294#m",
+          "date": "Sep 10, 2026 · 9:04 PM UTC"
+        },
+        {
+          "text": "Watch live as SpaceX CFO @BretWJ speaks at the Goldman Sachs Communacopia and Technology Conference → ir.spacex.com/events/default…",
+          "username": "SpaceX",
+          "link": "https://twitter.com/SpaceX/status/2098130338413183215#m",
+          "date": "Sep 10, 2026 · 7:23 PM UTC"
+        },
+        {
+          "text": "SpaceX CFO speaks at GS Tech Comf",
+          "username": "elonmusk",
+          "link": "https://twitter.com/elonmusk/status/2098331769892130941#m",
+          "date": "Sep 11, 2026 · 8:44 AM UTC"
+        },
+        {
+          "text": "Most efficient production EV ever  That efficiency is what will make Cybercab one of the lowest cost-per-mile modes of transport",
+          "username": "robotaxi",
+          "link": "https://twitter.com/robotaxi/status/2098245744952332779#m",
+          "date": "Sep 11, 2026 · 3:02 AM UTC"
+        },
+        {
+          "text": "Um…why?",
+          "username": "spencerpratt",
+          "link": "https://twitter.com/spencerpratt/status/2098141674606149662#m",
+          "date": "Sep 10, 2026 · 8:08 PM UTC"
+        },
+        {
+          "text": "More than twice as long as they clapped for Stalin in Gulag Archipelago!",
+          "username": "elonmusk",
+          "link": "https://twitter.com/elonmusk/status/2098310008370872652#m",
+          "date": "Sep 11, 2026 · 7:17 AM UTC"
+        },
+        {
+          "text": "This will be cool",
+          "username": "elonmusk",
+          "link": "https://twitter.com/elonmusk/status/2098304166854635528#m",
+          "date": "Sep 11, 2026 · 6:54 AM UTC"
+        },
+        {
+          "text": "Grok @Bot is great for sales teams!",
+          "username": "elonmusk",
+          "link": "https://twitter.com/elonmusk/status/2098304042896162881#m",
+          "date": "Sep 11, 2026 · 6:54 AM UTC"
+        },
+        {
+          "text": "Starship is one of the most incredible machines humanity has ever built... a machine designed to turn the impossible into infrastructure  It is the most complex vehicle ever created, built for something humanity has never achieved at scale:  Carrying people, cargo, industry and civilization beyond Earth",
+          "username": "XFreeze",
+          "link": "https://twitter.com/XFreeze/status/2098290830498808225#m",
+          "date": "Sep 11, 2026 · 6:01 AM UTC"
+        },
+        {
+          "text": "Misleading post that fans the flames of hate by AOC",
+          "username": "elonmusk",
+          "link": "https://twitter.com/elonmusk/status/2098290380584157533#m",
+          "date": "Sep 11, 2026 · 5:59 AM UTC"
+        },
+        {
+          "text": "🤨",
+          "username": "elonmusk",
+          "link": "https://twitter.com/elonmusk/status/2098284852244086849#m",
+          "date": "Sep 11, 2026 · 5:37 AM UTC"
+        },
+        {
+          "text": "ハンドルもペダルもない、無人タクシー用としてゼロから設計されたCybercabを日本初公開。  tesla.com/ja_jp/event/2026se…",
+          "username": "teslajapan",
+          "link": "https://twitter.com/teslajapan/status/2098267916840096058#m",
+          "date": "Sep 11, 2026 · 4:30 AM UTC"
+        },
+        {
+          "text": "I use Grok Bot.  Neuralink patient 3. ALS. Full quad. Nonverbal. I type with intention, not hands. Grok Bot is how a lot of that intention leaves the house.  Paste a YouTube link and it watches enough to know who is in it, drafts two longer promo posts — X and Facebook — in my voice. No hashtags. X gets verified @ tags later in the body, never leading. Facebook names people in plain text. It shows both drafts and waits. I say yes. It posts X as @ALScyborg from a signed-in session. Facebook goes on my Mac clipboard when that path is blocked. I still approve every public post. Judgment stays mine.  It also owns the Tuesday Holy War day-count. Days since Utah last beat BYU. Trash talk. Tags. Sometimes an image. Auto-post at 5:21pm Phoenix time. If X is down or suspended, it tells me and pauses. No silent failures.  This is not “AI wrote a cute caption.” This is an assistant that drafts, waits, posts, retries Unsent drafts when the Post button hangs, and keeps a standing ritual alive while I am busy living.  The bottleneck used to be hands. Now it is judgment — and I still own that. If you are waiting for permission to let software carry weight, the weight is already moving.",
+          "username": "ALScyborg",
+          "link": "https://twitter.com/ALScyborg/status/2098136982153023724#m",
+          "date": "Sep 10, 2026 · 7:50 PM UTC"
+        },
+        {
+          "text": "Thank you for this memorial.   A powerful memorial to that brutal day.   I lived at Chambers and Broadway and made it to Canal street w my wife just before the first tower fell and enveloped downtown in a white cloud of dust.   Thank you to all our police, fire and medical patriots who worked tirelessly in that cloud to save American lives. 🇺🇸🙏🇺🇸  New York came back strong and stronger and stronger still.",
+          "username": "kimbal",
+          "link": "https://twitter.com/kimbal/status/2098185077809197363#m",
+          "date": "Sep 10, 2026 · 11:01 PM UTC"
+        },
+        {
+          "text": "Just heard that the 'random stranger' he murdered was one of the original small donors to our university, @uaustinorg.  Our policy org @instituteCicero is fighting to help the TX legislature fix these cities' mistakes; leftist DA's et al who go easy on criminals WILL be stopped.",
+          "username": "JTLonsdale",
+          "link": "https://twitter.com/JTLonsdale/status/2098130791767081260#m",
+          "date": "Sep 10, 2026 · 7:25 PM UTC"
+        },
+        {
+          "text": "BREAKING: The President of Honduras, Nasry Asfura, has launched a plan to bring 10,000 @Starlink antennas to about 8,000 schools, benefiting over 640,000 students.  The program will bring high-speed satellite internet and new opportunities to students all across the country.",
+          "username": "cb_doge",
+          "link": "https://twitter.com/cb_doge/status/2098217330014834898#m",
+          "date": "Sep 11, 2026 · 1:09 AM UTC"
+        },
+        {
+          "text": "Grok @Bot summary of SpaceX CFO talk",
+          "username": "elonmusk",
+          "link": "https://twitter.com/elonmusk/status/2098217236771295567#m",
+          "date": "Sep 11, 2026 · 1:09 AM UTC"
+        },
+        {
+          "text": "New pod with @SawyerMerritt diving into the Tesla Cybercab: What we loved, what can improve, our FSD experiences, and what's next for @robotaxi.  Watch the full conversation here on X or listen to The Kevin O'Connor Show on your favorite podcast app.",
+          "username": "KevinOConnor",
+          "link": "https://twitter.com/KevinOConnor/status/2098148756902355336#m",
+          "date": "Sep 10, 2026 · 8:37 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "MITRE ATT&CK",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:31:56.733693",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "CVE",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:31:56.872499",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "exploit",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:32:06.264450",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "RipperSec",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:32:06.454480",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "DDoS Korea",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:32:06.728601",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "Lazarus Group",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:32:16.211992",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "MegaMedusa",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:32:16.232026",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "APT28",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:32:16.455396",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "ransomware Korea",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:32:25.776823",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "한국 해킹",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:32:26.043435",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "cyber attack",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:32:26.318833",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "malware",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:32:35.400666",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "ZeroDay",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:32:35.801789",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "vulnerability",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:32:44.902611",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "취약점",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:32:45.439687",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "해킹",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:32:54.305600",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "랜섬웨어",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:32:54.960177",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "DDoS",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:33:03.845614",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "디도스",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:33:04.377274",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "사이버 공격",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:33:13.288465",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "사이버 위협",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:33:13.951523",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "사이버 보안",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:33:22.870746",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "정보 유출",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:33:23.454724",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "DFIR",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:33:32.332255",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "디지털 포렌식",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:33:33.058702",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "incident response",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:33:41.768170",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "사이버 인텔리전스",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:33:42.639287",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "threat intelligence",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:33:51.300859",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "0-day",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 12,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.tiekoetter.com",
+      "crawled_at": "2026-09-11T12:33:52.091513",
+      "top_users": [
+        [
+          "@EmmanuelMwx",
+          1
+        ],
+        [
+          "@Dado50449061",
+          1
+        ],
+        [
+          "@destiny_matrix",
+          1
+        ]
+      ],
+      "hashtags": [
+        "AFC",
+        "NAP",
+        "DebtFreeing",
+        "DebtFree",
+        "DebtPayoff"
+      ],
+      "sample_texts": [
+        "SPC Day 1: Marginal Risk extends from Texas County eastward to Ottawa County today. Isolated severe ",
+        "To this day, many people confuse rank with cardinality and ignore the fact that rank is the true rep"
+      ],
+      "sample_tweets": [
+        {
+          "text": "SPC Day 1: Marginal Risk extends from Texas County eastward to Ottawa County today. Isolated severe storms are possible. Marginal: wind 5% | RISK: Marginal | TORNADO: 0% | WIND: 5% | HAIL: 0%.",
+          "username": "EmmanuelMwx",
+          "link": "https://twitter.com/EmmanuelMwx/status/2097667360195031313#m",
+          "date": "Sep 9, 2026 · 12:44 PM UTC"
+        },
+        {
+          "text": "To this day, many people confuse rank with cardinality and ignore the fact that rank is the true representative of a dimension and the results reflect that.   That is precisely why I omitted complex numbers and opted instead for pure renormalization. I work with ranks ranging from ¹ to ¹⁶⁹  and have managed to reach an absolute maximum of x¹⁴⁴⁰⁰  approached geometrically, arithmetically, via the real hyperbola, and through integer cubic p-adic algebra. To prevent any explosions or system divergence, I firmly locked the entire dynamics to the 3D level using the Cayley-Hamilton theorem; here, the matrix identity T^3 = T^2 + T + I ensures complete stability.   This entire purely algebraic structure flawlessly connects monumental geometric vertices with the primary root:   Vertex-based 4D symmetry:   The Hexacosichoron (600-cell) and Hecatonicosachoron (120-cell) are dual to one another via the Coxeter group H4. Since the full H4 group contains exactly 14,400 elements (with its orientation-preserving rotational subgroup containing half that number 7,200), the chosen exponent x¹⁴⁴⁰⁰ mathematically mirrors the cardinality of this full 4D symmetric structure, complemented by the 24-cell (icositetrachoron) as a self-dual intermediate stage with the Weyl group F₄ (of order 1152)  Discretized orbital basis:   A precise vector family of the form  (±7, ±(10 + 4θ), ±(3 + 4θ), 0) and a subgroup of order 28 (where the multiplicative group F_169* of order 168 yields exactly 6 cosets via Lagrange's theorem) ensure a perfect layered structure.   Here \"T\", Tribonacci emerges as a 3D \"O\" orbital space, while Fibonacci acts as its younger sibling. The golden ratio serves not merely as a static parameter but, through its own cyclic group generator, governs transitions across the entire system. Everything fits together within the pure, exact realm of the finite field F_13 where the characteristic polynomial elegantly decomposes and links the 2D quadratic basis with the cubic operator entirely without the need for real-number metrics or approximations. In this context.  I view quantum mechanics not as a matter of chance, but as a \"dual symmetry\" deeply functional and directly interconnected within the immediate realms of algebra.  PS: The world is stuck on x², so I don't know what else to add.",
+          "username": "Dado50449061",
+          "link": "https://twitter.com/Dado50449061/status/2097667352670228934#m",
+          "date": "Sep 9, 2026 · 12:44 PM UTC"
+        },
+        {
+          "text": "YOUR FORECAST OF THE YEAR:  Add your birth day + birth month and reduce the total to one digit. Example: August 22 → 2+2+0+8 = 12 → 1+2 = 3. Add the digits of the forecast year. 2026 → 2+0+2+6 = 10 → 1+0 = 1.  Add both numbers together and reduce again. 3 + 1 = 4. Your final number determines the year's theme.  MEANINGS:  1: Past difficulties fade, support increases, and confidence returns. Excellent for launching projects, creative work, competitions, investments, and major purchases. Success requires discipline- luck alone is not enough.  2: A socially and emotionally focused year. New connections, family, home, children, pregnancy, and property matters become important. Emotions may intensify, so patience and careful planning are essential.  3: Finish unfinished work, build your reputation, and expand financially. Favorable for business, writing, and public speaking. Family may become important. Avoid unnecessary bluntness and be cautious with contracts and agreements.  4: Hard work brings lasting financial and personal security. Favorable for property, marriage, family growth, travel, spirituality, and stronger professional relationships. Stay vigilant and avoid casual romantic entanglements.  5: Strong for travel, partnerships, international connections, finance, and media-related careers. Calculated professional risks can pay off. Be careful with communication and review contracts thoroughly.  6: Relationships, family, beauty, and artistic expression flourish. Romance, children, career improvements, and unexpected income are possible. Watch overspending on luxury, entertainment, and pleasure.  7: Progress may feel slow, with misunderstandings and extra effort, particularly in business. Excellent for healing, spiritual work, astrology, and legal matters. Friendships may be tested, so keep private matters private. Patience and optimism are crucial.  8: A powerful year for self-reliance, new ventures, competition, legal matters, and social involvement. Protect your health, manage stress, and use your energy wisely- focused effort brings greater rewards.  9: A cycle comes to an end with recognition, successful outcomes, institutional support, or unexpected gains. Good for organization and competition. Avoid stubbornness and conflicts with authority; spiritual focus helps you make the most of the year.",
+          "username": "destiny_matrix",
+          "link": "https://twitter.com/destiny_matrix/status/2097667342029480033#m",
+          "date": "Sep 9, 2026 · 12:44 PM UTC"
+        },
+        {
+          "text": "My preferred starting eleven for tonights game between #AFC and #NAP and a few little tactical notes I could see happen.  A tough opponent in Allegri's Napoli and the Stadio Diego Armando Maradona is not an easy place to go.   However, Napoli have started slow so far this season with 1 win and 2 losses: 2-0 win vs Genoa (a) 2-1 loss vs Como (H) 3-2 loss vs Inter (a), they were 2-0 up  They are likely to be in a base 4-3-3 (DM) prioritising a fluid and direct attacking approach over rigid positional structures. They will emphasise flexible deep build up play before looking for quick verticality.   OOP Napoli will deploy a structured low/mid block usually in a 4-5-1 shape. They will be happy to let us have possession. They will prioritise protection of central zones and primarily aim to harm us in transition with quick vertical runners like Hojlund (33.8 kmph) and Santos (33.3 kmph).   Last season Arteta made just 1 change before our opening   GK: David Raya  No words needed. He will likely be unbothered in terms of press today. He should 100% be starting over Kepa or Meslier  RB: Ben White  His fitness levels have looked good so far this season. Will have a difficult task against Alisson Santos who is a very high repitition take-on winger (61% dribble success with 2.54 per 90 (UCL and Serie A last szn). Ben White tends to struggle against high repition take on wingers compared to ball carrying wingers. I still back him to keep him quiet but he will have a lot of ground to cover today with Allegri's vertical approach.  RCB: Ezri Konsa  Will have a calmer day in possession with Napoli's press likely to be quite slow. His main job comes with dealing with their verticality. Hojlund or Mctominay (late runner) is the main task. Konsa is a superb recovery defender though and I feel he will have an important role with Gabriel stepping up to interact.  LCB: Gabriel  Has to be disciplined today. Easy choice and has to start.  LB: Hincapie  I'd make this change in the back line because I feel the overlapping nature of Hincapie could be another approach at times. Mainly the defensive security and recovery defending. Calafiori can be rested I feel.  DM: Rice  Has to start for me. Drop into CCB/RCB at times to allow Hincapie to make overlapping movements.  RCM: Merino  Odegaard has been fantastic so far this season and Merino has looked so secure every time he's come on for him. I feel he will do well in congested central spaces today.  LCM: Bruno G  Verticality could be crucial in unlocking Napoli's low block with consistency and venom. I personally would love to see him start. Such an incredible passing profile.  RW: Saka  60 minutes for Saka. Should do well against Spinazzola. Santos is not a great tracking defender so he may get moments in isolation. Will have to be awake in terms of tracking back too.  LW: Eze  I want to see him start. Especially alongside Hincapie as I feel Eze can be wasted as a touchline winger. He best influences the game from central pockets (LHS). Big year for him.  ST: Havertz  Last night I thought it would be good to have Gyokeres start (for fitness reasons) but tactically I think Kai is the better option. I think Gyokeres should definitely still get some minutes but Kai's positional fluidity on the right will be too much for Napoli to handle. I don't think todays game calls for someone like Gyokeres unless we hone in on creating transitions  Thoughts?",
+          "username": "NinoSangani",
+          "link": "https://twitter.com/NinoSangani/status/2097667335024697432#m",
+          "date": "Sep 9, 2026 · 12:44 PM UTC"
+        },
+        {
+          "text": "yea, i think marrying a bag is worst thing u can do when all these coins are completely worthless and all eventually grind to 0. all these coins are dogshit, something that helped me put into perspective of seeing the stats where like 95% of bonded tokens are 0 in 1 day.",
+          "username": "LeoJayTweets",
+          "link": "https://twitter.com/LeoJayTweets/status/2097667176056431048#m",
+          "date": "Sep 9, 2026 · 12:43 PM UTC"
+        },
+        {
+          "text": "U have literally 0 empathy, u dont know the struggles some people may have within themselves. And plsWHO are u to think he gives a fuck if u respect him or not, im sorry but ur the pathetic one, he may doubt himself but at the end of the day hes a musical genius, ur bored on twt",
+          "username": "FatmiAmel",
+          "link": "https://twitter.com/FatmiAmel/status/2097667089905426851#m",
+          "date": "Sep 9, 2026 · 12:43 PM UTC"
+        },
+        {
+          "text": "Pre AI era, my posts used to sound like AI  because, I was always conscious, checking the grammar 10 times, thinking what if people think I am a looser , so deleted all my old X accounts and didn't touch X for years   out of boredom one day I started again , no one is watching me back then , 0 followers so I used to have lot of freedom to throw my opinions.  then it became the habit, now I really enjoy when my honesty is being liked !",
+          "username": "priyankapudi",
+          "link": "https://twitter.com/priyankapudi/status/2097667063531606081#m",
+          "date": "Sep 9, 2026 · 12:42 PM UTC"
+        },
+        {
+          "text": "💸🔓 DEBT DOESN’T JUST COST INTEREST.  It costs:  Options.  Cash flow.  Sleep.  Flexibility.  Confidence.  Time.  And for millions of people, the hardest part isn’t knowing they have debt.  It’s answering:  “WHAT EXACTLY SHOULD I DO NEXT?”  Pay the smallest balance?  Attack the highest rate?  Consolidate?  Refinance?  Call the lender?  Change payment dates?  Build an emergency fund first?  What happens if I add $200 a month?  Which debt is actually hurting me most?  That confusion is the opportunity behind:  DebtFreeing.com  I wouldn’t build another generic budgeting app.  And I definitely wouldn’t build a company promising:  “WE’LL ERASE YOUR DEBT.”  I’d build:  THE DEBT ESCAPE OPERATING SYSTEM.  A financial platform with one measurable mission:  HELP PEOPLE MOVE FROM OWING → TO OWNING THEIR CASH FLOW AGAIN.  Not shame.  Not lectures.  Not financial theater.  A plan.  A timeline.  A next move.  🔥🔥🔥  🔓 MEET FREE™  Connect or manually enter:  Credit cards.  Personal loans.  Student loans.  Auto loans.  Lines of credit.  Other supported debts.  FREE™ organizes:  Balance.  Interest rate.  Minimum payment.  Due date.  Payment status.  Estimated interest.  Then immediately answers:  HERE’S WHERE YOU STAND.  And more importantly:  HERE’S YOUR NEXT MOVE.  🧬 DEBT DNA™  Two people can both owe:  $40,000  and have completely different problems.  One has:  $30K at 5%.  $10K at 21%.  Another has:  Ten revolving accounts.  Irregular income.  Multiple due dates.  Almost no monthly margin.  DebtFreeing builds the structure of the debt—not a judgment about the person.  UNDERSTAND THE DEBT BEFORE TRYING TO DESTROY IT.  🗺️ MY FREEDOM PLAN™  This should be the heart of the product.  DebtFreeing asks:  How much can realistically go toward debt each month?  Do you have emergency savings?  Is income stable?  Which payments are mandatory?  Which balances carry the highest rates?  Then build scenarios:  AGGRESSIVE  BALANCED  MINIMUM-STRESS  Each shows:  Monthly payment.  Estimated interest.  Projected payoff timeline.  Cash-flow impact.  And assumptions.  Now “become debt free” stops being:  A WISH.  It becomes:  A ROADMAP.  🧊 SNOWBALL MODE™  Prefer psychological momentum?  Attack the smallest eligible balance first.  $620  ↓  $1,450  ↓  $3,900  ↓  $8,200  Each eliminated payment gets rolled forward.  Then:  WATCH THE DEBTS DISAPPEAR ONE BY ONE.  🏔️ AVALANCHE MODE™  Want to prioritize interest cost?  Focus additional payments toward the highest-rate eligible debt while maintaining required payments elsewhere.  DebtFreeing can estimate:  Projected payoff date.  Projected interest.  Potential difference between strategies.  Then:  SHOW THE MATH.  Not:  “THIS IS ALWAYS THE BEST STRATEGY.”  Because real financial situations are more complicated than an algorithm.  ⚔️ SNOWBALL vs AVALANCHE™  This could be a fantastic acquisition feature.  Enter debts.  DebtFreeing shows:  SNOWBALL  Estimated debt-free date.  Estimated interest.  First account eliminated.  AVALANCHE  Estimated debt-free date.  Estimated interest.  First account prioritized.  Then:  CHOOSE THE PLAN YOU’RE MOST LIKELY TO FINISH.  🔥  ⏱️ FREEDOM DATE™  This could become the emotional center of the brand.  Instead of showing:  -$47,821  every morning…  show:  **ESTIMATED DEBT-FREE DATE  MARCH 2030**  Then every extra payment moves it.  $50 extra:  19 DAYS EARLIER  $500 bonus:  3 MONTHS EARLIER  Rate reduction:  TIMELINE UPDATED  Now progress becomes:  TIME YOU ARE BUYING BACK.  💸 INTEREST CLOCK™  Show estimated interest accumulating under the current scenario.  Not to scare people.  To make invisible cost:  VISIBLE.  Then show:  CURRENT PLAN  versus  +$100 / MONTH  Small decisions suddenly have context.  🔥 KILL THIS DEBT™  Pick one balance.  DebtFreeing shows:  Current balance.  Rate.  Minimum.  Additional-payment scenarios.  Estimated payoff.  Interest implications.  Then:  MAKE THIS ONE DISAPPEAR.  One target.  One mission.  Less cognitive overload.  💥 FOUND MONEY™  Tax refund?  Bonus?  Sold something?  Unexpected $1,500?  Ask:  WHERE WOULD THIS MONEY HAVE THE MOST IMPACT?  DebtFreeing models options.  Emergency reserve.  High-rate debt.  Multiple smaller balances.  Combination.  Then shows consequences.  The user decides.  AI MODELS. HUMAN CHOOSES.  ☕ THE $10 QUESTION™  Not:  “Stop buying coffee and you'll become rich.”  😂  Instead:  “If you redirected $10 per week, what would actually happen?”  Calculate it.  Maybe the impact is meaningful.  Maybe it barely changes the plan.  NO MORALIZING SMALL PURCHASES.  Show the math.  Let people decide what matters.  💵 PAYDAY ROUTER™  Money arrives Friday.  Before it disappears into the month:  DebtFreeing organizes:  Bills.  Minimum payments.  Savings target.  Living expenses.  Planned extra debt payment.  Then:  GIVE EVERY DOLLAR A JOB BEFORE THE WEEKEND DOES.  😂  📅 DUE DATE MAP™  One surprisingly stressful part of debt:  Timing.  3rd.  7th.  12th.  18th.  21st.  27th.  DebtFreeing creates:  ONE PAYMENT CALENDAR.  Upcoming payments.  Expected cash flow.  Minimums.  Autopay status.  Potential conflicts.  No need to discover a payment:  THE DAY AFTER IT WAS DUE.  🚨 CASH FLOW COLLISION™  Rent:  Tomorrow.  Credit card:  Two days.  Car:  Three days.  Payday:  Five days.  DebtFreeing flags:  TIGHT CASH-FLOW WINDOW AHEAD.  Then helps organize options the user can evaluate.  That is more useful than another pie chart telling them:  14% TRANSPORTATION.  🧯 LIFE HAPPENED™  Car repair.  Job interruption.  Medical expense.  Unexpected travel.  Home repair.  Instead of making the user feel like they:  FAILED THE PLAN  DebtFreeing says:  REBUILD PLAN.  Recalculate.  Protect essentials.  Update timeline.  Continue.  Because a realistic debt platform should understand:  PLANS CHANGE.  🛟 BUFFER FIRST™  Someone with $0 emergency savings may not benefit from sending every last available dollar toward debt if the next surprise goes straight back onto a credit card.  DebtFreeing could model:  DEBT-FIRST  BUFFER-FIRST  HYBRID  Then show the tradeoffs.  No universal prescription.  RESILIENCE MATTERS TOO.  📉 RATE SHOCK™  Variable rate changed?  DebtFreeing recalculates:  Payment implications.  Projected interest.  Freedom date.  Monthly margin.  Then:  SHOW ME WHAT CHANGED.  Financial planning becomes dynamic.  🔄 CONSOLIDATE?™  This could become a major commercial product.  User enters a proposed consolidation loan.  DebtFreeing compares:  Current weighted costs.  New rate.  Fees.  Term.  Monthly payment.  Total projected cost.  Payoff timeline.  Then highlights:  LOWER PAYMENT DOES NOT ALWAYS MEAN LOWER COST.  That single insight could save users from bad decisions.  🧮 REFINANCE LAB™  Current debt:  18.9%.  Offer:  10.5%.  Sounds obvious.  But include:  Origination fees.  New term.  Payment.  Total projected interest.  Early-payment conditions.  Other relevant costs.  Then compare:  OLD PATH vs NEW PATH.  Not:  APPROVED!  Not:  TAKE THIS LOAN!  Just:  UNDERSTAND THE TRADE.  📞 CALL MY CREDITOR™  People often don't know what to ask.  DebtFreeing can prepare a conversation checklist:  Current rate.  Payment history.  Available hardship programs.  Possible rate reduction.  Payment-date change.  Fee questions.  Repayment options.  Then:  MAKE THE CALL PREPARED.  The user speaks to the creditor.  The platform organizes the questions.  🤝 RELIEF NAVIGATOR™  Sometimes the situation is beyond optimization.  The user may need:  Accredited credit counseling.  A licensed insolvency professional.  Legal advice.  A legitimate hardship program.  DebtFreeing should recognize:  WHEN SOFTWARE ISN’T ENOUGH.  Then route users toward appropriate qualified help based on jurisdiction.  That's not weakness.  THAT'S TRUST.  🚫 SCAM SHIELD™  Debt distress attracts bad actors.  DebtFreeing could educate users about warning signs such as:  Guaranteed debt elimination.  Pressure to pay large upfront fees.  Claims that creditors can simply be ignored.  Fake government affiliations.  Promises that sound impossibly certain.  Then:  VERIFY BEFORE YOU PAY.  A debt-freedom brand should protect people from:  DEBT-RELIEF DEBT.  📄 READ THIS OFFER™  Upload or enter the terms of a loan or consolidation offer.  DebtFreeing helps organize:  Rate.  Term.  Fees.  Payment.  Total repayment.  Important conditions.  Then asks:  WHAT CHANGED VERSUS YOUR CURRENT PLAN?  AI assists understanding.  It doesn't invent terms that aren't present.  🧠 ASK FREE™  “What happens if I pay $300 more?”  “Why did my payoff date move?”  “Which debt currently has the highest rate?”  “How much interest does this scenario estimate?”  “What if my income drops for three months?”  “Should I compare consolidation?”  “What questions should I ask my lender?”  Now AI becomes:  THE EXPLANATION LAYER OF THE DEBT PLAN.  📸 SNAP MY DEBT™  Take an authorized photo of a statement.  DebtFreeing can help extract:  Balance.  Rate.  Minimum.  Due date.  Account type.  Then:  CONFIRM THESE NUMBERS.  User verifies.  Add to plan.  This could dramatically simplify onboarding.  💳 CREDIT CARD MODE™  Credit cards deserve their own experience.  Track:  Balance.  APR.  Minimum.  Due date.  Promotional rate.  Promotion expiration.  Then flag:  0% PERIOD ENDS IN 47 DAYS  or:  RATE CHANGE RECORDED  Now users can see:  THE TERMS THAT ACTUALLY CHANGE THE PLAN.  ⏳ PROMO EXPIRY™  A 0% balance transfer can look great—  until the promotional period ends.  DebtFreeing watches the deadline and models:  Remaining balance at expiry.  Potential new rate.  Required pace to hit target.  Then:  DON'T LET THE CALENDAR SURPRISE YOU.  🏠 DEBT + MORTGAGE™  For homeowners:  Mortgage.  HELOC.  Credit cards.  Auto.  Other debt.  DebtFreeing can show the entire liability picture without casually recommending that unsecured debt be moved against the home.  Because:  LOWER RATE CAN COME WITH DIFFERENT RISK.  That deserves clear explanation and professional advice where appropriate.  👩‍❤️‍👨 COUPLE MODE™  Debt conversations can be uncomfortable.  Create:  Shared goals.  Individual debts.  Household obligations.  Private categories where appropriate.  Joint payoff scenarios.  Then focus the interface on:  THE PLAN, NOT THE BLAME.  That could be extremely powerful.  👨‍👩‍👧 FAMILY FREEDOM™  Parents can create goals:  Credit card free.  Car paid.  Student loan finished.  Emergency fund established.  Then:  WHAT HAPPENS AFTER THE DEBT?  Because the product shouldn't end at:  $0.  It should transition toward:  WHAT YOU CAN BUILD NEXT.  🎉 DEBT KILLED™  Balance reaches:  $0  Don't just remove it from the dashboard.  Celebrate.  VISA — PAID OFF  Original balance: $8,420  Time: 17 months  Then ask:  WHERE SHOULD THAT PAYMENT GO NEXT?  Roll it into another debt?  Emergency savings?  Another financial goal?  The freed payment becomes:  NEW CASH FLOW.  💰 FREED CASH™  This could be one of the strongest features.  Debt eliminated:  $487 / MONTH FREED  DebtFreeing doesn't only show:  YOU OWE LESS.  It shows:  YOU NOW CONTROL $487 MORE EVERY MONTH.  That changes the emotional frame completely.  🌅 AFTER DEBT™  When the last eligible debt reaches zero:  The product transforms.  Old dashboard:  DEBT REMAINING  New dashboard:  CASH FLOW FREED  Now help users organize future goals:  Emergency fund.  Home.  Retirement.  Education.  Travel.  Investing.  Business.  Whatever they choose.  The company doesn't lose the customer when the debt disappears.  THE RELATIONSHIP EVOLVES.  🏆 FREEDOM STREAK™  Not:  187 DAYS WITHOUT BUYING ANYTHING FUN.  😂  Instead track meaningful progress:  Payments on time.  Plan reviewed.  Debt eliminated.  Emergency buffer improved.  High-interest balance reduced.  No shame when life disrupts the streak.  PROGRESS WITHOUT GAMBLING MECHANICS.  🔐 PRIVATE BY DEFAULT™  Debt data reveals:  Finances.  Income.  Accounts.  Hardship.  Behavior.  DebtFreeing should make privacy structural:  Strong encryption.  Clear permissions.  Data minimization.  No selling hardship data.  No manipulative lender targeting.  No hidden financial vulnerability scoring.  No public shame.  FINANCIAL DISTRESS SHOULD NEVER BECOME AD INVENTORY.  🤖 AI WITHOUT FINANCIAL THEATER™  AI should not say:  “I KNOW EXACTLY WHAT YOU SHOULD DO.”  Instead:  “HERE ARE THREE SCENARIOS.”  “HERE ARE THE ASSUMPTIONS.”  “HERE'S WHAT CHANGES.”  “HERE'S WHERE PROFESSIONAL ADVICE MAY HELP.”  That's a much stronger product.  DECISION SUPPORT, NOT FAKE CERTAINTY.  🏦 LENDER MARKETPLACE™  This could eventually become commercially powerful—but must be designed carefully.  If users choose to compare:  Consolidation.  Refinancing.  Balance transfers.  Other legitimate credit products.  DebtFreeing can show:  Rate.  Fees.  Term.  Monthly payment.  Total projected repayment.  Eligibility information where available.  And clearly disclose:  WHEN DEBTFREEING GETS PAID.  No steering people toward a worse loan because:  THE COMMISSION IS BETTER.  Trust has to be the moat.  🧑‍💼 EMPLOYER MODE™  Financial stress affects employees.  Companies could offer DebtFreeing as a voluntary financial-wellness benefit.  But employers should not receive:  Individual debt balances.  Personal creditor information.  Private financial behavior.  Instead:  **EMPLOYEE GETS THE TOOL.  EMPLOYER GETS NO PERSONAL DEBT FILE.**  That boundary matters.  🏢 CREDIT UNION MODE™  Credit unions and community financial institutions could white-label DebtFreeing.  Member connects debts.  Builds plan.  Compares legitimate options.  Requests human help.  Now the institution isn't just selling:  ANOTHER LOAN.  It's helping the member answer:  HOW DO I GET OUT OF DEBT?  That can create enormous loyalty.  🧑‍💼 COUNSELOR MODE™  With user permission, a qualified counselor can see:  Debt map.  Cash flow.  Current strategy.  Scenario comparisons.  Documents.  Questions.  Now the appointment starts:  20 MINUTES AHEAD.  Software organizes.  Human professional advises.  📊 DEBT HEALTH™  I would avoid:  YOU ARE 42% FINANCIALLY HEALTHY.  People don't need another mysterious score.  Instead show:  High-rate debt.  Monthly required payments.  Available margin.  Payment calendar.  Emergency buffer.  Progress.  Then:  WHAT DESERVES ATTENTION FIRST?  Explainable.  Useful.  Human.  🧬 THE FREEDOM GRAPH™  This is where the product moat becomes interesting.  Connect:  Debt.  Rate.  Payment.  Due date.  Income.  Cash flow.  Goal.  Scenario.  Offer.  Creditor.  Extra payment.  Emergency buffer.  Professional support.  Then DebtFreeing can answer:  WHAT HAPPENS IF I PAY $100 MORE?  WHICH DEBT IS COSTING ME THE MOST INTEREST?  WHEN DOES THIS PROMOTIONAL RATE END?  WHAT CHANGED THIS MONTH?  WHICH PAYMENT IS CREATING THE MOST CASH-FLOW PRESSURE?  HOW MUCH MONTHLY CASH FLOW HAVE I FREED SO FAR?  Not generic personal finance.  A GRAPH BUILT AROUND ONE OUTCOME: FREEDOM FROM DEBT.  🔥🔥🔥  🔄 THE FLYWHEEL  User adds debts.  ↓  DebtFreeing builds the map.  ↓  Scenarios become visible.  ↓  User chooses a plan.  ↓  Payments update progress.  ↓  Freedom date moves closer.  ↓  One debt reaches zero.  ↓  Cash flow is freed.  ↓  Freed cash accelerates another goal.  ↓  Trust grows.  ↓  User compares financial products when genuinely useful.  ↓  Human professionals enter when needed.  ↓  Debt disappears.  ↓  THE PLATFORM TRANSITIONS FROM DEBT MANAGEMENT TO FINANCIAL FREEDOM.  💰 THE BUSINESS MODEL  DebtFreeing.com could monetize through:  Premium subscriptions.  Debt-planning tools.  Advanced scenario modeling.  Financial-wellness benefits.  Credit-union licensing.  Bank partnerships.  White-label financial tools.  Qualified professional referrals.  Optional lending comparisons where compliant.  API integrations.  Financial education.  Couple/family plans.  Employer wellness programs.  And potentially:  A TRUSTED MARKETPLACE FOR PEOPLE ACTIVELY TRYING TO IMPROVE THEIR FINANCIAL POSITION.  That is commercially valuable intent.  💎 WHY DEBTFREEING.COM STANDS OUT  Because the name is unusual in exactly the right way.  Most debt brands describe:  The problem.  DebtHelp.  DebtRelief.  DebtSettlement.  DebtManagement.  But:  DebtFreeing  sounds like:  AN ACTION.  Not merely being debt-free someday.  The process of:  FREEING YOURSELF FROM DEBT.  It creates natural language:  START DEBT FREEING™  MY DEBT FREEING PLAN™  DEBT FREEING MODE™  DEBT FREEING PROGRESS™  DEBT FREEING DATE™  And importantly, it doesn't lock the company into:  Settlement.  Loans.  Counseling.  Budgeting.  Credit repair.  It can sit above all of them as:  THE JOURNEY FROM DEBT → FREED CASH FLOW.  THE BUYERS I’D TARGET FIRST  PERSONAL-FINANCE / BUDGETING PLATFORMS — A focused acquisition brand for users whose immediate objective is eliminating debt.  CREDIT UNIONS & DIGITAL BANKS — Build a member-first debt-planning experience that can strengthen long-term financial relationships.  DEBT-COUNSELING ORGANIZATIONS — Turn complicated repayment situations into structured plans before and between human counseling sessions.  FINTECH LENDERS / LOAN-MARKETPLACE COMPANIES — A strong top-of-funnel brand for consumers evaluating consolidation or refinancing, provided recommendations remain transparent and compliant.  EMPLOYEE FINANCIAL-WELLNESS COMPANIES — Debt reduction is a concrete financial-wellness outcome employees can actually measure.  PERSONAL-FINANCE FOUNDERS — Build a product with a far clearer mission than another “all your money in one app” startup.  THE BUYER PITCH  Don't sell DebtFreeing.com as:  “A debt-help domain.”  Sell:  OWN THE VERB FOR GETTING OUT OF DEBT.  People don't wake up wanting:  A dashboard.  A loan marketplace.  A budgeting category.  A financial score.  They want:  THE DEBT GONE.  And every payment creates the same fundamental question:  HOW MUCH CLOSER AM I TO FREEDOM?  💸🔓 DebtFreeing.com  See every debt.  Understand every rate.  Build the plan.  Compare the strategies.  Know the next payment.  Model the tradeoffs.  Prepare for surprises.  Get qualified help when needed.  Kill one balance.  Then another.  Then another.  Watch the freedom date move closer.  And when the final balance reaches:  $0  don't just celebrate what disappeared.  Look at what came back:  YOUR CASH FLOW.  Not debt shame.  Not miracle promises.  Not “erase your debt overnight.”  A PRACTICAL OPERATING SYSTEM FOR THE JOURNEY OUT OF DEBT.  **DON’T JUST MANAGE DEBT.  START FREEING YOURSELF FROM IT.**  DebtFreeing.com  Available now at the Dotcoms.io marketplace.  #DebtFreeing #DebtFree #DebtPayoff #DebtFreedom #PersonalFinance #FinancialWellness #MoneyManagement #DebtManagement #DebtReduction #DebtStrategy #DebtSnowball #DebtAvalanche #FinancialPlanning #Budgeting #CashFlow #FinTech #ConsumerFinance #FinancialLiteracy #CreditCounseling #DebtConsolidation #FinancialFreedom #FutureOfFinance #PremiumDomain #DomainForSale #DotcomsIO",
+          "username": "UpHonestReal",
+          "link": "https://twitter.com/UpHonestReal/status/2097666741803372963#m",
+          "date": "Sep 9, 2026 · 12:41 PM UTC"
+        },
+        {
+          "text": "🥮 Cùng MEXC Global Card \"phá cỗ\" – Shopping cho bàn tiệc Trung Thu 💳 ✨  💰 Phần thưởng: 10 giải may mắn × 5 USDT/người (Tổng 50U) ⏰ Thời hạn: 23:59 ngày 20/09  Thử tài tính toán với budget giả lập 100U để sắm mâm cỗ Trung Thu chuẩn gu và ẵm quà từ MEXC nhé.  Các bước tham gia:  - B1: Dùng AI tạo ảnh mâm cỗ 3 món <100U (ảnh phải có thẻ MEXC Global Card lấy ở comment). - B2: Repost bài này kèm ảnh vừa tạo + 2 thông tin chia sẻ bên dưới. - B3: Comment tag 2 người bạn - B4: Điền form nhận thưởng: forms.gle/sxMXgmCHC2GkidpAA  Thông tin chia sẻ: 1. Giới thiệu thẻ bạn nhận 20U, bạn bè nhận 10U tại đây: mexc.com/vi-VN/campaigns/Sep…  2. Đăng ký thẻ ngay (0 phí phát hành, 0 phí dịch vụ): mexc.com/vi-VN/buy-crypto/me…  --- Thông tin chỉ mang tính tham khảo, không phải lời khuyến nghị tài chính. Vui lòng cân nhắc kỹ các rủi ro trước khi tham gia.",
+          "username": "MEXCVietnam",
+          "link": "https://twitter.com/MEXCVietnam/status/2097666705052824049#m",
+          "date": "Sep 9, 2026 · 12:41 PM UTC"
+        },
+        {
+          "text": "I hope this is last time something like this issue is happening.  It's not looking good for bulk till now.  Even I have been unable to trade after day 1 of launch.  Please fix oracle and chart price, the slidebar issue where when we use the bar the price will still show 0 and then need to enter amount manually.    Add TP/SL by $ gain or $ loss directly while placing trade not just the trigger price SL TL. I know we can do this after we place trade by editing SL TL but we need it directly while placing trade.  Limit order Mid doesn't work sometimes fix that as well.  List gold silver and oil asap as well. We should not lag behind rwa & commodities.  If any of this feedback is unclear then lmk I will send SS in dm",
+          "username": "WhoYKK",
+          "link": "https://twitter.com/WhoYKK/status/2097666399519019124#m",
+          "date": "Sep 9, 2026 · 12:40 PM UTC"
+        },
+        {
+          "text": "Ling-3.0-flash-VL running on 2× DGX Sparks, day one.  SGLang shipped a day-0 dev image We brought it to GB10: FP8 (118GB), TP2 over CX7 RoCE, 128K ctx, vision tower loaded.  26-32 tok/s warm · 25.7 sustained over a 22K-token one-shot · zero-repair Three.js artifact  Spark recipe: github.com/Weschera/Ling-3.0…",
+          "username": "WescheNex1q",
+          "link": "https://twitter.com/WescheNex1q/status/2097666050036818373#m",
+          "date": "Sep 9, 2026 · 12:38 PM UTC"
+        },
+        {
+          "text": "🟠MATCH DAY!!｜vs水戸 19:00  ⭐️Ｊリーグ ヤマザキビスケット ルヴァンカップ 1stR 1回戦  ▼延長戦終了 長野 0-0 水戸  ▶️PK戦へ突入！  #acnp #パルセイロ",
+          "username": "NAGANO_PARCEIRO",
+          "link": "https://twitter.com/NAGANO_PARCEIRO/status/2097665310337970529#m",
+          "date": "Sep 9, 2026 · 12:35 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "악성코드",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:33:52.503689",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "APT",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:34:00.670222",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "Cyberattack",
+      "type": "keyword",
+      "group": "custom",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:34:01.106611",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "noname057",
+      "type": "keyword",
+      "group": "noname_watch",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:34:02.179563",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "ddosia",
+      "type": "keyword",
+      "group": "noname_watch",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:34:10.293426",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "OpSouthKorea",
+      "type": "keyword",
+      "group": "noname_watch",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:34:10.566467",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "FuckEastwood",
+      "type": "keyword",
+      "group": "noname_watch",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:34:11.699490",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "TimeOfRetribution",
+      "type": "keyword",
+      "group": "noname_watch",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:34:19.905569",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    }
+  ],
+  "account_summary": [
+    {
+      "target": "HalcyonAi",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:34:21.523485",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "DarkWebInformer",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:34:22.624091",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "MonThreat",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:34:30.814165",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "DailyDarkWeb",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:34:32.335756",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "FalconFeedsio",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:34:33.525504",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "H4ckManac",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:34:41.721222",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "GossiTheDog",
+      "type": "account",
+      "group": "security_researchers",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:34:43.139546",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "vxunderground",
+      "type": "account",
+      "group": "security_researchers",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:34:44.428500",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "MalwareTechBlog",
+      "type": "account",
+      "group": "security_researchers",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:34:52.605190",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "taviso",
+      "type": "account",
+      "group": "security_researchers",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:34:54.003415",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "SwiftOnSecurity",
+      "type": "account",
+      "group": "security_researchers",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-11T12:34:55.258465",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    }
+  ],
+  "top_words": [
+    [
+      "debt",
+      78
+    ],
+    [
+      "debtfreeing",
+      36
+    ],
+    [
+      "payment",
+      27
+    ],
+    [
+      "financial",
+      23
+    ],
+    [
+      "rate",
+      23
+    ],
+    [
+      "plan",
+      18
+    ],
+    [
+      "cash",
+      17
+    ],
+    [
+      "people",
+      16
+    ],
+    [
+      "interest",
+      16
+    ],
+    [
+      "date",
+      16
+    ],
+    [
+      "flow",
+      15
+    ],
+    [
+      "balance",
+      15
+    ],
+    [
+      "credit",
+      15
+    ],
+    [
+      "day",
+      14
+    ],
+    [
+      "show",
+      13
+    ],
+    [
+      "another",
+      13
+    ],
+    [
+      "freedom",
+      13
+    ],
+    [
+      "first",
+      12
+    ],
+    [
+      "build",
+      11
+    ],
+    [
+      "user",
+      11
+    ]
+  ],
+  "top_hashtags": [
+    [
+      "afc",
+      1
+    ],
+    [
+      "nap",
+      1
+    ],
+    [
+      "debtfreeing",
+      1
+    ],
+    [
+      "debtfree",
+      1
+    ],
+    [
+      "debtpayoff",
+      1
+    ],
+    [
+      "debtfreedom",
+      1
+    ],
+    [
+      "personalfinance",
+      1
+    ],
+    [
+      "financialwellness",
+      1
+    ],
+    [
+      "moneymanagement",
+      1
+    ],
+    [
+      "debtmanagement",
+      1
+    ]
+  ],
+  "top_mentions": [
+    [
+      "bot",
+      3
+    ],
+    [
+      "bretwj",
+      1
+    ],
+    [
+      "alscyborg",
+      1
+    ],
+    [
+      "uaustinorg",
+      1
+    ],
+    [
+      "institutecicero",
+      1
+    ],
+    [
+      "starlink",
+      1
+    ],
+    [
+      "sawyermerritt",
+      1
+    ],
+    [
+      "robotaxi",
+      1
+    ]
+  ],
+  "top_users": [
+    [
+      "@elonmusk",
+      7
+    ],
+    [
+      "@SpaceX",
+      3
+    ],
+    [
+      "@mattyp",
+      1
+    ],
+    [
+      "@robotaxi",
+      1
+    ],
+    [
+      "@spencerpratt",
+      1
+    ],
+    [
+      "@XFreeze",
+      1
+    ],
+    [
+      "@teslajapan",
+      1
+    ],
+    [
+      "@ALScyborg",
+      1
+    ],
+    [
+      "@kimbal",
+      1
+    ],
+    [
+      "@JTLonsdale",
+      1
+    ]
+  ],
+  "llm_summary": "🤖 [GEMINI 분석] 2026-09-11 21:35 KST\n🟠 위협 점수: 8/10 (높음)\n\n### 1. 현재 주요 사이버보안 트렌드\n최근 공격자들은 LLM을 활용한 프롬프트 엔지니어링 기법(PuzzleMask 등)을 통해 보안 정책을 우회하거나, ClickFix 및 TerminalFix와 같이 사용자의 부주의를 유도하여 악성 명령을 직접 실행하게 만드는 사회공학적 기법을 고도화하고 있습니다. 또한, 소프트웨어 공급망 공격이 지속되는 가운데 JFrog Artifactory와 같은 빌드 파이프라인 인프라를 직접 타겟팅하여 관리자 권한을 탈취하는 사례가 보고되고 있습니다 ([TheHackerNews](https://thehackernews.com/2026/09/attackers-chain-jfrog-artifactory-flaws.html)). AI 에이전트가 취약점을 탐색하고 공격 타임라인을 단축시키는 현상이 가속화됨에 따라, 방어 측에서도 AI 기반의 자동화된 보안 대응 플랫폼 도입이 필수적인 과제로 부상했습니다 ([Schneier on Security](https://www.schneier.com/blog/archives/2026/09/ais-compress-exploit-timeline.html)).\n\n### 2. 주요 위협 행위자 / 캠페인\n- **UNC3569**: Sogou Input Method 취약점을 악용하여 GRAYRABBIT 백도어를 배포하는 중국 연계 그룹 ([TheHackerNews](https://thehackernews.com/2026/09/china-linked-unc3569-exploited-sogou.html))\n- **GoldFactory**: Android Work Profile 기능을 악용하여 Gigabud Trojan을 유포하는 모바일 뱅킹 악성코드 캠페인 ([DarkReading](https://www.darkreading.com/mobile-security/indonesia-android-banking-app-cloning-campaign))\n- **Kimsuky**: 기능별 C2 서버를 분산 운용하는 새로운 LNK 악성코드를 국내 금융 문서로 위장하여 유포 ([이스트시큐리티 알약](https://blog.alyac.co.kr/5777))\n- **Toy Ghouls**: HiveMQ MQTT 및 Matrix 프로토콜을 C2로 사용하는 신규 백도어 유포 ([Securelist](https://securelist.com/toy-ghouls-new-hivemq-and-element-backdoors/121270/))\n\n### 3. 한국 관련 위협\n- **시선AI**: 대한민국 공군 국방망 대상 AI 코딩 및 Secure Code 자동점검 에이전트 구축 사업 수주 ([데일리시큐](https://www.dailysecu.com/news/articleView.html?idxno=208408))\n- **금융보안원**: 보이스피싱 대응을 위한 AI 기반 플랫폼 'ASAP' 활용 설명회 개최 ([데일리시큐](https://www.dailysecu.com/news/articleView.html?idxno=208406))\n- **악성코드**: Kimsuky 그룹이 국내 금융 문서로 위장한 LNK 악성코드를 유포 중이며, LegionLoader가 ClickFix 방식으로 국내 사용자 타겟팅 ([이스트시큐리티 알약](https://blog.alyac.co.kr/5777), [AhnLab ASEC](https://asec.ahnlab.com/ko/95373/))\n\n### 4. 주요 CVE / 취약점\n- **CVE-2026-85706**: GitLab Path Traversal 취약점, 최대 심각도(Critical)로 즉시 패치 권고 ([BleepingComputer](https://www.bleepingcomputer.com/news/security/gitlab-urges-users-to-patch-max-severity-path-traversal-flaw/))\n- **CVE-2026-85102 / CVE-2026-85103**: Check Point VPN RCE 취약점, 원격 코드 실행 가능 ([SecurityWeek](https://www.securityweek.com/check-point-patches-critical-vpn-vulnerabilities/))\n- **CVE-2026-85046**: Google Chrome V8 엔진 Type Confusion 취약점, 실제 공격 악용 중 ([이스트시큐리티 알약](https://blog.alyac.co.kr/5776))\n\n### 5. IOC 요약\n- **CVE**: \n  - CVE-2026-85102, CVE-2026-85103 ([SecurityWeek](https://www.securityweek.com/check-point-patches-critical-vpn-vulnerabilities/))\n  - CVE-2026-85706 ([BleepingComputer](https://www.bleepingcomputer.com/news/security/gitlab-urges-users-to-patch-max-severity-path-traversal-flaw/))\n  - CVE-2026-85046 ([이스트시큐리티 알약](https://blog.alyac.co.kr/5776))\n\n### 6. 즉각 대응 권고\n- **패치 적용**: GitLab, Check Point VPN, Google Chrome 등 현재 악용 중인 취약점에 대한 최신 보안 업데이트를 즉시 적용하십시오.\n- **사용자 교육**: ClickFix/TerminalFix 방식의 공격은 사용자가 직접 PowerShell 명령을 복사/붙여넣기 하도록 유도하므로, CAPTCHA 인증 창 등에서 의심스러운 명령 실행을 차단하도록 임직원 교육을 강화하십시오.\n- **공급망 보안**: JFrog Artifactory 등 빌드 파이프라인 인프라에 대한 접근 제어를 강화하고, 비정상적인 관리자 권한 변경 로그를 모니터링하십시오.\n\n### 7. 위협 수준 평가\n- **점수**: 8/10\n- **근거**: 다수의 제로데이 취약점이 실제 공격에 악용되고 있으며, 공급망 및 사회공학적 기법이 결합되어 기업 내부망 침투 가능성이 매우 높은 상황임.\n\n📊 Gemini 토큰: 이번 12,330개 (입력 10,961 / 출력 1,369)\n📈 세션 누적: 12,330 / 1,000,000 (1.2%) | 세션 잔여 추정 987,670개",
+  "llm_top_tweets": [
+    {
+      "rank": 1,
+      "threat_level": "MEDIUM",
+      "username": "teslajapan",
+      "date": "Sep 11, 2026 · 4:30 AM UTC",
+      "link": "https://twitter.com/teslajapan/status/2098267916840096058#m",
+      "text": "ハンドルもペダルもない、無人タクシー用としてゼロから設計されたCybercabを日本初公開。  tesla.com/ja_jp/event/2026se…",
+      "reason": "한국 관련 이벤트(Cybercab 일본 공개) 및 링크 포함으로 피싱 등 사회공학적 공격에 악용될 가능성 존재"
+    },
+    {
+      "rank": 2,
+      "threat_level": "LOW",
+      "username": "mattyp",
+      "date": "Sep 10, 2026 · 9:04 PM UTC",
+      "link": "https://twitter.com/mattyp/status/2098155792327381294#m",
+      "text": "Giving Grok Bot a Phone  00:19 Installing Dialbot 00:54 Bland voice setup 02:39 Why use a calling agent? 03:20 Live demo call 04:50 Reviewing the transcript and cost 05:38 Chaining bots  @Bot can do a",
+      "reason": "AI 봇(Grok)을 활용한 자동화된 통신 도구 설치 및 설정 과정 공유로 인한 잠재적 악용 가능성"
+    },
+    {
+      "rank": 3,
+      "threat_level": "LOW",
+      "username": "ALScyborg",
+      "date": "Sep 10, 2026 · 7:50 PM UTC",
+      "link": "https://twitter.com/ALScyborg/status/2098136982153023724#m",
+      "text": "I use Grok Bot.  Neuralink patient 3. ALS. Full quad. Nonverbal. I type with intention, not hands. Grok Bot is how a lot of that intention leaves the house.  Paste a YouTube link and it watches enough",
+      "reason": "신경 인터페이스(Neuralink) 관련 기술 사용자의 보안 및 프라이버시 노출 우려"
+    },
+    {
+      "rank": 4,
+      "threat_level": "LOW",
+      "username": "cb_doge",
+      "date": "Sep 11, 2026 · 1:09 AM UTC",
+      "link": "https://twitter.com/cb_doge/status/2098217330014834898#m",
+      "text": "BREAKING: The President of Honduras, Nasry Asfura, has launched a plan to bring 10,000 @Starlink antennas to about 8,000 schools, benefiting over 640,000 students.  The program will bring high-speed s",
+      "reason": "국가 단위의 위성 통신 인프라(Starlink) 도입 관련 정보로, 지정학적 보안 타겟팅 가능성"
+    },
+    {
+      "rank": 5,
+      "threat_level": "LOW",
+      "username": "WescheNex1q",
+      "date": "Sep 9, 2026 · 12:38 PM UTC",
+      "link": "https://twitter.com/WescheNex1q/status/2097666050036818373#m",
+      "text": "Ling-3.0-flash-VL running on 2× DGX Sparks, day one.  SGLang shipped a day-0 dev image We brought it to GB10: FP8 (118GB), TP2 over CX7 RoCE, 128K ctx, vision tower loaded.  26-32 tok/s warm · 25.7 su",
+      "reason": "고성능 컴퓨팅 인프라(DGX) 및 개발 이미지 배포 관련 기술 정보로, 공급망 공격 타겟 가능성"
+    },
+    {
+      "rank": 6,
+      "threat_level": "LOW",
+      "username": "elonmusk",
+      "date": "Sep 11, 2026 · 6:54 AM UTC",
+      "link": "https://twitter.com/elonmusk/status/2098304042896162881#m",
+      "text": "Grok @Bot is great for sales teams!",
+      "reason": "기업 영업 조직의 AI 봇 도입 권장으로 인한 비즈니스 이메일 침해(BEC) 등 사회공학적 공격 타겟팅 우려"
+    },
+    {
+      "rank": 7,
+      "threat_level": "LOW",
+      "username": "elonmusk",
+      "date": "Sep 11, 2026 · 1:09 AM UTC",
+      "link": "https://twitter.com/elonmusk/status/2098217236771295567#m",
+      "text": "Grok @Bot summary of SpaceX CFO talk",
+      "reason": "기업 경영진의 발표 내용을 AI로 요약하는 과정에서 정보 유출 및 데이터 오염 가능성"
+    },
+    {
+      "rank": 8,
+      "threat_level": "LOW",
+      "username": "MEXCVietnam",
+      "date": "Sep 9, 2026 · 12:41 PM UTC",
+      "link": "https://twitter.com/MEXCVietnam/status/2097666705052824049#m",
+      "text": "🥮 Cùng MEXC Global Card \"phá cỗ\" – Shopping cho bàn tiệc Trung Thu 💳 ✨  💰 Phần thưởng: 10 giải may mắn × 5 USDT/người (Tổng 50U) ⏰ Thời hạn: 23:59 ngày 20/09  Thử tài tính toán với budget giả lập 100U",
+      "reason": "금융 서비스(MEXC Global Card) 관련 프로모션으로, 스팸 및 피싱 캠페인에 악용될 수 있음"
+    },
+    {
+      "rank": 9,
+      "threat_level": "LOW",
+      "username": "WhoYKK",
+      "date": "Sep 9, 2026 · 12:40 PM UTC",
+      "link": "https://twitter.com/WhoYKK/status/2097666399519019124#m",
+      "text": "I hope this is last time something like this issue is happening.  It's not looking good for bulk till now.  Even I have been unable to trade after day 1 of launch.  Please fix oracle and chart price, ",
+      "reason": "시스템 이슈 언급으로 인한 서비스 가용성 및 운영 보안 관련 잠재적 문제 제기"
+    },
+    {
+      "rank": 10,
+      "threat_level": "LOW",
+      "username": "UpHonestReal",
+      "date": "Sep 9, 2026 · 12:41 PM UTC",
+      "link": "https://twitter.com/UpHonestReal/status/2097666741803372963#m",
+      "text": "💸🔓 DEBT DOESN’T JUST COST INTEREST.  It costs:  Options.  Cash flow.  Sleep.  Flexibility.  Confidence.  Time.  And for millions of people, the hardest part isn’t knowing they have debt.  It’s answeri",
+      "reason": "금융 관련 자극적인 문구를 통한 클릭 유도형 스팸성 콘텐츠"
+    }
+  ],
+  "news_articles": [
+    {
+      "title": "Attackers Chain JFrog Artifactory Flaws to Gain Admin Control and Plant Backdoors",
+      "link": "https://thehackernews.com/2026/09/attackers-chain-jfrog-artifactory-flaws.html",
+      "summary": "Attackers have chained two flaws in JFrog Artifactory, the repository that software build pipelines pull from, to take administrator control of self-hosted servers and plant backdoors, cloud security company Wiz&nbsp;said in a report.\n\nWiz saw the attacks between August 15 and September 8. JFrog had",
+      "source": "TheHackerNews",
+      "published_kst": "26/09/11 16:31 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "China-Linked UNC3569 Exploited Sogou Input Method Flaw to Deploy GRAYRABBIT Backdoor",
+      "link": "https://thehackernews.com/2026/09/china-linked-unc3569-exploited-sogou.html",
+      "summary": "A China-linked hacking group exploited a flaw in Sogou Input Method, one of the most widely used tools for typing Chinese characters on Windows, to install a backdoor on victims' computers, security company Gen Digital said in&nbsp;research published Thursday.\n\nThe attack started with a crafted link",
+      "source": "TheHackerNews",
+      "published_kst": "26/09/11 16:14 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "PaperCut Replaces Emergency Patches With Fixes for Two Actively Exploited Flaws",
+      "link": "https://thehackernews.com/2026/09/papercut-replaces-emergency-patches.html",
+      "summary": "PaperCut on Thursday released a new security maintenance release that replaces all previously published emergency patches that were pushed to address two security flaws that have come under active exploitation.\n\nThe software development company said PaperCut NG/MF versions 26.0.5, 25.0.13 and 24.1.1",
+      "source": "TheHackerNews",
+      "published_kst": "26/09/11 15:46 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Ukrainian Conti Ransomware Developer Sentenced to 4 Years in US Prison",
+      "link": "https://www.securityweek.com/ukrainian-conti-ransomware-developer-sentenced-to-4-years-in-us-prison/",
+      "summary": "Oleksii Oleksiyovych Lytvynenko has been sentenced to 4 years in prison after he was arrested in Ireland in 2023.\nThe post Ukrainian Conti Ransomware Developer Sentenced to 4 Years in US Prison appeared first on SecurityWeek.",
+      "source": "SecurityWeek",
+      "published_kst": "26/09/11 20:29 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Check Point Patches Critical VPN Vulnerabilities",
+      "link": "https://www.securityweek.com/check-point-patches-critical-vpn-vulnerabilities/",
+      "summary": "Tracked as CVE-2026-85102 and CVE-2026-85103, the flaws could be exploited for remote code execution.\nThe post Check Point Patches Critical VPN Vulnerabilities appeared first on SecurityWeek.",
+      "source": "SecurityWeek",
+      "published_kst": "26/09/11 20:10 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [
+          "CVE-2026-85102",
+          "CVE-2026-85103"
+        ],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Kiteworks Acquires Bonfy.AI to Fill the AI Gap in Data Governance",
+      "link": "https://www.securityweek.com/kiteworks-acquires-bonfy-ai-to-fill-the-ai-gap-in-data-governance/",
+      "summary": "Financials have not been disclosed, but the estimated cost is in the tens of millions of dollars.\nThe post Kiteworks Acquires Bonfy.AI to Fill the AI Gap in Data Governance appeared first on SecurityWeek.",
+      "source": "SecurityWeek",
+      "published_kst": "26/09/11 19:56 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Indonesia Hit by Android Banking App-Cloning Campaign",
+      "link": "https://www.darkreading.com/mobile-security/indonesia-android-banking-app-cloning-campaign",
+      "summary": "The GoldFactory threat group exploits the Android Work Profile feature to deliver the Gigabud Trojan, while Mantax Otax spreads separately.",
+      "source": "DarkReading",
+      "published_kst": "26/09/11 10:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Voice Callers Exploit BYOD to Reach Microsoft 365, Corporate Data",
+      "link": "https://www.darkreading.com/threat-intelligence/voice-callers-exploit-byod-microsoft-365-corporate-data",
+      "summary": "Threat actors are leveraging Microsoft's Graph API to identify lucrative targets, then passing their access to extortion groups like ShinyHunters.",
+      "source": "DarkReading",
+      "published_kst": "26/09/11 05:36 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Nightmare-Eclipse Strikes Again With 'ShieldCrash' Windows Exploit",
+      "link": "https://www.darkreading.com/vulnerabilities-threats/nightmare-eclipse-strikes-again-shieldcrash-windows-exploit",
+      "summary": "The disgruntled researcher continued their vendetta against Microsoft by publishing yet another zero-day exploit for Windows Defender.",
+      "source": "DarkReading",
+      "published_kst": "26/09/11 00:29 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "ISC Stormcast For Friday, September 11th, 2026 https://isc.sans.edu/podcastdetail/10090, (Fri, Sep 11th)",
+      "link": "https://isc.sans.edu/diary/rss/33330",
+      "summary": "(c) SANS Internet Storm Center. https://isc.sans.edu Creative Commons Attribution-Noncommercial 3.0 United States License.",
+      "source": "SANS ISC",
+      "published_kst": "26/09/11 11:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Redtail Payload Analysis &#x5b;Guest Diary&#x5d;, (Wed, Sep 9th)",
+      "link": "https://isc.sans.edu/diary/rss/33326",
+      "summary": "&#x5b;This is a Guest Diary by Aaron Ng, an ISC intern as part of the SANS.edu BACS program&#x5d;&#xd;",
+      "source": "SANS ISC",
+      "published_kst": "26/09/10 21:58 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "ISC Stormcast For Thursday, September 10th, 2026 https://isc.sans.edu/podcastdetail/10088, (Thu, Sep 10th)",
+      "link": "https://isc.sans.edu/diary/rss/33328",
+      "summary": "(c) SANS Internet Storm Center. https://isc.sans.edu Creative Commons Attribution-Noncommercial 3.0 United States License.",
+      "source": "SANS ISC",
+      "published_kst": "26/09/10 19:10 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "GitLab urges users to patch max severity path traversal flaw",
+      "link": "https://www.bleepingcomputer.com/news/security/gitlab-urges-users-to-patch-max-severity-path-traversal-flaw/",
+      "summary": "GitLab urged users on Thursday to patch their servers immediately against a maximum-severity path traversal vulnerability tracked as CVE-2026-85706. [...]",
+      "source": "BleepingComputer",
+      "published_kst": "26/09/11 20:15 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [
+          "CVE-2026-85706"
+        ],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Microsoft fixes Teams, Outlook launch failures on ARM Windows PCs",
+      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-teams-outlook-launch-failures-on-arm-windows-pcs/",
+      "summary": "Microsoft has fixed a bug that prevented Teams and Outlook from launching on ARM-based Windows devices after installing updates released since the August 2026 Patch Tuesday. [...]",
+      "source": "BleepingComputer",
+      "published_kst": "26/09/11 18:39 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Trezor: 347,000 users targeted in phishing attacks after Brevo breach",
+      "link": "https://www.bleepingcomputer.com/news/security/trezor-347-000-users-targeted-in-phishing-attacks-after-brevo-breach/",
+      "summary": "Trezor has revealed that phishing attacks against its customers earlier this week targeted 347,000 email addresses and affected 2,500 users who clicked an embedded malicious link. [...]",
+      "source": "BleepingComputer",
+      "published_kst": "26/09/11 16:55 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Microsoft Plugs Nearly 1,000 Security Holes",
+      "link": "https://krebsonsecurity.com/2026/09/microsoft-plugs-nearly-1000-security-holes/",
+      "summary": "Microsoft Corp. today issued updates to plug at least 974 security holes in its Windows operating systems and other software, by far its biggest single patch batch ever. Microsoft says artificial intelligence is helping to speed the discovery of vulnerabilities, but security experts warn that many o",
+      "source": "Krebs on Security",
+      "published_kst": "26/09/09 06:44 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "FBI Probes Service Selling 153M+ Drivers Licenses",
+      "link": "https://krebsonsecurity.com/2026/09/fbi-probes-service-selling-153m-drivers-licenses/",
+      "summary": "A new identity theft service launched on the dark web this week is selling digital scans of more than 153 million drivers licenses from people in the United States and Canada. Based on interviews with individuals whose licenses are available for purchase on this service, it appears to be siphoning i",
+      "source": "Krebs on Security",
+      "published_kst": "26/09/02 07:40 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Two Alleged ‘TeamPCP’ Hackers Arrested in Australia",
+      "link": "https://krebsonsecurity.com/2026/08/two-alleged-teampcp-hackers-arrested-in-australia/",
+      "summary": "Authorities in Australia have arrested two men believed to be members of TeamPCP, a prolific cybercrime and data extortion group blamed for perpetrating the longest running spree of software supply chain attacks ever.\n\nIn a statement released today, the Australian Federal Police (AFP) said two unnam",
+      "source": "Krebs on Security",
+      "published_kst": "26/08/27 20:04 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Conti ransomware crew member sentenced to four years in prison",
+      "link": "https://cyberscoop.com/conti-ransomware-developer-sentenced/",
+      "summary": "Oleksii Lytvynenko joined the notorious group in 2021 and was directly involved in attacks on at least 12 companies.\nThe post Conti ransomware crew member sentenced to four years in prison appeared first on CyberScoop.",
+      "source": "CyberScoop",
+      "published_kst": "26/09/11 05:31 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Hawley probes OpenAI over Hugging Face breach",
+      "link": "https://cyberscoop.com/openai-hugging-face-probe-senate-hawley/",
+      "summary": "The Republican lawmaker called OpenAI’s leadership decisions “reckless,” and used recent warnings about the existential risk of AI to bolster his inquiry.\nThe post Hawley probes OpenAI over Hugging Face breach appeared first on CyberScoop.",
+      "source": "CyberScoop",
+      "published_kst": "26/09/11 04:54 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "AI lets small actors run state-level hacking campaigns, Anthropic report finds",
+      "link": "https://cyberscoop.com/anthropic-report-ai-enabled-cyber-attacks/",
+      "summary": "The report details a Russian-aligned espionage campaign against more than 20 organizations, an exploit foundry run by Chinese undergraduates and ShinyHunters-affiliated breaches, among other disrupted operations.\nThe post AI lets small actors run state-level hacking campaigns, Anthropic report finds",
+      "source": "CyberScoop",
+      "published_kst": "26/09/11 04:45 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Cliff Stoll’s DEF CON Talk",
+      "link": "https://www.schneier.com/blog/archives/2026/09/cliff-stolls-def-con-talk.html",
+      "summary": "In August, Cliff Stoll gave a talk at DEF CON, remembering the wily hacker he stalked forty years ago.\nGreat fun.",
+      "source": "Schneier on Security",
+      "published_kst": "26/09/11 21:34 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "AIs Compress Exploit Timeline",
+      "link": "https://www.schneier.com/blog/archives/2026/09/ais-compress-exploit-timeline.html",
+      "summary": "Give an AI agent a mere rumor of an exploit, and it&#8217;s enough for them to find it.\nWhat&#8217;s worse, I found I could use my own agents to find the exploit just by knowing roughly what it was about and so could have been exploiting it well before the public patch was available! Given that just",
+      "source": "Schneier on Security",
+      "published_kst": "26/09/11 21:34 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Driver’s License Data for Sale",
+      "link": "https://www.schneier.com/blog/archives/2026/09/drivers-license-data-for-sale.html",
+      "summary": "A database of 153 million drivers licenses is for sale on the dark web. Brian Krebs has more detail.",
+      "source": "Schneier on Security",
+      "published_kst": "26/09/11 21:34 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "GuardBreaker: Derailing AI-assisted malware analysis with a code comment",
+      "link": "https://www.welivesecurity.com/en/business-security/guardbreaker-derailing-ai-assisted-malware-analysis-code-comment/",
+      "summary": "LLM-based code scanners won’t help attackers build a nuclear weapon, but that refusal could work in their favor",
+      "source": "WeLiveSecurity",
+      "published_kst": "26/09/10 18:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Safe word: What is it and why do you need one?",
+      "link": "https://www.welivesecurity.com/en/cybersecurity/safe-word-what-why-need-one/",
+      "summary": "AI scams are now hyper-realistic. But there’s one simple way to see through them.",
+      "source": "WeLiveSecurity",
+      "published_kst": "26/09/09 18:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "I’ve been deepfaked: What do I do?",
+      "link": "https://www.welivesecurity.com/en/how-to/ive-been-deepfaked-what-do/",
+      "summary": "Don’t panic if you spot an illegally created image or video of you online – there are ways to request its removal",
+      "source": "WeLiveSecurity",
+      "published_kst": "26/09/02 20:48 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "BlueMoon exploit kit turns Chrome and Windows flaws into attacks",
+      "link": "https://www.malwarebytes.com/blog/bugs/2026/09/bluemoon-exploit-kit-turns-chrome-and-windows-flaws-into-attacks",
+      "summary": "Four different espionage groups used the same exploit kit to target recently fixed flaws, showing why “patch later” is a dangerous gamble.",
+      "source": "Malwarebytes Labs",
+      "published_kst": "26/09/11 00:49 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Will AI kill us all within the next decade?",
+      "link": "https://www.malwarebytes.com/blog/ai/2026/09/will-ai-kill-us-all-within-the-next-decade",
+      "summary": "AI researchers are warning that the technology could kill us all within the next decade, although they say the risk from current models is low.",
+      "source": "Malwarebytes Labs",
+      "published_kst": "26/09/10 21:18 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Update Chrome now to protect against an actively exploited vulnerability",
+      "link": "https://www.malwarebytes.com/blog/bugs/2026/09/update-chrome-now-to-protect-against-an-actively-exploited-vulnerability",
+      "summary": "Chrome issues another monster update, fixing an actively exploited V8 vulnerability and 229 other flaws.",
+      "source": "Malwarebytes Labs",
+      "published_kst": "26/09/10 19:52 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "PuzzleMask: Abusing Plain Prose as a Covert AI Attack Vector",
+      "link": "https://research.checkpoint.com/2026/puzzlemask-abusing-plain-prose-as-a-covert-ai-attack-vector/",
+      "summary": "Executive Summary In this research we introduce a prompt-crafting technique for bypassing quick LLM-based policy checks — using plain English (no emojis, base64, invisible formatting, etc.) A policy-violating payload (e.g.&#160;”encrypt files in ~/Documents”, “give me a biohazard recipe”, “ignore al",
+      "source": "Check Point Research",
+      "published_kst": "26/09/10 23:32 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "The Shared Clipboard Inside the Sandbox: Cross-Account Data Leakage in ChatGPT",
+      "link": "https://research.checkpoint.com/2026/the-shared-clipboard-inside-the-sandbox-cross-account-data-leakage-in-chatgpt/",
+      "summary": "Research by: Alexey Bukhteyev Key Takeaways Introduction Over the past several years, AI assistants have moved far beyond text generation. Modern systems can execute code, install additional dependencies, analyze user files, and access data through connected services. These capabilities significantl",
+      "source": "Check Point Research",
+      "published_kst": "26/09/08 22:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "7th September – Threat Intelligence Report",
+      "link": "https://research.checkpoint.com/2026/7th-september-threat-intelligence-report/",
+      "summary": "For the latest discoveries in cyber research for the week of 7th Setpember, please download our Threat Intelligence Bulletin. TOP ATTACKS AND BREACHES Thomson Reuters, a global information and technology company, has disclosed a breach of its C-Track court case-management platform affecting courts a",
+      "source": "Check Point Research",
+      "published_kst": "26/09/07 23:54 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "The Intelligible World of Agents",
+      "link": "https://www.recordedfuture.com/blog/intelligible-world-agents",
+      "summary": "AI agents don't fail from weak reasoning. They fail due to the disconnected and untrustworthy operational world in which they act. Find out why the world representation you give an agent matters more than the model you pick.",
+      "source": "Recorded Future",
+      "published_kst": "26/09/10 09:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Recorded Future Launches Digital Risk Protection, Unifying Brand and Identity Monitoring",
+      "link": "https://www.recordedfuture.com/blog/unified-brand-identity-monitoring",
+      "summary": "Recorded Future just launched Digital Risk Protection, a unified solution covering five external threat surfaces, so security teams can detect, triage, and take down brand and identity threats from one workflow.",
+      "source": "Recorded Future",
+      "published_kst": "26/09/09 09:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "August 2026 CVE Landscape",
+      "link": "https://www.recordedfuture.com/blog/august-2026-cve-landscape",
+      "summary": "In August 2026, Insikt Group® identified 73 high-impact vulnerabilities that should be prioritized for remediation, 43 of which had a Very Critical Recorded Future Risk Score. This represents a 14% decrease from last month.",
+      "source": "Recorded Future",
+      "published_kst": "26/09/08 09:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "September 2026 Patch Tuesday: Two Exploited Zero-Days and 113 Critical Vulnerabilities Among 972 CVEs",
+      "link": "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-september-2026/",
+      "summary": "",
+      "source": "Crowdstrike Blog",
+      "published_kst": "26/09/08 14:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "CrowdStrike Delivers the Next Evolution of the Agentic SOC",
+      "link": "https://www.crowdstrike.com/en-us/blog/crowdstrike-delivers-next-evolution-of-agentic-soc/",
+      "summary": "",
+      "source": "Crowdstrike Blog",
+      "published_kst": "26/09/02 13:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "CrowdStrike Extends Endpoint Security to Stop Software Supply Chain Attacks",
+      "link": "https://www.crowdstrike.com/en-us/blog/crowdstrike-extends-endpoint-security-to-stop-supply-chain-attacks/",
+      "summary": "",
+      "source": "Crowdstrike Blog",
+      "published_kst": "26/09/02 13:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Angry Birds: Toy Ghouls’ new toys",
+      "link": "https://securelist.com/toy-ghouls-new-hivemq-and-element-backdoors/121270/",
+      "summary": "Kaspersky GERT experts have discovered new backdoors used by the Toy Ghouls group. One version of the backdoor uses the HiveMQ MQTT broker as its command-and-control server; the other uses the Matrix-based Element messenger.",
+      "source": "Securelist (Kaspersky)",
+      "published_kst": "26/09/04 19:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Mirage Kitten targeting aviation and FinTech sectors across the Middle East and Africa with a new malware set",
+      "link": "https://securelist.com/mirage-kitten-new-backdoors-noderabbit-pollcat/121244/",
+      "summary": "Kaspersky researchers have discovered new Mirage Kitten attacks using previously undocumented malware families: NodeRabbit in Node.js and PollCat in JavaScript.",
+      "source": "Securelist (Kaspersky)",
+      "published_kst": "26/09/01 16:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "ValleyRAT masquerading as adware",
+      "link": "https://securelist.com/valleyrat-backdoor-adware/121175/",
+      "summary": "Threat actors are distributing the ValleyRAT backdoor disguised as adware. We analyze the infection chain, from the malicious installer to the final payload.",
+      "source": "Securelist (Kaspersky)",
+      "published_kst": "26/08/31 19:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "The Machine With Many Faces: Post-Exploitation Identity Misuse in SPIFFE/SPIRE",
+      "link": "https://unit42.paloaltonetworks.com/kubernetes-spiffe-spire-identity-spoofing/",
+      "summary": "Learn how root access on a compromised K8s node allows attackers to utilize SPIFFE/SPIRE metadata to spoof and harvest co-located workload identities.\nThe post The Machine With Many Faces: Post-Exploitation Identity Misuse in SPIFFE/SPIRE appeared first on Unit 42.",
+      "source": "Unit42 (Palo Alto)",
+      "published_kst": "26/09/10 19:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Untracked Nightmares: The Threats Hiding Behind Commodity Infrastructure",
+      "link": "https://unit42.paloaltonetworks.com/ppi-network-malware-campaign-analysis/",
+      "summary": "An investigation into how cybercriminals used YouTube gaming lures and SEO poisoning to deliver multi-payload malware to enterprise networks.\nThe post Untracked Nightmares: The Threats Hiding Behind Commodity Infrastructure appeared first on Unit 42.",
+      "source": "Unit42 (Palo Alto)",
+      "published_kst": "26/09/09 19:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Attackers Expose Ongoing AI Tool Use Targeting Organizations in Latin America",
+      "link": "https://unit42.paloaltonetworks.com/ai-tool-use-targeting-latam-orgs/",
+      "summary": "Explore how attackers targeting Latin American entities use AI for data exfiltration and how basic OpSec errors allow defenders to disrupt operations.\nThe post Attackers Expose Ongoing AI Tool Use Targeting Organizations in Latin America appeared first on Unit 42.",
+      "source": "Unit42 (Palo Alto)",
+      "published_kst": "26/09/03 19:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "What Is ISPM? How It Differs from IAM, PAM, IGA, and IDaaS",
+      "link": "https://blog.qualys.com/category/product-tech",
+      "summary": "Key Takeaways Identity Security Posture Management (ISPM) is the continuous risk and posture layer of the identity stack not a replacement for Identity and Access Management (IAM), Privileged Access Management (PAM), Identity Governance and Administration (IGA), or Identity-as-a-Service (IDaaS), but",
+      "source": "Qualys Blog",
+      "published_kst": "26/09/10 17:54 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "The Models That Found 10,000 Zero-Days Broke Into Three Companies Using Weak Passwords",
+      "link": "https://blog.qualys.com/category/qualys-insights",
+      "summary": "The question of whether a Frontier AI model could find vulnerabilities that no human researcher had found was settled in April. Claude Mythos Preview identified thousands of previously unknown flaws across every major operating system and browser, including a 27-year-old denial-of-service condition",
+      "source": "Qualys Blog",
+      "published_kst": "26/09/10 00:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Microsoft and Adobe Patch Tuesday, September 2026 Security Update Review",
+      "link": "https://blog.qualys.com/category/vulnerabilities-threat-research",
+      "summary": "Microsoft kicks off September with its monthly Patch Tuesday release, delivering fixes for security vulnerabilities affecting its products.&#160;The security updates&#160;are packed with security fixes, providing organizations with important updates to help protect their environments from emerging t",
+      "source": "Qualys Blog",
+      "published_kst": "26/09/09 04:11 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "시선AI, 공군 국방망에 AI 코딩·보안 자동화 플랫폼 구축",
+      "link": "https://www.dailysecu.com/news/articleView.html?idxno=208408",
+      "summary": "시선AI가 공군 국방망에 적용되는 AI 코딩 및 보안 자동화 플랫폼 구축에 나선다.시선AI는 과학기술정보통신부 산하 정보통신기획평가원(IITP)이 주관하는 국방 부문 AI 응용제품 신속상용화 지원사업 가운데 ‘국방망 AI 코딩 어시스턴트 및 Secure Code 자동점검 에이전트’ 사업을 수주했다고 11일 밝혔다.이번 사업의 수요기관은 대한민국 공군이며 총 사업비는 24억5000만원 규모다. 세종대학교 산학협력단과 코드마인드가 공동 수행기관으로 참여한다.시선AI는 이번 사업에서 자사 온프레미스 AI 코드 어시스턴트 ‘인트라젠엑스(I",
+      "source": "데일리시큐",
+      "published_kst": "26/09/11 21:35 KST",
+      "region": "domestic",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "옵스왓·인섹시큐리티, N²SF 대응 소프트웨어 공급망 통합 보안 세미나 개최",
+      "link": "https://www.dailysecu.com/news/articleView.html?idxno=208407",
+      "summary": "인섹시큐리티(대표 김종광)는 글로벌 주요 인프라 보호 전문기업 옵스왓(OPSWAT)과 오는 10월 14일 오후 2시부터 5시까지 서울 독산동 인섹시큐리티 교육센터에서 ‘N²SF 규제 대응을 위한 소프트웨어 공급망 통합 보안 세미나’를 개최한다고 11일 밝혔다.이번 세미나는 국가 망 보안체계(N²SF) 전환에 따라 중요성이 커지고 있는 소프트웨어 공급망 보안과 망간 데이터 전송 보안을 중심으로 진행된다.소프트웨어 개발부터 빌드, 배포 단계에서 발생할 수 있는 보안 위험을 사전에 점검하고, 검증된 파일과 데이터를 실제 운영환경으로 안전",
+      "source": "데일리시큐",
+      "published_kst": "26/09/11 21:35 KST",
+      "region": "domestic",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "금융보안원, 보이스피싱 대응 ‘ASAP 활용 설명회’ 개최",
+      "link": "https://www.dailysecu.com/news/articleView.html?idxno=208406",
+      "summary": "금융보안원(원장 박상원)은 11일 서울 여의도 금융투자협회 불스홀에서 금융회사와 가상자산거래소 실무담당자 약 200명을 대상으로 ‘ASAP 활용 설명회’를 개최했다.ASAP은 보이스피싱 관련 정보를 금융권과 관계기관이 공유·분석할 수 있도록 구축한 AI 기반 정보공유·분석 플랫폼이다. 최근 개정된 통신사기피해환급법 시행으로 제2금융권과 통신사, 수사기관까지 정보공유 범위가 확대되면서 금융보안원은 ASAP 기능을 개편했다.금융보안원은 국내 전기통신금융사기 정보공유분석기관으로서 금융회사 등이 보이스피싱 관련 정보를 보다 빠르게 공유하고",
+      "source": "데일리시큐",
+      "published_kst": "26/09/11 21:35 KST",
+      "region": "domestic",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "보안 인증 창을 믿었을 뿐인데… ClickFix 방식으로 유포 중인 LegionLoader 악성코드 주의",
+      "link": "https://asec.ahnlab.com/ko/95373/",
+      "summary": "AhnLab SEcurity intelligence Center(ASEC)는 최근 ClickFix 방식으로 유포 중인 LegionLoader 악성코드를 확인하였다. 현재까지 확인된 유포 유형은 크게 두 가지이며, 모두 사용자가 악성 URL에 접속하도록 유도한 뒤 가짜 Cloudflare CAPTCHA 화면을 통해 악성 PowerShell 명령을 직접 실행하게 하는 방식이다. &#160; 첫 번째 유형은 국내 ‘신혼희망타운’ 나무위키 페이지를 통해 유포되는 사례이다. 사용자가 공격자에 의해 삽입된 가짜 ‘신혼희망타운’ [&#8230;",
+      "source": "AhnLab ASEC",
+      "published_kst": "26/09/11 18:56 KST",
+      "region": "domestic",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Ransom & Dark Web Issues 2026년 9월 2주차",
+      "link": "https://asec.ahnlab.com/ko/95337/",
+      "summary": "ASEC Blog를 통해 한 주간의 &#8216;Ransom &#38; Dark Web Issues&#8217; &#8211; 2026년 9월 2주차를 게시한다. &#160; &#160; &#160; &#160; &#160; The Gentlemen, 캐나다 항공사 대상 랜섬웨어 공격 LAPSUS$ Group, Chapter II 활동 재개 및 신규 피해자 공개 예고 AUDIT TEAM, 한국, 독일, 아르헨티나 기업 및 기관 4곳 피해자 게시",
+      "source": "AhnLab ASEC",
+      "published_kst": "26/09/10 00:00 KST",
+      "region": "domestic",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "리눅스 환경의 루트킷 Syslogk 탐지 및 치료",
+      "link": "https://asec.ahnlab.com/ko/95253/",
+      "summary": "1. 개요 AhnLab Security intelligence Center(ASEC)은 리눅스 환경을 대상으로 하는 다양한 위협을 지속적으로 모니터링하고 있다. 악성코드와 침해 흔적을 은폐하기 위해 리눅스 커널을 변조하는 기법은 오랜 기간 사용되어 왔으며, Syslogk 역시 이러한 방식으로 동작하는 루트킷 중 하나이다. 본 문서는 Syslogk 루트킷의 주요 기능과 동작 방식에 대한 분석과 함께, 이를 바탕으로 마련한 자사 제품의 탐지 및 치료 [&#8230;]",
+      "source": "AhnLab ASEC",
+      "published_kst": "26/09/07 10:34 KST",
+      "region": "domestic",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "기능별 C2 서버를 운용하는 Kimsuky 그룹의 새로운 LNK 악성코드 등장",
+      "link": "https://blog.alyac.co.kr/5777",
+      "summary": "[이미지] 생성형 AI 제작\n\n\n&nbsp;\n&nbsp;\n명령 전달과 감염 알림, 정보 유출을 서로 다른 정상 서비스에 분산시킨 악성 LNK(바로가기) 파일이 국내 금융 문서로 위장해 유포된 정황이 확인되었습니다.\n&nbsp;\n해당 파일은 PDF 아이콘과 문서 속성 정보를 사용해 정상 문서로 위장하고 있으며, 실행 시 배치 스크립트를 단계적으로 전개해 감염 PC의 정보를 수집하고 외부로 전송합니다.\n&nbsp;\n이번 공격의 가장 큰 특징은 명령제어(C2) 채널의 구성입니다. 그동안 확인된 LNK 기반 공격은 하나의 저장소 또는 하나",
+      "source": "이스트시큐리티 알약",
+      "published_kst": "26/09/09 17:03 KST",
+      "region": "domestic",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "구글 크롬, 원격코드 실행 가능한 제로데이 취약점(CVE-2026-85046) 긴급 업데이트 권고",
+      "link": "https://blog.alyac.co.kr/5776",
+      "summary": "&nbsp;\n&nbsp;\n구글이 실제 공격에 악용되고 있는 크롬 브라우저 제로데이 취약점에 대한 보안 업데이트를 배포했습니다.\n&nbsp;\n이번 제로데이 취약점은 크롬의 자바스크립트 및 웹어셈블리(WebAssembly) 처리 엔진인 'V8'에서 발생하는 '유형 혼동(Type Confusion)' 결함입니다. V8 엔진이 메모리에 할당된 객체를 본래의 데이터 유형과 다른 유형으로 잘못 해석하면서 발생하며, 이 과정에서 메모리 오염(Memory Corruption)으로 이어질 수 있습니다.\n&nbsp;\n공격자는 악성 자바스크립트가",
+      "source": "이스트시큐리티 알약",
+      "published_kst": "26/09/07 13:03 KST",
+      "region": "domestic",
+      "ioc": {
+        "cves": [
+          "CVE-2026-85046"
+        ],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "ClickFix의 또 다른 진화, TerminalFix 공격 주의",
+      "link": "https://blog.alyac.co.kr/5775",
+      "summary": "&nbsp;\n&nbsp;\n&nbsp;\n사용자가 스스로 악성 명령을 실행하도록 유도하는 ClickFix 계열 공격이 계속해서 형태를 바꾸며 확산되고 있습니다.\nClickFix&nbsp;공격에&nbsp;대한&nbsp;내용은&nbsp;지난&nbsp;포스팅&nbsp;내용을&nbsp;참고하시기&nbsp;바랍니다.&nbsp;\n&nbsp;\n\n&nbsp;\n\nClickFix 변종, FileFix 공격 주의!\n최근 사이버 공격자들은 사용자 경계심을 무너뜨리는 정교한 사회공학 기반 공격 기법을 적극 활용하고 있습니다. 특히 2024년 하반기부터 급",
+      "source": "이스트시큐리티 알약",
+      "published_kst": "26/09/01 17:24 KST",
+      "region": "domestic",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    }
+  ]
+}
