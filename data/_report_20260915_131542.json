@@ -1,0 +1,2265 @@
+{
+  "generated_at": "2026-09-15T13:15:17.346331",
+  "total_tweets": 58,
+  "total_targets": 49,
+  "keyword_summary": [
+    {
+      "target": "MITRE ATT&CK",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 19,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:05:54.135783",
+      "top_users": [
+        [
+          "@elonmusk",
+          9
+        ],
+        [
+          "@cb_doge",
+          3
+        ],
+        [
+          "@altcap",
+          1
+        ]
+      ],
+      "hashtags": [],
+      "sample_texts": [
+        "Trump calling @JensenHuang live during @theallinpod interview. “The grt thing about Jensen is that h",
+        "Slovenia 🇸🇮 🙌"
+      ],
+      "sample_tweets": [
+        {
+          "text": "Trump calling @JensenHuang live during @theallinpod interview. “The grt thing about Jensen is that he can create the best AI chip in the world but can’t figure out how to put me on speaker phone.”  They agree that AI is safe, grt for jobs, economic growth & natl security. 😂🇺🇸🚀",
+          "username": "altcap",
+          "link": "https://twitter.com/altcap/status/2099573086354100364#m",
+          "date": "Sep 14, 2026 · 6:56 PM UTC"
+        },
+        {
+          "text": "Slovenia 🇸🇮 🙌",
+          "username": "elonmusk",
+          "link": "https://twitter.com/elonmusk/status/2099744349017747493#m",
+          "date": "Sep 15, 2026 · 6:17 AM UTC"
+        },
+        {
+          "text": "True",
+          "username": "elonmusk",
+          "link": "https://twitter.com/elonmusk/status/2099743954707067058#m",
+          "date": "Sep 15, 2026 · 6:15 AM UTC"
+        },
+        {
+          "text": "Elon just gave a much more practical explanation of the current AI safety problem....and laid out a practical framework for making frontier AI safer  OpenAI and Anthropic are the two leading AI companies....and their models are close enough in capability that it’s incredibly difficult for either one to slow down without basically handing the lead to the other  Elon also made an important distinction:  On balance, Anthropic puts more care into safety than OpenAI....but even people inside Anthropic are publicly worried about what their own models can do  So instead of asking one company to voluntarily fall behind, Elon’s solution is much more practical:  Have Anthropic run its safety test harness on OpenAI models  Have OpenAI test Anthropic Have SpaceXAI test both And bring the leading Chinese AI companies into the same system  Everyone tries to break everyone else’s models before release  “The odds that you will find issues are dramatically greater”  That makes way more sense than asking frontier labs to grade their own homework",
+          "username": "XFreeze",
+          "link": "https://twitter.com/XFreeze/status/2099741633868865621#m",
+          "date": "Sep 15, 2026 · 6:06 AM UTC"
+        },
+        {
+          "text": "ELON MUSK: I saw some pretty funny jokes on 𝕏. One of them I saw was:  'Your girlfriend's a 10, but she's a benchmark maxxer.' 🤣",
+          "username": "cb_doge",
+          "link": "https://twitter.com/cb_doge/status/2099739185943056674#m",
+          "date": "Sep 15, 2026 · 5:56 AM UTC"
+        },
+        {
+          "text": "Wow",
+          "username": "elonmusk",
+          "link": "https://twitter.com/elonmusk/status/2099739744598962225#m",
+          "date": "Sep 15, 2026 · 5:59 AM UTC"
+        },
+        {
+          "text": "Physics is a harsh judge",
+          "username": "elonmusk",
+          "link": "https://twitter.com/elonmusk/status/2099739543360438774#m",
+          "date": "Sep 15, 2026 · 5:58 AM UTC"
+        },
+        {
+          "text": "All-In",
+          "username": "elonmusk",
+          "link": "https://twitter.com/elonmusk/status/2099739227499942339#m",
+          "date": "Sep 15, 2026 · 5:56 AM UTC"
+        },
+        {
+          "text": "This might be the best political chart ever made…",
+          "username": "kevin_smith45",
+          "link": "https://twitter.com/kevin_smith45/status/2099662060611076236#m",
+          "date": "Sep 15, 2026 · 12:50 AM UTC"
+        },
+        {
+          "text": "4D-Chess",
+          "username": "elonmusk",
+          "link": "https://twitter.com/elonmusk/status/2099737765260763348#m",
+          "date": "Sep 15, 2026 · 5:51 AM UTC"
+        },
+        {
+          "text": "This is the way",
+          "username": "elonmusk",
+          "link": "https://twitter.com/elonmusk/status/2099737081756930206#m",
+          "date": "Sep 15, 2026 · 5:48 AM UTC"
+        },
+        {
+          "text": "ELON MUSK: “Physics is a harsh judge. There’s no fooling physics. Physics is the law, and everything else is a recommendation. I’ve seen people break the laws made by humans, but I’ve not seen anyone break the laws made by physics. The rockets are ruled by physics.”",
+          "username": "cb_doge",
+          "link": "https://twitter.com/cb_doge/status/2099723415024533598#m",
+          "date": "Sep 15, 2026 · 4:54 AM UTC"
+        },
+        {
+          "text": "The world’s richest man is living in an Airstream trailer in Memphis.  “This is Elon, by the way, doing what people don’t believe he does. He sleeps on the factory floor. He’s in Memphis helping build buildings and bring up Colossus II.”  — SpaceX COO, Gwynne Shotwell",
+          "username": "cb_doge",
+          "link": "https://twitter.com/cb_doge/status/2099721738687054206#m",
+          "date": "Sep 15, 2026 · 4:47 AM UTC"
+        },
+        {
+          "text": "Sadly, California is the only state in the union that prohibits insurers from pricing based on how people actually drive.  So in Tesla's largest US market, the state prevents Tesla from giving heavy FSD users the insurance discount their lower risk warrants.  The result: @CDInews, under @ICRicardoLara, taxes road users who actively use life-saving technology to subsidize those more likely to kill or maim.",
+          "username": "wintonARK",
+          "link": "https://twitter.com/wintonARK/status/2099590200519487994#m",
+          "date": "Sep 14, 2026 · 8:04 PM UTC"
+        },
+        {
+          "text": "I thought white supremacy was the big issue",
+          "username": "adamcarolla",
+          "link": "https://twitter.com/adamcarolla/status/2099706124631195751#m",
+          "date": "Sep 15, 2026 · 3:45 AM UTC"
+        },
+        {
+          "text": "This was surreal",
+          "username": "chamath",
+          "link": "https://twitter.com/chamath/status/2099595792059453532#m",
+          "date": "Sep 14, 2026 · 8:27 PM UTC"
+        },
+        {
+          "text": "Grok @Bot summary",
+          "username": "elonmusk",
+          "link": "https://twitter.com/elonmusk/status/2099714967113015716#m",
+          "date": "Sep 15, 2026 · 4:20 AM UTC"
+        },
+        {
+          "text": "MUST SEE: Amazing moment as President Trump calls Nvidia CEO Jensen Huang while he's on stage at the All-In Summit.  @POTUS on AI Doomerism: “I'm telling you, it's all a hoax… and we're not going to let that happen.”",
+          "username": "theallinpod",
+          "link": "https://twitter.com/theallinpod/status/2099621431621607829#m",
+          "date": "Sep 14, 2026 · 10:08 PM UTC"
+        },
+        {
+          "text": "Tesla self-driving is amazing",
+          "username": "elonmusk",
+          "link": "https://twitter.com/elonmusk/status/2099705926332690482#m",
+          "date": "Sep 15, 2026 · 3:44 AM UTC"
+        }
+      ]
+    },
+    {
+      "target": "CVE",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:05:55.193848",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "Cyberattack",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:05:56.560008",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "exploit",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:06:29.813669",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "RipperSec",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:06:32.434397",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "DDoS Korea",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:06:33.938767",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "MegaMedusa",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:07:05.731834",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "Lazarus Group",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:07:08.238801",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "APT28",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:07:11.044917",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "ransomware Korea",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:07:41.429883",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "한국 해킹",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:07:44.066708",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "cyber attack",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:07:46.861623",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "malware",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:08:17.239163",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "ZeroDay",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:08:19.874652",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "0-day",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:08:22.590270",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "vulnerability",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:08:53.042738",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "취약점",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:08:55.665171",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "해킹",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:08:58.302794",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "랜섬웨어",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:09:28.680707",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "DDoS",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:09:31.448222",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "디도스",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:09:34.055305",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "사이버 공격",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:10:04.502970",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "사이버 위협",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:10:07.297497",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "사이버 보안",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:10:09.925178",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "정보 유출",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:10:40.195427",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "DFIR",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:10:43.191615",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "디지털 포렌식",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:10:46.065973",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "incident response",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 19,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.privacyredirect.com",
+      "crawled_at": "2026-09-15T13:10:51.986179",
+      "top_users": [
+        [
+          "@Believe45701354",
+          1
+        ],
+        [
+          "@WRPSToday",
+          1
+        ],
+        [
+          "@ItsLinoBxtchh",
+          1
+        ]
+      ],
+      "hashtags": [
+        "Web3",
+        "Crypto",
+        "Blockchain",
+        "Tether",
+        "GPU"
+      ],
+      "sample_texts": [
+        "Don’t be lazy and naive. Read the expert report prepared by Dr Shuey. Here’s a link:  caainc.org.au/",
+        "Officers from our Central Division Crime Suppression and Response (CSAR) Unit are investigating a ro"
+      ],
+      "sample_tweets": [
+        {
+          "text": "Don’t be lazy and naive. Read the expert report prepared by Dr Shuey. Here’s a link:  caainc.org.au/wp-content/upl…  If you can’t be bothered and want to wait for the Age to report this after the family wins its defamation case here are the key factors that point to the car hitting Ryan full-on, drawn from the Shuey report, ambulance records, police photos, and the response timeline and other research: •  Ambulance report: Paramedics recorded the SUV “struck” Ryan while travelling forty to sixty kilometres an hour. He went onto the bonnet, then the windscreen, which cracked, then was thrown onto the roadway. That directly contradicts the T-bone claim. •  Car damage: Police photos show the windscreen smashed and heavily depressed on the driver’s side, plus damage to the front corner bodywork ahead of the front tyre. A side impact from a bike would not produce that pattern. •  Trajectory and physics: The cyclist was flipped onto the bonnet, over the roof line, then sideways onto the road. Low-speed impacts push people forward; this motion only fits a vehicle still moving at speed. •  Stopping distance: The SUV came to rest nineteen point two metres after impact. Shuey calculated that indicates an impact speed of roughly forty to fifty kilometres an hour, not a stationary turn. •  Point of impact: Twenty-seven metres into Ridley Street, about one point five metres onto the bitumen from the bike path, on a road only three point eight metres wide. The SUV was still partly on the wrong side of the road. •  No braking: Neither the vehicle nor the cyclist braked. A witness reported tyre squeal before impact, consistent with the car cutting the corner at speed. •  Delayed triple-zero call: Crash estimated at one-oh-six pm. Andrews did not call until one-ten pm — roughly six and a half minutes. A nearby resident had already alerted ambulance at one-oh-eight. •  Phone activity instead of help: Records and reports indicate calls to staff, including chief of staff Brett Curran, and arranging a replacement windscreen through Chris Riley and government insurers while Ryan was still on the road.  Due to legal reason the govt insurer refused to replace the windscreen immediately but Andrews staff arranged for Windscreen O’Brien to replace the windscreen with 24 hours.  •  Chief of staff: Brett Curran was Andrews’ chief of staff at the time and is now a Victoria Police assistant commissioner. He has declined to say whether he received a call from the scene. •  Police response: The closest experienced crew, Scott Hanley from Rosebud, was en route with lights and sirens when a more junior Rye crew “jumped the call.” That officer took another six and a half minutes to leave the station. •  Attending officers: Senior Constable Shaina Sage and Constable Daniel Ward were the only ones who attended. They later visited Ryan at his mother’s house, phoned Catherine Andrews first, and told him he caused the crash and was lucky not to be charged — without taking a formal statement from him. •  No breath test: Catherine Andrews was never breathalysed, despite standard procedure for a serious crash. •  Vehicle removed: The damaged SUV was driven from the scene before any forensic examination. •  Driver name: Police recorded the driver as “Catherine Louise Kesik” — her maiden name — on the traffic incident report. Shuey called this an irregularity that should have stood out and part of an overt cover-up. •  No proper investigation: No scene measurements, no proper photos at the time, no interview with Ryan, statements from the Andrews taken almost a month later. Shuey described it as deeply flawed and lacking even rudimentary examination. Those are the main ones. The physics and the ambulance report are the strongest on the “car hit him” point; the response and phone activity are the strongest on the aftermath.",
+          "username": "Believe45701354",
+          "link": "https://twitter.com/Believe45701354/status/2099848057060028676#m",
+          "date": "Sep 15, 2026 · 1:09 PM UTC"
+        },
+        {
+          "text": "Officers from our Central Division Crime Suppression and Response (CSAR) Unit are investigating a robbery that occurred in the area of King Street East and Cedar Street North in Kitchener on September 14, 2026.   Investigators are looking to identify and speak with the individual pictured, who is believed to have information related to the incident.   Anyone with information is asked to call police at 519-570-9777.  More: wrps.info/3VbBVvm  WA26135633",
+          "username": "WRPSToday",
+          "link": "https://twitter.com/WRPSToday/status/2099847872443273526#m",
+          "date": "Sep 15, 2026 · 1:08 PM UTC"
+        },
+        {
+          "text": "@grok denmark claims that a russian navy frigate allegedly fired two flares at a danish air force patrol helicopter near the city of gedser in the baltic sea  - according to the danish side, one of the flares flew \"in close proximity to the aircraft\"  - in response, denmark summoned the russian ambassador  - the country's minister of defense bruus stated: \"this is serious, the boundaries of what russia is willing to do have been crossed, this is extremely unprofessional behavior at sea\"  - the crew was unharmed and the helicopter sustained no damage  - the russian ministry of defense has not yet commented on the incident, but i'm willing to bet that the helicopter decided to get too close to the frigate and that's what it got for it – a \"scare,\" by the way in footage of a similar incident it is clearly visible how the danish helicopter hovers over the russian reconnaissance vessel \"academic nikolai strakhov,\" to put it mildly, the maneuvers of the danish air force in such situations are questionable",
+          "username": "ItsLinoBxtchh",
+          "link": "https://twitter.com/ItsLinoBxtchh/status/2099847736648454415#m",
+          "date": "Sep 15, 2026 · 1:08 PM UTC"
+        },
+        {
+          "text": "Today at noon EDT I'm launching a book I've been working on for 20 months: Dynamic Incident Response, an iterative IR framework designed for how security teams actually work. Free in all formats.  Join me for the launch today: sans.org/engage/dynamic-inci…",
+          "username": "joswr1ght",
+          "link": "https://twitter.com/joswr1ght/status/2099812290404946064#m",
+          "date": "Sep 15, 2026 · 10:47 AM UTC"
+        },
+        {
+          "text": "informationweek.com/incident…",
+          "username": "tony_cleal",
+          "link": "https://twitter.com/tony_cleal/status/2099847073071759685#m",
+          "date": "Sep 15, 2026 · 1:05 PM UTC"
+        },
+        {
+          "text": "How China is preparing for the risk of AI escaping human control yahoo.com/news/world/article… All govts need to put strategies and plans in place. Municipalities should examine the cascading impacts and create an AI Agent Incident Response Plan, not simply add AI to the cyber plan.",
+          "username": "EmergMgt",
+          "link": "https://twitter.com/EmergMgt/status/2099846817613500516#m",
+          "date": "Sep 15, 2026 · 1:04 PM UTC"
+        },
+        {
+          "text": "💻 Hiring: Technical Lead - GPU Infrastructure - Tether Operations Limited 📍 Remote (Worldwide, UTC to UTC+5:30 overlap) | 🧑‍💻 Kubernetes / Slurm / NVIDIA GPU / Linux / Node.js | 🕐 September 11, 2026  Tether Operations Limited is hiring a Technical Lead for Cosmic AC, its GPU compute and managed inference platform. The role owns the bare-metal GPU stack and leads about 12 engineers across Europe and India.  📋 Responsibilities include: - Own platform architecture, designs, implementation, and delivery - Line-manage ~12 engineers across backend (Node.js), frontend (React), DevOps, QA, and docs - Build and operate a managed Slurm service for research and training teams - Own Kubernetes lifecycle and GPU enablement on partner bare metal - Lead managed inference, observability, SLOs, incidents, and on-call - Serve as technical interface to partners, vendors, and internal teams; complete hiring  🔑 Requirements: - 8+ years hands-on engineering, including 3+ leading infrastructure platform teams; CS/engineering degree or equivalent - Hands-on Slurm at scale and bare-metal NVIDIA GPU ops (drivers, CUDA, Fabric Manager, NVSwitch, DCGM, MIG) - InfiniBand/RDMA/SR-IOV, multi-node NCCL, deep Linux, and production Kubernetes - HPC storage (VAST/Lustre/NFS), observability (Prometheus/Grafana/Loki), incident response - JS/Node.js fluency to review the control plane; shipped multi-tenant IaaS/PaaS or research platform - People management across time zones; excellent English; occasional travel  🛠 Nice-to-have: Slurm-on-K8s, vLLM/SGLang, confidential compute, GitOps, HPC or GPU-cloud ops  📩 To apply: Apply: careers.tether.io/o/technica…  🔗 Original post: careers.tether.io/o/technica…  🌐 Inside a Live DeFi Ecosystem: Infrastructure engineers can study how STON.fi handles user-controlled wallets and liquidity aggregation with smart routing. Review the non-custodial swap flow on TON and see the product in action at ston.fi  ⚠️ DYOR! I do not verify every job. Requests to run files, including files from GitHub, or make a payment are major scam warning signs. 🚩 ❗️ I am not hiring. I share fresh Web3, crypto, and blockchain roles posted by others.  💡 Internships and junior roles: t.me/crypto_vazima_english 💼 Mid-level and senior roles: t.me/web3_jobs_crypto_vazima #Web3 #Crypto #Blockchain #Tether #GPU #Infrastructure #Kubernetes #Slurm #DevOps #AI #Remote #Hiring",
+          "username": "crypto_vazima",
+          "link": "https://twitter.com/crypto_vazima/status/2099846797367656781#m",
+          "date": "Sep 15, 2026 · 1:04 PM UTC"
+        },
+        {
+          "text": "Democracy is the ability of citizens to speak freely, organise, access information, participate in public affairs, question government decisions and demand accountability.",
+          "username": "PPDC_ng",
+          "link": "https://twitter.com/PPDC_ng/status/2099846613606777071#m",
+          "date": "Sep 15, 2026 · 1:03 PM UTC"
+        },
+        {
+          "text": "Your on-call engineer shouldn't spend 20 minutes piecing together what broke. A91I's Incident Response Agent reads the Sentry alert, checks recent deploys, pulls the Jira tickets, and posts the brief to Slack — automatically. They walk in with context, not chaos. #A91I #DevOps",
+          "username": "a91I_x",
+          "link": "https://twitter.com/a91I_x/status/2099845928039350724#m",
+          "date": "Sep 15, 2026 · 1:00 PM UTC"
+        },
+        {
+          "text": "CVE-2026-76356: IP-spoofing auth bypass in the Automation Broker of Splunk SOAR, the SOAR platform used to automate incident response.  The broker trusts a client-supplied source IP header as proof of a local request. Spoof it, reach privileged functionality, no authentication needed, and execute arbitrary code on the host.  Patched in v8.6.0. Found by a CyStack researcher. Details at cystack.net/disclosures #CyStack #CyberSecurity #Vulnerability #Splunk #SOAR #RCE #EnterpriseSecurity #InfoSec",
+          "username": "CyStackSecurity",
+          "link": "https://twitter.com/CyStackSecurity/status/2099845704092926178#m",
+          "date": "Sep 15, 2026 · 1:00 PM UTC"
+        },
+        {
+          "text": "Delegates to #IAEAGC today visited the @IAEAorg Incident and Emergency Centre, the global focal point for international preparedness for and response to nuclear and radiological emergencies. Two further tours will be held on Wednesday 16 and Thursday 17 September, 13:00–14:00.   To register, email: iec-routine@iaea.org with your name, affiliation and delegation.",
+          "username": "IAEANS",
+          "link": "https://twitter.com/IAEANS/status/2099845502531452965#m",
+          "date": "Sep 15, 2026 · 12:59 PM UTC"
+        },
+        {
+          "text": "that ‘pivotal pretext’ phrase is clever, but the evidence still matters. a scary incident can be real without automatically proving someone planned the policy response.",
+          "username": "aamirfaizwp",
+          "link": "https://twitter.com/aamirfaizwp/status/2099842955976831483#m",
+          "date": "Sep 15, 2026 · 12:49 PM UTC"
+        },
+        {
+          "text": "🚨 CISA says attackers are using VMware vCenter’s critical flaw in ransomware campaigns. If yours was internet-facing and unpatched, don’t just patch—investigate. “Reboot and pray” isn’t incident response. windowsforum.com/news/cve-20… #Ransomware #CisaKev #VmwareVcenter #Cve202659310",
+          "username": "windowsforum",
+          "link": "https://twitter.com/windowsforum/status/2099840947823538554#m",
+          "date": "Sep 15, 2026 · 12:41 PM UTC"
+        },
+        {
+          "text": "HRFE Incident Feed ALARMS Location: BARRINGTON ST, HALIFAX Call Number: HF26000013854 Response: A03 E02 E03 STN02 September 15, 2026 at 09:38AM",
+          "username": "mattdagley",
+          "link": "https://twitter.com/mattdagley/status/2099840850222108987#m",
+          "date": "Sep 15, 2026 · 12:40 PM UTC"
+        },
+        {
+          "text": "Incident response can be just as important as preventative security.",
+          "username": "kaybee_mmg",
+          "link": "https://twitter.com/kaybee_mmg/status/2099840229494444118#m",
+          "date": "Sep 15, 2026 · 12:38 PM UTC"
+        },
+        {
+          "text": "Those who are commenting on my response must understand a few things before writing  1. My response is not about defending an animal attacking a child ( should not have happend, and Government must arrange more shelters for them)  2. My response is not about what you eat, what not, none of my prerogative, beef and pork dispute is going on since 300 years and taken many lives in riots, rest is your mind how you apply  My response is categorily accusing Zubair to have picked up a random incident involving a cow,  associated with Religious sentiment, to trigger the people  Show us one of his post of 100s of incident of a dog attacking a child, not only attacked but killed  Only fools may not understand his agenda !!",
+          "username": "manishgarg9999",
+          "link": "https://twitter.com/manishgarg9999/status/2099839703797371081#m",
+          "date": "Sep 15, 2026 · 12:36 PM UTC"
+        },
+        {
+          "text": "If I had 6 months to become an AI Evals & Reliability Engineer.  I'd do this.  Stage 1: Python and Testing Foundations Python, pytest, Git, CI/CD basics, JSONL data handling, pandas.  Stage 2: LLM Behavior Fundamentals Tokens, sampling, temperature, reasoning effort, why outputs are non-deterministic.  Stage 3: Evaluation Fundamentals Golden datasets, exact vs fuzzy matching, LLM-as-a-judge, rubric design, judge bias control.  Stage 4: RAG Evaluation Hit rate, MRR, NDCG, RAGAS faithfulness and relevance, citation grounding checks.  Stage 5: Agent and Trajectory Evaluation Tool-call correctness, step-level grading, counterfactual runs, trajectory datasets.  Stage 6: Eval Frameworks and Pipelines DeepEval, promptfoo, RAGAS, OpenAI Evals; wiring evals into CI regression gates.  Stage 7: Observability and Tracing Langfuse, LangSmith, Arize Phoenix, OpenTelemetry spans, production sampling, failure mining.  Stage 8: Production Monitoring and Drift Hallucination spike alerts, quality drift detection, shadow traffic, canary evals.  Stage 9: Reliability Patterns Circuit breakers, fallback chains, retries with backoff, idempotency, graceful degradation.  Stage 10: Durable Execution and Chaos Temporal checkpoints, LLM load testing, chaos experiments, infinite loop detection.  Stage 11: Cost and FinOps Guardrails Cost per request and per tenant, budget alerting, kill-switches, caching ROI measurement.  Stage 12: Incident Response and Portfolio SLOs for AI systems, runbooks, post-mortems, public reliability writeups, open-source eval tooling.  Most people stay stuck watching tutorials.  Builders get hired.  (Bookmark it)",
+          "username": "suraj_sharma14",
+          "link": "https://twitter.com/suraj_sharma14/status/2099838143273070847#m",
+          "date": "Sep 15, 2026 · 12:30 PM UTC"
+        },
+        {
+          "text": "Advanced professional education on operational governance of AI agents after deployment",
+          "username": "gdprschemes",
+          "link": "https://twitter.com/gdprschemes/status/2099838133206466944#m",
+          "date": "Sep 15, 2026 · 12:29 PM UTC"
+        },
+        {
+          "text": "There is logic and deductive reasoning, math some call critical thinking, that reveal motive. Others who practice deception label it conspiracy theory.   These people who put out BS incident reports and strategically use language to take advantage of ignorance are running their playbook year after year. They make statements like, “too dangerous to release,” “swarm went rogue and escaped,” as if they’re some animal on the loose. These types of statements cloud the ignorant mind that doesn’t know technology and has never architected, engineered, or been part of incident response. They say it will destroy humanity and fear ensues.   Dan spins up this lab like a boss and shows you in real time how full of shit their official story is.   People that do these jobs day in and day out put the pieces together and know something isn’t right. Project managers, security professionals, risk experts, the professional world realizes things that are industry norms didn’t happen. Because they are industry norms, and these are very smart people, we are bewildered.   Social media influence campaigns happen to support the BS story and people come out of nowhere making statement that are fiction. “AI is grown,” as if it’s some plant in a garden. Professional Youtubers who claim over a decade in the industry cope and say there no way they can know how to secure this technology.   These things aren’t right folks.   People start digging and find out there is a group, a culture, monetary relationships, business connections, and these are facts.   You don’t have to be a rocket scientist to read between the lines. Telling you that “in between the lines” is conspiracy, is using a tactic to cloud the waters. They like to poison the well so people can’t make sense of things.   You’re not crazy. It’s normal to ask questions. Too many red flags and no questions is not normal. Now, it may not be some outlandish theory, but some group of people are lying to you. They’ve been working in adjacent domains together for decades. They have stolen our IP, and taken actions to threaten our freedom to use technology. No legal consequences have been applied to them in cases where we would face serious consequences. They’ve called for control and used fear and deception that is just not realistic. Take it for what it is.",
+          "username": "GsInfosystems",
+          "link": "https://twitter.com/GsInfosystems/status/2099838128819429567#m",
+          "date": "Sep 15, 2026 · 12:29 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "사이버 인텔리전스",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:11:18.976091",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "threat intelligence",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:11:21.908151",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "악성코드",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:11:28.329358",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "APT",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 20,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.privacyredirect.com",
+      "crawled_at": "2026-09-15T13:11:30.986563",
+      "top_users": [
+        [
+          "@ggganeshh",
+          1
+        ],
+        [
+          "@roseprotectrr",
+          1
+        ],
+        [
+          "@kettapaya123",
+          1
+        ]
+      ],
+      "hashtags": [
+        "3DPrintopia",
+        "for_new_nex2y"
+      ],
+      "sample_texts": [
+        "Fleecing might be a more apt term",
+        "BLACKPINK members Longest-charting songs in the top 100 on MelOn weekly chart  ROSÉ, APT – 100* ROSÉ"
+      ],
+      "sample_tweets": [
+        {
+          "text": "Fleecing might be a more apt term",
+          "username": "ggganeshh",
+          "link": "https://twitter.com/ggganeshh/status/2099848496681791521#m",
+          "date": "Sep 15, 2026 · 1:11 PM UTC"
+        },
+        {
+          "text": "BLACKPINK members Longest-charting songs in the top 100 on MelOn weekly chart  ROSÉ, APT – 100* ROSÉ, toxic till the end – 93* JENNIE, Like JENNIE – 80* JENNIE, SPOT!   – 50 JENNIE, Mantra – 43 JISOO, FLOWER – 42 JENNIE, You & Me – 39 JENNIE, SOLO – 33  ROSÉ, On The Ground – 29",
+          "username": "roseprotectrr",
+          "link": "https://twitter.com/roseprotectrr/status/2099835657199685904#m",
+          "date": "Sep 15, 2026 · 12:20 PM UTC"
+        },
+        {
+          "text": "SK oda indha story ku apt aana aal ila.. Bcoz Indha script la top tier yar pannirndhalum selp eduthurkadhu.. Music was let down..",
+          "username": "kettapaya123",
+          "link": "https://twitter.com/kettapaya123/status/2099848467988570349#m",
+          "date": "Sep 15, 2026 · 1:11 PM UTC"
+        },
+        {
+          "text": "Apt,clubs must have promised the parents heaven and earth. Don't make him stay against his will,he isn't the best the club has ever produced.",
+          "username": "shaywenjaydee",
+          "link": "https://twitter.com/shaywenjaydee/status/2099848433527857308#m",
+          "date": "Sep 15, 2026 · 1:10 PM UTC"
+        },
+        {
+          "text": "Apt DESCRIPTION  cnn.com/2026/09/12/middleeas…",
+          "username": "factsovrhetoric",
+          "link": "https://twitter.com/factsovrhetoric/status/2099848412938039701#m",
+          "date": "Sep 15, 2026 · 1:10 PM UTC"
+        },
+        {
+          "text": "isang apt apt nga dyan woojin",
+          "username": "woominchi",
+          "link": "https://twitter.com/woominchi/status/2099838481669468261#m",
+          "date": "Sep 15, 2026 · 12:31 PM UTC"
+        },
+        {
+          "text": "Chiru ki Correct Apt Untadhu RT. Chiru Ni Chusi Gattiga Inspire Avadam Valla Anukunta Emotion Comedy Ani Chiru Lage Cheyagaladu. 80 Percent Chiru Mves Only RT ki Baga Set Avuthai Present HeroesLo",
+          "username": "SehwagVire10738",
+          "link": "https://twitter.com/SehwagVire10738/status/2099848323561644377#m",
+          "date": "Sep 15, 2026 · 1:10 PM UTC"
+        },
+        {
+          "text": "Apt",
+          "username": "gailcweiner",
+          "link": "https://twitter.com/gailcweiner/status/2099848277180944553#m",
+          "date": "Sep 15, 2026 · 1:10 PM UTC"
+        },
+        {
+          "text": "This article is quite old, but very apt. @irfhabib would do well to read it. Maulana was no nationalist. His reasons for keeping India undivided were the same as that espoused by Maududi and Husain Ahmed Madani.",
+          "username": "Sanjay_Dixit",
+          "link": "https://twitter.com/Sanjay_Dixit/status/2099802535477584130#m",
+          "date": "Sep 15, 2026 · 10:08 AM UTC"
+        },
+        {
+          "text": "When I got my first apt up West Chester whew hoe stage unlocked 😭😭😭",
+          "username": "mtw1028_",
+          "link": "https://twitter.com/mtw1028_/status/2099848248445772111#m",
+          "date": "Sep 15, 2026 · 1:10 PM UTC"
+        },
+        {
+          "text": "px0 now has workspace-wide, superfast full-text search that helps you look up symbols, text, literally anything you want, and serves it in milliseconds...  ... just tap Ctrl+Shift+F. Along with this, shipped a few sweet conveniences like  - auto-reload when file content changes - checksum when px0 self-updates - you can now open files in px0 - git and root dir detection  Given how quickly px0 opens projects, when you open a file, px0 detects the root dir and opens the entire project in an instant.  Interestingly, if you pass a line number in the command, the project is loaded with the apt file at that line. So, you save a couple of clicks and lookup.  > px0 search.go:42  If you already have px0 installed, update with:  > sudo px0 --update  If you have not tried px0.ai yet, give it a shot - it is a fast, ultra-light, remote-first, read-only IDE which starts in less than 1s and takes ~20MB of RAM.  If you are finding px0 interesting and useful, leave a star on GitHub; it helps: github.com/px0-ai/px0  PS: sorry for bombarding you with px0 updates, but tbh, that is the most interesting thing in my life right now :)",
+          "username": "arpit_bhayani",
+          "link": "https://twitter.com/arpit_bhayani/status/2099848245405163687#m",
+          "date": "Sep 15, 2026 · 1:10 PM UTC"
+        },
+        {
+          "text": "Very apt, most of the players have been poor.",
+          "username": "Chisky_YNWA",
+          "link": "https://twitter.com/Chisky_YNWA/status/2099848052383138190#m",
+          "date": "Sep 15, 2026 · 1:09 PM UTC"
+        },
+        {
+          "text": "Yea but APT was released right after the poster dropped but now it’s different",
+          "username": "rosieallday_",
+          "link": "https://twitter.com/rosieallday_/status/2099847945042763998#m",
+          "date": "Sep 15, 2026 · 1:08 PM UTC"
+        },
+        {
+          "text": "Hit some motherfuckers in the face a few times and they become less apt to tackle.",
+          "username": "FFBallAppraiser",
+          "link": "https://twitter.com/FFBallAppraiser/status/2099847936867803637#m",
+          "date": "Sep 15, 2026 · 1:08 PM UTC"
+        },
+        {
+          "text": "$APT 🥰🥰🥰",
+          "username": "investorespa",
+          "link": "https://twitter.com/investorespa/status/2099847866059477171#m",
+          "date": "Sep 15, 2026 · 1:08 PM UTC"
+        },
+        {
+          "text": "Ada rose apt apt nyaaa😲😻",
+          "username": "wnarham",
+          "link": "https://twitter.com/wnarham/status/2099847864210092215#m",
+          "date": "Sep 15, 2026 · 1:08 PM UTC"
+        },
+        {
+          "text": "ほほぉ・・・ たしかにラヴクラフト御大の短編は30分枠向きな気がする  別監督の古い映画だけど、死体蘇生者ハーバート・ウェストの映像化作品(？)は学生時代に雑誌の宣伝記事を見て大変ﾊｧﾊｧしました",
+          "username": "AvianCity15",
+          "link": "https://twitter.com/AvianCity15/status/2099847790218342422#m",
+          "date": "Sep 15, 2026 · 1:08 PM UTC"
+        },
+        {
+          "text": "現金マジで無い時に財布からこれ出てきてガチで腹たった",
+          "username": "Meiripu_bot",
+          "link": "https://twitter.com/Meiripu_bot/status/2099751377903976556#m",
+          "date": "Sep 15, 2026 · 6:45 AM UTC"
+        },
+        {
+          "text": "Eeek! Just printed some logos for our hoodies for @3DPrintopia next week 🤍   Used the gorgeously glittery @Proto_pasta Unicorn Tears filament which was inspired by an ERFF contest winner so felt very apt for #3DPrintopia! 🦄  5% of proceeds from the sale of the filament very kindly go to the @The_SMF_ too 🩵  Get your own spool 🛒 bit.ly/4AfLdXm",
+          "username": "E3DOnline",
+          "link": "https://twitter.com/E3DOnline/status/2099847771314434420#m",
+          "date": "Sep 15, 2026 · 1:08 PM UTC"
+        },
+        {
+          "text": "NEXZのAPT   #for_new_nex2y youtu.be/6f4-Jc1BuoA?si=pYOp…",
+          "username": "toranexz",
+          "link": "https://twitter.com/toranexz/status/2099775124794913102#m",
+          "date": "Sep 15, 2026 · 8:19 AM UTC"
+        }
+      ]
+    },
+    {
+      "target": "Cyberattack",
+      "type": "keyword",
+      "group": "custom",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:11:57.038756",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "noname057",
+      "type": "keyword",
+      "group": "noname_watch",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:12:04.240466",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "ddosia",
+      "type": "keyword",
+      "group": "noname_watch",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:12:06.866262",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "OpSouthKorea",
+      "type": "keyword",
+      "group": "noname_watch",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:12:33.064387",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "FuckEastwood",
+      "type": "keyword",
+      "group": "noname_watch",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:12:40.182468",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "TimeOfRetribution",
+      "type": "keyword",
+      "group": "noname_watch",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:12:42.695627",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    }
+  ],
+  "account_summary": [
+    {
+      "target": "HalcyonAi",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:13:12.237884",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "DarkWebInformer",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:13:19.365694",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "MonThreat",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:13:25.016522",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "DailyDarkWeb",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:13:51.333833",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "FalconFeedsio",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:13:58.544590",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "H4ckManac",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:14:04.143262",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "GossiTheDog",
+      "type": "account",
+      "group": "security_researchers",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:14:30.412026",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "vxunderground",
+      "type": "account",
+      "group": "security_researchers",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:14:38.195525",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "MalwareTechBlog",
+      "type": "account",
+      "group": "security_researchers",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:14:47.280732",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "taviso",
+      "type": "account",
+      "group": "security_researchers",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:15:09.556778",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "SwiftOnSecurity",
+      "type": "account",
+      "group": "security_researchers",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-15T13:15:17.335004",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    }
+  ],
+  "top_words": [
+    [
+      "response",
+      21
+    ],
+    [
+      "incident",
+      20
+    ],
+    [
+      "apt",
+      19
+    ],
+    [
+      "people",
+      15
+    ],
+    [
+      "stage",
+      14
+    ],
+    [
+      "px0",
+      13
+    ],
+    [
+      "call",
+      10
+    ],
+    [
+      "some",
+      8
+    ],
+    [
+      "physics",
+      8
+    ],
+    [
+      "only",
+      8
+    ],
+    [
+      "gpu",
+      8
+    ],
+    [
+      "point",
+      7
+    ],
+    [
+      "elon",
+      6
+    ],
+    [
+      "report",
+      6
+    ],
+    [
+      "police",
+      6
+    ],
+    [
+      "windscreen",
+      6
+    ],
+    [
+      "andrews",
+      6
+    ],
+    [
+      "jennie",
+      6
+    ],
+    [
+      "put",
+      5
+    ],
+    [
+      "openai",
+      5
+    ]
+  ],
+  "top_hashtags": [
+    [
+      "devops",
+      2
+    ],
+    [
+      "web3",
+      1
+    ],
+    [
+      "crypto",
+      1
+    ],
+    [
+      "blockchain",
+      1
+    ],
+    [
+      "tether",
+      1
+    ],
+    [
+      "gpu",
+      1
+    ],
+    [
+      "infrastructure",
+      1
+    ],
+    [
+      "kubernetes",
+      1
+    ],
+    [
+      "slurm",
+      1
+    ],
+    [
+      "ai",
+      1
+    ]
+  ],
+  "top_mentions": [
+    [
+      "jensenhuang",
+      1
+    ],
+    [
+      "theallinpod",
+      1
+    ],
+    [
+      "cdinews",
+      1
+    ],
+    [
+      "icricardolara",
+      1
+    ],
+    [
+      "bot",
+      1
+    ],
+    [
+      "potus",
+      1
+    ],
+    [
+      "grok",
+      1
+    ],
+    [
+      "iaeaorg",
+      1
+    ],
+    [
+      "iaea",
+      1
+    ],
+    [
+      "irfhabib",
+      1
+    ]
+  ],
+  "top_users": [
+    [
+      "@elonmusk",
+      9
+    ],
+    [
+      "@cb_doge",
+      3
+    ],
+    [
+      "@altcap",
+      1
+    ],
+    [
+      "@XFreeze",
+      1
+    ],
+    [
+      "@kevin_smith45",
+      1
+    ],
+    [
+      "@wintonARK",
+      1
+    ],
+    [
+      "@adamcarolla",
+      1
+    ],
+    [
+      "@chamath",
+      1
+    ],
+    [
+      "@theallinpod",
+      1
+    ],
+    [
+      "@Believe45701354",
+      1
+    ]
+  ],
+  "llm_summary": "🤖 [GEMINI 분석] 2026-09-15 22:15 KST\n🟡 위협 점수: 5/10 (보통)\n\n### 1. 현재 주요 사이버보안 트렌드\n최근 사이버 공격은 AI를 활용하여 취약점 발견부터 익스플로잇까지의 시간을 8초 이내로 단축하는 등 공격의 자동화 및 고도화가 두드러지고 있습니다([TheHackerNews](https://thehackernews.com/2026/09/human-attacker-exploits-marimo-rce.html)). 특히 소프트웨어 공급망 공격과 클라우드 자격 증명 탈취를 노리는 대규모 스캔 캠페인이 활발하며, AI 에이전트가 악성 패키지 유포에 관여하는 등 새로운 형태의 위협이 관측되고 있습니다([SecurityWeek](https://www.securityweek.com/openai-investigates-report-linking-ai-agents-to-rubygems-attack/)). 또한, 랜섬웨어 조직들이 VMware vCenter와 같은 핵심 인프라의 취약점을 즉각적으로 악용하고 있어 패치 관리의 중요성이 그 어느 때보다 강조됩니다([BleepingComputer](https://www.bleepingcomputer.com/news/security/cisa-critical-vmware-vcenter-rce-flaw-now-exploited-by-ransomware-gangs/)).\n\n### 2. 주요 위협 행위자 / 캠페인\n- **Sandworm**: Cisco 취약점을 연쇄적으로 활용하여 Cyclops Blink 봇넷을 배포 중([DarkReading](https://www.darkreading.com/cyberattacks-data-breaches/sandworm-chains-cisco-vulnerabilities-cyclops-blink)).\n- **Black Axe**: 글로벌 금융 사기 및 로맨스 스캠을 주도하며, 최근 주요 리더들이 미국으로 인도되어 기소됨([BleepingComputer](https://www.bleepingcomputer.com/news/security/black-axe-gang-members-extradited-to-us-face-cybercrime-charges/)).\n- **Toy Ghouls**: HiveMQ MQTT 브로커 및 Matrix 프로토콜을 C2 서버로 사용하는 새로운 백도어 캠페인 수행([Securelist](https://securelist.com/toy-ghouls-new-hivemq-and-element-backdoors/121270/)).\n- **Mirage Kitten**: Node.js 기반의 NodeRabbit, JavaScript 기반의 PollCat 등 신규 악성코드를 사용하여 중동 및 아프리카의 항공/핀테크 분야 타겟팅([Securelist](https://securelist.com/mirage-kitten-new-backdoors-noderabbit-pollcat/121244/)).\n\n### 3. 한국 관련 위협\n- **의료기관 대상 랜섬웨어**: 국내 의료기관을 대상으로 RDP 드라이브 리다이렉션 기능을 악용한 Beast(GodDamn) 랜섬웨어 공격 확인([이스트시큐리티 알약](https://blog.alyac.co.kr/5779)).\n- **Slack 피싱**: 정상적인 Slack 워크스페이스 초대 기능을 악용하여 국내 기업을 대상으로 피싱 메일 유포 중([이스트시큐리티 알약](https://blog.alyac.co.kr/5780)).\n- **공공기관 위협**: NoName057(16) 등 핵티비스트 그룹이 일본뿐만 아니라 한국을 포함한 주변국 정부 및 금융 기관을 지속적으로 타겟팅하고 있음([AhnLab ASEC](https://asec.ahnlab.com/ko/95389/)).\n\n### 4. 주요 CVE / 취약점\n- **CVE-2026-85706**: GitLab CE/EE 경로 탐색 취약점, CVSS 10.0(Critical), 즉시 패치 권고([DarkReading](https://www.darkreading.com/cyberattacks-data-breaches/maximum-severity-gitlab-flaw-supply-chains-risk)).\n- **VMware vCenter RCE**: 랜섬웨어 조직에 의해 활발히 악용 중, 긴급 업데이트 필요([BleepingComputer](https://www.bleepingcomputer.com/news/security/cisa-critical-vmware-vcenter-rce-flaw-now-exploited-by-ransomware-gangs/)).\n- **CVE-2026-76356**: Splunk SOAR Automation Broker 내 IP 스푸핑을 통한 인증 우회 취약점([CyStackSecurity](https://twitter.com/CyStackSecurity/status/2099845704092926178)).\n\n### 5. IOC 요약\n- **CVE**: CVE-2026-85706 ([DarkReading](https://www.darkreading.com/cyberattacks-data-breaches/maximum-severity-gitlab-flaw-supply-chains-risk), [이스트시큐리티 알약](https://blog.alyac.co.kr/5778))\n\n### 6. 즉각 대응 권고\n- **GitLab 패치**: CVE-2026-85706 취약점 대응을 위해 즉시 최신 버전으로 업데이트하고 저장소 커밋 API 접근 제어 강화.\n- **RDP 보안 강화**: 국내 의료기관 등 RDP를 사용하는 조직은 드라이브 리다이렉션 기능을 비활성화하고, 다중 인증(MFA)을 필수 적용.\n- **Slack 보안 교육**: 임원 사칭 및 정상 기능을 악용한 피싱 메일이 유포 중이므로, 외부 워크스페이스 초대 수락 시 주의하도록 임직원 보안 인식 교육 실시.\n\n### 7. 위협 수준 평가\n- **점수**: 8.5/10\n- **근거**: 공급망 취약점(GitLab)과 핵심 인프라(VMware)에 대한 실질적인 랜섬웨어 공격이 동시다발적으로 발생하고 있으며, AI를 활용한 공격 속도 증가로 인해 방어 측의 대응 시간이 매우 촉박함.\n\n📊 Gemini 토큰: 이번 13,728개 (입력 12,386 / 출력 1,342)\n📈 세션 누적: 13,728 / 1,000,000 (1.4%) | 세션 잔여 추정 986,272개",
+  "llm_top_tweets": [
+    {
+      "rank": 1,
+      "threat_level": "HIGH",
+      "username": "CyStackSecurity",
+      "date": "Sep 15, 2026 · 1:00 PM UTC",
+      "link": "https://twitter.com/CyStackSecurity/status/2099845704092926178#m",
+      "text": "CVE-2026-76356: IP-spoofing auth bypass in the Automation Broker of Splunk SOAR, the SOAR platform used to automate incident response.  The broker trusts a client-supplied source IP header as proof of",
+      "reason": "Splunk SOAR 플랫폼의 IP-spoofing 인증 우회 취약점(CVE-2026-76356) 공개"
+    },
+    {
+      "rank": 2,
+      "threat_level": "HIGH",
+      "username": "windowsforum",
+      "date": "Sep 15, 2026 · 12:41 PM UTC",
+      "link": "https://twitter.com/windowsforum/status/2099840947823538554#m",
+      "text": "🚨 CISA says attackers are using VMware vCenter’s critical flaw in ransomware campaigns. If yours was internet-facing and unpatched, don’t just patch—investigate. “Reboot and pray” isn’t incident respo",
+      "reason": "VMware vCenter의 치명적 취약점을 악용한 랜섬웨어 공격 캠페인 경보"
+    },
+    {
+      "rank": 3,
+      "threat_level": "MEDIUM",
+      "username": "EmergMgt",
+      "date": "Sep 15, 2026 · 1:04 PM UTC",
+      "link": "https://twitter.com/EmergMgt/status/2099846817613500516#m",
+      "text": "How China is preparing for the risk of AI escaping human control yahoo.com/news/world/article… All govts need to put strategies and plans in place. Municipalities should examine the cascading impacts ",
+      "reason": "AI 기술의 통제 불능 위험에 대한 중국의 대응 전략 보고"
+    },
+    {
+      "rank": 4,
+      "threat_level": "MEDIUM",
+      "username": "joswr1ght",
+      "date": "Sep 15, 2026 · 10:47 AM UTC",
+      "link": "https://twitter.com/joswr1ght/status/2099812290404946064#m",
+      "text": "Today at noon EDT I'm launching a book I've been working on for 20 months: Dynamic Incident Response, an iterative IR framework designed for how security teams actually work. Free in all formats.  Joi",
+      "reason": "동적 사고 대응(Dynamic Incident Response) 관련 보안 전문 서적 출간 정보"
+    },
+    {
+      "rank": 5,
+      "threat_level": "MEDIUM",
+      "username": "ItsLinoBxtchh",
+      "date": "Sep 15, 2026 · 1:08 PM UTC",
+      "link": "https://twitter.com/ItsLinoBxtchh/status/2099847736648454415#m",
+      "text": "@grok denmark claims that a russian navy frigate allegedly fired two flares at a danish air force patrol helicopter near the city of gedser in the baltic sea  - according to the danish side, one of th",
+      "reason": "러시아 해군 함정의 덴마크 공군기 대상 위협 행위 보고"
+    },
+    {
+      "rank": 6,
+      "threat_level": "LOW",
+      "username": "XFreeze",
+      "date": "Sep 15, 2026 · 6:06 AM UTC",
+      "link": "https://twitter.com/XFreeze/status/2099741633868865621#m",
+      "text": "Elon just gave a much more practical explanation of the current AI safety problem....and laid out a practical framework for making frontier AI safer  OpenAI and Anthropic are the two leading AI compan",
+      "reason": "현재 AI 안전성 문제에 대한 기술적 설명 및 논의"
+    },
+    {
+      "rank": 7,
+      "threat_level": "LOW",
+      "username": "kaybee_mmg",
+      "date": "Sep 15, 2026 · 12:38 PM UTC",
+      "link": "https://twitter.com/kaybee_mmg/status/2099840229494444118#m",
+      "text": "Incident response can be just as important as preventative security.",
+      "reason": "사고 대응(Incident Response)의 중요성에 대한 보안 인사이트"
+    },
+    {
+      "rank": 8,
+      "threat_level": "LOW",
+      "username": "gdprschemes",
+      "date": "Sep 15, 2026 · 12:29 PM UTC",
+      "link": "https://twitter.com/gdprschemes/status/2099838133206466944#m",
+      "text": "Advanced professional education on operational governance of AI agents after deployment",
+      "reason": "배포된 AI 에이전트의 운영 거버넌스 및 보안 교육 정보"
+    },
+    {
+      "rank": 9,
+      "threat_level": "LOW",
+      "username": "IAEANS",
+      "date": "Sep 15, 2026 · 12:59 PM UTC",
+      "link": "https://twitter.com/IAEANS/status/2099845502531452965#m",
+      "text": "Delegates to #IAEAGC today visited the @IAEAorg Incident and Emergency Centre, the global focal point for international preparedness for and response to nuclear and radiological emergencies. Two furth",
+      "reason": "IAEA 사고 및 비상 센터(IEC) 방문을 통한 글로벌 보안 협력 정보"
+    },
+    {
+      "rank": 10,
+      "threat_level": "LOW",
+      "username": "WRPSToday",
+      "date": "Sep 15, 2026 · 1:08 PM UTC",
+      "link": "https://twitter.com/WRPSToday/status/2099847872443273526#m",
+      "text": "Officers from our Central Division Crime Suppression and Response (CSAR) Unit are investigating a robbery that occurred in the area of King Street East and Cedar Street North in Kitchener on September",
+      "reason": "지역 경찰의 범죄 억제 및 대응 유닛(CSAR) 활동 보고"
+    }
+  ],
+  "news_articles": [
+    {
+      "title": "Human Attacker Exploits Marimo RCE, Reaches SSH Bastion in Eight Seconds",
+      "link": "https://thehackernews.com/2026/09/human-attacker-exploits-marimo-rce.html",
+      "summary": "With artificial intelligence (AI) shrinking the window between vulnerability discovery and exploitation and lowering the barrier to entry for bad actors, new findings from Sysdig show that skilled human operators can move just as swiftly after gaining initial access.\n\nIn one instance highlighted by",
+      "source": "TheHackerNews",
+      "published_kst": "26/09/15 20:52 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Attack Chains, Not Just Attack Surfaces: Why Testing Individual Techniques Misses the Point",
+      "link": "https://thehackernews.com/2026/09/attack-chains-not-just-attack-surfaces.html",
+      "summary": "Introduction\n\nSecurity teams have gotten pretty good at testing against what can hurt them. Can this EDR agent catch this payload? Will my organization fail the phishing simulation? Does this SIEM rule fire on this particular technique? And, in more mature organizations, this testing happens continu",
+      "source": "TheHackerNews",
+      "published_kst": "26/09/15 20:26 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Mass-Scanning Campaign Exploits Vite Flaw to Extract Cloud Credentials From Exposed Dev Servers",
+      "link": "https://thehackernews.com/2026/09/mass-scanning-campaign-exploits-vite.html",
+      "summary": "Cybersecurity researchers have disclosed details of a mass-scanning campaign that has targeted Vite deployments siphon sensitive data.\n\nThe first is an automated effort aimed at internet-exposed Vite development servers that's designed to steal cloud credentials, configurations from Amazon Web Servi",
+      "source": "TheHackerNews",
+      "published_kst": "26/09/15 20:12 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "OpenAI Investigates Report Linking AI Agents to RubyGems Attack",
+      "link": "https://www.securityweek.com/openai-investigates-report-linking-ai-agents-to-rubygems-attack/",
+      "summary": "The incident occurred in May, when RubyGems maintainers suspended new account registrations due to what appeared like malicious activity.\nThe post OpenAI Investigates Report Linking AI Agents to RubyGems Attack appeared first on SecurityWeek.",
+      "source": "SecurityWeek",
+      "published_kst": "26/09/15 21:42 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "240,000 Hit by Data Breach at Japan’s Digital Agency",
+      "link": "https://www.securityweek.com/240000-hit-by-data-breach-at-japans-digital-agency/",
+      "summary": "Hackers exploited a vulnerability in a VPN product to steal the personal information of roughly 240,000 people.\nThe post 240,000 Hit by Data Breach at Japan&#8217;s Digital Agency appeared first on SecurityWeek.",
+      "source": "SecurityWeek",
+      "published_kst": "26/09/15 20:45 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Apple Patches 200 Vulnerabilities With New iOS 27, macOS Golden Gate 27 Releases",
+      "link": "https://www.securityweek.com/apple-patches-200-vulnerabilities-with-new-ios-27-macos-golden-gate-27-releases/",
+      "summary": "The updates resolve kernel vulnerabilities that could lead to memory corruption, privilege escalation, system termination, and information leaks.\nThe post Apple Patches 200 Vulnerabilities With New iOS 27, macOS Golden Gate 27 Releases  appeared first on SecurityWeek.",
+      "source": "SecurityWeek",
+      "published_kst": "26/09/15 20:06 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "'Sandworm' Chains Cisco Vulnerabilities to Deploy Cyclops Blink",
+      "link": "https://www.darkreading.com/cyberattacks-data-breaches/sandworm-chains-cisco-vulnerabilities-cyclops-blink",
+      "summary": "The notorious Russian threat group is spreading an upgraded version of the botnet malware, which the FBI disrupted in 2022.",
+      "source": "DarkReading",
+      "published_kst": "26/09/15 06:37 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Maximum Severity GitLab Flaw Puts Supply Chains at Risk",
+      "link": "https://www.darkreading.com/cyberattacks-data-breaches/maximum-severity-gitlab-flaw-supply-chains-risk",
+      "summary": "CVE-2026-85706 is a path traversal vulnerability with a 10 out of 10 CVSS score, affecting both GitLab Community Edition and Enterprise Edition instances.",
+      "source": "DarkReading",
+      "published_kst": "26/09/15 05:19 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [
+          "CVE-2026-85706"
+        ],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Anthropic CEO: Time to Shift From Improving to Controlling AI",
+      "link": "https://www.darkreading.com/cyber-risk/anthropic-ceo-shift-from-improving-to-controlling-ai",
+      "summary": "Dario Amodei says it's time to slow the pace of frontier AI improvements so that security and risk prevention efforts can catch up. What does this mean for enterprises?",
+      "source": "DarkReading",
+      "published_kst": "26/09/15 01:41 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "ISC Stormcast For Tuesday, September 15th, 2026 https://isc.sans.edu/podcastdetail/10094, (Tue, Sep 15th)",
+      "link": "https://isc.sans.edu/diary/rss/33338",
+      "summary": "(c) SANS Internet Storm Center. https://isc.sans.edu Creative Commons Attribution-Noncommercial 3.0 United States License.",
+      "source": "SANS ISC",
+      "published_kst": "26/09/15 11:25 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Apple Updates Everything, (Mon, Sep 14th)",
+      "link": "https://isc.sans.edu/diary/rss/33336",
+      "summary": "Today, Apple released its annual update across all its operating systems. With that, Apple not only released new features but also patched 261 different vulnerabilities. This is the most vulnerabilities Apple has ever patched, but the increase is not as significant as other vendors&&#x23&#x3b;x26&#x",
+      "source": "SANS ISC",
+      "published_kst": "26/09/15 03:33 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "ISC Stormcast For Monday, September 14th, 2026 https://isc.sans.edu/podcastdetail/10092, (Mon, Sep 14th)",
+      "link": "https://isc.sans.edu/diary/rss/33334",
+      "summary": "(c) SANS Internet Storm Center. https://isc.sans.edu Creative Commons Attribution-Noncommercial 3.0 United States License.",
+      "source": "SANS ISC",
+      "published_kst": "26/09/14 11:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "CISA: Critical VMware RCE flaw now exploited by ransomware gangs",
+      "link": "https://www.bleepingcomputer.com/news/security/cisa-critical-vmware-vcenter-rce-flaw-now-exploited-by-ransomware-gangs/",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) warned security teams that ransomware gangs have now joined ongoing attacks exploiting a critical VMware vCenter vulnerability patched in July. [...]",
+      "source": "BleepingComputer",
+      "published_kst": "26/09/15 21:16 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Suspected Black Axe gang leaders face cybercrime charges in the US",
+      "link": "https://www.bleepingcomputer.com/news/security/black-axe-gang-members-extradited-to-us-face-cybercrime-charges/",
+      "summary": "Five alleged leaders of the Black Axe cybercrime syndicate, known for its involvement in global-scale cyber-enabled financial fraud, have been extradited to the United States to face wire fraud and money laundering charges. [...]",
+      "source": "BleepingComputer",
+      "published_kst": "26/09/15 18:50 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Microsoft confirms KB5002914 Excel update breaks copy and paste",
+      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-september-kb5002914-security-update-breaks-excel-copy-and-paste/",
+      "summary": "Microsoft has confirmed that copy and paste may silently fail for some Excel users after installing the September 2026 KB5002914 security update. [...]",
+      "source": "BleepingComputer",
+      "published_kst": "26/09/15 17:40 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Microsoft Plugs Nearly 1,000 Security Holes",
+      "link": "https://krebsonsecurity.com/2026/09/microsoft-plugs-nearly-1000-security-holes/",
+      "summary": "Microsoft Corp. today issued updates to plug at least 974 security holes in its Windows operating systems and other software, by far its biggest single patch batch ever. Microsoft says artificial intelligence is helping to speed the discovery of vulnerabilities, but security experts warn that many o",
+      "source": "Krebs on Security",
+      "published_kst": "26/09/09 06:44 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "FBI Probes Service Selling 153M+ Drivers Licenses",
+      "link": "https://krebsonsecurity.com/2026/09/fbi-probes-service-selling-153m-drivers-licenses/",
+      "summary": "A new identity theft service launched on the dark web this week is selling digital scans of more than 153 million drivers licenses from people in the United States and Canada. Based on interviews with individuals whose licenses are available for purchase on this service, it appears to be siphoning i",
+      "source": "Krebs on Security",
+      "published_kst": "26/09/02 07:40 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Two Alleged ‘TeamPCP’ Hackers Arrested in Australia",
+      "link": "https://krebsonsecurity.com/2026/08/two-alleged-teampcp-hackers-arrested-in-australia/",
+      "summary": "Authorities in Australia have arrested two men believed to be members of TeamPCP, a prolific cybercrime and data extortion group blamed for perpetrating the longest running spree of software supply chain attacks ever.\n\nIn a statement released today, the Australian Federal Police (AFP) said two unnam",
+      "source": "Krebs on Security",
+      "published_kst": "26/08/27 20:04 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Supreme Court denies Trump request to allow USPS mail ballot changes",
+      "link": "https://cyberscoop.com/supreme-court-denies-trump-usps-mail-ballot-changes/",
+      "summary": "One justice said the attempt to change the rules ahead of the 2026 elections would be \"arbitrary and capricious” and violated the Administrative Procedures Act.\nThe post Supreme Court denies Trump request to allow USPS mail ballot changes appeared first on CyberScoop.",
+      "source": "CyberScoop",
+      "published_kst": "26/09/15 11:15 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Five alleged leaders of Black Axe’s operations in South Africa extradited to US",
+      "link": "https://cyberscoop.com/black-axe-south-africa-leaders-extradited/",
+      "summary": "Officials said the five individuals concocted various long-running romance scams to trick U.S.-based victims into sending them money.\nThe post Five alleged leaders of Black Axe’s operations in South Africa extradited to US appeared first on CyberScoop.",
+      "source": "CyberScoop",
+      "published_kst": "26/09/15 03:37 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Researchers say OpenAI agents were behind May hacking campaign targeting RubyGems",
+      "link": "https://cyberscoop.com/openai-agents-malicious-rubygems-packages/",
+      "summary": "OpenAI confirmed their agents were behind a campaign in May that researchers say flooded the popular online code repository with malicious software packages.\nThe post Researchers say OpenAI agents were behind May hacking campaign targeting RubyGems appeared first on CyberScoop.",
+      "source": "CyberScoop",
+      "published_kst": "26/09/12 10:50 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "25 Years of Mass Surveillance Is Enough",
+      "link": "https://www.schneier.com/blog/archives/2026/09/25-years-of-mass-surveillance-is-enough.html",
+      "summary": "This essay was written with Cindy Cohn, and originally appeared in Lawfare.\nOne of the many legacies of the terrorist attacks of Sept. 11 is the government-wide shift from targeted surveillance&#8212;such as individual wiretaps or pen register/trap and trace orders&#8212;to mass surveillance techniq",
+      "source": "Schneier on Security",
+      "published_kst": "26/09/15 22:15 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "On the NSA’s Supercomputer from the 1960s",
+      "link": "https://www.schneier.com/blog/archives/2026/09/on-the-nsas-supercomputer-from-the-1960s.html",
+      "summary": "Really interesting story about Harvest, a specialized code breaking computer built in the 1960s by IBM for the NSA.",
+      "source": "Schneier on Security",
+      "published_kst": "26/09/15 22:15 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Upcoming Speaking Engagements",
+      "link": "https://www.schneier.com/blog/archives/2026/09/upcoming-speaking-engagements-60.html",
+      "summary": "This is a current list of where and when I am scheduled to speak:\n\nI’m speaking online (via Zoom) at a League of Women Voters event on Tuesday, September 22, 2026 at 5 PM ET.\nI’m speaking at CanSecWest 2026 in Vancouver, Canada. The conference runs September 30–October 1, 2026; the time of my talk i",
+      "source": "Schneier on Security",
+      "published_kst": "26/09/15 22:15 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "GuardBreaker: Derailing AI-assisted malware analysis with a code comment",
+      "link": "https://www.welivesecurity.com/en/business-security/guardbreaker-derailing-ai-assisted-malware-analysis-code-comment/",
+      "summary": "LLM-based code scanners won’t help attackers build a nuclear weapon, but that refusal could work in their favor",
+      "source": "WeLiveSecurity",
+      "published_kst": "26/09/10 18:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Safe word: What is it and why do you need one?",
+      "link": "https://www.welivesecurity.com/en/cybersecurity/safe-word-what-why-need-one/",
+      "summary": "AI scams are now hyper-realistic. But there’s one simple way to see through them.",
+      "source": "WeLiveSecurity",
+      "published_kst": "26/09/09 18:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "I’ve been deepfaked: What do I do?",
+      "link": "https://www.welivesecurity.com/en/how-to/ive-been-deepfaked-what-do/",
+      "summary": "Don’t panic if you spot an illegally created image or video of you online – there are ways to request its removal",
+      "source": "WeLiveSecurity",
+      "published_kst": "26/09/02 20:48 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "HBO Max’s verified Reddit account hijacked to spread malware",
+      "link": "https://www.malwarebytes.com/blog/news/2026/09/hbo-maxs-verified-reddit-account-hijacked-to-spread-malware",
+      "summary": "Cybercriminals used HBO Max’s verified Reddit account to run 108 malicious ads that tricked people into installing information stealers.",
+      "source": "Malwarebytes Labs",
+      "published_kst": "26/09/15 20:51 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Meta AI builds detailed profiles of children from years of family posts",
+      "link": "https://www.malwarebytes.com/blog/family-and-parenting/2026/09/meta-ai-builds-detailed-profiles-of-children-from-years-of-family-posts",
+      "summary": "A mother says Meta AI pieced together names, birth details, photos, and location information about her young daughters from years of family posts.",
+      "source": "Malwarebytes Labs",
+      "published_kst": "26/09/15 18:44 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Search results are sending people to fake Bitrefill checkouts",
+      "link": "https://www.malwarebytes.com/blog/threat-intel/2026/09/search-results-are-sending-people-to-fake-bitrefill-checkouts",
+      "summary": "Fake Bitrefill checkout pages are appearing in search results and tricking people into sending cryptocurrency directly to scammers.",
+      "source": "Malwarebytes Labs",
+      "published_kst": "26/09/15 17:40 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "14th September – Threat Intelligence Report",
+      "link": "https://research.checkpoint.com/2026/14th-september-threat-intelligence-report/",
+      "summary": "For the latest discoveries in cyber research for the week of 14th Setpember, please download our Threat Intelligence Bulletin. TOP ATTACKS AND BREACHES IDScan.net, a US identity verification provider, has disclosed a data breach after detecting unauthorized access on September 1. Exposed data includ",
+      "source": "Check Point Research",
+      "published_kst": "26/09/14 21:22 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "PuzzleMask: Abusing Plain Prose as a Covert AI Attack Vector",
+      "link": "https://research.checkpoint.com/2026/puzzlemask-abusing-plain-prose-as-a-covert-ai-attack-vector/",
+      "summary": "Executive Summary In this research we introduce a prompt-crafting technique for bypassing quick LLM-based policy checks — using plain English (no emojis, base64, invisible formatting, etc.) A policy-violating payload (e.g.&#160;”encrypt files in ~/Documents”, “give me a biohazard recipe”, “ignore al",
+      "source": "Check Point Research",
+      "published_kst": "26/09/10 23:32 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "The Shared Clipboard Inside the Sandbox: Cross-Account Data Leakage in ChatGPT",
+      "link": "https://research.checkpoint.com/2026/the-shared-clipboard-inside-the-sandbox-cross-account-data-leakage-in-chatgpt/",
+      "summary": "Research by: Alexey Bukhteyev Key Takeaways Introduction Over the past several years, AI assistants have moved far beyond text generation. Modern systems can execute code, install additional dependencies, analyze user files, and access data through connected services. These capabilities significantl",
+      "source": "Check Point Research",
+      "published_kst": "26/09/08 22:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "What is Proactive Threat Intelligence? | Recorded Future",
+      "link": "https://www.recordedfuture.com/blog/proactive-threat-intelligence",
+      "summary": "Move from reactive defense to a proactive security mindset. Learn how proactive threat intelligence identifies and neutralizes threats.",
+      "source": "Recorded Future",
+      "published_kst": "26/09/14 09:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "The Intelligible World of Agents",
+      "link": "https://www.recordedfuture.com/blog/intelligible-world-agents",
+      "summary": "AI agents don't fail from weak reasoning. They fail due to the disconnected and untrustworthy operational world in which they act. Find out why the world representation you give an agent matters more than the model you pick.",
+      "source": "Recorded Future",
+      "published_kst": "26/09/10 09:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Recorded Future Launches Digital Risk Protection, Unifying Brand and Identity Monitoring",
+      "link": "https://www.recordedfuture.com/blog/unified-brand-identity-monitoring",
+      "summary": "Recorded Future just launched Digital Risk Protection, a unified solution covering five external threat surfaces, so security teams can detect, triage, and take down brand and identity threats from one workflow.",
+      "source": "Recorded Future",
+      "published_kst": "26/09/09 09:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "September 2026 Patch Tuesday: Two Exploited Zero-Days and 113 Critical Vulnerabilities Among 972 CVEs",
+      "link": "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-september-2026/",
+      "summary": "",
+      "source": "Crowdstrike Blog",
+      "published_kst": "26/09/08 14:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "CrowdStrike Delivers the Next Evolution of the Agentic SOC",
+      "link": "https://www.crowdstrike.com/en-us/blog/crowdstrike-delivers-next-evolution-of-agentic-soc/",
+      "summary": "",
+      "source": "Crowdstrike Blog",
+      "published_kst": "26/09/02 13:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "CrowdStrike Extends Endpoint Security to Stop Software Supply Chain Attacks",
+      "link": "https://www.crowdstrike.com/en-us/blog/crowdstrike-extends-endpoint-security-to-stop-supply-chain-attacks/",
+      "summary": "",
+      "source": "Crowdstrike Blog",
+      "published_kst": "26/09/02 13:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Angry Birds: Toy Ghouls’ new toys",
+      "link": "https://securelist.com/toy-ghouls-new-hivemq-and-element-backdoors/121270/",
+      "summary": "Kaspersky GERT experts have discovered new backdoors used by the Toy Ghouls group. One version of the backdoor uses the HiveMQ MQTT broker as its command-and-control server; the other uses the Matrix-based Element messenger.",
+      "source": "Securelist (Kaspersky)",
+      "published_kst": "26/09/04 19:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Mirage Kitten targeting aviation and FinTech sectors across the Middle East and Africa with a new malware set",
+      "link": "https://securelist.com/mirage-kitten-new-backdoors-noderabbit-pollcat/121244/",
+      "summary": "Kaspersky researchers have discovered new Mirage Kitten attacks using previously undocumented malware families: NodeRabbit in Node.js and PollCat in JavaScript.",
+      "source": "Securelist (Kaspersky)",
+      "published_kst": "26/09/01 16:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "ValleyRAT masquerading as adware",
+      "link": "https://securelist.com/valleyrat-backdoor-adware/121175/",
+      "summary": "Threat actors are distributing the ValleyRAT backdoor disguised as adware. We analyze the infection chain, from the malicious installer to the final payload.",
+      "source": "Securelist (Kaspersky)",
+      "published_kst": "26/08/31 19:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Unmasking Cloud Identities: From Behavioral Clustering to Automated Detection",
+      "link": "https://unit42.paloaltonetworks.com/behavioral-clustering-map-to-cloud-identities/",
+      "summary": "We designed a behavioral clustering model to map cloud identity roles from audit logs, enabling continuous threat detection using standard SQL queries.\nThe post Unmasking Cloud Identities: From Behavioral Clustering to Automated Detection appeared first on Unit 42.",
+      "source": "Unit42 (Palo Alto)",
+      "published_kst": "26/09/14 19:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "The Machine With Many Faces: Post-Exploitation Identity Misuse in SPIFFE/SPIRE",
+      "link": "https://unit42.paloaltonetworks.com/kubernetes-spiffe-spire-identity-spoofing/",
+      "summary": "Learn how root access on a compromised K8s node allows attackers to utilize SPIFFE/SPIRE metadata to spoof and harvest co-located workload identities.\nThe post The Machine With Many Faces: Post-Exploitation Identity Misuse in SPIFFE/SPIRE appeared first on Unit 42.",
+      "source": "Unit42 (Palo Alto)",
+      "published_kst": "26/09/10 19:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Untracked Nightmares: The Threats Hiding Behind Commodity Infrastructure",
+      "link": "https://unit42.paloaltonetworks.com/ppi-network-malware-campaign-analysis/",
+      "summary": "An investigation into how cybercriminals used YouTube gaming lures and SEO poisoning to deliver multi-payload malware to enterprise networks.\nThe post Untracked Nightmares: The Threats Hiding Behind Commodity Infrastructure appeared first on Unit 42.",
+      "source": "Unit42 (Palo Alto)",
+      "published_kst": "26/09/09 19:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "What Is ISPM? How It Differs from IAM, PAM, IGA, and IDaaS",
+      "link": "https://blog.qualys.com/category/product-tech",
+      "summary": "Key Takeaways Identity Security Posture Management (ISPM) is the continuous risk and posture layer of the identity stack not a replacement for Identity and Access Management (IAM), Privileged Access Management (PAM), Identity Governance and Administration (IGA), or Identity-as-a-Service (IDaaS), but",
+      "source": "Qualys Blog",
+      "published_kst": "26/09/10 17:54 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "The Models That Found 10,000 Zero-Days Broke Into Three Companies Using Weak Passwords",
+      "link": "https://blog.qualys.com/category/qualys-insights",
+      "summary": "The question of whether a Frontier AI model could find vulnerabilities that no human researcher had found was settled in April. Claude Mythos Preview identified thousands of previously unknown flaws across every major operating system and browser, including a 27-year-old denial-of-service condition",
+      "source": "Qualys Blog",
+      "published_kst": "26/09/10 00:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Microsoft and Adobe Patch Tuesday, September 2026 Security Update Review",
+      "link": "https://blog.qualys.com/category/vulnerabilities-threat-research",
+      "summary": "Microsoft kicks off September with its monthly Patch Tuesday release, delivering fixes for security vulnerabilities affecting its products.&#160;The security updates&#160;are packed with security fixes, providing organizations with important updates to help protect their environments from emerging t",
+      "source": "Qualys Blog",
+      "published_kst": "26/09/09 04:11 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "SK렌터카, 구글 워크스페이스 도입...클라우드 기반 업무 환경 구축",
+      "link": "https://www.dailysecu.com/news/articleView.html?idxno=208485",
+      "summary": "SK렌터카가 전사에 구글 워크스페이스(Google Workspace)를 도입하고 생성형 AI 기반 클라우드 업무 환경을 구축했다고 구글 클라우드는 15일 밝혔다.그동안 SK렌터카는 내부 보안을 유지하기 위해 폐쇄형 VDI(가상 데스크톱) 기반 업무 환경을 운용했다. 하지만 VDI 특유의 접속 지연과 성능 저하 문제로 직원들의 불편이 이어졌고, 최신 AI 솔루션이나 클라우드 협업 도구를 도입하는 데 제한이 있었다.SK렌터카는 보안 수준을 유지하면서 AI 기술을 적용하기 위해 기존 VDI 환경을 클라우드 기반 로컬 PC 환경으로 바꾸고",
+      "source": "데일리시큐",
+      "published_kst": "26/09/15 22:15 KST",
+      "region": "domestic",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "이노그리드, NIA '공공 재해복구 DR ISP 6차 사업' 주관사 선정",
+      "link": "https://www.dailysecu.com/news/articleView.html?idxno=208484",
+      "summary": "이노그리드가 한국지능정보사회진흥원(NIA)이 발주한 '2026년 공공 재해복구시스템(DR) 구축 ISP 사업(6차)'의 주관사로 선정됐다. 이노그리드는 5차 사업에 이어 6차 사업까지 연속 수행하며 공공 재해복구 컨설팅 사업을 진행한다. 사업 기간은 2027년 1월 28일까지다.정부는 2025년 9월 국가정보자원관리원 대전센터 화재 발생 이후 주요 정보시스템 이중화와 재해복구 체계 구축을 추진해왔다. 시스템별 특성과 업무 중요도를 반영한 상세 DR 설계의 필요성도 높아졌다.이번 사업 대상은 소방청 3개, 기후에너지환경부 2개, 해양",
+      "source": "데일리시큐",
+      "published_kst": "26/09/15 22:15 KST",
+      "region": "domestic",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "소프트캠프, 레드펜소프트 '엑스스캔 서버 런타임' 나라장터 등록...공공 SBOM 시장 공략",
+      "link": "https://www.dailysecu.com/news/articleView.html?idxno=208483",
+      "summary": "소프트캠프가 자회사 레드펜소프트의 운영 서버 보안 솔루션 'XSCAN Server Runtime(엑스스캔 서버 런타임)'을 조달청 나라장터에 등록했다.이번 제3자 단가계약 체결로 공공기관과 지방자치단체 등 수요기관은 별도 경쟁입찰 과정 없이 나라장터에서 솔루션을 바로 구매할 수 있다. 레드펜소프트가 제품 개발을 맡았고, 소프트캠프가 나라장터 등록과 공공시장 공급을 담당한다.최근 개발과 납품 단계에서 작성하는 SBOM(소프트웨어 자재명세서)만으로는 소프트웨어 공급망 공격을 막기에 한계가 있다는 지적이 제기된다. 실제로 가동하는 운영환",
+      "source": "데일리시큐",
+      "published_kst": "26/09/15 22:15 KST",
+      "region": "domestic",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "2026년 8월 다크웹 위협 행위자 동향 보고서",
+      "link": "https://asec.ahnlab.com/ko/95389/",
+      "summary": "알림 2026년 8월 다크웹 위협 행위자 동향 보고서는 핵티비스트를 포함해 딥웹과 다크웹에서 활동하는 위협 행위자의 동향을 중심으로 작성되었다. 일부 내용은 사실 관계를 확인할 수 없다고 명시되었다. 주요 이슈 NoName057(16), BD Anonymous, Dark Storm Team은 일본의 정부기관, 지방자치단체, 운송, 금융, 조선 분야 웹사이트를 대상으로 반복적인 DDoS 공격을 주장했다. DDoS는 대량의 요청을 발생시켜 서비스 이용을 어렵게 만드는 [&#8230;]",
+      "source": "AhnLab ASEC",
+      "published_kst": "26/09/14 00:00 KST",
+      "region": "domestic",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "2026년 8월 다크웹 침해사고 동향 보고서",
+      "link": "https://asec.ahnlab.com/ko/95384/",
+      "summary": "알림 2026년 8월 다크웹 및 딥웹 포럼에서는 데이터베이스 유출, 내부 데이터 판매, 초기 접근 권한 거래가 광범위하게 관측되었다. 일부 게시물은 출처 특성상 사실 여부를 완전히 확인하기 어려웠다. 주요 이슈 ShinyHunters는 미국 데이터센터 운영사, 라이브 스트리밍 플랫폼, 디지털 헬스케어 기업, 오픈소스 분석 플랫폼, 글로벌 의료기기 기업, 프랑스 지식재산권 서비스 기업 등 다수 조직을 대상으로 연속적인 데이터 [&#8230;]",
+      "source": "AhnLab ASEC",
+      "published_kst": "26/09/14 00:00 KST",
+      "region": "domestic",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "2026년 8월 다크웹 이슈 동향 보고서",
+      "link": "https://asec.ahnlab.com/ko/95388/",
+      "summary": "알림 2026년 8월 다크웹 이슈 동향 보고서는 딥웹 및 다크웹에서 발생한 주요 이슈를 정리한 내용이다. 출처 특성상 사실 여부를 완전히 확인하기 어려운 정보가 일부 포함될 수 있다고 밝혔다. 주요 이슈 RaidForums는 도메인이 중지된 뒤 신규 도메인이 공개되었고, 동일한 RaidForums 명칭을 사용하는 사이버 범죄 포럼도 재등장했다. 이로 인해 원 운영진의 인프라 전환과 명칭을 차용한 제3자 포럼이 [&#8230;]",
+      "source": "AhnLab ASEC",
+      "published_kst": "26/09/14 00:00 KST",
+      "region": "domestic",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "정상 Slack 초대 기능을 악용한 회사 임원 사칭 피싱 메일 주의!",
+      "link": "https://blog.alyac.co.kr/5780",
+      "summary": "[이미지] 생성형 AI 제작\n\n\n&nbsp;\n최근 협업 도구인 Slack의 정상적인 '워크스페이스 초대' 기능을 악용한 피싱 메일이 국내 기업을 대상으로 유포 중인 것으로 확인되었습니다.\n&nbsp;\n\n  참고하세요\nSlack은 기업이나 팀이 업무용 메신저처럼 사용하는 협업 도구로, 이메일 대신 채널과 대화방에서 소통하고 파일을 공유하는 서비스입니다. 여러 구성원이 모여 함께 일하는 공간을 '워크스페이스(Workspace)'라고 부르며, 새로운 구성원을 추가할 때는 Slack이 해당 사용자에게 자동으로 초대 메일을 발송합니다. 이번",
+      "source": "이스트시큐리티 알약",
+      "published_kst": "26/09/15 14:42 KST",
+      "region": "domestic",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "국내 의료기관을 노린 RDP 기반 Beast(GodDamn) 랜섬웨어 공격",
+      "link": "https://blog.alyac.co.kr/5779",
+      "summary": "[이미지] 생성형 AI 제작\n\n\n&nbsp;\n&nbsp;\n최근 국내 의료기관을 대상으로 RDP(원격 데스크톱 프로토콜)를 악용한 랜섬웨어 감염 사례가 확인되었습니다. 공격자는 RDP의 드라이브 리다이렉션(tsclient) 기능을 통해 공격 도구를 내부 네트워크에 전달하고, ProcessHacker, PCHunter 와 같은 도구로 보안 제품을 무력화 후 Beast(GodDamn) 랜섬웨어를 실행하였습니다.\n&nbsp;\n본 글에서는 이번 공격에서 확인된 RDP 악용 방식과 Beast 랜섬웨어의 분석 결과를 정리합니다.\n&nbsp;",
+      "source": "이스트시큐리티 알약",
+      "published_kst": "26/09/14 16:13 KST",
+      "region": "domestic",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "GitLab 경로 탐색 취약점(CVE-2026-85706) 긴급 업데이트 권고",
+      "link": "https://blog.alyac.co.kr/5778",
+      "summary": "[이미지] 생성형 AI 제작\n\n\n&nbsp;\n&nbsp;\nGitLab이 GitLab CE(Community Edition)와 EE(Enterprise Edition)에서 발견된 심각한 경로 탐색(Path Traversal) 취약점을 긴급 패치했습니다.&nbsp;\n&nbsp;\n해당 취약점은 저장소 커밋(repository commits) API에 존재하며, 경로 제한이 제대로 이루어지지 않고 인증 확인이 누락되어 있어, 인증되지 않은 공격자가 특정 조건에서 GitLab 서버의 임의 파일을 읽어낼 수 있습니다. &nbsp; \n&nbsp",
+      "source": "이스트시큐리티 알약",
+      "published_kst": "26/09/14 14:14 KST",
+      "region": "domestic",
+      "ioc": {
+        "cves": [
+          "CVE-2026-85706"
+        ],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    }
+  ]
+}
