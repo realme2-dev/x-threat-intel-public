@@ -18,6 +18,7 @@ import sys
 import threading
 import time
 from base64 import b64decode
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -101,6 +102,11 @@ FALLBACK_INSTANCES: list[str] = [
 INSTANCE_HEALTH_TIMEOUT: int = int(os.getenv("INSTANCE_HEALTH_TIMEOUT", "5"))
 NTSCRAPER_TIMEOUT: int = int(os.getenv("NTSCRAPER_TIMEOUT", "60"))
 PLAYWRIGHT_TIMEOUT: int = int(os.getenv("PLAYWRIGHT_TIMEOUT", "150"))
+
+# 헬스체크에서 검색어 무시(고정 홈/트렌딩 피드 반환) 인스턴스를 걸러내기 위한
+# 서로 다른 두 검색어. 결과가 겹치면 해당 인스턴스는 unhealthy로 판정한다.
+HEALTH_CHECK_QUERY_A: str = os.getenv("HEALTH_CHECK_QUERY_A", "bitcoin")
+HEALTH_CHECK_QUERY_B: str = os.getenv("HEALTH_CHECK_QUERY_B", "football")
 
 # 공개 Nitter 인스턴스들의 /search 경로가 (프로필 조회는 되어도) 지속적으로
 # 빈 페이지를 반환하는 상태(2026-08-21부터 관측)라, ntscraper(검색 기반) 시도가
@@ -301,39 +307,88 @@ class InstanceManager:
     return instances
 
   def _checkAllHealth(self, instanceUrls: list[str]) -> list[InstanceInfo]:
-    """모든 인스턴스의 헬스체크를 수행하고 응답 속도순으로 정렬합니다."""
+    """모든 인스턴스의 헬스체크를 병렬로 수행하고 응답 속도순으로 정렬합니다.
+
+    인스턴스당 최대 3회 요청(프로필 + 검색어 2개)이 순차로 들어가 개별
+    체크가 최대 15초까지 걸릴 수 있어, 인스턴스 수가 많을 때 전체 헬스체크가
+    느려지지 않도록 병렬로 실행한다.
+    """
     results: list[InstanceInfo] = []
 
-    for url in instanceUrls:
-      info = self._checkHealth(url)
-      if info.isHealthy:
-        results.append(info)
+    with ThreadPoolExecutor(max_workers=min(8, len(instanceUrls) or 1)) as pool:
+      for info in pool.map(self._checkHealth, instanceUrls):
+        if info.isHealthy:
+          results.append(info)
 
     results.sort(key=lambda x: x.responseTime)
     return results
 
   def _checkHealth(self, instanceUrl: str) -> InstanceInfo:
-    """단일 인스턴스 헬스체크 + 응답 시간 측정."""
+    """단일 인스턴스 헬스체크 + 응답 시간 측정.
+
+    2026-09 관측: 일부 Nitter 인스턴스가 200 응답은 정상적으로 주지만
+    검색어를 무시하고 자체 홈/트렌딩 피드(예: 일론머스크·SpaceX 관련
+    트윗)를 반환하는 "반쯤 죽은" 상태가 반복됨. 이 경우 크롤러 입장에서는
+    결과가 비어있지 않으니 "성공"으로 오판해 엉뚱한 데이터를 수집하고,
+    이후 중복 제거 단계에서 대부분 걸러지며 최종 트윗 수가 급감했다.
+    서로 다른 두 검색어를 날려 결과(작성자 집합)가 실제로 달라지는지
+    확인해야 이런 인스턴스를 걸러낼 수 있다.
+    """
     info = InstanceInfo(url=instanceUrl)
+    headers = {
+      "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "Gecko/20100101 Firefox/129.0"
+      )
+    }
     try:
       start = time.time()
       r = requests.get(
         f"{instanceUrl}/x",
         timeout=INSTANCE_HEALTH_TIMEOUT,
-        headers={
-          "User-Agent": (
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-            "Gecko/20100101 Firefox/129.0"
-          )
-        },
+        headers=headers,
       )
       elapsed = time.time() - start
-      info.isHealthy = r.ok
+      if not r.ok:
+        info.isHealthy = False
+        return info
+
+      authors1 = self._searchAuthors(instanceUrl, HEALTH_CHECK_QUERY_A, headers)
+      if not authors1:
+        info.isHealthy = False
+        return info
+
+      authors2 = self._searchAuthors(instanceUrl, HEALTH_CHECK_QUERY_B, headers)
+      if not authors2 or authors1 == authors2:
+        # 검색어가 달라졌는데도 작성자 집합이 동일하면 검색을 무시하고
+        # 고정된(홈/트렌딩) 콘텐츠를 반환하는 인스턴스로 간주한다.
+        info.isHealthy = False
+        return info
+
+      info.isHealthy = True
       info.responseTime = elapsed
     except Exception:
       info.isHealthy = False
 
     return info
+
+  def _searchAuthors(
+    self, instanceUrl: str, query: str, headers: dict
+  ) -> frozenset[str]:
+    """검색 결과 트윗 작성자 집합을 반환합니다(헬스체크용 가벼운 조회)."""
+    try:
+      r = requests.get(
+        f"{instanceUrl}/search?f=tweets&q={query}",
+        timeout=INSTANCE_HEALTH_TIMEOUT,
+        headers=headers,
+      )
+      if not r.ok:
+        return frozenset()
+      soup = BeautifulSoup(r.text, "lxml")
+      links = soup.select("a.username")
+      return frozenset(a.get("href", "") for a in links)
+    except Exception:
+      return frozenset()
 
 
 # ============================================================
