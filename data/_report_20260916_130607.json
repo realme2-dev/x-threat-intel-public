@@ -1,0 +1,1953 @@
+{
+  "generated_at": "2026-09-16T13:05:42.436560",
+  "total_tweets": 20,
+  "total_targets": 49,
+  "keyword_summary": [
+    {
+      "target": "CVE",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 19,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:03:02.872159",
+      "top_users": [
+        [
+          "@elonmusk",
+          7
+        ],
+        [
+          "@boringcompany",
+          1
+        ],
+        [
+          "@StarbaseTX",
+          1
+        ]
+      ],
+      "hashtags": [],
+      "sample_texts": [
+        "Prufrock-5 finishing a test-tunnel in Bastrop, Texas.     The ~900,000 lb boring machine will re-lau",
+        "Join us this Saturday at 9 AM for International Coastal Cleanup Day, and help take care of Boca Chic"
+      ],
+      "sample_tweets": [
+        {
+          "text": "Prufrock-5 finishing a test-tunnel in Bastrop, Texas.     The ~900,000 lb boring machine will re-launch in November.",
+          "username": "boringcompany",
+          "link": "https://twitter.com/boringcompany/status/2100094676149907928#m",
+          "date": "Sep 16, 2026 · 5:29 AM UTC"
+        },
+        {
+          "text": "Join us this Saturday at 9 AM for International Coastal Cleanup Day, and help take care of Boca Chica Beach.  The City of Starbase, @SpaceX, @TXAdoptABeach, and Cameron County are teaming up for a community cleanup, and we'd love to have you there. Invite your friends, family, and neighbors. Supplies will be provided, so just bring yourself.  Sign up → bit.ly/46I7e3H  See you on the beach!",
+          "username": "StarbaseTX",
+          "link": "https://twitter.com/StarbaseTX/status/2099975928482767240#m",
+          "date": "Sep 15, 2026 · 9:37 PM UTC"
+        },
+        {
+          "text": "😂🎯",
+          "username": "elonmusk",
+          "link": "https://twitter.com/elonmusk/status/2100085873807364122#m",
+          "date": "Sep 16, 2026 · 4:54 AM UTC"
+        },
+        {
+          "text": "BREAKING: The Government of Zambia has launched a three-year @Starlink powered digital learning programme for 70 schools. 🇿🇲  • Will connect 70 schools to Starlink • Expand digital learning and skills • Bring internet to surrounding communities",
+          "username": "cb_doge",
+          "link": "https://twitter.com/cb_doge/status/2099995060930785479#m",
+          "date": "Sep 15, 2026 · 10:53 PM UTC"
+        },
+        {
+          "text": "True",
+          "username": "elonmusk",
+          "link": "https://twitter.com/elonmusk/status/2100085414161965074#m",
+          "date": "Sep 16, 2026 · 4:52 AM UTC"
+        },
+        {
+          "text": "Grok Build",
+          "username": "elonmusk",
+          "link": "https://twitter.com/elonmusk/status/2100083283757584858#m",
+          "date": "Sep 16, 2026 · 4:44 AM UTC"
+        },
+        {
+          "text": "Elon just gave one of the clearest explanations yet for why Terafab has to exist  There are basically two problems:  • Geopolitical risk — at some point, advanced chips from Taiwan may not be available • Scale — even if supply remains stable, existing fabs eventually run out of capacity as AI, humanoid robots and autonomous cars keep scaling  And chips are the foundation underneath all of it  Server AI, edge compute, Optimus, Tesla vehicles....everything needs enormous and reliable semiconductor supply  Elon: “So it’s either build Terafab or fail to scale” That pretty much sums up the entire strategy  Secure the chip supply....then scale AI and robotics without a ceiling",
+          "username": "XFreeze",
+          "link": "https://twitter.com/XFreeze/status/2099747059553517864#m",
+          "date": "Sep 15, 2026 · 6:28 AM UTC"
+        },
+        {
+          "text": "Your Tesla keeps getting safer.    We push over-the-air updates remotely at no cost and with no service visit needed",
+          "username": "Tesla_India",
+          "link": "https://twitter.com/Tesla_India/status/2100065995641753869#m",
+          "date": "Sep 16, 2026 · 3:35 AM UTC"
+        },
+        {
+          "text": "SpaceXAI engineer Lingxi Li, @lingxi, runs code cleanup while everyone else is asleep. Nobody is shipping at 3 AM, so conflicts are rare and the changes are low risk.  His bots start a research agent that sweeps the monorepo for quality issues, poor modularization, comment bloat and security gaps. He wakes up to a stack of PRs.",
+          "username": "tetsuoai",
+          "link": "https://twitter.com/tetsuoai/status/2100048900942094348#m",
+          "date": "Sep 16, 2026 · 2:27 AM UTC"
+        },
+        {
+          "text": "True",
+          "username": "elonmusk",
+          "link": "https://twitter.com/elonmusk/status/2100070216902594669#m",
+          "date": "Sep 16, 2026 · 3:52 AM UTC"
+        },
+        {
+          "text": "Finally!!! A proper orbital attempt! Important note is that they won't be targeting orbit at SECO. They will only attempt an orbital circularization burn if all systems are go and it's considered safe. Nice and conservative approach!",
+          "username": "Erdayastronaut",
+          "link": "https://twitter.com/Erdayastronaut/status/2099970925353480654#m",
+          "date": "Sep 15, 2026 · 9:17 PM UTC"
+        },
+        {
+          "text": "We will work on this",
+          "username": "elonmusk",
+          "link": "https://twitter.com/elonmusk/status/2099989432925585534#m",
+          "date": "Sep 15, 2026 · 10:31 PM UTC"
+        },
+        {
+          "text": "The solar power exponential will continue until all other energy sources are <<0.1%",
+          "username": "elonmusk",
+          "link": "https://twitter.com/elonmusk/status/2099959353004720393#m",
+          "date": "Sep 15, 2026 · 8:31 PM UTC"
+        },
+        {
+          "text": "“Cisgender. It’s a way of marginalizing a normal person”   -Norm Macdonald",
+          "username": "LauraBeckerReal",
+          "link": "https://twitter.com/LauraBeckerReal/status/2099712689094504449#m",
+          "date": "Sep 15, 2026 · 4:11 AM UTC"
+        },
+        {
+          "text": "Love seeing government officials actually trying @Tesla FSD (Supervised). Here's the Deputy Prime Minister of Slovenia using it on public roads:  \"t doesn't get tired, doesn't fall asleep, and can significantly contribute to safer driving. On to the next step – robotaxis.\"",
+          "username": "SawyerMerritt",
+          "link": "https://twitter.com/SawyerMerritt/status/2099596383938293856#m",
+          "date": "Sep 14, 2026 · 8:29 PM UTC"
+        },
+        {
+          "text": "What’s crazy is that this bandwidth growth is well known but it’s likely impact is totally dismissed at the same time.   For context here is Starlinks historic bandwidth growth by generation. The V2 -> V3 inflection will 3-10x greater than the V1 -> V2 inflection was on this video.",
+          "username": "aaronburnett",
+          "link": "https://twitter.com/aaronburnett/status/2099936406735073748#m",
+          "date": "Sep 15, 2026 · 7:00 PM UTC"
+        },
+        {
+          "text": "Vice President @JDVance had a simple idea: Why don’t we have a Most Wanted Fraudsters list?  So we built one.  In just 3 months: 5 fraudsters captured, 4,000+ days on the run, nearly $2 BILLION in alleged fraud—across 3 continents.  The American people remain one of the FBI’s greatest partners.  You give us the information. We find them. We bring them to justice.  -DKP🇺🇸",
+          "username": "FBIDirectorKash",
+          "link": "https://twitter.com/FBIDirectorKash/status/2099560274181136430#m",
+          "date": "Sep 14, 2026 · 6:05 PM UTC"
+        },
+        {
+          "text": "Try @Grok @Bot",
+          "username": "elonmusk",
+          "link": "https://twitter.com/elonmusk/status/2099948962400874950#m",
+          "date": "Sep 15, 2026 · 7:50 PM UTC"
+        },
+        {
+          "text": "I have used my X Money virtual Visa card, via my iPhone wallet, twice today. Works perfectly.  This app has come a long way from the days of Twitter.",
+          "username": "WallStreetMav",
+          "link": "https://twitter.com/WallStreetMav/status/2099945389113655736#m",
+          "date": "Sep 15, 2026 · 7:36 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "Cyberattack",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:03:03.012767",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "MITRE ATT&CK",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:03:03.083591",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "RipperSec",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:03:12.702192",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "DDoS Korea",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:03:12.850685",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "exploit",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:03:13.571040",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "MegaMedusa",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:03:22.277876",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "Lazarus Group",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:03:22.551889",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "APT28",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:03:23.244946",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "한국 해킹",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:03:32.135533",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "ransomware Korea",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:03:32.518045",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "cyber attack",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:03:32.919350",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "malware",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:03:41.830406",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "ZeroDay",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:03:42.318782",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "0-day",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:03:42.851422",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "vulnerability",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:03:51.368800",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "취약점",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:03:52.022126",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "해킹",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:03:52.599127",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "랜섬웨어",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:04:01.027752",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "DDoS",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:04:01.614535",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "디도스",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:04:02.231195",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "사이버 공격",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:04:10.686440",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "사이버 위협",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:04:11.225150",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "사이버 보안",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:04:11.849712",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "정보 유출",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:04:20.220120",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "DFIR",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:04:20.867220",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "디지털 포렌식",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:04:21.549235",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "incident response",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:04:29.815264",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "사이버 인텔리전스",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:04:30.480734",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "threat intelligence",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:04:31.121111",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "악성코드",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:04:39.361157",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "APT",
+      "type": "keyword",
+      "group": "security_threats",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:04:40.129563",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "Cyberattack",
+      "type": "keyword",
+      "group": "custom",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:04:40.223439",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "noname057",
+      "type": "keyword",
+      "group": "noname_watch",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:04:48.948991",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "ddosia",
+      "type": "keyword",
+      "group": "noname_watch",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:04:49.922148",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "OpSouthKorea",
+      "type": "keyword",
+      "group": "noname_watch",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:04:49.994582",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "FuckEastwood",
+      "type": "keyword",
+      "group": "noname_watch",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:04:58.463621",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "TimeOfRetribution",
+      "type": "keyword",
+      "group": "noname_watch",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:04:59.824982",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    }
+  ],
+  "account_summary": [
+    {
+      "target": "HalcyonAi",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 1,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:05:01.122183",
+      "top_users": [
+        [
+          "@elonmusk",
+          1
+        ]
+      ],
+      "hashtags": [],
+      "sample_texts": [
+        "Live demo of building a company with @Grok @Bot!"
+      ],
+      "sample_tweets": [
+        {
+          "text": "Live demo of building a company with @Grok @Bot!",
+          "username": "elonmusk",
+          "link": "https://twitter.com/elonmusk/status/2099875660290228642#m",
+          "date": "Sep 15, 2026 · 2:59 PM UTC"
+        }
+      ]
+    },
+    {
+      "target": "DarkWebInformer",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:05:09.427710",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "MonThreat",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:05:10.751621",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "DailyDarkWeb",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:05:12.099429",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "FalconFeedsio",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 0,
+      "thread_count": 1,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:05:20.372327",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "H4ckManac",
+      "type": "account",
+      "group": "threat_intel",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:05:21.689967",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "GossiTheDog",
+      "type": "account",
+      "group": "security_researchers",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:05:23.052238",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "vxunderground",
+      "type": "account",
+      "group": "security_researchers",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:05:31.362373",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "MalwareTechBlog",
+      "type": "account",
+      "group": "security_researchers",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:05:32.975406",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "taviso",
+      "type": "account",
+      "group": "security_researchers",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:05:34.061517",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    },
+    {
+      "target": "SwiftOnSecurity",
+      "type": "account",
+      "group": "security_researchers",
+      "tweet_count": 0,
+      "thread_count": 0,
+      "method": "playwright",
+      "instance_used": "https://nitter.click",
+      "crawled_at": "2026-09-16T13:05:42.426764",
+      "top_users": [],
+      "hashtags": [],
+      "sample_texts": [],
+      "sample_tweets": []
+    }
+  ],
+  "top_words": [
+    [
+      "cleanup",
+      3
+    ],
+    [
+      "bring",
+      3
+    ],
+    [
+      "grok",
+      3
+    ],
+    [
+      "scale",
+      3
+    ],
+    [
+      "supply",
+      3
+    ],
+    [
+      "tesla",
+      3
+    ],
+    [
+      "beach",
+      2
+    ],
+    [
+      "love",
+      2
+    ],
+    [
+      "government",
+      2
+    ],
+    [
+      "starlink",
+      2
+    ],
+    [
+      "digital",
+      2
+    ],
+    [
+      "learning",
+      2
+    ],
+    [
+      "schools",
+      2
+    ],
+    [
+      "true",
+      2
+    ],
+    [
+      "build",
+      2
+    ],
+    [
+      "elon",
+      2
+    ],
+    [
+      "terafab",
+      2
+    ],
+    [
+      "risk",
+      2
+    ],
+    [
+      "chips",
+      2
+    ],
+    [
+      "run",
+      2
+    ]
+  ],
+  "top_hashtags": [],
+  "top_mentions": [
+    [
+      "grok",
+      2
+    ],
+    [
+      "bot",
+      2
+    ],
+    [
+      "spacex",
+      1
+    ],
+    [
+      "txadoptabeach",
+      1
+    ],
+    [
+      "starlink",
+      1
+    ],
+    [
+      "lingxi",
+      1
+    ],
+    [
+      "tesla",
+      1
+    ],
+    [
+      "jdvance",
+      1
+    ]
+  ],
+  "top_users": [
+    [
+      "@elonmusk",
+      8
+    ],
+    [
+      "@boringcompany",
+      1
+    ],
+    [
+      "@StarbaseTX",
+      1
+    ],
+    [
+      "@cb_doge",
+      1
+    ],
+    [
+      "@XFreeze",
+      1
+    ],
+    [
+      "@Tesla_India",
+      1
+    ],
+    [
+      "@tetsuoai",
+      1
+    ],
+    [
+      "@Erdayastronaut",
+      1
+    ],
+    [
+      "@LauraBeckerReal",
+      1
+    ],
+    [
+      "@SawyerMerritt",
+      1
+    ]
+  ],
+  "llm_summary": "🤖 [GEMINI 분석] 2026-09-16 22:06 KST\n🟠 위협 점수: 8/10 (높음)\n\n### 1. 현재 주요 사이버보안 트렌드\n최근 사이버 위협 환경은 AI를 활용한 공격 기법의 고도화와 함께, 기존의 신뢰 기반 인증 체계를 우회하는 피싱 및 공급망 공격이 주를 이루고 있습니다. 특히 LLM을 악용한 프롬프트 인젝션 기법인 'PuzzleMask'나 AI 생성형 정보를 활용한 정교한 피싱 페이지 제작이 증가하고 있으며([Check Point Research](https://research.checkpoint.com/2026/puzzlemask-abusing-plain-prose-as-a-covert-ai-attack-vector/)), 기업의 협업 도구(Slack 등)의 정상 기능을 악용하여 보안 솔루션을 회피하는 캠페인이 활발합니다([이스트시큐리티 알약](https://blog.alyac.co.kr/5780)). 또한, 모바일 기기 및 인프라 장비의 제로데이 취약점을 노린 타겟 공격이 지속적으로 보고되고 있어 패치 관리의 중요성이 극대화되고 있습니다.\n\n### 2. 주요 위협 행위자 / 캠페인\n- **NightEagle**: 러시아 기업을 타겟으로 `GhostContainer` 백도어와 GitHub 호스팅 도구를 사용하며, Active Directory 취약점을 악용함 ([Securelist](https://securelist.com/tr/nighteagle-apt-ghostcontainer-and-tunneling/121323/))\n- **Tajin Group**: Telegram 기반의 벤더로, 결제 게이트웨이를 악용하여 피싱 및 자금 세탁 활동을 수행함 ([Recorded Future](https://www.recordedfuture.com/research/tajin-group-gurantee-marketplace))\n- **Toy Ghouls**: `HiveMQ` MQTT 브로커 및 Matrix 프로토콜을 C&C 서버로 사용하는 새로운 백도어 캠페인 포착 ([Securelist](https://securelist.com/toy-ghouls-new-hivemq-and-element-backdoors/121270/))\n- **Mirage Kitten**: 중동 및 아프리카의 항공/FinTech 분야를 타겟으로 `NodeRabbit`, `PollCat` 등 신규 백도어 사용 ([Securelist](https://securelist.com/mirage-kitten-new-backdoors-noderabbit-pollcat/121244/))\n\n### 3. 한국 관련 위협\n- **미디어 및 자동차 분야 타겟 APT**: 북한 연계 APT 그룹이 리눅스 기반의 미공개 스파이웨어 툴킷을 사용하여 로드 밸런서를 장악하고 통신을 탈취함 ([DarkReading](https://www.darkreading.com/cyberattacks-data-breaches/cyber-south-korean-media-automotive))\n- **국내 의료기관 랜섬웨어**: RDP의 드라이브 리다이렉션 기능을 악용하여 `Beast(GodDamn)` 랜섬웨어를 유포하고 보안 제품을 무력화함 ([이스트시큐리티 알약](https://blog.alyac.co.kr/5779))\n- **국내 기업 대상 Slack 피싱**: Slack의 정상적인 워크스페이스 초대 기능을 악용하여 임원 사칭 피싱 메일 유포 ([이스트시큐리티 알약](https://blog.alyac.co.kr/5780))\n\n### 4. 주요 CVE / 취약점\n- **CVE-2026-58704**: Google Pixel Cellular Modem, 심각도 8.0, 야생에서 제한적 악용 확인 ([Malwarebytes Labs](https://www.malwarebytes.com/blog/mobile/2026/09/google-pixel-owners-urged-to-patch-actively-exploited-modem-flaw))\n- **CVE-2026-85706**: GitLab CE/EE, 경로 탐색(Path Traversal) 취약점, 긴급 패치 권고 ([이스트시큐리티 알약](https://blog.alyac.co.kr/5778))\n\n### 5. IOC 요약\n- **CVE**: \n    - CVE-2026-58704 ([Malwarebytes Labs](https://www.malwarebytes.com/blog/mobile/2026/09/google-pixel-owners-urged-to-patch-actively-exploited-modem-flaw))\n    - CVE-2026-85706 ([이스트시큐리티 알약](https://blog.alyac.co.kr/5778))\n- **도메인/해시**: 이번 수집 데이터 내 특정 도메인 및 파일 해시 값은 포함되지 않음.\n\n### 6. 즉각 대응 권고\n- **GitLab 패치**: GitLab CE/EE 사용 환경에서 CVE-2026-85706에 대한 긴급 업데이트 적용.\n- **RDP 보안 강화**: 국내 의료기관 등 RDP를 사용하는 환경에서는 드라이브 리다이렉션 기능을 제한하고 다중 인증(MFA)을 필수 적용.\n- **협업 도구 모니터링**: Slack 등 협업 도구의 외부 초대 로그를 정기적으로 감사하고, 임원 사칭 피싱 메일 주의 공지.\n\n### 7. 위협 수준 평가\n- **점수**: 8/10\n- **근거**: 한국 내 주요 산업(미디어, 자동차, 의료)을 타겟으로 한 APT 공격과 제로데이 취약점 악용이 동시에 발생하고 있어 높은 경계가 필요함.\n\n📊 Gemini 토큰: 이번 10,742개 (입력 9,482 / 출력 1,260)\n📈 세션 누적: 10,742 / 1,000,000 (1.1%) | 세션 잔여 추정 989,258개",
+  "llm_top_tweets": [
+    {
+      "rank": 1,
+      "threat_level": "MEDIUM",
+      "username": "FBIDirectorKash",
+      "date": "Sep 14, 2026 · 6:05 PM UTC",
+      "link": "https://twitter.com/FBIDirectorKash/status/2099560274181136430#m",
+      "text": "Vice President @JDVance had a simple idea: Why don’t we have a Most Wanted Fraudsters list?  So we built one.  In just 3 months: 5 fraudsters captured, 4,000+ days on the run, nearly $2 BILLION in all",
+      "reason": "정부 기관의 사기범 추적 및 법 집행 관련 활동으로, 관련 위협 행위자 식별 및 보안 정책 변화 가능성 존재"
+    },
+    {
+      "rank": 2,
+      "threat_level": "LOW",
+      "username": "Tesla_India",
+      "date": "Sep 16, 2026 · 3:35 AM UTC",
+      "link": "https://twitter.com/Tesla_India/status/2100065995641753869#m",
+      "text": "Your Tesla keeps getting safer.    We push over-the-air updates remotely at no cost and with no service visit needed",
+      "reason": "원격 OTA 업데이트 시스템의 보안성 및 무결성 유지와 관련된 기술적 운영 정보"
+    },
+    {
+      "rank": 3,
+      "threat_level": "LOW",
+      "username": "WallStreetMav",
+      "date": "Sep 15, 2026 · 7:36 PM UTC",
+      "link": "https://twitter.com/WallStreetMav/status/2099945389113655736#m",
+      "text": "I have used my X Money virtual Visa card, via my iPhone wallet, twice today. Works perfectly.  This app has come a long way from the days of Twitter.",
+      "reason": "금융 결제 시스템(X Money) 사용 사례로, 디지털 결제 플랫폼의 보안 취약점 노출 가능성 모니터링 필요"
+    },
+    {
+      "rank": 4,
+      "threat_level": "LOW",
+      "username": "elonmusk",
+      "date": "Sep 16, 2026 · 4:44 AM UTC",
+      "link": "https://twitter.com/elonmusk/status/2100083283757584858#m",
+      "text": "Grok Build",
+      "reason": "AI 모델(Grok) 빌드 관련 정보로, AI 시스템의 보안성 및 신뢰성 확보와 관련된 기술적 맥락"
+    },
+    {
+      "rank": 5,
+      "threat_level": "LOW",
+      "username": "tetsuoai",
+      "date": "Sep 16, 2026 · 2:27 AM UTC",
+      "link": "https://twitter.com/tetsuoai/status/2100048900942094348#m",
+      "text": "SpaceXAI engineer Lingxi Li, @lingxi, runs code cleanup while everyone else is asleep. Nobody is shipping at 3 AM, so conflicts are rare and the changes are low risk.  His bots start a research agent ",
+      "reason": "코드 정리(Code Cleanup) 작업 언급으로, 개발 환경 내 보안 취약점 수정 가능성 시사"
+    },
+    {
+      "rank": 6,
+      "threat_level": "LOW",
+      "username": "elonmusk",
+      "date": "Sep 15, 2026 · 2:59 PM UTC",
+      "link": "https://twitter.com/elonmusk/status/2099875660290228642#m",
+      "text": "Live demo of building a company with @Grok @Bot!",
+      "reason": "AI 기반 기업 운영 데모로, 자동화된 시스템의 보안 및 데이터 보호 측면 검토 필요"
+    },
+    {
+      "rank": 7,
+      "threat_level": "LOW",
+      "username": "aaronburnett",
+      "date": "Sep 15, 2026 · 7:00 PM UTC",
+      "link": "https://twitter.com/aaronburnett/status/2099936406735073748#m",
+      "text": "What’s crazy is that this bandwidth growth is well known but it’s likely impact is totally dismissed at the same time.   For context here is Starlinks historic bandwidth growth by generation. The V2 -",
+      "reason": "대역폭 증가에 따른 잠재적 보안 영향력 언급으로, 네트워크 인프라 보안 관점의 고려 사항"
+    },
+    {
+      "rank": 8,
+      "threat_level": "LOW",
+      "username": "cb_doge",
+      "date": "Sep 15, 2026 · 10:53 PM UTC",
+      "link": "https://twitter.com/cb_doge/status/2099995060930785479#m",
+      "text": "BREAKING: The Government of Zambia has launched a three-year @Starlink powered digital learning programme for 70 schools. 🇿🇲  • Will connect 70 schools to Starlink • Expand digital learning and skills",
+      "reason": "국가 단위 디지털 인프라 도입으로, 해당 인프라의 보안 아키텍처 및 공급망 보안 중요성"
+    },
+    {
+      "rank": 9,
+      "threat_level": "LOW",
+      "username": "SawyerMerritt",
+      "date": "Sep 14, 2026 · 8:29 PM UTC",
+      "link": "https://twitter.com/SawyerMerritt/status/2099596383938293856#m",
+      "text": "Love seeing government officials actually trying @Tesla FSD (Supervised). Here's the Deputy Prime Minister of Slovenia using it on public roads:  \"t doesn't get tired, doesn't fall asleep, and can sig",
+      "reason": "자율주행 소프트웨어(FSD)의 정부 관계자 테스트로, 시스템 안전성 및 보안 검증 관련"
+    },
+    {
+      "rank": 10,
+      "threat_level": "LOW",
+      "username": "elonmusk",
+      "date": "Sep 15, 2026 · 7:50 PM UTC",
+      "link": "https://twitter.com/elonmusk/status/2099948962400874950#m",
+      "text": "Try @Grok @Bot",
+      "reason": "AI 봇 서비스 사용 권장으로, AI 챗봇의 프롬프트 인젝션 등 잠재적 보안 위협 노출 가능성"
+    }
+  ],
+  "news_articles": [
+    {
+      "title": "N0va Phishkit Targets US and EU Businesses: A New Challenge for Identity Security",
+      "link": "https://thehackernews.com/2026/09/n0va-phishkit-targets-us-and-eu.html",
+      "summary": "N0va is targeting organizations across North America and Europe with phishing campaigns that impersonate trusted services and abuse legitimate authentication flows. Successful attacks can give threat actors access to valid accounts without relying on obvious malware activity.\n\nFrom there, a single c",
+      "source": "TheHackerNews",
+      "published_kst": "26/09/16 20:58 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Google Patches Pixel Modem Flaw Amid Signs of Limited Targeted Exploitation",
+      "link": "https://thehackernews.com/2026/09/google-patches-pixel-modem-flaw-amid.html",
+      "summary": "Google has disclosed that a high-severity security flaw in its Pixel Cellular Modem has come under exploitation in the wild.\n\nThe vulnerability, tracked as CVE-2026-58704 (CVSS score: 8.0), is a privilege escalation flaw.\n\n\"In Cellular Modem, there is a possible permission bypass due to a logic erro",
+      "source": "TheHackerNews",
+      "published_kst": "26/09/16 20:15 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [
+          "CVE-2026-58704"
+        ],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Threat Intelligence Alone Won't Close the Exploitation Gap",
+      "link": "https://thehackernews.com/2026/09/threat-intelligence-alone-wont-close.html",
+      "summary": "A leaked credential shows up in a criminal marketplace, or a vulnerability gets a disclosure advisory, and either one can be weaponized against a real target before most security teams have triaged the alert. Attackers are combining that kind of intelligence with AI-assisted exploitation to accelera",
+      "source": "TheHackerNews",
+      "published_kst": "26/09/16 20:15 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "US, UK, Dutch Agencies Expose Iranian ‘Chosen Brick’ Surveillance Malware",
+      "link": "https://www.securityweek.com/us-uk-dutch-agencies-expose-iranian-chosen-brick-surveillance-malware/",
+      "summary": "US, UK, and Dutch government agencies published a report detailing the malware, and the FBI described the abuse of Telegram for C&#038;C.\nThe post US, UK, Dutch Agencies Expose Iranian &#8216;Chosen Brick&#8217; Surveillance Malware appeared first on SecurityWeek.",
+      "source": "SecurityWeek",
+      "published_kst": "26/09/16 21:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Unauthenticated RCE Flaws Could Expose 200,000+ WordPress Sites to Takeover",
+      "link": "https://www.securityweek.com/unauthenticated-rce-flaws-could-expose-200000-wordpress-sites-to-takeover/",
+      "summary": "Vulnerabilities in The Events Calendar can provide attackers with remote code execution capabilities.\nThe post Unauthenticated RCE Flaws Could Expose 200,000+ WordPress Sites to Takeover appeared first on SecurityWeek.",
+      "source": "SecurityWeek",
+      "published_kst": "26/09/16 20:32 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Hackuity Raises $19 Million for AI-Powered Vulnerability Management",
+      "link": "https://www.securityweek.com/hackuity-raises-19-million-for-ai-powered-vulnerability-management/",
+      "summary": "The company will use the new capital to expand its vulnerability operations platform and support international growth.\nThe post Hackuity Raises $19 Million for AI-Powered Vulnerability Management appeared first on SecurityWeek.",
+      "source": "SecurityWeek",
+      "published_kst": "26/09/16 20:11 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Cyber Op Targets South Korean Media &amp; Automotive Sectors",
+      "link": "https://www.darkreading.com/cyberattacks-data-breaches/cyber-south-korean-media-automotive",
+      "summary": "A likely North Korean advanced persistent threat (APT) group used a previously undocumented Linux espionage toolkit to compromise load balancers, gain access to communications, and further exploit networks.",
+      "source": "DarkReading",
+      "published_kst": "26/09/16 10:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Microsoft Issues Emergency Fixes After Massive Patch Tuesday",
+      "link": "https://www.darkreading.com/application-security/microsoft-emergency-fixes-patch-tuesday",
+      "summary": "You can't make an omelet without breaking a few eggs, and you can't patch nearly 1,000 CVEs without a few glitches.",
+      "source": "DarkReading",
+      "published_kst": "26/09/16 05:16 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Black Hat USA 2026 | The 'Breaking' News: The OpenAI–Hugging Face Incident",
+      "link": "https://www.darkreading.com/vulnerabilities-threats/bhusa26huggingfacetalk",
+      "summary": "The 'Breaking' News: The OpenAI–Hugging Face Incident - A Technical Reconstruction and Its Implications for AI\nAt this Black Hat USA 2026 talk, OpenAI security engineers and researchers will reconstruct the OpenAI-Hugging Face incident and examine its implications for AI security, cyber resilience,",
+      "source": "DarkReading",
+      "published_kst": "26/09/16 04:27 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "ISC Stormcast For Wednesday, September 16th, 2026 https://isc.sans.edu/podcastdetail/10096, (Wed, Sep 16th)",
+      "link": "https://isc.sans.edu/diary/rss/33342",
+      "summary": "(c) SANS Internet Storm Center. https://isc.sans.edu Creative Commons Attribution-Noncommercial 3.0 United States License.",
+      "source": "SANS ISC",
+      "published_kst": "26/09/16 11:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "MacOS 27 - First Boot, (Tue, Sep 15th)",
+      "link": "https://isc.sans.edu/diary/rss/33340",
+      "summary": "I have not done this type of diary in a while: What traffic will you see from a system on boot, before a user logs in&#x3f; I just took a quick look at macOS 27 \"Golden Gate\" to see what traffic you should expect. Here are some of the highlights:&#xd;",
+      "source": "SANS ISC",
+      "published_kst": "26/09/16 00:23 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "ISC Stormcast For Tuesday, September 15th, 2026 https://isc.sans.edu/podcastdetail/10094, (Tue, Sep 15th)",
+      "link": "https://isc.sans.edu/diary/rss/33338",
+      "summary": "(c) SANS Internet Storm Center. https://isc.sans.edu Creative Commons Attribution-Noncommercial 3.0 United States License.",
+      "source": "SANS ISC",
+      "published_kst": "26/09/15 11:25 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Microsoft says Copilot buttons still missing in classic Outlook",
+      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-shares-workaround-for-missing-outlook-copilot-buttons/",
+      "summary": "Microsoft says it's still investigating a known issue that causes the Copilot and Copilot Chat buttons in Classic Outlook to disappear for some Windows users. [...]",
+      "source": "BleepingComputer",
+      "published_kst": "26/09/16 21:16 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Webinar: What happens in the first hours of a Google Workspace breach",
+      "link": "https://www.bleepingcomputer.com/news/security/webinar-what-happens-in-the-first-hours-of-a-google-workspace-breach/",
+      "summary": "The first hours after discovering a Google Workspace breach can determine how an incident unfolds. This webinar examines real-world breaches to show which early response decisions can limit the impact and which can make matters worse. [...]",
+      "source": "BleepingComputer",
+      "published_kst": "26/09/16 21:11 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Critical ScreenConnect flaw now actively exploited in attacks",
+      "link": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-exploiting-critical-screenconnect-flaw/",
+      "summary": "Attackers now exploit a critical-severity ConnectWise ScreenConnect vulnerability in the wild, according to the U.S. Cybersecurity and Infrastructure Security Agency (CISA). [...]",
+      "source": "BleepingComputer",
+      "published_kst": "26/09/16 20:14 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Microsoft Plugs Nearly 1,000 Security Holes",
+      "link": "https://krebsonsecurity.com/2026/09/microsoft-plugs-nearly-1000-security-holes/",
+      "summary": "Microsoft Corp. today issued updates to plug at least 974 security holes in its Windows operating systems and other software, by far its biggest single patch batch ever. Microsoft says artificial intelligence is helping to speed the discovery of vulnerabilities, but security experts warn that many o",
+      "source": "Krebs on Security",
+      "published_kst": "26/09/09 06:44 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "FBI Probes Service Selling 153M+ Drivers Licenses",
+      "link": "https://krebsonsecurity.com/2026/09/fbi-probes-service-selling-153m-drivers-licenses/",
+      "summary": "A new identity theft service launched on the dark web this week is selling digital scans of more than 153 million drivers licenses from people in the United States and Canada. Based on interviews with individuals whose licenses are available for purchase on this service, it appears to be siphoning i",
+      "source": "Krebs on Security",
+      "published_kst": "26/09/02 07:40 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Two Alleged ‘TeamPCP’ Hackers Arrested in Australia",
+      "link": "https://krebsonsecurity.com/2026/08/two-alleged-teampcp-hackers-arrested-in-australia/",
+      "summary": "Authorities in Australia have arrested two men believed to be members of TeamPCP, a prolific cybercrime and data extortion group blamed for perpetrating the longest running spree of software supply chain attacks ever.\n\nIn a statement released today, the Australian Federal Police (AFP) said two unnam",
+      "source": "Krebs on Security",
+      "published_kst": "26/08/27 20:04 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "What’s next for CISA’s CDM program that gives cybersecurity tools to federal agencies",
+      "link": "https://cyberscoop.com/whats-next-for-cisas-cdm-program-that-gives-cybersecurity-tools-to-federal-agencies/",
+      "summary": "Three feds spoke about future plans for the Continuous Diagnostics and Mitigation program, and lessons they’ve learned.\nThe post What’s next for CISA&#8217;s CDM program that gives cybersecurity tools to federal agencies appeared first on CyberScoop.",
+      "source": "CyberScoop",
+      "published_kst": "26/09/16 04:45 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Cisco warns customers of actively exploited zero-day in email gateways",
+      "link": "https://cyberscoop.com/cisco-secure-email-gateway-zero-day-exploited/",
+      "summary": "The company confirmed the defect was exploited before it was disclosed and patched, but it did not describe the nature of the attacks or the scope of impact across its customer base. \nThe post Cisco warns customers of actively exploited zero-day in email gateways appeared first on CyberScoop.",
+      "source": "CyberScoop",
+      "published_kst": "26/09/16 00:44 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Supreme Court denies Trump request to allow USPS mail ballot changes",
+      "link": "https://cyberscoop.com/supreme-court-denies-trump-usps-mail-ballot-changes/",
+      "summary": "One justice said the attempt to change the rules ahead of the 2026 elections would be \"arbitrary and capricious” and violated the Administrative Procedures Act.\nThe post Supreme Court denies Trump request to allow USPS mail ballot changes appeared first on CyberScoop.",
+      "source": "CyberScoop",
+      "published_kst": "26/09/15 11:15 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Fake CAPTCHA Scams",
+      "link": "https://www.schneier.com/blog/archives/2026/09/fake-captcha-scams.html",
+      "summary": "New variant of an old scam: Use the framing of a CAPTCHA to get an unsuspecting user to download and run a malicious program.",
+      "source": "Schneier on Security",
+      "published_kst": "26/09/16 22:05 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "25 Years of Mass Surveillance Is Enough",
+      "link": "https://www.schneier.com/blog/archives/2026/09/25-years-of-mass-surveillance-is-enough.html",
+      "summary": "This essay was written with Cindy Cohn, and originally appeared in Lawfare.\nOne of the many legacies of the terrorist attacks of Sept. 11 is the government-wide shift from targeted surveillance&#8212;such as individual wiretaps or pen register/trap and trace orders&#8212;to mass surveillance techniq",
+      "source": "Schneier on Security",
+      "published_kst": "26/09/16 22:05 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "On the NSA’s Supercomputer from the 1960s",
+      "link": "https://www.schneier.com/blog/archives/2026/09/on-the-nsas-supercomputer-from-the-1960s.html",
+      "summary": "Really interesting story about Harvest, a specialized code breaking computer built in the 1960s by IBM for the NSA.",
+      "source": "Schneier on Security",
+      "published_kst": "26/09/16 22:05 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "GuardBreaker: Derailing AI-assisted malware analysis with a code comment",
+      "link": "https://www.welivesecurity.com/en/business-security/guardbreaker-derailing-ai-assisted-malware-analysis-code-comment/",
+      "summary": "LLM-based code scanners won’t help attackers build a nuclear weapon, but that refusal could work in their favor",
+      "source": "WeLiveSecurity",
+      "published_kst": "26/09/10 18:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Safe word: What is it and why do you need one?",
+      "link": "https://www.welivesecurity.com/en/cybersecurity/safe-word-what-why-need-one/",
+      "summary": "AI scams are now hyper-realistic. But there’s one simple way to see through them.",
+      "source": "WeLiveSecurity",
+      "published_kst": "26/09/09 18:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "I’ve been deepfaked: What do I do?",
+      "link": "https://www.welivesecurity.com/en/how-to/ive-been-deepfaked-what-do/",
+      "summary": "Don’t panic if you spot an illegally created image or video of you online – there are ways to request its removal",
+      "source": "WeLiveSecurity",
+      "published_kst": "26/09/02 20:48 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Google Pixel owners urged to patch actively exploited modem flaw",
+      "link": "https://www.malwarebytes.com/blog/mobile/2026/09/google-pixel-owners-urged-to-patch-actively-exploited-modem-flaw",
+      "summary": "Google’s September Pixel update fixes 110 vulnerabilities, including a modem flaw being used in limited, targeted attacks.",
+      "source": "Malwarebytes Labs",
+      "published_kst": "26/09/16 19:39 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "AI helps scammers build convincing antivirus renewal pages",
+      "link": "https://www.malwarebytes.com/blog/threat-intel/2026/09/ai-helps-scammers-build-convincing-antivirus-renewal-pages",
+      "summary": "A fake Avast renewal page shows how AI is helping scammers create more convincing traps with polished designs and fluent copy.",
+      "source": "Malwarebytes Labs",
+      "published_kst": "26/09/16 17:41 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "How to opt out of AI chatbot training",
+      "link": "https://www.malwarebytes.com/blog/how-to/2026/09/how-to-opt-out-of-ai-chatbot-training",
+      "summary": "ChatGPT contractors are reviewing real users' conversations. Here’s how to stop AI companies using your chats for model training.",
+      "source": "Malwarebytes Labs",
+      "published_kst": "26/09/16 00:41 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "14th September – Threat Intelligence Report",
+      "link": "https://research.checkpoint.com/2026/14th-september-threat-intelligence-report/",
+      "summary": "For the latest discoveries in cyber research for the week of 14th Setpember, please download our Threat Intelligence Bulletin. TOP ATTACKS AND BREACHES IDScan.net, a US identity verification provider, has disclosed a data breach after detecting unauthorized access on September 1. Exposed data includ",
+      "source": "Check Point Research",
+      "published_kst": "26/09/14 21:22 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "PuzzleMask: Abusing Plain Prose as a Covert AI Attack Vector",
+      "link": "https://research.checkpoint.com/2026/puzzlemask-abusing-plain-prose-as-a-covert-ai-attack-vector/",
+      "summary": "Executive Summary In this research we introduce a prompt-crafting technique for bypassing quick LLM-based policy checks — using plain English (no emojis, base64, invisible formatting, etc.) A policy-violating payload (e.g.&#160;”encrypt files in ~/Documents”, “give me a biohazard recipe”, “ignore al",
+      "source": "Check Point Research",
+      "published_kst": "26/09/10 23:32 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "The Shared Clipboard Inside the Sandbox: Cross-Account Data Leakage in ChatGPT",
+      "link": "https://research.checkpoint.com/2026/the-shared-clipboard-inside-the-sandbox-cross-account-data-leakage-in-chatgpt/",
+      "summary": "Research by: Alexey Bukhteyev Key Takeaways Introduction Over the past several years, AI assistants have moved far beyond text generation. Modern systems can execute code, install additional dependencies, analyze user files, and access data through connected services. These capabilities significantl",
+      "source": "Check Point Research",
+      "published_kst": "26/09/08 22:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Tajin Group: Guarantee Marketplace Vendor Involved in Phishing and Chinese Money Laundering Group",
+      "link": "https://www.recordedfuture.com/research/tajin-group-gurantee-marketplace",
+      "summary": "Analyze Tajin Group's role in phishing and Chinese money laundering. Discover how this Telegram-based vendor exploits payment gateways and adapts its financial fraud operations.",
+      "source": "Recorded Future",
+      "published_kst": "26/09/15 09:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "What is Proactive Threat Intelligence? | Recorded Future",
+      "link": "https://www.recordedfuture.com/blog/proactive-threat-intelligence",
+      "summary": "Move from reactive defense to a proactive security mindset. Learn how proactive threat intelligence identifies and neutralizes threats.",
+      "source": "Recorded Future",
+      "published_kst": "26/09/14 09:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "The Intelligible World of Agents",
+      "link": "https://www.recordedfuture.com/blog/intelligible-world-agents",
+      "summary": "AI agents don't fail from weak reasoning. They fail due to the disconnected and untrustworthy operational world in which they act. Find out why the world representation you give an agent matters more than the model you pick.",
+      "source": "Recorded Future",
+      "published_kst": "26/09/10 09:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "PhantomRaven: An LLM-Generated Information Stealer Developed for Bug Bounty Hunting",
+      "link": "https://www.crowdstrike.com/en-us/blog/phantomraven-llm-generated-information-stealer-for-bug-bounty-hunting/",
+      "summary": "",
+      "source": "Crowdstrike Blog",
+      "published_kst": "26/09/15 14:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "September 2026 Patch Tuesday: Two Exploited Zero-Days and 113 Critical Vulnerabilities Among 972 CVEs",
+      "link": "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-september-2026/",
+      "summary": "",
+      "source": "Crowdstrike Blog",
+      "published_kst": "26/09/08 14:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "CrowdStrike Delivers the Next Evolution of the Agentic SOC",
+      "link": "https://www.crowdstrike.com/en-us/blog/crowdstrike-delivers-next-evolution-of-agentic-soc/",
+      "summary": "",
+      "source": "Crowdstrike Blog",
+      "published_kst": "26/09/02 13:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "NightEagle targets Russian companies",
+      "link": "https://securelist.com/tr/nighteagle-apt-ghostcontainer-and-tunneling/121323/",
+      "summary": "Kaspersky GERT experts have uncovered a new campaign by the NightEagle APT, featuring the GhostContainer backdoor and tools hosted on GitHub. The group is also exploiting vulnerabilities in Active Directory and RDP.",
+      "source": "Securelist (Kaspersky)",
+      "published_kst": "26/09/16 19:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Angry Birds: Toy Ghouls’ new toys",
+      "link": "https://securelist.com/toy-ghouls-new-hivemq-and-element-backdoors/121270/",
+      "summary": "Kaspersky GERT experts have discovered new backdoors used by the Toy Ghouls group. One version of the backdoor uses the HiveMQ MQTT broker as its command-and-control server; the other uses the Matrix-based Element messenger.",
+      "source": "Securelist (Kaspersky)",
+      "published_kst": "26/09/04 19:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Mirage Kitten targeting aviation and FinTech sectors across the Middle East and Africa with a new malware set",
+      "link": "https://securelist.com/mirage-kitten-new-backdoors-noderabbit-pollcat/121244/",
+      "summary": "Kaspersky researchers have discovered new Mirage Kitten attacks using previously undocumented malware families: NodeRabbit in Node.js and PollCat in JavaScript.",
+      "source": "Securelist (Kaspersky)",
+      "published_kst": "26/09/01 16:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Atomic macOS (AMOS) Stealer Activity",
+      "link": "https://unit42.paloaltonetworks.com/atomic-macos-amos-stealer-activity/",
+      "summary": "Modern macOS malware uses deceptive setup guides to steal credentials and sensitive user data. Learn how to identify and block these threats.\nThe post Atomic macOS (AMOS) Stealer Activity appeared first on Unit 42.",
+      "source": "Unit42 (Palo Alto)",
+      "published_kst": "26/09/16 19:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Unmasking Cloud Identities: From Behavioral Clustering to Automated Detection",
+      "link": "https://unit42.paloaltonetworks.com/behavioral-clustering-map-to-cloud-identities/",
+      "summary": "We designed a behavioral clustering model to map cloud identity roles from audit logs, enabling continuous threat detection using standard SQL queries.\nThe post Unmasking Cloud Identities: From Behavioral Clustering to Automated Detection appeared first on Unit 42.",
+      "source": "Unit42 (Palo Alto)",
+      "published_kst": "26/09/14 19:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "The Machine With Many Faces: Post-Exploitation Identity Misuse in SPIFFE/SPIRE",
+      "link": "https://unit42.paloaltonetworks.com/kubernetes-spiffe-spire-identity-spoofing/",
+      "summary": "Learn how root access on a compromised K8s node allows attackers to utilize SPIFFE/SPIRE metadata to spoof and harvest co-located workload identities.\nThe post The Machine With Many Faces: Post-Exploitation Identity Misuse in SPIFFE/SPIRE appeared first on Unit 42.",
+      "source": "Unit42 (Palo Alto)",
+      "published_kst": "26/09/10 19:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Before You Patch. Why Patch Reliability Matters for Confident Deployment",
+      "link": "https://blog.qualys.com/category/product-tech",
+      "summary": "Executive Summary Microsoft’s September 2026 security updates, KB5124008 and KB5124012, have been linked to USB audio failures on some Windows systems, highlighting the operational risk that can accompany security patching. Qualys TruRisk Eliminate classified both updates as Low Reliability, signali",
+      "source": "Qualys Blog",
+      "published_kst": "26/09/16 03:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "Automate Asset Isolation: Your Last Resort to Meet Remediation Deadlines",
+      "link": "https://blog.qualys.com/category/product-tech",
+      "summary": "Executive Summary Remediation deadlines slip for reasons outside your control: a patch does not exist yet, a patch is delayed, or a remediation attempt fails. The outcome is the same either way: the host stays unpatched and stays on the network. TruRisk Eliminate closes that window by isolating the",
+      "source": "Qualys Blog",
+      "published_kst": "26/09/16 00:00 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "What Is ISPM? How It Differs from IAM, PAM, IGA, and IDaaS",
+      "link": "https://blog.qualys.com/category/product-tech",
+      "summary": "Key Takeaways Identity Security Posture Management (ISPM) is the continuous risk and posture layer of the identity stack not a replacement for Identity and Access Management (IAM), Privileged Access Management (PAM), Identity Governance and Administration (IGA), or Identity-as-a-Service (IDaaS), but",
+      "source": "Qualys Blog",
+      "published_kst": "26/09/10 17:54 KST",
+      "region": "international",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "인젠트, 온이츠에이아이와 AI·데이터 플랫폼 연계 MOU 체결",
+      "link": "https://www.dailysecu.com/news/articleView.html?idxno=208511",
+      "summary": "인젠트(대표 이형배)가 AI 인프라 플랫폼 기업 온이츠에이아이(대표 고영신)와 전략적 업무협약(MOU)을 15일 체결했다.양사는 인젠트의 데이터 플랫폼 솔루션과 온이츠에이아이의 AI 솔루션, 파트너 관계인 Teradata 솔루션 간 유기적 연계 및 상호 운용성 확보를 위한 기술 협력을 추진한다. 기술력과 시장 인프라를 결합해 국내외 공동 사업 기회를 발굴하고 PoC(개념 검증)와 사업화를 공동 진행한다.협력 분야는 크게 네 가지다. 솔루션 연계 및 기술 협력, 타깃 고객사 대상 공동 PoC 수행과 성공 사례 발굴, 신규 사업 기회",
+      "source": "데일리시큐",
+      "published_kst": "26/09/16 22:05 KST",
+      "region": "domestic",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "[부고] 김태일 코어시큐리티 대표 부친상",
+      "link": "https://www.dailysecu.com/news/articleView.html?idxno=208510",
+      "summary": "김태일 코어시큐리티 부친상(모바일 부고: 클릭 )■고인: 故김성만 (9월 16일 별세)■상주: 김태일. 김태선■빈소: 전북대병원장례식장 3호■주소: 전북 전주시 덕진구 건지로 20(금암동)■발인: 2026년 9월 18일 7:00■ 모바일 부고장 : 클릭",
+      "source": "데일리시큐",
+      "published_kst": "26/09/16 22:05 KST",
+      "region": "domestic",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "안랩, '안랩 AI 플러스' 공개...AI-네이티브 보안 플랫폼 전환 선언",
+      "link": "https://www.dailysecu.com/news/articleView.html?idxno=208509",
+      "summary": "안랩(대표 강석균)이 30여 종의 보안 제품 및 서비스와 위협 인텔리전스(TI)를 AI 중심 체계로 재구성한 통합 브랜드 '안랩 AI 플러스'를 16일 발표했다.안랩은 기자간담회를 통해 AI-네이티브 보안 플랫폼 기업으로의 전환을 공식화했다. 기존 개별 제품에 AI 기능을 단순 추가하던 방식에서 벗어나 제품, 데이터, 보안 운영 구조를 초기 설계 단계부터 AI 중심으로 통합하는 청사진을 제시했다.사업 구조는 SaaS 중심으로 개편한다. EPP와 EDR을 SaaS 환경으로 통합한 '안랩 AI 플러스 엔드포인트'와 XDR, MDR, A",
+      "source": "데일리시큐",
+      "published_kst": "26/09/16 22:05 KST",
+      "region": "domestic",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "2026년 8월 다크웹 침해사고 동향 보고서",
+      "link": "https://asec.ahnlab.com/ko/95384/",
+      "summary": "알림 2026년 8월 다크웹 및 딥웹 포럼에서는 데이터베이스 유출, 내부 데이터 판매, 초기 접근 권한 거래가 광범위하게 관측되었다. 일부 게시물은 출처 특성상 사실 여부를 완전히 확인하기 어려웠다. 주요 이슈 ShinyHunters는 미국 데이터센터 운영사, 라이브 스트리밍 플랫폼, 디지털 헬스케어 기업, 오픈소스 분석 플랫폼, 글로벌 의료기기 기업, 프랑스 지식재산권 서비스 기업 등 다수 조직을 대상으로 연속적인 데이터 [&#8230;]",
+      "source": "AhnLab ASEC",
+      "published_kst": "26/09/14 00:00 KST",
+      "region": "domestic",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "2026년 8월 다크웹 이슈 동향 보고서",
+      "link": "https://asec.ahnlab.com/ko/95388/",
+      "summary": "알림 2026년 8월 다크웹 이슈 동향 보고서는 딥웹 및 다크웹에서 발생한 주요 이슈를 정리한 내용이다. 출처 특성상 사실 여부를 완전히 확인하기 어려운 정보가 일부 포함될 수 있다고 밝혔다. 주요 이슈 RaidForums는 도메인이 중지된 뒤 신규 도메인이 공개되었고, 동일한 RaidForums 명칭을 사용하는 사이버 범죄 포럼도 재등장했다. 이로 인해 원 운영진의 인프라 전환과 명칭을 차용한 제3자 포럼이 [&#8230;]",
+      "source": "AhnLab ASEC",
+      "published_kst": "26/09/14 00:00 KST",
+      "region": "domestic",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "2026년 8월 다크웹 위협 행위자 동향 보고서",
+      "link": "https://asec.ahnlab.com/ko/95389/",
+      "summary": "알림 2026년 8월 다크웹 위협 행위자 동향 보고서는 핵티비스트를 포함해 딥웹과 다크웹에서 활동하는 위협 행위자의 동향을 중심으로 작성되었다. 일부 내용은 사실 관계를 확인할 수 없다고 명시되었다. 주요 이슈 NoName057(16), BD Anonymous, Dark Storm Team은 일본의 정부기관, 지방자치단체, 운송, 금융, 조선 분야 웹사이트를 대상으로 반복적인 DDoS 공격을 주장했다. DDoS는 대량의 요청을 발생시켜 서비스 이용을 어렵게 만드는 [&#8230;]",
+      "source": "AhnLab ASEC",
+      "published_kst": "26/09/14 00:00 KST",
+      "region": "domestic",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "정상 Slack 초대 기능을 악용한 회사 임원 사칭 피싱 메일 주의!",
+      "link": "https://blog.alyac.co.kr/5780",
+      "summary": "[이미지] 생성형 AI 제작\n\n\n&nbsp;\n최근 협업 도구인 Slack의 정상적인 '워크스페이스 초대' 기능을 악용한 피싱 메일이 국내 기업을 대상으로 유포 중인 것으로 확인되었습니다.\n&nbsp;\n\n  참고하세요\nSlack은 기업이나 팀이 업무용 메신저처럼 사용하는 협업 도구로, 이메일 대신 채널과 대화방에서 소통하고 파일을 공유하는 서비스입니다. 여러 구성원이 모여 함께 일하는 공간을 '워크스페이스(Workspace)'라고 부르며, 새로운 구성원을 추가할 때는 Slack이 해당 사용자에게 자동으로 초대 메일을 발송합니다. 이번",
+      "source": "이스트시큐리티 알약",
+      "published_kst": "26/09/15 14:42 KST",
+      "region": "domestic",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "국내 의료기관을 노린 RDP 기반 Beast(GodDamn) 랜섬웨어 공격",
+      "link": "https://blog.alyac.co.kr/5779",
+      "summary": "[이미지] 생성형 AI 제작\n\n\n&nbsp;\n&nbsp;\n최근 국내 의료기관을 대상으로 RDP(원격 데스크톱 프로토콜)를 악용한 랜섬웨어 감염 사례가 확인되었습니다. 공격자는 RDP의 드라이브 리다이렉션(tsclient) 기능을 통해 공격 도구를 내부 네트워크에 전달하고, ProcessHacker, PCHunter 와 같은 도구로 보안 제품을 무력화 후 Beast(GodDamn) 랜섬웨어를 실행하였습니다.\n&nbsp;\n본 글에서는 이번 공격에서 확인된 RDP 악용 방식과 Beast 랜섬웨어의 분석 결과를 정리합니다.\n&nbsp;",
+      "source": "이스트시큐리티 알약",
+      "published_kst": "26/09/14 16:13 KST",
+      "region": "domestic",
+      "ioc": {
+        "cves": [],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    },
+    {
+      "title": "GitLab 경로 탐색 취약점(CVE-2026-85706) 긴급 업데이트 권고",
+      "link": "https://blog.alyac.co.kr/5778",
+      "summary": "[이미지] 생성형 AI 제작\n\n\n&nbsp;\n&nbsp;\nGitLab이 GitLab CE(Community Edition)와 EE(Enterprise Edition)에서 발견된 심각한 경로 탐색(Path Traversal) 취약점을 긴급 패치했습니다.&nbsp;\n&nbsp;\n해당 취약점은 저장소 커밋(repository commits) API에 존재하며, 경로 제한이 제대로 이루어지지 않고 인증 확인이 누락되어 있어, 인증되지 않은 공격자가 특정 조건에서 GitLab 서버의 임의 파일을 읽어낼 수 있습니다. &nbsp; \n&nbsp",
+      "source": "이스트시큐리티 알약",
+      "published_kst": "26/09/14 14:14 KST",
+      "region": "domestic",
+      "ioc": {
+        "cves": [
+          "CVE-2026-85706"
+        ],
+        "ips": [],
+        "domains": [],
+        "hashes": [],
+        "urls": []
+      }
+    }
+  ]
+}
