@@ -192,7 +192,9 @@
     "custom_accounts": {
       "enabled": true,
       "description": "직접 추가한 계정",
-      "usernames": []
+      "usernames": [
+        "boannews"
+      ]
     }
   }
 }
