@@ -1,0 +1,37 @@
+name: Telegram Multi-Chat Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install minimal dependencies
+        run: pip install requests
+
+      - name: Send test message to all configured chats
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_CHAT_ID_EXTRA: ${{ secrets.TELEGRAM_CHAT_ID_EXTRA }}
+          PYTHONUTF8: "1"
+        run: |
+          python -c "
+          from notifier import TelegramNotifier
+          n = TelegramNotifier()
+          print('enabled:', n.enabled)
+          print('chat_ids:', n._chat_ids)
+          ok = n.send_text('✅ 텔레그램 다중 채널 발송 테스트 (그룹방 포함)')
+          print('send_text result:', ok)
+          "
