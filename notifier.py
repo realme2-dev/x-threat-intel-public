@@ -25,6 +25,9 @@ logger = logging.getLogger(__name__)
 
 TELEGRAM_BOT_TOKEN: str = os.getenv("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID: str = os.getenv("TELEGRAM_CHAT_ID", "")
+# 기존 TELEGRAM_CHAT_ID(주 채널/DM)에 더해 추가로 알림을 받을 chat_id들.
+# 쉼표로 구분해 여러 개 지정 가능 (예: 그룹방 chat_id 추가).
+TELEGRAM_CHAT_ID_EXTRA: str = os.getenv("TELEGRAM_CHAT_ID_EXTRA", "")
 TELEGRAM_API_BASE: str = "https://api.telegram.org/bot{token}/{method}"
 
 MAX_MESSAGE_LENGTH = 4000
@@ -116,10 +119,15 @@ class TelegramNotifier:
         self,
         token: str = TELEGRAM_BOT_TOKEN,
         chat_id: str = TELEGRAM_CHAT_ID,
+        extra_chat_ids: str = TELEGRAM_CHAT_ID_EXTRA,
     ):
         self._token = token
         self._chat_id = chat_id
         self._enabled = bool(token and chat_id)
+
+        # 주 chat_id + 추가 chat_id들을 중복 없이 하나의 발송 대상 목록으로 구성
+        extra_ids = [c.strip() for c in extra_chat_ids.split(",") if c.strip()]
+        self._chat_ids = [chat_id] + [c for c in extra_ids if c != chat_id] if chat_id else extra_ids
 
         if not self._enabled:
             logger.info("텔레그램 알림 비활성화 (TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID 미설정)")
@@ -414,12 +422,26 @@ class TelegramNotifier:
     # ─── 전송 ────────────────────────────────────────────────────────────────
 
     def _send_message(self, text: str) -> int | None:
-        """텔레그램 sendMessage API 호출. 성공 시 message_id 반환."""
+        """텔레그램 sendMessage API 호출. 등록된 모든 chat_id로 전송하고,
+        주 chat_id(첫 번째) 기준 message_id를 반환한다 (실패 시 None).
+        다른 chat_id로의 전송 실패는 로그만 남기고 전체 흐름을 막지 않는다.
+        """
+        primary_result: int | None = None
+        for i, chat_id in enumerate(self._chat_ids):
+            mid = self._sendToChat(chat_id, text)
+            if i == 0:
+                primary_result = mid
+            elif mid is None:
+                logger.warning("텔레그램 추가 chat_id(%s) 전송 실패", chat_id)
+        return primary_result
+
+    def _sendToChat(self, chat_id: str, text: str) -> int | None:
+        """단일 chat_id에 텔레그램 sendMessage API 호출. 성공 시 message_id 반환."""
         url = TELEGRAM_API_BASE.format(token=self._token, method="sendMessage")
 
         for parse_mode in ["Markdown", ""]:
             payload = {
-                "chat_id": self._chat_id,
+                "chat_id": chat_id,
                 "text": text,
                 "parse_mode": parse_mode,
                 "disable_web_page_preview": True,
@@ -430,10 +452,10 @@ class TelegramNotifier:
                     return resp.json().get("result", {}).get("message_id")
                 else:
                     err = resp.json().get("description", resp.text[:100])
-                    logger.warning("텔레그램 전송 실패 (parse_mode=%s): %s", parse_mode, err)
+                    logger.warning("텔레그램 전송 실패 (chat_id=%s, parse_mode=%s): %s", chat_id, parse_mode, err)
             except Exception as e:
-                logger.error("텔레그램 전송 오류: %s", e)
+                logger.error("텔레그램 전송 오류 (chat_id=%s): %s", chat_id, e)
                 return None
 
-        logger.error("텔레그램 전송 최종 실패")
+        logger.error("텔레그램 전송 최종 실패 (chat_id=%s)", chat_id)
         return None
