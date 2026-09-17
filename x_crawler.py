@@ -13,6 +13,7 @@ import logging
 import os
 import queue
 import random
+import re
 import signal
 import sys
 import threading
@@ -79,6 +80,14 @@ LOG_LEVEL: str = os.getenv("LOG_LEVEL", "INFO").upper()
 # === Nitter 인스턴스 설정 ===
 INSTANCES_API: str = (
   "https://raw.githubusercontent.com/libredirect/instances/main/data.json"
+)
+
+# 2026-08-24 Nitter 원본 종료 이후 커뮤니티가 생존 인스턴스 목록을 직접
+# 관리하는 위키. "Working instances" 섹션의 인스턴스도 실제로는 검색이
+# 막힌 경우가 많아 신뢰하지 않고, 반드시 _checkHealth 검증을 거친 뒤에만
+# 채택한다 — 이 URL은 "검증할 후보"를 넓히는 용도일 뿐이다.
+SHITTER_WIKI_RAW_URL: str = (
+  "https://codeberg.org/mv12star/shitter/wiki/raw/Instances"
 )
 
 # 2026-08-24 Nitter 원본(zedeus/nitter) 공식 종료 이후 LibRedirect API가
@@ -284,13 +293,17 @@ class InstanceManager:
     self._failedInstances.add(instanceUrl)
 
   def _fetchInstanceList(self) -> list[str]:
-    """LibRedirect API + 폴백 목록에서 인스턴스 후보를 가져옵니다.
+    """LibRedirect API + 커뮤니티 위키 + 폴백 목록에서 인스턴스 후보를 모읍니다.
 
     LibRedirect API는 Nitter 원본 종료(2026-08-24) 이후 죽은 인스턴스 위주로
     반환하는 경우가 많아, 검증된 FALLBACK_INSTANCES를 항상 앞에 붙여
-    헬스체크 우선순위에서 밀리지 않도록 한다.
+    헬스체크 우선순위에서 밀리지 않도록 한다. 여기서 모은 목록은 전부
+    "검증할 후보"일 뿐이며 실제 채택 여부는 _checkHealth(검색어 교차검증)가
+    결정한다 — 매번 자동으로 최신 후보를 확보해 사람이 수동으로 인스턴스를
+    찾아 갱신하지 않아도 새로 살아난 인스턴스를 자동으로 편입시키기 위함.
     """
     instances = FALLBACK_INSTANCES.copy()
+
     try:
       r = requests.get(INSTANCES_API, timeout=10)
       if r.ok:
@@ -302,9 +315,46 @@ class InstanceManager:
             if url not in instances:
               instances.append(url)
     except Exception as e:
-      logger.warning("인스턴스 API 조회 실패: %s - 폴백 목록만 사용", e)
+      logger.warning("LibRedirect API 조회 실패: %s", e)
+
+    try:
+      wikiInstances = self._fetchShitterWikiInstances()
+      if wikiInstances:
+        logger.info("shitter 위키에서 %d개 인스턴스 조회", len(wikiInstances))
+        for url in wikiInstances:
+          if url not in instances:
+            instances.append(url)
+    except Exception as e:
+      logger.warning("shitter 위키 조회 실패: %s", e)
 
     return instances
+
+  # 위키 문서 자체가 참조하는 링크(Nitter 인스턴스가 아님)를 후보에서 제외
+  _WIKI_NOISE_DOMAINS = frozenset({
+    "codeberg.org", "status.d420.de",
+  })
+
+  @classmethod
+  def _fetchShitterWikiInstances(cls) -> list[str]:
+    """codeberg shitter 위키의 raw 마크다운에서 clearnet https 인스턴스만 추출합니다.
+
+    .onion(Tor 전용) 항목은 일반 requests로 접근 불가하므로 제외하고,
+    문서 자체의 참조 링크(codeberg.org 등)도 노이즈이므로 걸러낸다.
+    최종 채택 여부는 어차피 _checkHealth가 검색 기능까지 검증하므로,
+    여기서는 명백한 비-인스턴스만 걸러내는 가벼운 필터로 충분하다.
+    """
+    r = requests.get(SHITTER_WIKI_RAW_URL, timeout=10)
+    if not r.ok:
+      return []
+    urls = re.findall(r"https://[a-zA-Z0-9._-]+", r.text)
+    seen: list[str] = []
+    for url in urls:
+      domain = url.removeprefix("https://")
+      if domain in cls._WIKI_NOISE_DOMAINS:
+        continue
+      if url not in seen:
+        seen.append(url)
+    return seen
 
   def _checkAllHealth(self, instanceUrls: list[str]) -> list[InstanceInfo]:
     """모든 인스턴스의 헬스체크를 병렬로 수행하고 응답 속도순으로 정렬합니다.
