@@ -21,6 +21,7 @@ import logging
 import re
 import sys
 import threading
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -299,19 +300,47 @@ def run_crawl_job(
     analyzer = Analyzer()
     notifier = TelegramNotifier()
 
-    # ── 인스턴스 헬스체크 (메인 스레드에서 1회)
+    # ── 인스턴스 헬스체크 (메인 스레드에서 1회, 0개일 경우 5분 간격 최대 3회 재시도)
     safe_print("\n[1] Nitter 인스턴스 헬스체크 중...")
     instance_mgr = InstanceManager()
     working = instance_mgr.refresh()
+
+    INSTANCE_RETRY_MAX = 3
+    INSTANCE_RETRY_DELAY_SEC = 300  # 5분
+
     if not working:
-        safe_print("  활성 인스턴스 없음 — 작업 중단")
+        safe_print("  활성 인스턴스 없음 — 즉시 알림 후 재시도")
         if notifier.enabled:
             notifier.send_text(
                 "🚨 X 크롤러 경고\n"
                 "살아있는 Nitter 인스턴스가 하나도 없습니다 (헬스체크 200 응답 0개).\n"
-                "크롤링을 건너뛰었습니다 — 인스턴스 목록(FALLBACK_INSTANCES) 점검이 필요합니다."
+                f"5분 간격으로 최대 {INSTANCE_RETRY_MAX}회 재시도합니다."
             )
-        return
+
+        for attempt in range(1, INSTANCE_RETRY_MAX + 1):
+            safe_print(f"  재시도 대기 {INSTANCE_RETRY_DELAY_SEC}초 ({attempt}/{INSTANCE_RETRY_MAX})...")
+            time.sleep(INSTANCE_RETRY_DELAY_SEC)
+            working = instance_mgr.refresh()
+            if working:
+                safe_print(f"  재시도 {attempt}회차 성공 — 활성 인스턴스 {len(working)}개 확인")
+                if notifier.enabled:
+                    notifier.send_text(
+                        f"✅ Nitter 인스턴스 복구됨 (재시도 {attempt}회차)\n"
+                        f"활성 인스턴스 {len(working)}개로 크롤링을 재개합니다."
+                    )
+                break
+            safe_print(f"  재시도 {attempt}회차도 활성 인스턴스 없음")
+
+        if not working:
+            safe_print("  최종 실패 — 다음 정기 실행으로 넘어감")
+            if notifier.enabled:
+                notifier.send_text(
+                    f"🚨 X 크롤러 최종 실패\n"
+                    f"{INSTANCE_RETRY_MAX}회 재시도에도 활성 Nitter 인스턴스가 없습니다.\n"
+                    "이번 실행은 건너뛰고 다음 정기 실행 때 다시 시도합니다."
+                )
+            return
+
     safe_print(f"  활성 인스턴스: {len(working)}개 → {working}")
 
 
