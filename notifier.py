@@ -209,6 +209,14 @@ class TelegramNotifier:
             return False
         return self._send_message(text) is not None
 
+    def send_text_primary_only(self, text: str) -> bool:
+        """주 chat_id(TELEGRAM_CHAT_ID)에만 전송하고 추가 chat_id(그룹방 등)는
+        건너뛴다. Nitter 인스턴스 장애 알림처럼 운영자 개인에게만 필요한
+        알림용."""
+        if not self._enabled:
+            return False
+        return self._sendToChat(self._chat_id, text) is not None
+
     def test_connection(self) -> bool:
         if not self._enabled:
             logger.warning("텔레그램 설정이 없어 연결 테스트를 건너뜁니다.")

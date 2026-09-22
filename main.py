@@ -311,7 +311,7 @@ def run_crawl_job(
     if not working:
         safe_print("  활성 인스턴스 없음 — 즉시 알림 후 재시도")
         if notifier.enabled:
-            notifier.send_text(
+            notifier.send_text_primary_only(
                 "🚨 X 크롤러 경고\n"
                 "살아있는 Nitter 인스턴스가 하나도 없습니다 (헬스체크 200 응답 0개).\n"
                 f"5분 간격으로 최대 {INSTANCE_RETRY_MAX}회 재시도합니다."
@@ -324,7 +324,7 @@ def run_crawl_job(
             if working:
                 safe_print(f"  재시도 {attempt}회차 성공 — 활성 인스턴스 {len(working)}개 확인")
                 if notifier.enabled:
-                    notifier.send_text(
+                    notifier.send_text_primary_only(
                         f"✅ Nitter 인스턴스 복구됨 (재시도 {attempt}회차)\n"
                         f"활성 인스턴스 {len(working)}개로 크롤링을 재개합니다."
                     )
@@ -334,7 +334,7 @@ def run_crawl_job(
         if not working:
             safe_print("  최종 실패 — 다음 정기 실행으로 넘어감")
             if notifier.enabled:
-                notifier.send_text(
+                notifier.send_text_primary_only(
                     f"🚨 X 크롤러 최종 실패\n"
                     f"{INSTANCE_RETRY_MAX}회 재시도에도 활성 Nitter 인스턴스가 없습니다.\n"
                     "이번 실행은 건너뛰고 다음 정기 실행 때 다시 시도합니다."
