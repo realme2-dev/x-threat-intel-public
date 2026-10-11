@@ -324,6 +324,14 @@ class GroqBackend:
             },
             timeout=LLM_TIMEOUT,
         )
+        if not resp.ok:
+            # 404가 반복되는 원인(모델명/엔드포인트/계정 문제 등)을 구분하기
+            # 위해 응답 본문을 로그에 남긴다. raise_for_status()만으로는
+            # 상태코드만 보이고 Groq가 알려주는 구체적 사유가 사라진다.
+            logger.warning(
+                "Groq 응답 본문 (status=%d, model=%s): %s",
+                resp.status_code, GROQ_MODEL, resp.text[:300],
+            )
         resp.raise_for_status()
         data = resp.json()
         usage = data.get("usage", {})
