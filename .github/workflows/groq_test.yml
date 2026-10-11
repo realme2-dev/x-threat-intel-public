@@ -20,9 +20,10 @@ jobs:
       - name: Install minimal dependencies
         run: pip install requests
 
-      - name: List available Groq models for this account
+      - name: Test actual chat completion with new model
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GROQ_MODEL: ${{ secrets.GROQ_MODEL }}
           PYTHONUTF8: "1"
         run: |
           python -c "
@@ -30,16 +31,20 @@ jobs:
           import requests
 
           key = os.environ.get('GROQ_API_KEY', '')
-          resp = requests.get(
-              'https://api.groq.com/openai/v1/models',
-              headers={'Authorization': f'Bearer {key}'},
+          model = os.environ.get('GROQ_MODEL', '')
+          resp = requests.post(
+              'https://api.groq.com/openai/v1/chat/completions',
+              headers={
+                  'Authorization': f'Bearer {key}',
+                  'Content-Type': 'application/json',
+              },
+              json={
+                  'model': model,
+                  'messages': [{'role': 'user', 'content': 'say hi in one word'}],
+                  'max_tokens': 20,
+              },
               timeout=30,
           )
           print('status:', resp.status_code)
-          data = resp.json()
-          if resp.ok:
-              for m in data.get('data', []):
-                  print('-', m.get('id'))
-          else:
-              print('body:', resp.text[:1000])
+          print('body:', resp.text[:500])
           "
