@@ -20,10 +20,9 @@ jobs:
       - name: Install minimal dependencies
         run: pip install requests
 
-      - name: Test Groq API directly
+      - name: List available Groq models for this account
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          GROQ_MODEL: ${{ secrets.GROQ_MODEL }}
           PYTHONUTF8: "1"
         run: |
           python -c "
@@ -31,24 +30,16 @@ jobs:
           import requests
 
           key = os.environ.get('GROQ_API_KEY', '')
-          model = os.environ.get('GROQ_MODEL', '')
-          print('key length:', len(key))
-          print('key repr (first/last 4 chars):', repr(key[:4]), repr(key[-4:]) if len(key) >= 4 else '')
-          print('model repr:', repr(model))
-
-          resp = requests.post(
-              'https://api.groq.com/openai/v1/chat/completions',
-              headers={
-                  'Authorization': f'Bearer {key}',
-                  'Content-Type': 'application/json',
-              },
-              json={
-                  'model': model,
-                  'messages': [{'role': 'user', 'content': 'say hi in one word'}],
-                  'max_tokens': 20,
-              },
+          resp = requests.get(
+              'https://api.groq.com/openai/v1/models',
+              headers={'Authorization': f'Bearer {key}'},
               timeout=30,
           )
           print('status:', resp.status_code)
-          print('body:', resp.text[:1000])
+          data = resp.json()
+          if resp.ok:
+              for m in data.get('data', []):
+                  print('-', m.get('id'))
+          else:
+              print('body:', resp.text[:1000])
           "
