@@ -1,0 +1,54 @@
+name: Groq API Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install minimal dependencies
+        run: pip install requests
+
+      - name: Test Groq API directly
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GROQ_MODEL: ${{ secrets.GROQ_MODEL }}
+          PYTHONUTF8: "1"
+        run: |
+          python -c "
+          import os
+          import requests
+
+          key = os.environ.get('GROQ_API_KEY', '')
+          model = os.environ.get('GROQ_MODEL', '')
+          print('key length:', len(key))
+          print('key repr (first/last 4 chars):', repr(key[:4]), repr(key[-4:]) if len(key) >= 4 else '')
+          print('model repr:', repr(model))
+
+          resp = requests.post(
+              'https://api.groq.com/openai/v1/chat/completions',
+              headers={
+                  'Authorization': f'Bearer {key}',
+                  'Content-Type': 'application/json',
+              },
+              json={
+                  'model': model,
+                  'messages': [{'role': 'user', 'content': 'say hi in one word'}],
+                  'max_tokens': 20,
+              },
+              timeout=30,
+          )
+          print('status:', resp.status_code)
+          print('body:', resp.text[:1000])
+          "
