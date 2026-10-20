@@ -341,6 +341,7 @@ def generate_html(report: dict, threat_history=None) -> str:
         hashtag_tags += f'<span class="hashtag-tag">{tag} <small>{count}</small></span> '
 
     # 수집 현황 테이블 + 모달용 트윗 데이터
+    PLATFORM_ICON = {'x': '🔵', 'bluesky': '🦋', 'mastodon': '🐘'}
     summary_rows = ''
     modal_data = {}  # target -> list of tweet dicts
     for s in sorted(keyword_summary + account_summary, key=lambda x: -x.get('tweet_count', 0)):
@@ -349,19 +350,21 @@ def generate_html(report: dict, threat_history=None) -> str:
         count = s.get('tweet_count', 0)
         method = s.get('method', '')
         crawled_at = s.get('crawled_at', '')[:16].replace('T', ' ')
-        icon = '🔍' if ttype == 'keyword' else '👤'
+        platform = s.get('platform', 'x')
+        type_icon = '🔍' if ttype == 'keyword' else '👤'
+        platform_icon = PLATFORM_ICON.get(platform, '🔵')
         bar_width = min(100, int(count / max(total_tweets, 1) * 100 * 5))
         # sample_tweets 수집
         tweets = s.get('sample_tweets', [])
         target_id = re.sub(r'[^a-zA-Z0-9_]', '_', target)
         modal_data[target_id] = {
-            'title': f"{icon} {target}",
+            'title': f"{platform_icon} {type_icon} {target}",
             'type': ttype,
             'tweets': tweets
         }
         summary_rows += f'''
-        <tr class="clickable-row" onclick="openModal('{target_id}')" title="클릭하여 트윗 보기">
-            <td>{icon} {target} <span class="view-icon">👁</span></td>
+        <tr class="clickable-row" data-platform="{platform}" onclick="openModal('{target_id}')" title="클릭하여 트윗 보기">
+            <td>{platform_icon} {type_icon} {target} <span class="view-icon">👁</span></td>
             <td>{count}</td>
             <td><div class="bar" style="width:{bar_width}px"></div></td>
             <td><span class="method-badge">{method}</span></td>
@@ -369,6 +372,41 @@ def generate_html(report: dict, threat_history=None) -> str:
         </tr>'''
 
     modal_json = json.dumps(modal_data, ensure_ascii=False)
+
+    # 플랫폼별 비교 통계 스트립 + 필터 탭
+    platform_summary = report.get('platform_summary', {})
+    x_status = report.get('x_status', 'ok')
+    platform_names = {'x': ('🔵', 'X'), 'bluesky': ('🦋', 'Bluesky'), 'mastodon': ('🐘', 'Mastodon')}
+    platform_stat_cards = ''
+    for p, (icon, name) in platform_names.items():
+        if p == 'x' and x_status == 'skipped_nitter_down':
+            platform_stat_cards += f'''
+        <div class="platform-stat-card platform-stat-fail">
+            <div class="platform-stat-icon">{icon}</div>
+            <div class="platform-stat-name">{name}</div>
+            <div class="platform-stat-value">수집 실패</div>
+        </div>'''
+        elif p in platform_summary:
+            stat = platform_summary[p]
+            stat_tweets = stat["tweets"]
+            stat_targets = stat["targets"]
+            platform_stat_cards += f'''
+        <div class="platform-stat-card">
+            <div class="platform-stat-icon">{icon}</div>
+            <div class="platform-stat-name">{name}</div>
+            <div class="platform-stat-value">{stat_tweets}건 / 타겟 {stat_targets}개</div>
+        </div>'''
+
+    platform_filter_tabs = '''
+        <button class="platform-tab active" data-filter="all" onclick="filterPlatform('all', this)">전체</button>
+        <button class="platform-tab" data-filter="x" onclick="filterPlatform('x', this)">🔵 X</button>
+        <button class="platform-tab" data-filter="bluesky" onclick="filterPlatform('bluesky', this)">🦋 Bluesky</button>
+        <button class="platform-tab" data-filter="mastodon" onclick="filterPlatform('mastodon', this)">🐘 Mastodon</button>'''
+
+    x_status_banner = ''
+    if x_status == 'skipped_nitter_down':
+        x_status_banner = '''
+  <div class="x-status-banner">🔵 X(Nitter) 수집 실패 — 현재 Nitter 인스턴스 장애로 건너뛰었습니다. Bluesky/Mastodon 결과만 표시됩니다.</div>'''
 
     llm_html = markdown_to_html(llm_summary) if llm_summary else '<p>LLM 분석 없음</p>'
 
@@ -430,6 +468,16 @@ def generate_html(report: dict, threat_history=None) -> str:
   .stat-card .num {{ font-size: 2rem; font-weight: 700; }}
   .stat-card .label {{ font-size: 0.8rem; color: #94a3b8; margin-top: 4px; }}
   .threat-score {{ color: {score_color}; }}
+  .x-status-banner {{ background: #7c2d12; color: #fed7aa; border-radius: 8px; padding: 12px 16px; margin: 12px 0 20px; font-size: 0.9rem; }}
+  .platform-stats-row {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 24px; }}
+  .platform-stat-card {{ background: #1e293b; border-radius: 10px; padding: 14px; text-align: center; }}
+  .platform-stat-fail {{ background: #4c1d1d; }}
+  .platform-stat-icon {{ font-size: 1.4rem; }}
+  .platform-stat-name {{ font-size: 0.8rem; color: #94a3b8; margin-top: 2px; }}
+  .platform-stat-value {{ font-size: 0.95rem; font-weight: 600; margin-top: 4px; }}
+  .platform-tabs {{ display: flex; gap: 8px; margin-bottom: 12px; }}
+  .platform-tab {{ background: #1e293b; color: #94a3b8; border: 1px solid #334155; border-radius: 8px; padding: 6px 14px; font-size: 0.85rem; cursor: pointer; }}
+  .platform-tab.active {{ background: #3b82f6; color: #f1f5f9; border-color: #3b82f6; }}
   section {{ margin-bottom: 32px; }}
   section h2 {{ font-size: 1.1rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 14px; border-left: 3px solid #3b82f6; padding-left: 10px; }}
   .llm-box {{ background: #1e293b; border-radius: 10px; padding: 20px; font-size: 0.9rem; line-height: 1.8; }}
@@ -520,6 +568,10 @@ def generate_html(report: dict, threat_history=None) -> str:
     <h1>🛡️ X 사이버 위협 인텔리전스 대시보드</h1>
     <div class="meta">마지막 업데이트: {generated_at}</div>
   </header>
+{x_status_banner}
+
+  <div class="platform-stats-row">{platform_stat_cards}
+  </div>
 
   <div class="stats-row">
     <div class="stat-card">
@@ -567,9 +619,10 @@ def generate_html(report: dict, threat_history=None) -> str:
 
   <section>
     <h2>📋 수집 현황</h2>
+    <div class="platform-tabs">{platform_filter_tabs}</div>
     <table>
       <thead><tr><th>타겟</th><th>트윗 수</th><th>비율</th><th>방법</th><th>수집 시각</th></tr></thead>
-      <tbody>{summary_rows}</tbody>
+      <tbody id="summaryTableBody">{summary_rows}</tbody>
     </table>
   </section>
 
@@ -592,6 +645,14 @@ def generate_html(report: dict, threat_history=None) -> str:
 <script>
 const MODAL_DATA = {modal_json};
 
+function filterPlatform(platform, btn) {{
+  document.querySelectorAll('.platform-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#summaryTableBody tr').forEach(row => {{
+    row.style.display = (platform === 'all' || row.dataset.platform === platform) ? '' : 'none';
+  }});
+}}
+
 function openModal(targetId) {{
   const data = MODAL_DATA[targetId];
   if (!data) return;
@@ -607,13 +668,19 @@ function openModal(targetId) {{
       const text = (t.text || '').replace(/</g, '&lt;').replace(/>/g, '&gt;');
       const link = t.link || '#';
       const date = (t.date || '').substring(0, 22);
+      const platform = t.platform || 'x';
+      const profileUrl = platform === 'bluesky'
+        ? `https://bsky.app/profile/${{username}}`
+        : platform === 'mastodon'
+          ? '#'
+          : `https://twitter.com/${{username}}`;
       return `<div class="modal-tweet">
         <div class="modal-tweet-meta">
-          <a class="modal-tweet-user" href="https://twitter.com/${{username}}" target="_blank">@${{username}}</a>
+          <a class="modal-tweet-user" href="${{profileUrl}}" target="_blank">@${{username}}</a>
           <span class="modal-tweet-date">${{date}}</span>
         </div>
         <div class="modal-tweet-text">${{text}}</div>
-        <a class="modal-tweet-link" href="${{link}}" target="_blank">🔗 트윗 원문 보기</a>
+        <a class="modal-tweet-link" href="${{link}}" target="_blank">🔗 원문 보기</a>
       </div>`;
     }}).join('');
   }}
