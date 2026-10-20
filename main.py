@@ -18,6 +18,7 @@ config_v2.json을 읽어 활성화된 키워드 / 계정을 크롤링하고,
 import argparse
 import io
 import logging
+import os
 import re
 import sys
 import threading
@@ -41,6 +42,7 @@ from analyzer import Analyzer
 from notifier import TelegramNotifier
 from llm_analyzer import run_llm_analysis, run_tweet_selection, list_available_backends, run_korea_tweet_filter, run_llm_compare
 from rss_collector import collect_rss_news, format_articles_for_llm, format_articles_for_telegram
+from sns_crawler import load_sns_targets, MastodonCrawler, BlueskyCrawler
 
 # x_crawler 컴포넌트
 from x_crawler import (
@@ -154,6 +156,7 @@ def _crawl_one(
             "target": target,
             "type": target_type,
             "group": group_name,
+            "platform": "x",
             "data": result.toDict(),
         }
     except (NoInstanceError, AllInstancesFailedError, RetryError, CrawlError) as e:
@@ -162,6 +165,91 @@ def _crawl_one(
     except Exception as e:
         safe_print(f"오류: {str(e)[:60]}")
         return None
+
+
+# ─── Bluesky / Mastodon 크롤링 ────────────────────────────────────────────────
+
+SNS_REQUEST_DELAY_SEC = 0.7  # 공개 API 매너 지연 (요청 사이)
+
+
+def _crawl_sns_targets(
+    keywords_only: bool = False, accounts_only: bool = False
+) -> list[dict]:
+    """sns_targets.json에 등록된 Mastodon/Bluesky 대상을 크롤링합니다.
+    Nitter 상태와 무관하게 항상 호출되며, 플랫폼별로 독립적으로 실패를 처리합니다
+    (Bluesky 로그인 실패 시 Bluesky만 건너뛰고 Mastodon은 계속 진행).
+    Mastodon은 전부 계정이라 --keywords-only 시 건너뛰고, Bluesky 계정도
+    --keywords-only 시 건너뛰며 키워드 검색은 --accounts-only 시 건너뛴다
+    (X 크롤링의 --keywords-only/--accounts-only 플래그와 동일한 의미로 일관성 유지).
+    """
+    sns_data = load_sns_targets()
+    if not sns_data:
+        return []
+
+    results: list[dict] = []
+
+    mastodon_accounts = [] if keywords_only else sns_data.get("mastodon_accounts", [])
+    if mastodon_accounts:
+        safe_print(f"\n[Mastodon] 크롤링 시작: 계정 {len(mastodon_accounts)}개")
+        mastodon_crawler = MastodonCrawler()
+        for i, acc in enumerate(mastodon_accounts, 1):
+            label = f"@{acc['username']}@{acc['instance']}"
+            safe_print(f"  [{i:>3}/{len(mastodon_accounts)}] {label} ...", end=" ", flush=True)
+            result = mastodon_crawler.crawl_account(
+                acc["username"], acc["instance"], max_posts=20
+            )
+            safe_print(f"게시물 {len(result.tweets)}개")
+            results.append({
+                "target": acc["username"],
+                "type": "account",
+                "group": "mastodon",
+                "platform": "mastodon",
+                "data": result.toDict(),
+            })
+            time.sleep(SNS_REQUEST_DELAY_SEC)
+
+    bluesky_accounts = [] if keywords_only else sns_data.get("bluesky_accounts", [])
+    bluesky_keywords = [] if accounts_only else sns_data.get("bluesky_keywords", [])
+    if bluesky_accounts or bluesky_keywords:
+        bluesky_crawler = BlueskyCrawler()
+        bluesky_ok = bluesky_crawler.login(
+            os.getenv("BLUESKY_IDENTIFIER", ""),
+            os.getenv("BLUESKY_APP_PASSWORD", ""),
+        )
+        if not bluesky_ok:
+            safe_print("\n[Bluesky] 로그인 실패/미설정 — Bluesky 수집 전체 건너뜀")
+        else:
+            if bluesky_accounts:
+                safe_print(f"\n[Bluesky] 계정 크롤링 시작: {len(bluesky_accounts)}개")
+                for i, acc in enumerate(bluesky_accounts, 1):
+                    safe_print(f"  [{i:>3}/{len(bluesky_accounts)}] {acc['handle']} ...", end=" ", flush=True)
+                    result = bluesky_crawler.crawl_account(acc["handle"], max_posts=20)
+                    safe_print(f"게시물 {len(result.tweets)}개")
+                    results.append({
+                        "target": acc["handle"],
+                        "type": "account",
+                        "group": "bluesky",
+                        "platform": "bluesky",
+                        "data": result.toDict(),
+                    })
+                    time.sleep(SNS_REQUEST_DELAY_SEC)
+
+            if bluesky_keywords:
+                safe_print(f"\n[Bluesky] 키워드 검색 시작: {len(bluesky_keywords)}개")
+                for i, kw in enumerate(bluesky_keywords, 1):
+                    safe_print(f"  [{i:>3}/{len(bluesky_keywords)}] '{kw}' ...", end=" ", flush=True)
+                    result = bluesky_crawler.search_keyword(kw, max_posts=20)
+                    safe_print(f"게시물 {len(result.tweets)}개")
+                    results.append({
+                        "target": kw,
+                        "type": "keyword",
+                        "group": "bluesky",
+                        "platform": "bluesky",
+                        "data": result.toDict(),
+                    })
+                    time.sleep(SNS_REQUEST_DELAY_SEC)
+
+    return results
 
 
 # ─── 유틸 함수 ───────────────────────────────────────────────────────────────
@@ -249,6 +337,17 @@ def _filter_tweets_by_date(
         except (ValueError, TypeError):
             return None
 
+    def _parse_iso_date(date_str: str) -> datetime | None:
+        """Bluesky/Mastodon의 ISO 8601 날짜("2026-10-19T13:57:06.699Z")를 UTC datetime으로 변환."""
+        try:
+            s = date_str.strip().replace("Z", "+00:00")
+            dt = datetime.fromisoformat(s)
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=timezone.utc)
+            return dt.astimezone(timezone.utc)
+        except (ValueError, TypeError):
+            return None
+
     for item in crawl_results:
         data = item.get("data", {})
         tweets = data.get("tweets", [])
@@ -257,6 +356,8 @@ def _filter_tweets_by_date(
             total += 1
             date_str = t.get("date", "")
             dt = _parse_nitter_date(date_str) if date_str else None
+            if dt is None and date_str:
+                dt = _parse_iso_date(date_str)
             if dt is None or dt >= cutoff:
                 kept.append(t)
             else:
@@ -307,6 +408,7 @@ def run_crawl_job(
 
     INSTANCE_RETRY_MAX = 3
     INSTANCE_RETRY_DELAY_SEC = 300  # 5분
+    x_status = "ok"
 
     if not working:
         safe_print("  활성 인스턴스 없음 — 즉시 알림 후 재시도")
@@ -332,87 +434,67 @@ def run_crawl_job(
             safe_print(f"  재시도 {attempt}회차도 활성 인스턴스 없음")
 
         if not working:
-            safe_print("  최종 실패 — 다음 정기 실행으로 넘어감")
+            safe_print("  최종 실패 — X 수집은 건너뛰고 Bluesky/Mastodon으로 계속 진행")
+            x_status = "skipped_nitter_down"
             if notifier.enabled:
                 notifier.send_text_primary_only(
                     f"🚨 X 크롤러 최종 실패\n"
                     f"{INSTANCE_RETRY_MAX}회 재시도에도 활성 Nitter 인스턴스가 없습니다.\n"
-                    "이번 실행은 건너뛰고 다음 정기 실행 때 다시 시도합니다."
+                    "X 수집은 이번 실행에서 건너뛰고, Bluesky/Mastodon 수집은 계속 진행합니다."
                 )
-            return
 
-    safe_print(f"  활성 인스턴스: {len(working)}개 → {working}")
+    if working:
+        safe_print(f"  활성 인스턴스: {len(working)}개 → {working}")
 
 
-    # ── 크롤 대상 수집
-    keyword_targets: list[tuple[str, str]] = []
-    account_targets: list[tuple[str, str]] = []
-
-    if not accounts_only:
-        for group in config.keyword_groups:
-            if not group.enabled:
-                continue
-            if group_filter and group.name != group_filter:
-                continue
-            for kw in group.keywords:
-                keyword_targets.append((kw, group.name))
-
-    if not keywords_only:
-        for group in config.account_groups:
-            if not group.enabled:
-                continue
-            if group_filter and group.name != group_filter:
-                continue
-            for username in group.usernames:
-                account_targets.append((username, group.name))
-
-    all_targets = (
-        [(t, g, "keyword") for t, g in keyword_targets] +
-        [(t, g, "account") for t, g in account_targets]
-    )
-    total = len(all_targets)
-    safe_print(f"\n[2] 크롤링 시작: 키워드 {len(keyword_targets)}개 / 계정 {len(account_targets)}개 / workers={workers}")
-
-    # ── 크롤링 (순차 or 병렬)
+    # ── 크롤링 결과 (X + Bluesky + Mastodon 공통 리스트)
     crawl_results: list[dict] = []
-    success_count = 0
-    fail_count = 0
 
-    common_kwargs = dict(
-        delay_min=cfg.request_delay_min,
-        delay_max=cfg.request_delay_max,
-        working_instances=working,
-        storage=storage,
-        total=total,
-    )
+    # ── X(Nitter) 크롤 대상 수집 및 크롤링 — 인스턴스가 있을 때만 수행
+    if working:
+        keyword_targets: list[tuple[str, str]] = []
+        account_targets: list[tuple[str, str]] = []
 
-    if workers <= 1:
-        # ── 순차 처리
-        for i, (target, group_name, target_type) in enumerate(all_targets, 1):
-            result = _crawl_one(
-                target=target,
-                target_type=target_type,
-                group_name=group_name,
-                max_tweets=config.max_tweets_for(target),
-                index=i,
-                **common_kwargs,
-            )
-            if result:
-                crawl_results.append(result)
-                success_count += 1
-            else:
-                fail_count += 1
-    else:
-        # ── 병렬 처리 (ThreadPoolExecutor)
-        # workers를 인스턴스 수로 제한 (과도한 병렬은 차단 위험)
-        effective_workers = min(workers, len(working), total)
-        safe_print(f"  실제 병렬 workers: {effective_workers}개")
+        if not accounts_only:
+            for group in config.keyword_groups:
+                if not group.enabled:
+                    continue
+                if group_filter and group.name != group_filter:
+                    continue
+                for kw in group.keywords:
+                    keyword_targets.append((kw, group.name))
 
-        futures_map = {}
-        with ThreadPoolExecutor(max_workers=effective_workers) as executor:
+        if not keywords_only:
+            for group in config.account_groups:
+                if not group.enabled:
+                    continue
+                if group_filter and group.name != group_filter:
+                    continue
+                for username in group.usernames:
+                    account_targets.append((username, group.name))
+
+        all_targets = (
+            [(t, g, "keyword") for t, g in keyword_targets] +
+            [(t, g, "account") for t, g in account_targets]
+        )
+        total = len(all_targets)
+        safe_print(f"\n[2] X 크롤링 시작: 키워드 {len(keyword_targets)}개 / 계정 {len(account_targets)}개 / workers={workers}")
+
+        success_count = 0
+        fail_count = 0
+
+        common_kwargs = dict(
+            delay_min=cfg.request_delay_min,
+            delay_max=cfg.request_delay_max,
+            working_instances=working,
+            storage=storage,
+            total=total,
+        )
+
+        if workers <= 1:
+            # ── 순차 처리
             for i, (target, group_name, target_type) in enumerate(all_targets, 1):
-                future = executor.submit(
-                    _crawl_one,
+                result = _crawl_one(
                     target=target,
                     target_type=target_type,
                     group_name=group_name,
@@ -420,21 +502,51 @@ def run_crawl_job(
                     index=i,
                     **common_kwargs,
                 )
-                futures_map[future] = (target, target_type)
-
-            for future in as_completed(futures_map):
-                result = future.result()
                 if result:
                     crawl_results.append(result)
                     success_count += 1
                 else:
                     fail_count += 1
+        else:
+            # ── 병렬 처리 (ThreadPoolExecutor)
+            # workers를 인스턴스 수로 제한 (과도한 병렬은 차단 위험)
+            effective_workers = min(workers, len(working), total)
+            safe_print(f"  실제 병렬 workers: {effective_workers}개")
 
-    elapsed = (datetime.now() - start_time).total_seconds()
-    safe_print(f"\n[3] 크롤링 완료: {success_count}/{total} 성공 / {elapsed:.0f}초 소요")
+            futures_map = {}
+            with ThreadPoolExecutor(max_workers=effective_workers) as executor:
+                for i, (target, group_name, target_type) in enumerate(all_targets, 1):
+                    future = executor.submit(
+                        _crawl_one,
+                        target=target,
+                        target_type=target_type,
+                        group_name=group_name,
+                        max_tweets=config.max_tweets_for(target),
+                        index=i,
+                        **common_kwargs,
+                    )
+                    futures_map[future] = (target, target_type)
+
+                for future in as_completed(futures_map):
+                    result = future.result()
+                    if result:
+                        crawl_results.append(result)
+                        success_count += 1
+                    else:
+                        fail_count += 1
+
+        elapsed = (datetime.now() - start_time).total_seconds()
+        safe_print(f"\n[3] X 크롤링 완료: {success_count}/{total} 성공 / {elapsed:.0f}초 소요")
+    else:
+        safe_print("\n[2-3] X 크롤링 건너뜀 (Nitter 인스턴스 없음)")
+
+    # ── Bluesky / Mastodon 크롤링 (Nitter 상태와 무관하게 항상 시도)
+    crawl_results.extend(_crawl_sns_targets(
+        keywords_only=keywords_only, accounts_only=accounts_only
+    ))
 
     if not crawl_results:
-        safe_print("  수집된 데이터 없음 — 분석 건너뜀")
+        safe_print("  수집된 데이터 없음 (X/Bluesky/Mastodon 전체 실패) — 분석 건너뜀")
         return
 
     # ── 중복 트윗 제거
@@ -456,6 +568,7 @@ def run_crawl_job(
 
     # ── 분석
     report = analyzer.analyze(crawl_results)
+    report.x_status = x_status
 
     # ── RSS 뉴스 수집
     safe_print("\n[5] RSS 보안 뉴스 수집 중...")
