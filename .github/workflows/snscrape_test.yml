@@ -1,0 +1,31 @@
+name: snscrape Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install snscrape
+        run: pip install snscrape
+
+      - name: Test snscrape against X (search + profile)
+        run: |
+          echo "=== snscrape version ==="
+          snscrape --version
+
+          echo ""
+          echo "=== Test 1: keyword search (CVE) ==="
+          timeout 60 snscrape --max-results 5 "twitter-search" "CVE" || echo "EXIT_CODE=$?"
+
+          echo ""
+          echo "=== Test 2: user profile (elonmusk) ==="
+          timeout 60 snscrape --max-results 5 "twitter-user" "elonmusk" || echo "EXIT_CODE=$?"
