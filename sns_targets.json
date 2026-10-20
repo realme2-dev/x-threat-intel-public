@@ -1,0 +1,469 @@
+{
+  "mastodon_accounts": [
+    {
+      "username": "codabar",
+      "instance": "infosec.exchange",
+      "display_name": "codabar (42de.it 운영자 -- NoName057(16)/DDoSia 추적)",
+      "tier": 1,
+      "reputation": 0.9
+    },
+    {
+      "username": "briankrebs",
+      "instance": "infosec.exchange",
+      "display_name": "Brian Krebs (KrebsOnSecurity)",
+      "tier": 1,
+      "reputation": 0.9
+    },
+    {
+      "username": "GossiTheDog",
+      "instance": "cyberplace.social",
+      "display_name": "Kevin Beaumont",
+      "tier": 1,
+      "reputation": 0.95
+    },
+    {
+      "username": "vxunderground",
+      "instance": "infosec.exchange",
+      "display_name": "vx-underground",
+      "tier": 2,
+      "reputation": 0.8
+    },
+    {
+      "username": "troyhunt",
+      "instance": "infosec.exchange",
+      "display_name": "Troy Hunt (Have I Been Pwned 설립자)",
+      "tier": 1,
+      "reputation": 0.9
+    },
+    {
+      "username": "cyb3rops",
+      "instance": "infosec.exchange",
+      "display_name": "Florian Roth (Nextron Systems, Sigma 룰 저자)",
+      "tier": 2,
+      "reputation": 0.75
+    },
+    {
+      "username": "TheDFIRReport",
+      "instance": "infosec.exchange",
+      "display_name": "The DFIR Report",
+      "tier": 2,
+      "reputation": 0.8
+    },
+    {
+      "username": "ShadowServer",
+      "instance": "infosec.exchange",
+      "display_name": "The Shadowserver Foundation",
+      "tier": 2,
+      "reputation": 0.8
+    },
+    {
+      "username": "SwiftOnSecurity",
+      "instance": "infosec.exchange",
+      "display_name": "SwiftOnSecurity",
+      "tier": 2,
+      "reputation": 0.7
+    },
+    {
+      "username": "falconfeedsio",
+      "instance": "mastodon.social",
+      "display_name": "FalconFeeds (위협 인텔 집계)",
+      "tier": 2,
+      "reputation": 0.7
+    },
+    {
+      "username": "DarkWebInformer",
+      "instance": "infosec.exchange",
+      "display_name": "Dark Web Informer (다크웹 집계)",
+      "tier": 3,
+      "reputation": 0.6
+    },
+    {
+      "username": "vuldb",
+      "instance": "infosec.exchange",
+      "display_name": "VulDB (취약점 관리 플랫폼)",
+      "tier": 3,
+      "reputation": 0.45
+    },
+    {
+      "username": "TheHackerWire",
+      "instance": "mastodon.social",
+      "display_name": "TheHackerWire",
+      "tier": 3,
+      "reputation": 0.55
+    },
+    {
+      "username": "eyalestrin",
+      "instance": "mastodon.social",
+      "display_name": "Eyal Estrin (클라우드 보안 연구자)",
+      "tier": 2,
+      "reputation": 0.7
+    },
+    {
+      "username": "UK_Daniel_Card",
+      "instance": "infosec.exchange",
+      "display_name": "Daniel Card (영국 보안 연구자)",
+      "tier": 1,
+      "reputation": 0.8
+    },
+    {
+      "username": "elhackernet",
+      "instance": "infosec.exchange",
+      "display_name": "El Hacker.NET (보안 매체)",
+      "tier": 2,
+      "reputation": 0.7
+    },
+    {
+      "username": "UndercodeNews",
+      "instance": "mastodon.social",
+      "display_name": "Undercode News (보안 뉴스 집계)",
+      "tier": 3,
+      "reputation": 0.4
+    },
+    {
+      "username": "_r_netsec",
+      "instance": "infosec.exchange",
+      "display_name": "r/netsec 미러",
+      "tier": 2,
+      "reputation": 0.7
+    },
+    {
+      "username": "securityaffairs",
+      "instance": "infosec.exchange",
+      "display_name": "Security Affairs (보안 매체)",
+      "tier": 2,
+      "reputation": 0.7
+    },
+    {
+      "username": "0xor0ne",
+      "instance": "infosec.exchange",
+      "display_name": "0xor0ne (보안 연구자)",
+      "tier": 2,
+      "reputation": 0.8
+    }
+  ],
+  "bluesky_accounts": [
+    {
+      "handle": "codabar.bsky.social",
+      "display_name": "codabar (42de.it 운영자 -- NoName057(16)/DDoSia 추적)",
+      "tier": 1,
+      "reputation": 0.9
+    },
+    {
+      "handle": "troyhunt.com",
+      "display_name": "Troy Hunt (Have I Been Pwned 설립자)",
+      "tier": 1,
+      "reputation": 0.9
+    },
+    {
+      "handle": "doublepulsar.com",
+      "display_name": "Kevin Beaumont",
+      "tier": 1,
+      "reputation": 0.95
+    },
+    {
+      "handle": "malwaretech.com",
+      "display_name": "Marcus Hutchins (Bluesky 인증)",
+      "tier": 1,
+      "reputation": 0.9
+    },
+    {
+      "handle": "shadowserver.bsky.social",
+      "display_name": "The Shadowserver Foundation",
+      "tier": 2,
+      "reputation": 0.8
+    },
+    {
+      "handle": "falconfeedsio.bsky.social",
+      "display_name": "FalconFeeds (위협 인텔 집계)",
+      "tier": 2,
+      "reputation": 0.7
+    },
+    {
+      "handle": "darkwebinformer.com",
+      "display_name": "Dark Web Informer (다크웹 집계)",
+      "tier": 3,
+      "reputation": 0.6
+    },
+    {
+      "handle": "malwareobserver.bsky.social",
+      "display_name": "MalwareObserver",
+      "tier": 3,
+      "reputation": 0.6
+    },
+    {
+      "handle": "yousukezan.bsky.social",
+      "display_name": "yousukezan (보안 연구자)",
+      "tier": 3,
+      "reputation": 0.55
+    },
+    {
+      "handle": "thehackerwire.bsky.social",
+      "display_name": "TheHackerWire",
+      "tier": 3,
+      "reputation": 0.55
+    },
+    {
+      "handle": "eyalestrin.bsky.social",
+      "display_name": "Eyal Estrin (클라우드 보안 연구자)",
+      "tier": 2,
+      "reputation": 0.7
+    },
+    {
+      "handle": "pvynckier.bsky.social",
+      "display_name": "PVynckier (보안 연구자)",
+      "tier": 1,
+      "reputation": 0.75
+    },
+    {
+      "handle": "piyokango.bsky.social",
+      "display_name": "piyokango (일본 악성코드 연구자)",
+      "tier": 1,
+      "reputation": 0.8
+    },
+    {
+      "handle": "undercodenews.bsky.social",
+      "display_name": "Undercode News (보안 뉴스 집계)",
+      "tier": 3,
+      "reputation": 0.4
+    },
+    {
+      "handle": "0xor0ne.bsky.social",
+      "display_name": "0xor0ne (보안 연구자)",
+      "tier": 2,
+      "reputation": 0.8
+    },
+    {
+      "handle": "halcyonai.bsky.social",
+      "display_name": "Halcyon (랜섬웨어 대응 벤더)",
+      "tier": 2,
+      "reputation": 0.75
+    },
+    {
+      "handle": "intcyberdigest.bsky.social",
+      "display_name": "IntCyberDigest (위협 인텔 집계)",
+      "tier": 3,
+      "reputation": 0.5
+    },
+    {
+      "handle": "dinosn.bsky.social",
+      "display_name": "Dinosn (보안 연구자)",
+      "tier": 3,
+      "reputation": 0.65
+    },
+    {
+      "handle": "reconbee.bsky.social",
+      "display_name": "ReconBee (보안 집계)",
+      "tier": 3,
+      "reputation": 0.6
+    },
+    {
+      "handle": "virusbtn.bsky.social",
+      "display_name": "Virus Bulletin (보안 매체)",
+      "tier": 2,
+      "reputation": 0.75
+    },
+    {
+      "handle": "swiftonsecurity.com",
+      "display_name": "SwiftOnSecurity (Bluesky, 커스텀도메인)",
+      "tier": 1,
+      "reputation": 0.8
+    },
+    {
+      "handle": "evacide.bsky.social",
+      "display_name": "Eva Galperin (EFF 사이버보안 디렉터)",
+      "tier": 1,
+      "reputation": 0.85
+    },
+    {
+      "handle": "stamos.org",
+      "display_name": "Alex Stamos (前 Facebook/Yahoo CISO)",
+      "tier": 1,
+      "reputation": 0.85
+    },
+    {
+      "handle": "k8em0.bsky.social",
+      "display_name": "Katie Moussouris (버그바운티 창시자)",
+      "tier": 1,
+      "reputation": 0.85
+    },
+    {
+      "handle": "hacks4pancakes.com",
+      "display_name": "Lesley Carhart (ICS/IR, Dragos)",
+      "tier": 1,
+      "reputation": 0.85
+    },
+    {
+      "handle": "grahamcluley.com",
+      "display_name": "Graham Cluley (보안 저널리스트)",
+      "tier": 1,
+      "reputation": 0.8
+    },
+    {
+      "handle": "pylos.co",
+      "display_name": "Joe Slowik (위협 인텔리전스, 前 Dragos)",
+      "tier": 3,
+      "reputation": 0.3
+    },
+    {
+      "handle": "alyssam-infosec.com",
+      "display_name": "Alyssa Miller (CISO)",
+      "tier": 2,
+      "reputation": 0.7
+    },
+    {
+      "handle": "medus4.com",
+      "display_name": "Katelyn Medusfour (보안 연구자)",
+      "tier": 2,
+      "reputation": 0.7
+    },
+    {
+      "handle": "mjg59.eicar-test-file.zip",
+      "display_name": "Matthew Garrett (리눅스 커널/보안)",
+      "tier": 1,
+      "reputation": 0.8
+    },
+    {
+      "handle": "pwnallthethings.bsky.social",
+      "display_name": "Pwnallthethings (보안 연구자)",
+      "tier": 1,
+      "reputation": 0.8
+    },
+    {
+      "handle": "cybdetective.bsky.social",
+      "display_name": "Cyber Detective (OSINT)",
+      "tier": 2,
+      "reputation": 0.7
+    },
+    {
+      "handle": "meidanowski.bsky.social",
+      "display_name": "Mei Danowski (중국발 위협 인텔, Natto Thoughts)",
+      "tier": 2,
+      "reputation": 0.65
+    },
+    {
+      "handle": "attack.mitre.org",
+      "display_name": "MITRE ATT&CK (공식)",
+      "tier": 1,
+      "reputation": 0.95
+    },
+    {
+      "handle": "thezdi.bsky.social",
+      "display_name": "Trend Zero Day Initiative (공식)",
+      "tier": 1,
+      "reputation": 0.9
+    },
+    {
+      "handle": "defcon.bsky.social",
+      "display_name": "DEF CON (공식)",
+      "tier": 2,
+      "reputation": 0.7
+    },
+    {
+      "handle": "graylog.bsky.social",
+      "display_name": "Graylog (SIEM 벤더)",
+      "tier": 3,
+      "reputation": 0.6
+    },
+    {
+      "handle": "lorenzofb.bsky.social",
+      "display_name": "Lorenzo Franceschi-Bicchierai (TechCrunch)",
+      "tier": 1,
+      "reputation": 0.8
+    },
+    {
+      "handle": "zackwhittaker.com",
+      "display_name": "Zack Whittaker (TechCrunch 보안 담당)",
+      "tier": 1,
+      "reputation": 0.8
+    },
+    {
+      "handle": "patrickhowelloneill.com",
+      "display_name": "Patrick Howell O'Neill (MIT Tech Review)",
+      "tier": 2,
+      "reputation": 0.75
+    },
+    {
+      "handle": "smashingsecurity.com",
+      "display_name": "Smashing Security (보안 팟캐스트)",
+      "tier": 3,
+      "reputation": 0.6
+    },
+    {
+      "handle": "cybersecuritynews.bsky.social",
+      "display_name": "Cybersecurity News (보안 뉴스 집계)",
+      "tier": 3,
+      "reputation": 0.6
+    },
+    {
+      "handle": "infosecsherpa.bsky.social",
+      "display_name": "InfoSecSherpa (보안 큐레이션)",
+      "tier": 3,
+      "reputation": 0.6
+    },
+    {
+      "handle": "cybercareerblog.bsky.social",
+      "display_name": "Cybersecurity Careers Blog",
+      "tier": 3,
+      "reputation": 0.55
+    },
+    {
+      "handle": "womenofwicca.bsky.social",
+      "display_name": "Women in Cybersecurity Community Association",
+      "tier": 3,
+      "reputation": 0.55
+    },
+    {
+      "handle": "cybersec4all.bsky.social",
+      "display_name": "Cybersecurity For All",
+      "tier": 3,
+      "reputation": 0.55
+    },
+    {
+      "handle": "cyberlawyeryyz.bsky.social",
+      "display_name": "Brent J. Arnold (사이버 법률)",
+      "tier": 3,
+      "reputation": 0.6
+    },
+    {
+      "handle": "cybersecdiva.bsky.social",
+      "display_name": "Tanisha L. Turner (보안 커뮤니티)",
+      "tier": 4,
+      "reputation": 0.5
+    },
+    {
+      "handle": "lindawbell.bsky.social",
+      "display_name": "Linda (보안 콘텐츠, CISSP)",
+      "tier": 4,
+      "reputation": 0.45
+    },
+    {
+      "handle": "securescientist.eu",
+      "display_name": "Luca (TU Eindhoven, 사이버범죄학 교수)",
+      "tier": 2,
+      "reputation": 0.75
+    },
+    {
+      "handle": "davidpriess.bsky.social",
+      "display_name": "David Priess (前 CIA 애널리스트)",
+      "tier": 2,
+      "reputation": 0.7
+    },
+    {
+      "handle": "cyberciti.biz",
+      "display_name": "nixCraft (시스템관리/보안 하드닝)",
+      "tier": 2,
+      "reputation": 0.7
+    }
+  ],
+  "bluesky_keywords": [
+    "CVE",
+    "0day",
+    "zero-day",
+    "exploit",
+    "APT",
+    "malware",
+    "ransomware",
+    "DFIR",
+    "incident response"
+  ]
+}
