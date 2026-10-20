@@ -40,6 +40,8 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TELEGRAM_CHAT_ID_EXTRA: ${{ secrets.TELEGRAM_CHAT_ID_EXTRA }}
+          BLUESKY_IDENTIFIER: ${{ secrets.BLUESKY_IDENTIFIER }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
           LLM_BACKEND: "gemini"
           LLM_FALLBACK_ORDER: "groq,openai"
           ENABLE_LLM: "true"
@@ -55,7 +57,9 @@ jobs:
           # 2026-09: 활성 Nitter 인스턴스가 0개일 때 main.py가 5분 간격 최대
           # 3회(최대 15분) 재시도 후 포기하도록 되어 있어, 그 대기 시간 + 실제
           # 크롤링(최대 20분)을 모두 감당하도록 35분(2100초)으로 상향.
-          timeout -k 30 2100 python main.py --llm --workers 3 || echo "::warning::크롤러가 타임아웃/오류로 종료됨(코드 $?) - 마지막으로 저장된 리포트로 계속 진행"
+          # 2026-10: Bluesky(계정 52개+키워드 9개) + Mastodon(계정 20개) 순차
+          # 크롤링이 추가되어(공개 API 매너 지연 포함 수 분 소요) 40분(2400초)으로 재상향.
+          timeout -k 30 2400 python main.py --llm --workers 3 || echo "::warning::크롤러가 타임아웃/오류로 종료됨(코드 $?) - 마지막으로 저장된 리포트로 계속 진행"
 
       - name: Generate HTML report
         run: |
