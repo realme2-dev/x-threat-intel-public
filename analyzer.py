@@ -55,8 +55,9 @@ class SampleTweet:
     """텔레그램 알림용 샘플 트윗 정보."""
     text: str
     username: str
-    link: str       # https://twitter.com/... 원본 트위터 링크
+    link: str       # 원본 게시물 링크 (X/Bluesky/Mastodon)
     date: str
+    platform: str = "x"  # "x" | "bluesky" | "mastodon"
 
 
 @dataclass
@@ -67,9 +68,10 @@ class TweetSummary:
     group: str
     tweet_count: int
     thread_count: int
-    method: str  # "ntscraper" | "playwright"
+    method: str  # "ntscraper" | "playwright" | "mastodon_api" | "atproto_feed" | "atproto_search"
     instance_used: str
     crawled_at: str
+    platform: str = "x"  # "x" | "bluesky" | "mastodon"
     top_users: list[tuple[str, int]] = field(default_factory=list)
     hashtags: list[str] = field(default_factory=list)
     sample_texts: list[str] = field(default_factory=list)   # 하위호환 유지
@@ -91,6 +93,8 @@ class TrendReport:
     llm_summary: str = ""         # LLM 활성화 시 채워짐
     llm_top_tweets: list = field(default_factory=list)  # LLM 선별 주요 트윗
     news_articles: list = field(default_factory=list)  # RSS 뉴스 기사 (NewsArticle 목록)
+    platform_summary: dict = field(default_factory=dict)  # {"x": {"targets":N,"tweets":N}, ...}
+    x_status: str = "ok"  # "ok" | "skipped_nitter_down"
 
 
 class Analyzer:
@@ -124,6 +128,7 @@ class Analyzer:
             target = item.get("target", "")
             target_type = item.get("type", "keyword")
             group = item.get("group", "")
+            platform = item.get("platform", "x")
 
             all_tweets.extend(tweets)
 
@@ -136,6 +141,7 @@ class Analyzer:
                 method=meta.get("method", "?"),
                 instance_used=meta.get("instance_used", "?"),
                 crawled_at=meta.get("crawled_at", ""),
+                platform=platform,
                 top_users=self._top_users(tweets, n=3),
                 hashtags=self._extract_hashtags(tweets)[:5],
                 sample_texts=[t.get("text", "")[:100] for t in tweets[:2]],
@@ -145,6 +151,7 @@ class Analyzer:
                         username=t.get("user", {}).get("username", "").lstrip("@"),
                         link=t.get("link", ""),
                         date=t.get("date", ""),
+                        platform=t.get("platform", "x"),
                     )
                     for t in tweets
                     if t.get("link")
@@ -162,6 +169,13 @@ class Analyzer:
         top_mentions = self._top_mentions(all_tweets, n=10)
         top_users = self._top_users(all_tweets, n=10)
 
+        # 플랫폼별 집계 (타겟 수 / 트윗 수)
+        platform_summary: dict[str, dict] = {}
+        for s in keyword_summaries + account_summaries:
+            p = platform_summary.setdefault(s.platform, {"targets": 0, "tweets": 0})
+            p["targets"] += 1
+            p["tweets"] += s.tweet_count
+
         report = TrendReport(
             generated_at=datetime.now().isoformat(),
             total_tweets=len(all_tweets),
@@ -172,6 +186,7 @@ class Analyzer:
             top_hashtags=top_hashtags,
             top_mentions=top_mentions,
             top_users=top_users,
+            platform_summary=platform_summary,
         )
 
         # llm_summary는 main.py에서 --llm 옵션 시 외부에서 채워짐
@@ -325,6 +340,8 @@ class Analyzer:
                     "llm_summary": obj.llm_summary,
                     "llm_top_tweets": [to_serializable(t) for t in obj.llm_top_tweets],
                     "news_articles": [to_serializable(a) for a in obj.news_articles],
+                    "platform_summary": obj.platform_summary,
+                    "x_status": obj.x_status,
                 }
             if isinstance(obj, TweetSummary):
                 return {
@@ -336,24 +353,26 @@ class Analyzer:
                     "method": obj.method,
                     "instance_used": obj.instance_used,
                     "crawled_at": obj.crawled_at,
+                    "platform": obj.platform,
                     "top_users": obj.top_users,
                     "hashtags": obj.hashtags,
                     "sample_texts": obj.sample_texts,
                     "sample_tweets": [
                         {"text": t.text, "username": t.username,
-                         "link": t.link, "date": t.date}
+                         "link": t.link, "date": t.date, "platform": t.platform}
                         for t in obj.sample_tweets
                     ],
                 }
             if isinstance(obj, SampleTweet):
                 return {"text": obj.text, "username": obj.username,
-                        "link": obj.link, "date": obj.date}
+                        "link": obj.link, "date": obj.date, "platform": obj.platform}
             # TopTweet (llm_analyzer)
             if hasattr(obj, "threat_level") and hasattr(obj, "reason"):
                 return {
                     "rank": obj.rank, "threat_level": obj.threat_level,
                     "username": obj.username, "date": obj.date,
                     "link": obj.link, "text": obj.text, "reason": obj.reason,
+                    "platform": getattr(obj, "platform", "x"),
                 }
             # NewsArticle (rss_collector)
             if hasattr(obj, "region") and hasattr(obj, "ioc"):

@@ -66,9 +66,24 @@ def _to_kst(date_str: str) -> str:
         return s[:16]
 
 
+PLATFORM_ICON = {"x": "🔵", "bluesky": "🦋", "mastodon": "🐘"}
+
+
 def _twitter_profile_md(username: str) -> str:
     u = username.lstrip("@")
     return f"[@{u}](https://twitter.com/{u})"
+
+
+def _profile_md(username: str, platform: str = "x") -> str:
+    """플랫폼별 프로필 링크. Mastodon은 username에 보통 @instance가 안 붙어있어
+    인스턴스 없이 핸들만 링크 텍스트로 쓰고 실제 주소는 생략한다(인스턴스 정보가
+    SampleTweet/TopTweet에 없음 — 필요해지면 instance 필드 추가 고려)."""
+    u = username.lstrip("@")
+    if platform == "bluesky":
+        return f"[@{u}](https://bsky.app/profile/{u})"
+    if platform == "mastodon":
+        return f"[@{u}]"
+    return _twitter_profile_md(u)
 
 
 def _twitter_hashtag_md(tag: str) -> str:
@@ -257,6 +272,19 @@ class TelegramNotifier:
         if report.account_summary:
             header += f"\n👤 계정 {acc_ok}/{len(report.account_summary)}개 수집"
 
+        # 플랫폼별 수집 현황 (X가 Nitter 장애로 스킵됐을 때도 명시적으로 표시)
+        if report.x_status == "skipped_nitter_down":
+            header += "\n🔵 X: 수집 실패 (Nitter 장애)"
+        elif "x" in report.platform_summary:
+            p = report.platform_summary["x"]
+            header += f"\n🔵 X: 타겟 {p['targets']}개 · 트윗 {p['tweets']}개"
+        if "bluesky" in report.platform_summary:
+            p = report.platform_summary["bluesky"]
+            header += f"\n🦋 Bluesky: 타겟 {p['targets']}개 · 게시물 {p['tweets']}개"
+        if "mastodon" in report.platform_summary:
+            p = report.platform_summary["mastodon"]
+            header += f"\n🐘 Mastodon: 타겟 {p['targets']}개 · 게시물 {p['tweets']}개"
+
         parts.append(header)
 
         # ── 2. 트렌드 분석 (간소화)
@@ -326,13 +354,14 @@ class TelegramNotifier:
                 continue
             tw = s.sample_tweets[0]
             kst_date = _to_kst(tw.date)
-            user_link = _twitter_profile_md(s.target)
+            icon = PLATFORM_ICON.get(s.platform, "🔵")
+            user_link = _profile_md(s.target, s.platform)
             text_esc = _esc(tw.text[:120])
 
             if tw.link:
-                header = f"{user_link} | [{kst_date}]({tw.link})"
+                header = f"{icon} {user_link} | [{kst_date}]({tw.link})"
             else:
-                header = f"{user_link} | {kst_date}"
+                header = f"{icon} {user_link} | {kst_date}"
 
             lines.append(f"\n{header}")
             lines.append(text_esc)
@@ -349,14 +378,16 @@ class TelegramNotifier:
         for tw in top_tweets:
             badge = level_badge.get(tw.threat_level, "⚪")
             kst_date = _to_kst(tw.date)
-            user_link = _twitter_profile_md(tw.username)
+            platform = getattr(tw, "platform", "x")
+            icon = PLATFORM_ICON.get(platform, "🔵")
+            user_link = _profile_md(tw.username, platform)
             text_esc = _esc(tw.text[:140])
             reason_plain = tw.reason.replace("*", "").replace("_", "").replace("`", "")
 
             if tw.link:
-                header = f"{badge} {user_link} | [{kst_date}]({tw.link})"
+                header = f"{badge} {icon} {user_link} | [{kst_date}]({tw.link})"
             else:
-                header = f"{badge} {user_link} | {kst_date}"
+                header = f"{badge} {icon} {user_link} | {kst_date}"
 
             lines.append(f"\n{header}")
             lines.append(text_esc)
@@ -384,7 +415,7 @@ class TelegramNotifier:
 
             for tw in s.sample_tweets[:2]:
                 kst_date = _to_kst(tw.date)
-                user_link = _twitter_profile_md(tw.username)
+                user_link = _profile_md(tw.username, tw.platform)
                 text_esc = _esc(tw.text[:120])
 
                 if tw.link:

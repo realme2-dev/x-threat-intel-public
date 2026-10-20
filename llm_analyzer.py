@@ -560,6 +560,7 @@ class TopTweet:
     link: str
     text: str
     reason: str         # 선별 이유 (한 줄)
+    platform: str = "x"  # "x" | "bluesky" | "mastodon"
 
 
 def build_tweet_selection_prompt(tweets: list[dict]) -> str:
@@ -666,6 +667,7 @@ def run_tweet_selection(
                     link=t.get("link", ""),
                     text=t.get("text", "")[:200],
                     reason=item.get("reason", ""),
+                    platform=t.get("platform", "x"),
                 ))
             return top_tweets
 
