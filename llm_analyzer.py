@@ -777,6 +777,7 @@ class KoreaTweet:
     link: str
     text: str
     reason: str
+    platform: str = "x"  # "x" | "bluesky" | "mastodon"
 
 
 def run_korea_tweet_filter(
@@ -858,6 +859,7 @@ def run_korea_tweet_filter(
                     link=t.get("link", ""),
                     text=t.get("text", "")[:200],
                     reason=item.get("reason", ""),
+                    platform=t.get("platform", "x"),
                 ))
 
             seen_prefixes: set[str] = set()

@@ -75,14 +75,14 @@ def _twitter_profile_md(username: str) -> str:
 
 
 def _profile_md(username: str, platform: str = "x") -> str:
-    """플랫폼별 프로필 링크. Mastodon은 username에 보통 @instance가 안 붙어있어
-    인스턴스 없이 핸들만 링크 텍스트로 쓰고 실제 주소는 생략한다(인스턴스 정보가
-    SampleTweet/TopTweet에 없음 — 필요해지면 instance 필드 추가 고려)."""
+    """플랫폼별 프로필 링크. Mastodon은 username에 인스턴스 정보가 없어
+    (SampleTweet/TopTweet/KoreaTweet에 instance 필드가 없음) 링크 없이
+    평범한 텍스트로 표시한다 — 괄호만 남는 깨진 마크다운 링크를 피하기 위함."""
     u = username.lstrip("@")
     if platform == "bluesky":
         return f"[@{u}](https://bsky.app/profile/{u})"
     if platform == "mastodon":
-        return f"[@{u}]"
+        return f"@{u}"
     return _twitter_profile_md(u)
 
 
@@ -186,9 +186,15 @@ class TelegramNotifier:
         lines = [f"🇰🇷 *한국 관련 위협 알림* ({now_kst})", f"총 {len(korea_tweets)}건 탐지\n"]
         for i, t in enumerate(korea_tweets, 1):
             emoji = relevance_emoji.get(t.relevance, "🟡")
-            link = t.link.replace("https://twitter.com", "https://x.com") if t.link else ""
-            user_part = f"[@{t.username}](https://x.com/{t.username})" if t.username and t.username != "?" else f"@{t.username}"
-            lines.append(f"{emoji} *{i}. {t.relevance}*")
+            platform = getattr(t, "platform", "x")
+            platform_icon = PLATFORM_ICON.get(platform, "🔵")
+            link = t.link.replace("https://twitter.com", "https://x.com") if (t.link and platform == "x") else t.link
+            user_part = (
+                _profile_md(t.username, platform)
+                if t.username and t.username != "?"
+                else f"@{t.username}"
+            )
+            lines.append(f"{emoji} {platform_icon} *{i}. {t.relevance}*")
             lines.append(f"{user_part} | {t.date}")
             lines.append(t.reason)
             lines.append(t.text[:200])
@@ -408,9 +414,14 @@ class TelegramNotifier:
             if not s.sample_tweets:
                 continue
 
-            # 키워드 헤더 (트위터 검색 링크)
+            # 키워드 헤더 (플랫폼별 검색 링크)
             kw_encoded = quote(s.target)
-            kw_link = f"[#{_esc(s.target)}](https://twitter.com/search?q={kw_encoded})"
+            kw_icon = PLATFORM_ICON.get(s.platform, "🔵")
+            if s.platform == "bluesky":
+                kw_url = f"https://bsky.app/search?q={kw_encoded}"
+            else:
+                kw_url = f"https://twitter.com/search?q={kw_encoded}"
+            kw_link = f"{kw_icon} [#{_esc(s.target)}]({kw_url})"
             lines.append(f"\n{kw_link}")
 
             for tw in s.sample_tweets[:2]:
